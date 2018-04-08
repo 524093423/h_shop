@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{:C('APP_TITLE')}</title>
+ <link href="__PUBLIC__/admin/images/style.css" rel="stylesheet" type="text/css" />
+ <script src="http://api.html5media.info/1.1.4/html5media.min.js"></script>    
+</head>
+<body class="mainbody">
+
+<div class="navigation"><a href="javascript:history.go(-1);" class="back">后退</a>首页 &gt; 商家认证 &gt; 申请详情</div>
+<div id="contentTab">
+    <ul class="tab_nav">
+        <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">认证信息</a></li>
+        <li><a onclick="tabs('#contentTab',1);" href="javascript:;">店铺信息</a></li>
+    </ul>
+ <!--    <div class="tab_con" style="display:block;">
+        <table class="form_table">
+            <col width="150px"><col>
+            <tbody>
+            <tr> 
+                <th>用户名/手机号码：</th>
+                <td>{$info.user_name}&nbsp;/&nbsp;{$info.user_phone}
+                </td>
+            </tr>
+            <tr>
+                <th>法人名/手机号码：</th>
+                <td>{$info.seller_name}&nbsp;/&nbsp;{$info.seller_phone}
+                </td>
+            </tr>
+            <tr>
+                <th>企业名称：</th>
+                <td>{$info.company_name}
+                </td>
+            </tr>
+            <tr>
+                <th>商家地址：</th>
+                <td>{$info.province}省{$info.city}市&nbsp;/&nbsp;{$info.remarks}
+                </td>
+            </tr>
+            <tr>
+                <th>支付宝账号：</th>
+                <td>{$info.payment_no}
+                </td>
+            </tr>
+            <tr> 
+                <th>是否批准申请：</th>
+                <td id="status">
+                    <input type="radio" name="status" value="1" <if condition=" $info.status eq 1">checked</if>>待批准
+                    <input type="radio" name="status" value="3" <if condition=" $info.status eq 3">checked</if>>审核不通过
+                    <input type="radio" name="status" value="2" <if condition=" $info.status eq 2">checked</if>>审核通过
+                </td>
+                <input type="hidden" id="seller_id" name="seller_id" value='{$info.seller_id}'>
+                <input type="hidden" id="user_id" name="user_id" value='{$info.user_id}'>
+                <input type="hidden" id="old_status" name="old_status" value="{$info.status}"/>
+            </tr>
+            <php>if($info['status'] != 2){</php>
+                <tr>
+                    <th>审核不通过理由：</th>
+                    <td>
+                        <textarea name="nopass" id="nopass" cols="40" rows="4">{$info.nopass}</textarea>
+                    </td>
+                </tr>
+            <php>}</php>
+
+           
+            <tr>
+                <th>营业执照：</th>
+                <td><img id="s" src=".{$info.picture}" style="height:550px;"/>
+                </td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </div>
+ --> 
+    <div class="tab_con" style="display: block;">
+        <table class="form_table">
+            <col width="150px" />
+            <tbody>
+                <tr> 
+                    <th>12用户名/手机号码：</th>
+                    <td>{$info.user_name}&nbsp;/&nbsp;{$info.user_phone}
+                    </td>
+                </tr>
+                <tr>
+                    <th>法人名/手机号码：</th>
+                    <td>{$info.seller_name}&nbsp;/&nbsp;{$info.seller_phone}
+                    </td>
+                </tr>
+                <tr>
+                    <th>企业名称：</th>
+                    <td>{$info.company_name}
+                    </td>
+                </tr>
+                <tr>
+                    <th>商家地址：</th>
+                    <td>{$info.province}省{$info.city}市&nbsp;/&nbsp;{$info.remarks}
+                    </td>
+                </tr>
+                <tr>
+                    <th>支付宝账号：</th>
+                    <td>{$info.payment_no}
+                    </td>
+                </tr>
+                <tr> 
+                    <th>是否批准申请：</th>
+                    <td id="status">
+                        <input type="radio" name="status" value="1" <if condition=" $info.status eq 1">checked</if>>待批准
+                        <input type="radio" name="status" value="3" <if condition=" $info.status eq 3">checked</if>>审核不通过
+                        <input type="radio" name="status" value="2" <if condition=" $info.status eq 2">checked</if>>审核通过
+                    </td>
+                    <input type="hidden" id="seller_id" name="seller_id" value='{$info.seller_id}'>
+                    <input type="hidden" id="user_id" name="user_id" value='{$info.user_id}'>
+                    <input type="hidden" id="old_status" name="old_status" value="{$info.status}"/>
+                </tr>
+                <php>if($info['status'] != 2){</php>
+                    <tr>
+                        <th>审核不通过理由：</th>
+                        <td>
+                            <textarea name="nopass" id="nopass" cols="40" rows="4">{$info.nopass}</textarea>
+                        </td>
+                    </tr>
+                <php>}</php>
+
+               
+                <tr>
+                    <th>营业执照：</th>
+                    <td><img id="s" src=".{$info.picture}" style="height:550px;"/>
+                    </td>
+                </tr>
+                    
+                </tbody>
+        </table>
+        <div class="foot_btn_box">
+         <input id="sub" type="button" value="提交保存" class="btnSubmit"/>
+        </div>
+     </div>
+      <!-- 其他属性 -->
+        <div class="tab_con">
+            <table class="form_table">
+                <col width="150px" />
+                <tbody>
+                    <tr> 
+                        <th>店铺名称：</th>
+                        <td>{$store.name}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>店铺描述：</th>
+                        <td>{$store.bdesc}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>商家关注量：</th>
+                        <td>{$store.follow}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>创建时间：</th>
+                        <td>{$store.create_time}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>店铺logo：</th>
+                        <td><img id="s" src=".{$store.blogo}" style="height:300px;"/>
+                        </td>
+                    </tr>
+                     <tr>
+                        <th>店铺背景：</th>
+                        <td><img id="s" src=".{$store.bakimg}" style="height:300px;"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+</body>
+</html>
+ <script src="__PUBLIC__/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+ <script type="text/javascript" src="__PUBLIC__/admin/js/layer/layer.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/function.js"></script>
+    <script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+ <script src="__PUBLIC__/admin/js/tips/jquery.poshytip.js" type="text/javascript"></script>
+ <link href="__PUBLIC__/admin/js/tips/tip-yellow/tip-yellow.css" rel="stylesheet" type="text/css" />
+   <script>
+    $(function () {
+        $("#sub").click(function () {
+            var user_id = $("#user_id").val();
+            var seller_id = $("#seller_id").val();
+            var status = $("input[name=status]:checked").val();
+            var old_status = $("#old_status").val();             
+            var nopass = $("#nopass").val();          
+            $.ajax({
+                type: "POST",
+                url: "admin.php?c=Bank&a=SellerDetail",
+                // data:$("#submitForm").serialize(),
+                data:{user_id:user_id,seller_id:seller_id,status:status,nopass:nopass},
+                success: function (data) {
+                    if(data > 0){
+                        $.jBox.tip('提交成功', 'success');
+                        window.setTimeout(function () {
+                        location.href = "./admin.php?c=Bank&a=ApplySeller&status="+old_status;}, 2000); //跳转页面
+                    }else{
+                        $.jBox.tip('提交失败，请检查', 'error');
+                    }
+                }
+            });
+        });
+    });
+  </script>

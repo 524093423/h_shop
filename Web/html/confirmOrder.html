@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>确认订单</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/order.css"/>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">确认订单</h3>
+        <div class="back">
+         <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content car-content">
+    <!--送货地址 开始-->
+    <div class="address clearfix ">
+        <div class="ad-biao">
+            <img src="../images/dizhihei.png" alt=""/>
+        </div>
+        <div class="ad-wo" data-aid="0">
+            <h3>
+                <span></span>
+                <span></span>
+            </h3>
+            <h4></h4>
+            <h5></h5>
+        </div>
+        <div class="ad-jian">
+            <img src="../images/youjian.png" alt=""/>
+        </div>
+    </div>
+    <!--送货地址 结束-->
+    <!--线条-->
+    <div class="tiao">
+        <img src="../images/tiao.png" alt=""/>
+    </div>
+    <!--订单 列表 开始-->
+    <div class="carBox ">
+        
+    </div>
+    <!--订单 列表 结束-->
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+    <!--积分-->
+    <div class="score clearfix ">
+        <p>可用<span class="jfn">0</span>嘿币抵用<span class="jfp">0</span>元</p>
+        <img src="../images/dui1.png" alt=""/>
+    </div>
+    <!--合计部分-->
+    <div class="car-bot ">
+        <div class=" clearfix">
+            <div class="suan">
+                <p>结算（<b>1</b>）</p>
+            </div>
+            <div class="heji">
+                <p>合计：<span>¥<b>0</b></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../js/common.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/webconfig.js?a=321"></script>
+<script src="../js/goods.js?a=20170812"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    var goodsid	= "";
+    var type	= "";
+    var goodsInfo = "";
+    var isuseintl	= 0;
+    var gnum    = 1;
+    var specid  = "";
+  $(function(){
+      sessionStorage.setItem("isuseintl",isuseintl);
+      /*console.log("自动执行:"+isuseintl);*/
+      sessionStorage.setItem("total",sessionStorage.getItem("singleprice"));
+      /*console.log("自动执行:"+sessionStorage.getItem("singleprice"));*/
+      orderFunc().init();
+      goodsid	= getUrlParam("id");
+      type		= getUrlParam("type");
+      gnum      = getUrlParam("gnum");
+      specid    = getUrlParam("specid");
+      orderFunc().AgainGetUser();
+   	  GetProductDetail(goodsid,type,gnum,specid);
+      $(".back").click(function(){
+          if(type==1){
+              window.location.href="./confirmOrder.html?type=1&id="+goodsid+"&gnum="+gnum+"&specid="+specid
+          }else{
+              window.location.href  = "./ShopcCar.html";
+          }
+          window.history.back();
+      });
+      /*if(type==1){
+          $(".back").click(function(){
+             window.location.href="./productDetails（feng）.html?id="+goodsid;
+          });
+      }else{
+          $(".back").click(function(){
+              window.location.href="./confirmOrder.html";
+          });
+      }*/
+  });
+
+    var orderFunc = function(){
+        return{
+            init:function(){
+                this.scoreClick();
+                this.SetAddress();//设置收货地址
+                this.GetDefault();//获取默认地址
+                this.money();//合计
+            },
+            // 使用积分
+            scoreClick:function(){
+                $('.score img').click(function(){
+                	var total	= "";
+                	var price	= sessionStorage.getItem("singleprice");
+                    var jfnum	= sessionStorage.getItem("jfnum");
+                    var userJfnum	= sessionStorage.getItem("intl");
+                	var usejfnum	= 0;
+                	if(parseInt(jfnum) >= parseInt(userJfnum)){
+                		usejfnum	= userJfnum;
+                	}else{
+                		usejfnum	= jfnum;
+                	}
+                    var jfprice	= (usejfnum/100).toFixed(2);//可使用积分数量
+                	sessionStorage.setItem("isuseintl",isuseintl);
+                    if($(this).attr('src') == '../images/dui1.png'){
+                        $(this).attr('src','../images/dui2.png');
+                        isuseintl	= 1;
+                        total	= (price*100)-(jfprice*100);
+                        console.log("选择1:"+isuseintl);
+                        console.log("选择1:"+total);
+                    }else{
+                        $(this).attr('src','../images/dui1.png');
+                        isuseintl 	= 0;
+                        total	= price*100;
+                        console.log("选择2:"+isuseintl);
+                        console.log("选择2:"+total);
+                    }
+                    var actul   = (total/100).toFixed(2);
+                    sessionStorage.setItem("total",actul);
+                    $(".heji").find("span b").text(actul);
+                    sessionStorage.setItem("isuseintl",isuseintl);
+                })
+            },
+            SetAddress:function(){
+            	$(".address").click(function(){
+          			 window.location.href= './address.html?type=single&title=1&hreftype=1';
+                });
+            },
+         // 计算 每家店铺的总价
+            money:function(){
+                $('.car-list').each(function(i){
+                    var heji = null
+                    var danjia = null
+                    var num = null;
+                    var Num = null;
+                    $('.car-list').eq(i).find('li').each(function(index){
+
+                        var danjia  =  Number( $(this).find('.money').find('b').html());
+                        var num  =  Number( $(this).find('.num').find('b').html());
+
+                        //  精确地 乘法 计算
+                        var m=0,s1=danjia.toString(),s2=num.toString();
+                        try{m+=s1.split(".")[1].length}catch(e){}
+                        try{m+=s2.split(".")[1].length}catch(e){}
+                        //heji = Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
+                        if($('.car-list').eq(i).find('li').length > 1){
+                            heji += Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
+                            Num += num;
+                            $('.car-list').eq(i).find('.money-zl').html(heji.toFixed(2));
+                            $('.car-list').eq(i).find('.num-zl').html(Num)
+                        }else{
+                            heji =Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
+                            $('.car-list').eq(i).find('.money-zl').html(heji.toFixed(2))
+                            Num = num;
+                            $('.car-list').eq(i).find('.num-zl').html(Num)
+                        }
+                    });
+
+                })
+
+            },
+            GetDefault:function(){
+            	$.getJSON(webIp+"Address/GetAddress?callback=?&token="+sessionStorage.getItem('token'),function(result){
+            		var AddList	= result.info;
+	      			if(result.code=="200" && !$.isEmptyObject(AddList)){
+	      				layer.close();
+	      			}else{
+	      				layer.msg('您还未添加收货地址',{time:1000});
+	      				layer.close();
+	      				return false;
+	      			}
+	      			var addressId	= "";
+	      			var people		= "";
+	      			var phe			= "";
+	      			var address		= "";
+	      			var xxaddress	= "";
+	      			for(var i=0;i<AddList.length;i++){
+	      				if(AddList[i]['flag'] ==1){
+	      					addressId	= AddList[i]['address_id']?AddList[i]['address_id']:"";
+	      					people		= AddList[i]['consignee_name']?AddList[i]['consignee_name']:"";
+	      					phe			= AddList[i]['consignee_phe']?AddList[i]['consignee_phe']:"";
+	      					address		= AddList[i]['consignee_address']?AddList[i]['consignee_address']:"";
+	      					xxaddress	= AddList[i]['remarks']?AddList[i]['remarks']:"";
+	      				}
+	      			}
+	      			sessionStorage.setItem("addressId",addressId);
+  					sessionStorage.setItem("people",people);
+  					sessionStorage.setItem("phe",phe);
+  					sessionStorage.setItem("address",address);
+  					sessionStorage.setItem("xxaddress",xxaddress);
+  					orderFunc().setAddress();
+            	});
+            },
+            setAddress:function(){
+            	$(".ad-wo").find("h3 span").eq(0).text(sessionStorage.getItem("people"));
+				$(".ad-wo").find("h3 span").eq(1).text(sessionStorage.getItem("phe"));
+				$(".ad-wo").find("h4").text(sessionStorage.getItem("address"));
+				$(".ad-wo").find("h5").text(sessionStorage.getItem("xxaddress"));
+				$(".ad-wo").attr("data-aid",sessionStorage.getItem("addressId"));
+            },
+            suanClick:function(){
+                var json = {} ; //  存放结算时 所有的店铺信息以及商品信息
+                $('.suan').click(function(){
+                    var arr1 = [] ; //  存放 所有店铺 id 以及该店铺鞋面商品的信息
+                    var obj1 = {};  //  存放 单个店铺 id 以及该店铺鞋面商品的信息
+                    $('.car-list').each(function(i){
+                        var arr2 = [] ; // 存放 店铺下面所有商品 id 积分
+                        var obj2 = {};  // 存放 店铺下面单个商品 id 积分
+                        $('.car-list').eq(i).find('li').each(function(index){
+                            if(isuseintl==0){
+                                var jf =  0; // 获取积分
+                            }else{
+                                var jf =$(this).find('img').attr('data-jf');
+                            }
+                            var id =  $(this).find('img').attr('alt') ;//  获取 id
+                            var spid    = $(this).find("img").attr("data-specid");//获取规格id
+                            obj2 ={
+                                "id":id ,
+                                "jf":jf,
+                                "spid":spid
+                            };
+                            arr2.push(obj2); // 商品的 id 积分
+
+                        });
+                        var idPu =  $(this).find('.dianpu-log').find('img').attr('alt') ;//  获取 店铺 id
+                        var word =  $(this).find('.leaveWorld').find('input').val(); //  获取 留言
+                        obj1 = {
+                            "bid":idPu,
+                            "cart":arr2,
+                            "msg":word
+                        };
+                        arr1.push(obj1)
+                       
+                        json ={
+                            "cart":arr1
+                        };
+                        
+                    });
+                    sessionStorage.setItem("s2",JSON.stringify(json));
+                    if(sessionStorage.getItem("addressId") ==null){
+                        layer.msg('您还未添加收货地址',{time:1000});
+                        layer.close();
+                        return false;
+                    }
+                    window.location.href="./pay.html";
+                })
+
+            },
+            GoodsSuan:function(){
+            	$(".suan").click(function(){
+                	var jfnum = sessionStorage.getItem("jfnum");
+                	var userJfnum	= sessionStorage.getItem("intl");
+                	var usejfnum	= 0;
+                	if(parseInt(jfnum) >= parseInt(userJfnum)){
+                		usejfnum	= userJfnum;
+                	}else{
+                		usejfnum	= jfnum;
+                	}
+                    if(isuseintl==0){
+                        usejfnum    = 0;
+                    }
+                	var s2	  = {"order":{"goodsid":goodsid,"bid":$(".li-pic").find("img").attr("data-bid"),"msg":$(".leaveWorld").find("input").val(),"spid":specid,"jf":usejfnum,"gnum":gnum}};
+                	sessionStorage.setItem("s2",JSON.stringify(s2));
+                    if(sessionStorage.getItem("addressId") ==null){
+                        layer.msg('您还未添加收货地址',{time:1000});
+                        layer.close();
+                        return false;
+                    }
+                	window.location.href="./pay.html";
+                });
+            },
+            AgainGetUser:function(){
+            	$.getJSON(webIp+"AppLogin/GetUserInfo?callback=?&token="+sessionStorage.getItem("token"),function(result){
+            		var userinfo	= result.info;
+    				if(result.code=="200" && !$.isEmptyObject(userinfo)){
+    					sessionStorage.setItem('userName',userinfo.user_name);//用户名
+    					sessionStorage.setItem('Phone',userinfo.user_phone);//用户手机号
+    					sessionStorage.setItem('Photo',userinfo.user_photo);//用户头像
+    					sessionStorage.setItem('account',userinfo.account);//用户账户余额
+    					sessionStorage.setItem('intl',userinfo.integral);//用户积分数量
+    					sessionStorage.setItem('isseller',userinfo.is_seller);//用户是否为商户 0否
+    					sessionStorage.setItem('ispaypwd',userinfo.is_paypwd);//用户是否设置支付密码2否
+    					sessionStorage.setItem('token',userinfo.token);//用户token
+    				}else{
+    					layer.msg("请重新登录",{time:1000},function(){
+    						window.location.href="http://www.heigushop.com/Web/WxLogin/jsapi.php";
+    					});
+    				}
+            	});
+            }
+        }
+    }
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>全部评价</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/order.css"/>
+    <style>
+        html,body{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">全部评价</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content addCon">
+
+    <!--宝贝评价 部分-->
+    <div class="appraise">
+
+        <ul class="wrap app-list">
+            <li>
+                <p class="clearfix p1">
+                    <img src="../images/tou.png" alt=""/>
+                    <span>-------</span>
+                    <i>--------</i>
+                </p>
+                <p class=" p2">--------------------</p>
+                <p class="clearfix p3">
+                    <img src="../images/redxing.png" alt=""/>
+                    <img src="../images/redxing.png" alt=""/>
+                    <img src="../images/redxing.png" alt=""/>
+                    <img src="../images/redxing.png" alt=""/>
+                    <img src="../images/redxing.png" alt=""/>
+                </p>
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../js/common.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/webconfig.js?a=321"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    var goodsid	= "";
+    $(function(){
+		$(".back").click(function(){
+			history.go(-1);
+		});
+       proFun().init();
+       goodsid	= getUrlParam('goodsid');
+    });
+    var proFun = function(){
+        return{
+            init:function(){
+                this.RateList();// 点击 全部评价
+            },
+            RateList:function(state,page){
+            	//全部评价
+                $.getJSON(webIp+"Goods/GetRate?callback=?&goodsid="+getUrlParam('goodsid'),function(result){
+             	    console.log(result);
+             	   	var rateList	= result.info;
+	             	var index = layer.load(3,{time:2*1000});
+	          		if(result.code=="200" && !$.isEmptyObject(rateList)){
+	          			layer.close(index);
+	          		}else{
+	          			layer.msg('无评价信息');
+	          			return false;
+	          		}
+	          		var rateHtml	= "";
+             	    for(var i=0;i<rateList.length;i++){
+            			var ratelv	= "";
+            			for(var j=1;j<=rateList[i]['ratelevel'];j++){
+            				ratelv +="<img src=\"../images/redxing.png\" alt=\"\"/>";
+            			}
+            			rateHtml+="<li><p class=\"clearfix p1\"><img src=\"../images/tou.png\" alt=\"\"/><span>"+rateList[i]['phe']+"</span><i>"+rateList[i]['ratetime']+"</i></p>";
+            			rateHtml+="<p class=\" p2\">"+rateList[i]['rateinfo']+"</p><p class=\"clearfix p3\">"+ratelv;
+            			rateHtml+="</p></li>";
+            		}
+             	    if(state==1){
+             	    	$(".app-list").append(rateHtml);
+             	    }else{
+             	    	$(".app-list").html(rateHtml);	
+             	    }
+            	});
+       	 	}
+    	}
+    }
+</script>
+</html>

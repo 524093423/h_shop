@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>添加收货地址</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/addres.css"/>
+    <link rel="stylesheet" href="../layer/skin/default/layer.css"/>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">添加收货地址</h3>
+        <h4 class="compile save">保存</h4>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <div class="addContent">
+        <div class="people">
+            <label for="name">收货人：</label>
+            <input type="text" id="name"/>
+        </div>
+        <div class="people">
+            <label for="phone">联系电话：</label>
+            <input type="text" id="phone"/>
+        </div>
+        <div class="people area">
+            <label for="area">所在地区：</label>
+            <input type="text" id="area"/>
+           <!-- <span>所在地区：</span>
+            <div class="area-option">
+                <select class="province">
+                    <option selected="selected">请选择</option>
+                    <option>河南省</option>
+                    <option>北京市</option>
+                    <option>山西省</option>
+                </select>
+                <select class="city">
+                    <option selected="selected">请选择</option>
+                    <option>郑州市</option>
+                    <option>洛阳市</option>
+                    <option>南阳市</option>
+                </select>
+                <select class="district">
+                    <option selected="selected">请选择</option>
+                    <option>金水区</option>
+                    <option>惠济区</option>
+                    <option>高新区</option>
+                </select>
+            </div>-->
+        </div>
+        <div class="text">
+            <label for="detAddr">请输入详细地址：</label>
+            <textarea name="" id="detAddr" cols="30" rows="4"></textarea>
+        </div>
+        <div class="defaultBox clearfix box-zl">
+            <p class="clearfix xuan-p">
+                <i class="xaun-zl"></i>
+                <i class="xuan-wen">设置默认地址</i>
+            </p>
+        </div>
+
+    </div>
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<!-- <script src="../js/address.js?a=123"></script> -->
+<script type="text/javascript">
+var flag =0;
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    $(function(){
+    	$(".back").click(function(){
+     		window.location.href="./address.html";
+     	});
+        addFun().init();
+        flag	= getUrlParam('flag');
+        if(flag !=0){
+       		$('#name').val(sessionStorage.getItem("aname"));
+       		$('#phone').val(sessionStorage.getItem("aphe"));
+       	    $('#area').val(sessionStorage.getItem("area"));
+       	  	$('#detAddr').val(sessionStorage.getItem("astreet"));
+       	  	var aflag	= sessionStorage.getItem("aflag");
+       	  	if(aflag==1){
+       	  		$(".xuan-p").find("i").eq(0).attr("class","xaun-zl xaun-zl-on");
+       	  	}
+       	  	$("title").html('修改收货地址');
+       	  	$(".to-ti").html('修改收货地址');
+        }
+    });
+    var addFun = function(){
+        return{
+            init:function(){
+                this.saveClick();  // 点击保存或者更新
+                this.click_list();   // 设置 默认
+            },
+            // 点击保存
+            saveClick:function(){
+                $('.save').click(function(){
+                    // 获取页面数据
+                    var user_name = $.trim($('#name').val()) ;
+                    var user_phone = $('#phone').val().replace(/\s/g, "") ;
+                    console.log(user_phone)
+                    var user_area = $.trim($('#area').val()) ;
+                    var user_detAddr= $.trim($('#detAddr').val());
+                    console.log($(".xuan-p").find("i").eq(0).attr("class"));
+                    var state	= $(".xuan-p").find("i").eq(0).attr("class");
+                    var aflag	= 2;
+                    if(state.indexOf('xaun-zl-on') > 0){
+                    	aflag	= 1;
+                    }
+                    // 手机正则
+                    var myreg = /^1[34578][0-9]\d{4,8}$/;
+                    if(user_name == null || "" ==user_name){
+                        layer.msg("请输入收件人名称");
+                        return false;
+                    }else if(user_phone == null || "" == user_phone){
+                        layer.msg("请填入收件人手机号");
+                        return false;
+                    }else if(!myreg.test(user_phone)){
+                        layer.msg("请输入有效的手机号码！");
+                        return false;
+                    }else if(user_area == null || "" == user_area ){
+                        layer.msg("请选择区域");
+                        return false;
+                    }else if(user_detAddr == null || "" == user_detAddr){
+                        layer.msg("请填写收件人详细地址");
+                        return false;
+                    } else{
+                        if(flag==0){
+                        	$.ajax({
+                        		url:webIp2+"Address/NewlyAdded",
+                        		type:"post",
+                        		data:{"token":sessionStorage.getItem('token'),"cphe":user_phone,"cname":user_name,"caddress":user_area,"remarks":user_detAddr,"flag":aflag},
+                        		success:function(result){
+                        			layer.msg(result.message,{time:1000},function(){
+                        				if(result.code==200){
+                        					window.location.href="./address.html";
+                        				}
+                        			});
+                        		},
+                        		error:function(){
+                        			layer.msg("系统错误",{time:1000});
+                        		}
+                        	});
+                        }else{
+                        	$.ajax({
+                        		url:webIp2+"Address/RenewAddress",
+                        		type:"post",
+                        		data:{"token":sessionStorage.getItem('token'),
+                        			"address_id":flag,
+                        			"cphe":user_phone,
+                        			"cname":user_name,
+                        			"caddress":user_area,
+                        			"remarks":user_detAddr,
+                        			"flag":aflag},
+                        		success:function(result){
+                        			layer.msg(result.message,{time:1000},function(){
+                        				if(result.code==200){
+                        					sessionStorage.removeItem('aname');
+                        					sessionStorage.removeItem('aphe');
+                        					sessionStorage.removeItem('area');
+                        					sessionStorage.removeItem('street');
+                        					sessionStorage.removeItem('aflag');
+                        					window.location.href="./address.html";
+                        				}
+                        			});
+                        		},
+                        		error:function(){
+                        			layer.msg("系统错误",{time:1000});
+                        		}
+                        	});
+                        }
+                    }
+                })
+
+            },
+            // 设置 默认
+            click_list:function(){ // 点击选中事件(跟换背景图)
+                $('.xuan-p').click(function(){
+                    $(this).find('.xaun-zl').toggleClass('xaun-zl-on');// 会员选择部分
+                    if($(this).find('.xaun-zl').hasClass('xaun-zl-on')){
+
+                        // alert('已经选中我了')
+                    }else{
+                        //  alert('没有选中我')
+                    }
+
+                });
+
+            }
+
+        }
+    }
+
+</script>
+</html>

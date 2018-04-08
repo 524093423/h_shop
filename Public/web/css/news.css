@@ -1,0 +1,159 @@
+.new1 {
+  border-top: 1px solid #dadada;
+}
+.new1 li {
+  border-bottom: 1px solid #dadada;
+  height: 1.875rem;
+}
+.ne-pic,
+.ne-wo {
+  float: left;
+}
+.ne-pic img {
+  width: 1.34375rem;
+  height: 1.34375rem;
+  margin-top: 0.265625rem;
+}
+.ne-wo {
+  margin-left: 0.390625rem;
+  line-height: 0.671875rem;
+  margin-top: 0.265625rem;
+}
+.ne-wo h3 {
+  font-size: 0.4375rem;
+  width: 7.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ne-wo h4 {
+  font-size: 0.375rem;
+  color: #666;
+  width: 7.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*ϵͳ ��Ϣ����*/
+.dateNew {
+  padding-top: 0.625rem;
+}
+.dateNew h3 {
+  font-size: 0.375rem;
+  width: 3.4375rem;
+  line-height: 0.9375rem;
+  text-align: center;
+  margin: auto ;
+  background-color: #dcdcdc;
+  border-radius: 0.15625rem;
+}
+.dateNew ul li {
+  border: 2px solid #d2d2d2;
+  background-color: #fff;
+  border-radius: 0.125rem;
+  padding: 0.46875rem 0;
+  margin-top: 0.390625rem;
+}
+.dateNew ul li h4 {
+  font-size: 0.46875rem;
+  width: 8.671875rem;
+  margin: auto;
+  color: #000;
+}
+.dateNew ul li p {
+  font-size: 0.375rem;
+  line-height: 0.625rem;
+  width: 8.671875rem;
+  margin: auto;
+  margin-top: 0.46875rem;
+  color: #000;
+}
+/*����  ��Ϣ*/
+.chatBox {
+  padding-bottom: 0.625rem;
+}
+.chatNews {
+  padding-top: 0.625rem;
+  padding-bottom: 0.46875rem;
+}
+.chatNews h3 {
+  font-size: 0.375rem;
+  width: 3.4375rem;
+  line-height: 0.9375rem;
+  text-align: center;
+  margin: auto ;
+  background-color: #dcdcdc;
+  border-radius: 0.15625rem;
+  margin-bottom: 0.625rem;
+}
+.chat-list li {
+  margin-top: 0.625rem;
+}
+.chat-list li img {
+  width: 1rem;
+  height: 1rem;
+}
+.chat-list li p {
+  font-size: 0.375rem;
+  line-height: 0.6875rem;
+  max-width: 4.53125rem;
+  padding: 0.15625rem 0.3125rem;
+  background-color: #fff;
+  border-radius: 0.15625rem;
+}
+.chat-ri img,
+.chat-ri p {
+  float: right;
+}
+.chat-le img,
+.chat-le p {
+  float: left;
+}
+.chat-ri p {
+  margin-right: 0.234375rem;
+}
+.chat-le p {
+  margin-left: 0.234375rem;
+}
+.chat-bot {
+  height: 1.5625rem;
+}
+.chat-pic,
+.chat-wen {
+  float: left;
+}
+.chat-pic img {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  margin-top: 0.375rem;
+}
+.chat-wen p {
+  font-size: 0.5625rem;
+  line-height: 0.9375rem;
+  border-radius: 0.15625rem;
+  border: 1px solid #8d95a5;
+}
+.chat-pic {
+  width: 0.8125rem;
+  height: 1.5625rem;
+}
+.chat-wen {
+  width: 8.125rem;
+  margin-left: 0.28125rem;
+  line-height: 0.9375rem;
+  text-align: center;
+  margin-top: 0.3125rem;
+  height: 0.9375rem;
+}
+.chat-inp input {
+  border: none;
+  font-size: 0.375rem;
+  text-indent: 0.234375rem;
+  height: 0.9375rem;
+  width: 8.125rem;
+  display: block;
+}
+.chat-inp {
+  display: none;
+  border-bottom: 1px solid #8d95a5;
+}

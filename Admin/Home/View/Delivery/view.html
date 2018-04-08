@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>编辑资讯信息</title>
+ <link href="__PUBLIC__/admin/images/style.css" rel="stylesheet" type="text/css" />
+ <script src="http://api.html5media.info/1.1.4/html5media.min.js"></script>    
+</head>
+<body class="mainbody">
+
+<div class="navigation"><a href="javascript:history.go(-1);" class="back">后退</a>首页 &gt; 添加快递方式</div>
+<div id="contentTab">
+    <ul class="tab_nav">
+        <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+    </ul>
+    <div class="tab_con" style="display:block;">
+        <table class="form_table">
+            <col width="150px"><col>
+            <tbody>
+            <tr> 
+                <th>名称：</th>
+                <input type="hidden" id="odyid" value="{$info.odyid}"   class="txtInput normal required" name="odyid"/>
+                <td><input type="text" id="describe" value="{$info.describe}"   class="txtInput normal required" name="describe"/>
+                </td>
+            </tr>
+            <tr> 
+                <th>价格：</th>
+                <td><input type="text" id="price" value="{$info.price}"   class="txtInput normal required" name="price"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="foot_btn_box">
+     <input id="sub" type="button" value="提交保存" class="btnSubmit"/>
+    </div>
+</div>
+</body>
+</html>
+ <script src="__PUBLIC__/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+ <script type="text/javascript" src="__PUBLIC__/admin/js/layer/layer.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/function.js"></script>
+    <script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+ <script src="__PUBLIC__/admin/js/tips/jquery.poshytip.js" type="text/javascript"></script>
+ <link href="__PUBLIC__/admin/js/tips/tip-yellow/tip-yellow.css" rel="stylesheet" type="text/css" />
+   <script>
+        $(function(){
+            $("#sub").click(function () {
+                if ($.trim($("#describe").val()) == "") {
+                    tip('describe', '请填写名称');
+                    $("#describe").focus();
+                    return false;
+                }
+                if ($.trim($("#price").val()) == "") {
+                    tip('price', '请填写价格');
+                    $("#price").focus();
+                    return false;
+                }
+               var describe =  $("#describe").val();
+               var price =  $("#price").val();
+               var odyid =  $("#odyid").val();
+                $.ajax({
+                    type: "POST",
+                    url: "admin.php?c=Delivery&a=DeliveryView",
+                    data:{describe:describe,price:price,odyid:odyid},
+                    success: function (data) {
+                        if(data > 0){
+                            $.jBox.tip('修改成功', 'success');
+                            window.setTimeout(function () {
+                            location.href = "./admin.php?c=Delivery&a=DeliveryList";}, 2000); //跳转页面
+                        }else{
+                            $.jBox.tip('修改失败，请检查', 'error');
+                        }
+                    }
+                });
+                $("#tijiao").click(function () {
+                    $.jBox.tip("正在上传，请稍后...", 'loading');
+                });
+                $("#tijiao_big").click(function () {
+                    $.jBox.tip("正在上传，请稍后...", 'loading');
+                });
+        });
+      });
+  </script>

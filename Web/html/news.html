@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>消息</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/news.css"/>
+	<link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css">
+    <style>
+        body,html{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">消息</h3>
+		<div class="back">
+			<img src="../images/back.png" alt=""/>
+		</div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+   <ul class="new1" id="new">
+       <li>
+           <div class="wrap clearfix">
+               <div class="ne-pic">
+                   <img src="../images/new1.png" alt=""/>
+				   <!--红色圆点-->
+				   <div class="newsNum" id="system"></div>
+               </div>
+               <div class="ne-wo system" data-type="1">
+                   <h3>系统消息</h3>
+                   <h4></h4>
+               </div>
+           </div>
+       </li>
+       <li>
+           <div class="wrap clearfix">
+               <div class="ne-pic">
+                   <img src="../images/new2.png" alt=""/>
+				   <!--红色圆点-->
+				   <div class="newsNum" id="msg"></div>
+               </div>
+               <div class="ne-wo message" data-type="2">
+                   <h3>站内信</h3>
+                   <h4></h4>
+               </div>
+           </div>
+       </li>
+   </ul>
+    <!--分界线-->
+    <div class="line"></div>
+    <!--店铺 消息-->
+    <ul class="new1 msglist" id="new1">
+    
+    </ul>
+</div>
+<!--content end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/jquery.mobile-1.4.5.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    $(function(){
+		$(".back").click(function(){
+			window.location.href="./index.html";
+		});
+		sysTem_msg();
+    	msgList();
+    	InfoClick();
+    	illegal();//检测是否登陆
+    });
+  var msgnumber = function(){
+	  $('#new li ').each(function(index){
+		  var num = $('#new li ').eq(index).find('.newsNum').text();
+		  var num2 = parseInt(num);
+		  if(num2>0){
+			  $('#new li ').eq(index).find('.newsNum').css('display','block')
+
+			  if(num2>99){
+				  $('#new li ').eq(index).find('.newsNum').text('99+')
+			  }
+		  }else{
+			  $('#new li ').eq(index).find('.newsNum').css('display','none')
+		  }
+	  });
+
+  }
+    var msgList = function(){
+        	$.ajax({
+        		url:"../web-im/function/msgList.php",
+        		type:"post",
+        		data:{"token":sessionStorage.getItem("token")},
+        		success:function(result){
+        			result	= eval("("+result+")");
+        			var html = "";
+    				//加载过程中
+    				var index = layer.load(3);
+    				//alert(result.code);
+    				var newsList	= result.info;
+    				if(result.code=="200" && !$.isEmptyObject(newsList)){
+    					layer.close(index);
+    				}else{
+    					layer.close(index);
+    					return false;
+    				}
+    				var d = new Date();
+    				var nowtime=d.toLocaleString();
+    				for(var i=0;i<newsList.length;i++){
+    					html	+='<li><div class="wrap clearfix shopsf" data-logo='+newsList[i]['shopl']+' data-shop='+newsList[i]['shopn']+' data-token='+newsList[i]['shopt']+'><div class="ne-pic">';
+    					html	+='<img src='+newsList[i]['shopl']+' class="singleShop" alt=""/>';
+    					html    +='</div><div class="ne-wo singleShop">';
+    					html 	+='<h3>'+newsList[i]['shopn']+'</h3>';
+    					html	+='<h4>'+nowtime+'</h4>';
+    					html	+='</div>';
+    					html	+='<div class="ne-btn"><p>删除回话</p></div>';
+    					html	+='</div></li>';
+    				}
+    				$(".msglist").html(html);
+    				$("#new1 li").on("swipeleft",function(){
+    				      $(this).find('.ne-btn').slideDown(300);
+    				      $(this).siblings().find('.ne-btn').slideUp(300);
+
+    				     $(this).siblings().on("tap",function(){
+    				         $('.ne-btn').slideUp(300);
+    				     });
+    				      $('.ne-btn').on("tap",function(){
+    				    	  var obj	= this;
+    				          $.getJSON("../web-im/function/deleteFile.php?token="+sessionStorage.getItem("token")+"&sellerToken="+$(obj).parents(".shopsf").attr("data-token"),function(result){
+    				        	  	if(result.code=200){
+    				        	  		$(obj).parents('li').remove();
+    				        	  	}
+    				          });
+    				      });
+    				  });
+    				  $("#new1 li").on("swiperight",function(){
+    				      $(this).find('.ne-btn').slideUp(300);
+    				  });
+    				$(".singleShop").click(function(){
+    					window.location.href='./chatNews.html?sellerToken='+$(this).parents("li").find(".shopsf").attr("data-token")+'&shop='+escape($(this).parents(".shopsf").attr("data-shop"))+'&logo='+$(this).parents("li").find(".shopsf").attr("data-logo");
+    				});
+        		},
+        		error:function(){
+        			layer.msg('正在努力加载..');
+        		}
+        	});
+        }
+    var sysTem_msg = function(){
+    	$.getJSON(webIp+"Message/unread?callback=?&token="+sessionStorage.getItem("token"),function(result){
+    		var system = result.info.list1['new_message'];
+			var systemunread	= result.info.list1['un_read'];
+    		$(".system").find("h4").text(system);
+			$("#system").text(systemunread);
+    		var msg	   = result.info.list2['new_message'];
+			var msgunread	= result.info.list2['un_read'];
+    		$(".message").find("h4").text(msg);
+			$("#msg").text(msgunread);
+			msgnumber();//显示和隐藏
+    	});
+    };
+    var InfoClick = function(){
+    	$(".ne-wo").click(function(){
+    		window.location.href='./newDetails.html?type='+$(this).attr("data-type");
+    	});
+    }
+    var illegal=function(){
+    	var userToken	= sessionStorage.getItem("token");
+    	if(userToken=="" || userToken==null || userToken==undefined){
+    		layer.msg("请在公众号搜索【黑谷商城】进行登录..",{time:1000});
+    	}
+    }
+</script>
+</html>

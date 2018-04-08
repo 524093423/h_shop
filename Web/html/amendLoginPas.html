@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>修改登录密码</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/register.css"/>
+    <link rel="stylesheet" href="../layer/skin/default/layer.css"/>
+    <style>
+        body,html{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">修改登录密码</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+   <div class="wrap lo-box">
+       <div class="log-inp ">
+           <div class="lo-num clearfix">
+               <img src="../images/lo2.png" alt=""/>
+               <input type="password" id="old_pas" placeholder="请输入密码"/>
+           </div>
+           <div class="lo-num clearfix">
+               <img src="../images/lo2.png" alt=""/>
+               <input type="password" id="pas" placeholder="请输入6-12位密码"/>
+           </div>
+           <div class="lo-pas clearfix">
+                <img src="../images/lo2.png" alt=""/>
+                <input type="password" id="pas2" placeholder="请再次输入新密码"/>
+           </div>
+       </div>
+       <div class=" alp-ma clearfix">
+           <span>忘记密码？</span>
+       </div>
+       <!--按钮-->
+       <div class="alp-btn">
+           <p>确认修改</p>
+       </div>
+
+   </div>
+</div>
+<!--content end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+  $(function(){
+	 $(".back").click(function(){
+		 var index = parent.layer.getFrameIndex(window.name);//获取窗口索引
+		 parent.layer.close(index);// 关闭layer
+	 });
+     payFun().init();
+  });
+
+    var payFun = function(){
+        return{
+            init:function(){
+                this.pasClick();  // 点击  忘记密码
+                this.btnClick() ; //  点击 确认修改 按钮
+            },
+            // 点击  忘记密码
+            pasClick:function(){
+                $('.alp-ma span').click(function(){
+                	var index = layer.open({
+          			  title:false,
+          			  type: 2,
+          			  closeBtn:0,
+          			  shift:1,
+          			  content: './forgetLoginPas.html',
+          			  area: ["100%","100%"],
+          			  maxmin: true,
+          			  success:function(){
+          				  $('.layui-layer-min').hide();
+          				  $('.layui-layer-max').hide(); 
+          			  },
+          			  end: function () {
+          				  //OrderSearch();
+          				  //orderFunc().setAddress();
+          	            }
+          			});
+                });
+            },
+            //  点击 确认修改 按钮
+            btnClick:function(){
+
+                // 获取 数据
+                var old_pas = $('#old_pas').val().replace(/\s/g, "") ;
+                var pas = $('#pas').val().replace(/\s/g,"");
+                var pas2 = $('#pas2').val().replace(/\s/g,"");
+
+                //  键盘 抬起 事件
+                $('.log-inp input').keyup(function(){
+                    // 获取 数据
+                    var old_pas = $('#old_pas').val().replace(/\s/g, "") ;
+                    var pas = $('#pas').val().replace(/\s/g,"");
+                    var pas2 = $('#pas2').val().replace(/\s/g,"");
+                     if(old_pas !="" && pas !=""  && pas2 !=""){
+                         $('.alp-btn').addClass('log-btn').removeClass('alp-btn')
+                     } else{
+                         $('.log-btn').addClass('alp-btn').removeClass('log-btn')
+                     }
+
+                });
+                //  点击事件
+                $('.alp-btn').click(function(){
+                    // 获取 数据
+                    var old_pas = $('#old_pas').val().replace(/\s/g, "") ;
+                    var pas = $('#pas').val().replace(/\s/g,"");
+                    var pas2 = $('#pas2').val().replace(/\s/g,"");
+                    var   maReg = /^[\w]{6,12}$/ ;
+                    if(old_pas == ""){
+                        layer.msg('请输入密码')
+                    }else if(pas == ""){
+                        layer.msg('请输新入密码')
+                    }else if(!maReg.test(pas)){
+                        layer.msg('请输入6-12位密码（数字、字母、下划线）')
+                    }else if(pas2 == ""){
+                        layer.msg('请再次输入新密码')
+                    }else if(pas != pas2){
+                        layer.msg('两次密码不一样')
+                    }else{
+                        $.ajax({
+                        	url:webIp2+"AppLogin/UpUserPwd",
+                        	type:"post",
+                        	data:{"token":sessionStorage.getItem('token'),"cpwd":old_pas,"pwd":pas,"p_pwd":pas2},
+                        	success:function(result){
+                        		layer.msg(result.message,{time:1000},function(){
+                        			if(result.code==200){
+                        				var index = parent.layer.getFrameIndex(window.name);//获取窗口索引
+                        				 parent.layer.close(index);// 关闭layer
+                        			}
+                        		});
+                        	},
+                        	error:function(){
+                        		layer.msg("敬请期待",{time:2000});
+                        	}
+                        });
+                    }
+                })
+            }
+
+        }
+    }
+</script>
+</html>

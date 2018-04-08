@@ -1,0 +1,729 @@
+[ 2017-11-29T18:30:47+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: logintype D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\c26b57a04f9af6d7b3ea471b0c73dfe4.php 第 61 行.
+NOTIC: [8] Undefined index: nmt_groupname D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\c26b57a04f9af6d7b3ea471b0c73dfe4.php 第 98 行.
+NOTIC: [8] Undefined index: nmt_admin D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\c26b57a04f9af6d7b3ea471b0c73dfe4.php 第 98 行.
+NOTIC: [8] Undefined index: logintype D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\c26b57a04f9af6d7b3ea471b0c73dfe4.php 第 121 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.023000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.015000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-11-29T18:30:47+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `api_return` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.api_return' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `api_return`
+NOTIC: [8] Undefined variable: Getdata D:\wamp\www\h_shop\Admin\Home\Controller\IndexController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:30:47+08:00 ] 127.0.0.1 /h_shop/admin.php/Index/verify.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `api_return` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.api_return' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `api_return`
+NOTIC: [8] Undefined variable: Getdata D:\wamp\www\h_shop\Admin\Home\Controller\IndexController.class.php 第 13 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-11-29T18:30:53+08:00 ] 127.0.0.1 /h_shop/admin.php?a=Verify
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `api_return` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.api_return' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `api_return`
+NOTIC: [8] Undefined variable: Getdata D:\wamp\www\h_shop\Admin\Home\Controller\IndexController.class.php 第 13 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:30:57+08:00 ] 127.0.0.1 /h_shop/admin.php?a=CheckLogin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `api_return` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.api_return' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `api_return`
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.043000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.000000s ]
+SQL: SELECT admin_id as id,`bid`,admin_name as adname,admin_password as pwd,usepeople as user,`groupname`,`pinyin`,nmt_admin_group.id as groupid FROM `admin` INNER JOIN nmt_user_group on admin.admin_id=nmt_user_group.adminid INNER JOIN nmt_admin_group on nmt_user_group.groupid=nmt_admin_group.id  WHERE ( admin_name='admin' ) LIMIT 1   [ RunTime:0.047000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:31:01+08:00 ] 127.0.0.1 /h_shop/admin.php?a=CheckLogin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `api_return` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.api_return' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `api_return`
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.000000s ]
+SQL: SELECT admin_id as id,`bid`,admin_name as adname,admin_password as pwd,usepeople as user,`groupname`,`pinyin`,nmt_admin_group.id as groupid FROM `admin` INNER JOIN nmt_user_group on admin.admin_id=nmt_user_group.adminid INNER JOIN nmt_admin_group on nmt_user_group.groupid=nmt_admin_group.id  WHERE ( admin_name='admin' ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:31:02+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.017000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:31:03+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin&a=Center
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.026000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:31:03+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin&a=Center
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:31:03+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin&a=Center
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:31:03+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=getMeun
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `nmt_column` [ RunTime:0.027000s ]
+SQL: SELECT `id`,title as text,`url`,pid as parentid FROM `nmt_column` WHERE ( id!=3 ) ORDER BY sort asc  [ RunTime:0.004000s ]
+
+[ 2017-11-29T18:31:03+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=CheckOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.046000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_order` INNER JOIN order_detail on order_detail.goid2=goods_order.goid  WHERE ( isfh=1 AND goods_order.ispay=2 ) LIMIT 1   [ RunTime:0.011000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-11-29T18:31:03+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=CheckWithDraw
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `nmt_user_tx` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nmt_user_tx`
+SQL: SELECT COUNT(*) AS tp_count FROM `nmt_user_tx` WHERE ( isauth=1 ) LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `nmt_user_tx` WHERE ( isauth=1 ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:31:03+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=CheckReturnOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_order` INNER JOIN order_detail on order_detail.goid2=goods_order.goid  WHERE ( isth=2 AND goods_order.ispay=2 ) LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-11-29T18:31:06+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Message&a=MessageFeedBack
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\wamp\www\h_shop\Admin\Home\Controller\MessageController.class.php 第 100 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `message` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `message`
+SQL: SHOW COLUMNS FROM `feedback` [ RunTime:0.047000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feedback` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		mid,userid,message,replycontent,`time`,issolve,CASE WHEN issolve=0 Then '未处理' ELSE '已授理' END as solvetext,left(message,10) as mtitle
+	FROM
+		feedback
+	
+	WHERE
+	mid IN (SELECT
+	mid
+FROM
+	(SELECT
+	mid
+FROM
+	feedback
+
+WHERE
+	( 1=1  
+	)  	ORDER BY
+		issolve asc  LIMIT 0,15) as t)   ORDER BY issolve  asc
+ [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.026000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-11-29T18:31:09+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\wamp\www\h_shop\Admin\Home\Controller\UserController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: where D:\wamp\www\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\wamp\www\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\wamp\www\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.032000s ]
+NOTIC: [8] Undefined variable: join D:\wamp\www\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: join D:\wamp\www\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id asc  LIMIT 0,20) as t)   ORDER BY user_id  asc
+ [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\wamp\www\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.025000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:33:21+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Message&a=MessageFeedBack
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: page D:\wamp\www\h_shop\Admin\Home\Controller\MessageController.class.php 第 100 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `message` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `message`
+SQL: SHOW COLUMNS FROM `feedback` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feedback` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		mid,userid,message,replycontent,`time`,issolve,CASE WHEN issolve=0 Then '未处理' ELSE '已授理' END as solvetext,left(message,10) as mtitle
+	FROM
+		feedback
+	
+	WHERE
+	mid IN (SELECT
+	mid
+FROM
+	(SELECT
+	mid
+FROM
+	feedback
+
+WHERE
+	( 1=1  
+	)  	ORDER BY
+		issolve asc  LIMIT 0,15) as t)   ORDER BY issolve  asc
+ [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-11-29T18:33:25+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Message&a=MessageFeedBack
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\wamp\www\h_shop\Admin\Home\Controller\MessageController.class.php 第 100 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `message` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `message`
+SQL: SHOW COLUMNS FROM `feedback` [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feedback` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT
+		mid,userid,message,replycontent,`time`,issolve,CASE WHEN issolve=0 Then '未处理' ELSE '已授理' END as solvetext,left(message,10) as mtitle
+	FROM
+		feedback
+	
+	WHERE
+	mid IN (SELECT
+	mid
+FROM
+	(SELECT
+	mid
+FROM
+	feedback
+
+WHERE
+	( 1=1  
+	)  	ORDER BY
+		issolve asc  LIMIT 0,15) as t)   ORDER BY issolve  asc
+ [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:33:26+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Message&a=MessageFeedBack
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\wamp\www\h_shop\Admin\Home\Controller\MessageController.class.php 第 100 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `message` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `message`
+SQL: SHOW COLUMNS FROM `feedback` [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feedback` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		mid,userid,message,replycontent,`time`,issolve,CASE WHEN issolve=0 Then '未处理' ELSE '已授理' END as solvetext,left(message,10) as mtitle
+	FROM
+		feedback
+	
+	WHERE
+	mid IN (SELECT
+	mid
+FROM
+	(SELECT
+	mid
+FROM
+	feedback
+
+WHERE
+	( 1=1  
+	)  	ORDER BY
+		issolve asc  LIMIT 0,15) as t)   ORDER BY issolve  asc
+ [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:33:30+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Message&a=MessageFeedBack
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: page D:\wamp\www\h_shop\Admin\Home\Controller\MessageController.class.php 第 100 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `message` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `message`
+SQL: SHOW COLUMNS FROM `feedback` [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feedback` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT
+		mid,userid,message,replycontent,`time`,issolve,CASE WHEN issolve=0 Then '未处理' ELSE '已授理' END as solvetext,left(message,10) as mtitle
+	FROM
+		feedback
+	
+	WHERE
+	mid IN (SELECT
+	mid
+FROM
+	(SELECT
+	mid
+FROM
+	feedback
+
+WHERE
+	( 1=1  
+	)  	ORDER BY
+		issolve asc  LIMIT 0,15) as t)   ORDER BY issolve  asc
+ [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:44:54+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:44:54+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin&a=Center
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:44:54+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin&a=Center
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:44:54+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin&a=Center
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:44:54+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=getMeun
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `nmt_column` [ RunTime:0.001000s ]
+SQL: SELECT `id`,title as text,`url`,pid as parentid FROM `nmt_column` WHERE ( id!=3 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+
+[ 2017-11-29T18:44:55+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=CheckOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_order` INNER JOIN order_detail on order_detail.goid2=goods_order.goid  WHERE ( isfh=1 AND goods_order.ispay=2 ) LIMIT 1   [ RunTime:0.003000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:44:55+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=CheckReturnOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_order` INNER JOIN order_detail on order_detail.goid2=goods_order.goid  WHERE ( isth=2 AND goods_order.ispay=2 ) LIMIT 1   [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:44:55+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=CheckWithDraw
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `nmt_user_tx` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nmt_user_tx`
+SQL: SELECT COUNT(*) AS tp_count FROM `nmt_user_tx` WHERE ( isauth=1 ) LIMIT 1   [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `nmt_user_tx` WHERE ( isauth=1 ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:44:58+08:00 ] 127.0.0.1 /h_shop/admin.php?c=System&a=Help_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 53 行.
+NOTIC: [8] Undefined index: flag D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 59 行.
+NOTIC: [8] Undefined index: ext D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 65 行.
+NOTIC: [8] Undefined variable: where D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 69 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.system' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `system`
+NOTIC: [8] Undefined variable: type D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 70 行.
+NOTIC: [8] Undefined variable: join D:\wamp\www\h_shop\Admin\Home\Model\SystemModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `h_system_mes` [ RunTime:0.023000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h_system_mes` WHERE ( 1=1 and type = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: select h_system_mes.* from h_system_mes  Where  1=1  and type = 2 order by sys_id desc limit 20 [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: type D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 77 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:45:00+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Message&a=MessageFeedBack
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: page D:\wamp\www\h_shop\Admin\Home\Controller\MessageController.class.php 第 100 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `message` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.message' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `message`
+SQL: SHOW COLUMNS FROM `feedback` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feedback` WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		mid,userid,message,replycontent,`time`,issolve,CASE WHEN issolve=0 Then '未处理' ELSE '已授理' END as solvetext,left(message,10) as mtitle
+	FROM
+		feedback
+	
+	WHERE
+	mid IN (SELECT
+	mid
+FROM
+	(SELECT
+	mid
+FROM
+	feedback
+
+WHERE
+	( 1=1  
+	)  	ORDER BY
+		issolve desc  LIMIT 0,15) as t)   ORDER BY issolve  desc
+ [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-11-29T18:45:01+08:00 ] 127.0.0.1 /h_shop/admin.php?c=System&a=Help_list
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 53 行.
+NOTIC: [8] Undefined index: flag D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 59 行.
+NOTIC: [8] Undefined index: ext D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 65 行.
+NOTIC: [8] Undefined variable: where D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 69 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wamp\www\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.system' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `system`
+NOTIC: [8] Undefined variable: type D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 70 行.
+NOTIC: [8] Undefined variable: join D:\wamp\www\h_shop\Admin\Home\Model\SystemModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `h_system_mes` [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h_system_mes` WHERE ( 1=1 and type = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: select h_system_mes.* from h_system_mes  Where  1=1  and type = 2 order by sys_id desc limit 20 [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: type D:\wamp\www\h_shop\Admin\Home\Controller\SystemController.class.php 第 77 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

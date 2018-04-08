@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>我的订单</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/order.css"/>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">我的订单</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <!--订单导航 开始-->
+    <div class="or-nav">
+        <ul class="clearfix">
+            <li class="nav-on" id="nav0" data-state="0"><p>全部</p></li>
+            <li  id="nav1"data-state="1"><p>待付款</p></li>
+            <li  id="nav2" data-state="2"><p>待发货</p></li>
+            <li  id="nav3" data-state="3"><p>待收货</p></li>
+            <li  id="nav4" data-state="4"><p>待评价</p></li>
+        </ul>
+    </div>
+    <!--订单导航 结束-->
+    <!--订单列表   开始-->
+    <div class="or-list">
+        <ul class="feng-order">
+            <!-- 内容 -->
+        </ul>
+    </div>
+    <!--订单列表   结束-->
+</div>
+<!--content end-->
+<!--bottom  star-->
+
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+var orderFlag	= 0;
+  $(function(){
+	 orderFlag 	= getUrlParam('state')?getUrlParam('state'):0;
+	 $(".back").click(function(){
+ 		window.location.href="./my.html";
+ 	});
+     $('#nav'+orderFlag).addClass('nav-on').siblings().removeClass('nav-on'); 
+	 myOrderFun().init();
+     myorderList(orderFlag);
+  });
+var myOrderFun = function(){
+    return{
+        init:function(){
+            this.navClick() ;  //导航 点击切换
+        },
+        OrderOreate:function(){
+        	//订单操作
+        	this.payClick();//付款
+        	this.cancelClick();//取消
+        	this.refundClick();//申请退款
+        	this.takeClick();//确认收货
+        	this.rateClick();//评价
+        },
+        //导航 点击切换
+        navClick:function(){
+            $('.or-nav li').click(function(){
+               $(this).addClass('nav-on').siblings().removeClass('nav-on');
+               myorderList($(this).attr("data-state"));
+            })
+        },
+        payClick:function(){
+        	$(".pay").click(function(){
+        		var obj	= this;
+				$.ajax({
+					url:webIp2+"Order/PayAgin",
+					type:"post",
+					data:{"token":sessionStorage.getItem("token"),"orderid":$(obj).attr("data-goid"),"payid":2,"trade_type":"jsapi"},
+					success:function(result){
+						layer.msg(result.message,{time:1000},function(){
+							if(result.code==200){
+								var info	= result.info;
+								sessionStorage.setItem("attach",info['attach']);
+								sessionStorage.setItem("body",info['body']);
+								sessionStorage.setItem("notify_url",info['notify_url']);
+								sessionStorage.setItem("out_trade_no",info['out_trade_no']);
+								sessionStorage.setItem("total_fee",info['total_fee']);
+								window.location.href="../Wxpay/jsapi.php?attach="+info['attach']+"&body="+info['body']+"&notify_url="+info['notify_url']+"&out_trade_no="+info['out_trade_no']+"&total_fee="+info['total_fee']+"&openid="+sessionStorage.getItem("openid");
+							}
+						});
+					},
+					error:function(){
+						alert("失败了");
+					}
+				});
+        	});
+        },
+        cancelClick:function(){
+        	$(".cancel").click(function(){
+        		var obj = this;
+        		$.ajax({
+        			url:webIp2+"Order/DelOrder",
+        			type:"post",
+        			data:{"token":sessionStorage.getItem("token"),"orderid":$(this).attr("data-goid")},
+        			success:function(result){
+        				if(result.code==200){
+        					layer.msg("订单取消成功",{time:1000},function(){
+        						$(obj).parents(".or-item").remove();
+        					});
+        				}else{
+        	        		layer.msg(result.message,{time:1000});
+        				}
+        			},error:function(){
+        				layer.msg("连接超时",{time:1000});
+        			}
+        		});
+        	});
+        },
+        refundClick:function(){
+        	$(".tuiKuan2").click(function(){
+        		var obj	  = this;
+        		var index = layer.open({
+        			  title:false,
+        			  type: 2,
+        			  closeBtn:0,
+        			  shift:1,
+        			  content: "./tuihuoApply.html?orderid="+$(this).attr("data-odid"),
+        			  area: ["100%","100%"],
+        			  success:function(){
+        				  $('.layui-layer-min').hide();
+        				  $('.layui-layer-max').hide(); 
+        			  },
+        			  end: function () {
+        				  myOrderFun().ApplyReturn($(obj).attr("data-odid"),obj);
+        			  }
+        			});
+        	});
+        },
+        ApplyReturn:function(id,obj){
+        	var appstate	= sessionStorage.getItem("applyState");
+        	if(appstate == 2){
+        		$(obj).text("退款中");
+        		$(obj).unbind("click");
+        		$(obj).removeClass();
+				$(obj).addClass("tuiKuan tuiKuan3 tuiBtn2");
+        		//$(obj).parents(".or-state").find(".compile2").text("卖家退款中");
+        		sessionStorage.setItem("applyState",1);
+        	}
+        },
+        takeClick:function(){
+        	$(".take").click(function(){
+        		$.ajax({
+        			url:webIp2+"Order/ConfirmReceipt",
+        			type:"post",
+        			data:{"token":sessionStorage.getItem('token'),"orderid":$(this).attr("data-goid")},
+        			success:function(result){
+        				layer.msg(result.message,{time:1000},function(){
+        					if(result.code==200){
+        						myorderList($(".or-nav").find(".nav-on").attr('data-state'));
+        					}
+        				});
+        			},
+        			error:function(){
+        				layer.msg("系统问题，处理中..给您带了的不便，对不起",{time:1000});
+        			}
+        		});
+        	});
+        },
+        rateClick:function(){
+        	$(".rate").click(function(){
+        		var obj	  = this;
+				window.location.href="./userPingJia.html?orderid="+$(obj).attr("data-goid");return false;
+				var index = layer.open({
+        			  title:false,
+        			  type: 2,
+        			  closeBtn:0,
+        			  shift:1,
+        			  content: "./userPingJia.html?orderid="+$(obj).attr("data-goid"),
+        			  area: ["100%","100%"],
+        			  success:function(){
+        				  $('.layui-layer-min').hide();
+        				  $('.layui-layer-max').hide(); 
+        			  },
+        			  end: function () {
+        				  myorderList($(".or-nav").find(".nav-on").attr('data-state'));
+        				  myOrderFun().RateReturn($(obj).attr("data-goid"),obj);
+        			  }
+        			});
+        	});
+        },
+        RateReturn:function(id,obj){
+        	if(sessionStorage.getItem("RateState")==2){
+        		$(obj).unbind("click");
+        		$(obj).text("已完成");
+        		sessionStorage.setItem("RateState",1)
+        	}
+        }
+        
+    }
+}
+//获取我的订单列表
+function myorderList(state="",page=""){
+	var index = layer.load(3);
+	$.getJSON(webIp+"Order/MyOrderList?callback=?&token="+sessionStorage.getItem("token")+"&page="+page+"&orderstate="+state,function(result){
+		var OrderList	= result.info;
+		if(result.code=="200" && !$.isEmptyObject(OrderList)){
+			layer.close(index);
+		}else{
+			layer.msg('无订单信息',{time:1000});
+			$(".feng-order").html("");
+			layer.close(index);
+			return false;
+		}
+		var orderHtml	= "";
+		var goodslist	= "";
+		var goodsHtml	= "";
+		for(var i=0;i<OrderList.length;i++){
+			goodsHtml	="";
+			orderHtml	+= '<li class="or-item"><div class="car-ti logoshop" data-bid='+OrderList[i]['bid']+'><div class="wrap clearfix"><div class="car-log">';
+			orderHtml	+= '<img src='+OrderList[i]['shopimg']+' alt=""/>';
+			orderHtml	+= '</div><div class="car-name">';
+			orderHtml	+= '<p>'+OrderList[i]['seller']+'</p>';
+			orderHtml	+= '</div><div class="car-bian or-state">';
+			if(OrderList[i]['orderstate'] ==1){
+				orderHtml	+= '<p class="compile2">买家待付款</p>';
+			}else if(OrderList[i]['orderstate'] ==2){
+				if(OrderList[i]['th']==1){
+					orderHtml	+= '<p class="compile2">卖家待发货</p>';
+				}else if(OrderList[i]['th']==2){
+					orderHtml	+= '<p class="compile2">已提交退款申请</p>';
+				}else{
+					orderHtml	+= '<p class="compile2">退款已成功</p>';
+				}
+			}else if(OrderList[i]['orderstate'] ==3){
+				if(OrderList[i]['th']==1){
+					orderHtml	+= '<p class="compile2">买家待收货</p>';
+				}else if(OrderList[i]['th']==2){
+					orderHtml	+= '<p class="compile2">已提交退款申请</p>';
+				}else{
+					orderHtml	+= '<p class="compile2">退款成功</p>';
+				}
+			}else if(OrderList[i]['orderstate'] ==4){
+				if(OrderList[i]['rate'] == 1){
+					orderHtml	+= '<p class="compile2">买家待评价</p>';	
+				}else{
+					orderHtml	+= '<p class="compile2">订单已完成</p>';
+				}
+			}
+			orderHtml	+= '</div></div></div>';
+			orderHtml	+= '<ul class="or-wupin ">';
+			goodslist	= OrderList[i]['order'];
+			for(var j=0;j<goodslist.length;j++){
+				goodsHtml	+= '<li class="clearfix "><div class="wu-pic">';
+				goodsHtml	+= '<img src='+goodslist[j]['gphoto']+' alt='+goodslist[j]['godsid']+' /></div>';
+				goodsHtml	+= '<div class="wu-wo clearfix"><div class="wu-le">';
+				goodsHtml	+= '<p class="hid">'+goodslist[j]['gname']+'</p>';
+				goodsHtml	+= '<h4 class="hid">'+goodslist[j]['spectitle']+'</h4>';
+				if(OrderList[i]['orderstate'] ==2 || OrderList[i]['orderstate']==3){
+					if(goodslist[j]['th'] ==1){
+						goodsHtml	+= '<span class="tuiKuan tuiKuan2 tuiBtn1" data-odid='+goodslist[j]['odid']+'>申请退货</span>';
+					}else if(goodslist[j]['th'] ==2){
+						goodsHtml	+= '<span class="tuiKuan tuiKuan3 tuiBtn2" data-odid='+goodslist[j]['odid']+'>退款中</span>';
+					}else{
+						goodsHtml	+= '<span class="tuiKuan tuiKuan3 tuiBtn2" data-odid='+goodslist[j]['odid']+'>退款成功</span>';
+					}
+				}
+				goodsHtml	+= '</div><div class="wu-ri">';
+				goodsHtml	+= '<p class="money">¥<b>'+goodslist[j]['gprices']+'</b></p>';
+				goodsHtml	+= '<p class="num">X<b>'+goodslist[j]['gnum']+'</b></p>';
+				goodsHtml	+= '</div></div></li>';	
+			}
+			orderHtml	+=goodsHtml;
+			orderHtml	+= '</ul>';
+			
+			orderHtml	+= '<div class="or-heji wrap clearfix">';
+			orderHtml	+= '<span class="date">'+OrderList[i]['ordertime']+'</span>';
+			orderHtml	+= '<span class="heMoney">合计：¥<b>'+OrderList[i]['total']+'</b></span>';
+			orderHtml	+= '<span class="heNum">共计<b>'+OrderList[i]['number']+'</b>件商品</span>';
+			orderHtml	+= '</div><div class="or-btn clearfix wrap">';
+			if(OrderList[i]['orderstate'] ==1){
+				orderHtml	+= '<p class="btn1 pay" data-goid='+OrderList[i]['goid']+'>付款</p>';
+				orderHtml	+= '<p class="btn2 cancel" data-goid='+OrderList[i]['goid']+'>取消订单</p>';
+			}else if(OrderList[i]['orderstate'] ==2){
+				//orderHtml	+= '<p class="btn1">代发货</p>';
+				//orderHtml	+= '<p class="btn2 refund">申请退款</p>';
+			}else if(OrderList[i]['orderstate'] ==3){
+				orderHtml	+= '<p class="btn1 take" data-goid='+goodslist[0]['odid']+'>确认收货</p>';
+				//orderHtml	+= '<p class="btn2 refund">申请退款</p>';
+			}else if(OrderList[i]['orderstate'] ==4){
+				//orderHtml	+= '<p class="btn1">再来一单</p>';
+				if(OrderList[i]['rate'] == 1){
+					orderHtml	+= '<p class="btn1 rate" data-goid='+OrderList[i]['goid']+'>评价</p>';	
+				}else{
+					orderHtml	+= '<p class="btn1">已完成</p>';
+				}
+			}
+			orderHtml	+= '</div></li>';
+		}
+		$(".feng-order").html(orderHtml);
+		$(".logoshop").click(function(){
+			window.location.href="./Store.html?shopid="+$(this).attr("data-bid");
+		});
+		myOrderFun().OrderOreate();
+	});
+}
+</script>
+</html>

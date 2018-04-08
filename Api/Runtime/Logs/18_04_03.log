@@ -1,0 +1,798 @@
+[ 2018-04-03T08:41:56+08:00 ] 127.0.0.1 /h_shop/CityVideo/AutoCityVideo/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+
+[ 2018-04-03T08:42:11+08:00 ] 127.0.0.1 /h_shop/CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=113.672404,34.697024
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.007001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'郑州市') AND sort_id = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click FROM city_video WHERE INSTR(city,'郑州市') AND sort_id = 1 LIMIT 0,20 [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: stdClass::$results D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 1525 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 1525 行.
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo`,`ns` FROM `user` WHERE ( `user_id` = 8 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T08:49:39+08:00 ] 127.0.0.1 /h_shop/Classifys/GetClassify
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\ClassifysController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `is_seller` FROM `user` WHERE ( `user_id` = 0 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `classify` [ RunTime:0.009001s ]
+SQL: SELECT `id`,`name`,`img` FROM `classify` WHERE ( `state` = 1 ) AND ( `id` = 1 )  [ RunTime:0.000000s ]
+
+[ 2018-04-03T08:50:01+08:00 ] 127.0.0.1 /h_shop/Classifys/GetClassify?token=a254436278d365687344eb74f2f25245
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `is_seller` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `classify` [ RunTime:0.008000s ]
+SQL: SELECT `id`,`name`,`img` FROM `classify` WHERE ( `state` = 1 )  [ RunTime:0.000000s ]
+
+[ 2018-04-03T08:52:00+08:00 ] 127.0.0.1 /h_shop/Api/GetHome
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\ApiController.class.php 第 13 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( click >= 100 AND sort_id != 1 ) ORDER BY uploadetime DESC LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\ApiController.class.php 第 71 行.
+SQL: SELECT id,user_id,click,video_path,title,cover FROM city_video WHERE click >= 100  AND sort_id != 1 ORDER BY uploadetime DESC  LIMIT 0,20 [ RunTime:0.001000s ]
+
+[ 2018-04-03T08:56:37+08:00 ] 127.0.0.1 /h_shop/Api/GetHome
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\ApiController.class.php 第 13 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( click >= 100 AND sort_id != 1 ) ORDER BY uploadetime DESC LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\ApiController.class.php 第 71 行.
+SQL: SELECT id,user_id,click,video_path,title,cover FROM city_video WHERE click >= 100  AND sort_id != 1 ORDER BY uploadetime DESC  LIMIT 0,20 [ RunTime:0.017001s ]
+
+[ 2018-04-03T11:03:35+08:00 ] 127.0.0.1 /h_shop/Users/delCollection?token=c287ba3a029043a4bca257a89e7280b5&multiple=1,2,3,
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='c287ba3a029043a4bca257a89e7280b5' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video_collection` [ RunTime:0.007000s ]
+SQL: DELETE FROM `city_video_collection` WHERE ( `user_id` = 1 ) AND ( `video_id` = 1 ) [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.009000s ]
+SQL: UPDATE `city_video` SET `num_collection`=num_collection-1 WHERE ( `id` = 1 ) [ RunTime:0.014001s ]
+SQL: DELETE FROM `city_video_collection` WHERE ( `user_id` = 1 ) AND ( `video_id` = 2 ) [ RunTime:0.000000s ]
+SQL: UPDATE `city_video` SET `num_collection`=num_collection-1 WHERE ( `id` = 2 ) [ RunTime:0.000000s ]
+SQL: DELETE FROM `city_video_collection` WHERE ( `user_id` = 1 ) AND ( `video_id` = 3 ) [ RunTime:0.001000s ]
+SQL: UPDATE `city_video` SET `num_collection`=num_collection-1 WHERE ( `id` = 3 ) [ RunTime:0.000000s ]
+
+[ 2018-04-03T11:39:24+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T11:39:46+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-03T11:40:05+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-03T11:40:54+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: num D:\phpStudy\WWW\h_shop\Api\Home\Controller\GiftController.class.php 第 176 行.
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.022001s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user_gift` [ RunTime:0.010001s ]
+SQL: INSERT INTO `user_gift` (`user_id`,`from_id`,`gift_id`,`create_time`) VALUES (2,1,1,1522726854) [ RunTime:0.032002s ]
+
+[ 2018-04-03T11:41:19+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1&num=80
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user_gift` [ RunTime:0.009000s ]
+SQL: INSERT INTO `user_gift` (`user_id`,`from_id`,`gift_id`,`create_time`) VALUES (2,1,1,1522726879) [ RunTime:0.001000s ]
+
+[ 2018-04-03T11:42:50+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1&num=80
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user_gift` [ RunTime:0.009001s ]
+SQL: INSERT INTO `user_gift` (`user_id`,`from_id`,`gift_id`,`money`,`create_time`) VALUES (2,1,1,0,1522726970) [ RunTime:0.001000s ]
+
+[ 2018-04-03T11:43:16+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1&num=80
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user_gift` [ RunTime:0.008000s ]
+SQL: INSERT INTO `user_gift` (`user_id`,`from_id`,`gift_id`,`money`,`create_time`) VALUES (2,1,1,4000,1522726996) [ RunTime:0.000000s ]
+SQL: UPDATE `user` SET `integral`=integral-4000 WHERE ( `user_id` = 2 ) [ RunTime:0.000000s ]
+
+[ 2018-04-03T11:45:04+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1&num=80
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user_gift` [ RunTime:0.009000s ]
+SQL: INSERT INTO `user_gift` (`user_id`,`from_id`,`gift_id`,`num`,`money`,`create_time`) VALUES (2,1,1,80,4000,1522727104) [ RunTime:0.001000s ]
+SQL: UPDATE `user` SET `integral`=integral-4000 WHERE ( `user_id` = 2 ) [ RunTime:0.000000s ]
+
+[ 2018-04-03T11:50:14+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1&num=80
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T11:50:16+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1&num=80
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-03T11:50:34+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1&num=80
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `user_gift` [ RunTime:0.010000s ]
+SQL: INSERT INTO `user_gift` (`user_id`,`from_id`,`gift_id`,`num`,`money`,`create_time`) VALUES (2,1,1,80,4000,1522727434) [ RunTime:0.001000s ]
+SQL: UPDATE `user` SET `integral`=integral-4000 WHERE ( `user_id` = 2 ) [ RunTime:0.000000s ]
+
+[ 2018-04-03T11:50:36+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1&num=80
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user_gift` [ RunTime:0.010001s ]
+SQL: INSERT INTO `user_gift` (`user_id`,`from_id`,`gift_id`,`num`,`money`,`create_time`) VALUES (2,1,1,80,4000,1522727436) [ RunTime:0.000000s ]
+SQL: UPDATE `user` SET `integral`=integral-4000 WHERE ( `user_id` = 2 ) [ RunTime:0.000000s ]
+
+[ 2018-04-03T11:59:01+08:00 ] 127.0.0.1 /h_shop/Gift/givingGifts?token=a254436278d365687344eb74f2f25245&user_id=1&gift_id=1&num=80
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `gift` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `gift` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `user_gift` [ RunTime:0.008000s ]
+SQL: INSERT INTO `user_gift` (`user_id`,`from_id`,`gift_id`,`num`,`money`,`create_time`) VALUES (2,1,1,80,4000,1522727940) [ RunTime:0.000000s ]
+SQL: UPDATE `user` SET `integral`=integral-4000 WHERE ( `user_id` = 2 ) [ RunTime:0.000000s ]
+SQL: UPDATE `user` SET `integral`=integral+2000 WHERE ( `user_id` = 1 ) [ RunTime:0.001000s ]
+
+[ 2018-04-03T15:24:09+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=0&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010001s ]
+
+[ 2018-04-03T15:24:21+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=0&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.033002s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009000s ]
+SQL: INSERT INTO `city_video_comment` (`cid`,`user_id`,`pid`,`content`,`create_time`,`fabulous_num`,`reply_num`) VALUES (1,2,0,'我哦我我是',1522740261,0,0) [ RunTime:0.063004s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.021001s ]
+SQL: UPDATE `city_video` SET `num_commen`=num_commen+1 WHERE ( `id` = 1 ) [ RunTime:0.032002s ]
+
+[ 2018-04-03T15:24:41+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=15&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.014001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `id` = 15 ) LIMIT 1   [ RunTime:0.018001s ]
+SQL: UPDATE `city_video_comment` SET `reply_num`=reply_num+1 WHERE ( `id` = 15 ) [ RunTime:0.000000s ]
+SQL: INSERT INTO `city_video_comment` (`cid`,`user_id`,`pid`,`content`,`create_time`,`fabulous_num`,`reply_num`) VALUES (1,2,15,'我哦我我是',1522740281,0,0) [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.008001s ]
+SQL: UPDATE `city_video` SET `num_commen`=num_commen+1 WHERE ( `id` = 1 ) [ RunTime:0.001000s ]
+
+[ 2018-04-03T15:24:54+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=21&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `city_video_comment` SET `reply_num`=reply_num+1 WHERE (  ) AND ( `id` = 21 ) [ RunTime:0.019001s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') AND ( `id` = 21 )' at line 1
+ [ SQL语句 ] : UPDATE `city_video_comment` SET `reply_num`=reply_num+1 WHERE (  ) AND ( `id` = 21 )
+SQL: INSERT INTO `city_video_comment` (`cid`,`user_id`,`pid`,`content`,`create_time`,`fabulous_num`,`reply_num`) VALUES (1,2,21,'我哦我我是',1522740294,0,0) [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.009001s ]
+SQL: UPDATE `city_video` SET `num_commen`=num_commen+1 WHERE ( `id` = 1 ) [ RunTime:0.001000s ]
+
+[ 2018-04-03T15:25:34+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=21&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-03T15:25:46+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=21&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.007000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T15:26:22+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=977b2db8ef038bdf85d90388bbf648e0&cid=1&pid=21&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='977b2db8ef038bdf85d90388bbf648e0' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-03T15:32:14+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=977b2db8ef038bdf85d90388bbf648e0&cid=1&pid=21&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='977b2db8ef038bdf85d90388bbf648e0' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `id` = 21 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `city_video_comment` SET `reply_num`=reply_num+1 WHERE ( `id` = 21 ) [ RunTime:0.000000s ]
+SQL: INSERT INTO `city_video_comment` (`cid`,`user_id`,`pid`,`content`,`create_time`,`fabulous_num`,`reply_num`) VALUES (1,9,21,'我哦我我是',1522740734,0,0) [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.009001s ]
+SQL: UPDATE `city_video` SET `num_commen`=num_commen+1 WHERE ( `id` = 1 ) [ RunTime:0.001000s ]
+
+[ 2018-04-03T15:37:18+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=21&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.008001s ]
+SQL: UPDATE `city_video_comment` SET `reply_num`=reply_num+1 WHERE ( `id` = 21 ) [ RunTime:0.001000s ]
+SQL: INSERT INTO `city_video_comment` (`cid`,`user_id`,`pid`,`content`,`create_time`,`fabulous_num`,`reply_num`) VALUES (1,2,21,'我哦我我是',1522741038,0,0) [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.009000s ]
+SQL: UPDATE `city_video` SET `num_commen`=num_commen+1 WHERE ( `id` = 1 ) [ RunTime:0.000000s ]
+
+[ 2018-04-03T15:37:26+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=21&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.008000s ]
+SQL: UPDATE `city_video_comment` SET `reply_num`=reply_num+1 WHERE ( `id` = 21 ) [ RunTime:0.001001s ]
+SQL: INSERT INTO `city_video_comment` (`cid`,`user_id`,`pid`,`content`,`create_time`,`fabulous_num`,`reply_num`) VALUES (1,2,21,'我哦我我是',1522741046,0,0) [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.009000s ]
+SQL: UPDATE `city_video` SET `num_commen`=num_commen+1 WHERE ( `id` = 1 ) [ RunTime:0.000000s ]
+
+[ 2018-04-03T15:37:45+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=25&content=%E6%88%91%E5%93%A6%E6%88%91%E6%88%91%E6%98%AF
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.008000s ]
+SQL: UPDATE `city_video_comment` SET `reply_num`=reply_num+1 WHERE ( `id` = 25 ) [ RunTime:0.001000s ]
+SQL: INSERT INTO `city_video_comment` (`cid`,`user_id`,`pid`,`content`,`create_time`,`fabulous_num`,`reply_num`) VALUES (1,2,25,'我哦我我是',1522741065,0,0) [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.009001s ]
+SQL: UPDATE `city_video` SET `num_commen`=num_commen+1 WHERE ( `id` = 1 ) [ RunTime:0.000000s ]
+
+[ 2018-04-03T15:50:00+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=16&content=%E8%BF%99%E6%98%AF%E5%AD%90%E8%AF%84%E8%AE%BA
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `id` = 16 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: from_id D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 187 行.
+
+[ 2018-04-03T15:50:50+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=16&content=%E8%BF%99%E6%98%AF%E5%AD%90%E8%AF%84%E8%AE%BA&from_id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `id` = 16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `city_video_comment` SET `reply_num`=reply_num+1 WHERE ( `id` = 16 ) [ RunTime:0.000000s ]
+SQL: INSERT INTO `city_video_comment` (`cid`,`user_id`,`pid`,`content`,`create_time`,`fabulous_num`,`reply_num`) VALUES (1,2,16,'这是子评论',1522741850,0,0) [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.011001s ]
+SQL: UPDATE `city_video` SET `num_commen`=num_commen+1 WHERE ( `id` = 1 ) [ RunTime:0.001000s ]
+
+[ 2018-04-03T15:52:33+08:00 ] 127.0.0.1 /h_shop/CityVideo/comment_up/?token=a254436278d365687344eb74f2f25245&cid=1&pid=16&content=%E8%BF%99%E6%98%AF%E5%AD%90%E8%AF%84%E8%AE%BA&from_id=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `id` = 16 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `city_video_comment` SET `reply_num`=reply_num+1 WHERE ( `id` = 16 ) [ RunTime:0.000000s ]
+SQL: INSERT INTO `city_video_comment` (`cid`,`user_id`,`pid`,`content`,`create_time`,`fabulous_num`,`reply_num`,`from_uid`) VALUES (1,2,15,'这是子评论',1522741953,0,0,5) [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.008000s ]
+SQL: UPDATE `city_video` SET `num_commen`=num_commen+1 WHERE ( `id` = 1 ) [ RunTime:0.001000s ]
+
+[ 2018-04-03T16:01:44+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T16:09:13+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.011001s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-03T16:14:48+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T16:17:05+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T16:18:41+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.010001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T16:19:33+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-03T16:19:59+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T16:20:16+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.007000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T16:20:42+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T16:21:17+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T16:22:53+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1  [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1 
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1  [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1 
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 709 行.
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 2 LIMIT 1  [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 2 LIMIT 1 
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 709 行.
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+
+[ 2018-04-03T16:23:22+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1  [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1 
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1  [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1 
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 709 行.
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 2 LIMIT 1  [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 2 LIMIT 1 
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 709 行.
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+
+[ 2018-04-03T16:23:34+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1  [ RunTime:0.001000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1 
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1  [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1 
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 709 行.
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 2 LIMIT 1  [ RunTime:0.001000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 2 LIMIT 1 
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001001s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 709 行.
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+
+[ 2018-04-03T16:23:45+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1  [ RunTime:0.001000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1 
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1  [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 10 LIMIT 1 
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 709 行.
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE id = 2 LIMIT 1  [ RunTime:0.000000s ]
+ERR: 1054:Unknown column 'id' in 'where clause'
+ [ SQL语句 ] : SELECT `user_name`,`user_photo` FROM `user` WHERE id = 2 LIMIT 1 
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #1 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 709 行.
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 712 行.
+
+[ 2018-04-03T16:24:20+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCommentReply/?comment_id=15
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `pid` = 15 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT user_name as from_name,user_photo as from_photo FROM `user` WHERE ( `user_id` = 10 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-03T17:35:53+08:00 ] 127.0.0.1 /h_shop/CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.010000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.022002s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.010000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.022001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') AND sort_id = 1 ) LIMIT 1   [ RunTime:0.034002s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click,video_path FROM city_video WHERE INSTR(city,'北京市') AND sort_id = 1 LIMIT 0,20 [ RunTime:0.001000s ]
+

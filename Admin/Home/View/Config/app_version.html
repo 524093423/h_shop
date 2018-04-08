@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>编辑资讯信息</title>
+ <link href="__PUBLIC__/admin/images/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="mainbody">
+
+<div class="navigation"><!--<a href="javascript:history.go(-1);" class="back">后退</a>-->首页 &gt; 系统管理 &gt; APP版本更新</div>
+<div id="contentTab">
+    <ul class="tab_nav">
+        <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+    </ul>
+
+    <div class="tab_con" style="display:block;">
+        <table class="form_table">
+            <col width="150px"><col>
+            <tbody>
+            <tr> 
+                <th>版本名称：</th>
+                <td><input type="text" id="ename" value="{$info.edition_name}"   class="txtInput normal required" /></td>
+            </tr>
+            <tr> 
+                <th>版本号：</th>
+                <td><input type="text" id="eno" value="{$info.edition_no}"   class="txtInput normal required" /></td>
+            </tr>
+            <tr> 
+                <th>版本描述：</th>
+                <td><input type="text" id="edesc" value="{$info.editioninfo}"   class="txtInput normal required" /></td>
+            </tr>
+            <tr> 
+                <th>下载地址：</th>
+                <td><input type="text" id="eurls"  style="width:375px" value="{$info.downloadaddress}"   class="txtInput normal required" /></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="foot_btn_box">
+     <input id="sub" type="button" value="提交保存" class="btnSubmit"/>
+    </div>
+</div>
+</body>
+</html>
+ <script src="__PUBLIC__/js/jquery-1.8.3.min.js" type="text/javascript" ></script>
+ <script src="__PUBLIC__/admin/js/function.js" type="text/javascript" ></script>
+ <script src="__PUBLIC__/admin/js/tips/jquery.poshytip.js" type="text/javascript"></script>
+ <link href="__PUBLIC__/admin/js/tips/tip-yellow/tip-yellow.css" rel="stylesheet" type="text/css" />
+     <script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+   <script>
+       $(function () {
+           $("#sub").click(function () {
+               if (!veriform('ename')) { tip('ename', '请填写版本名称'); $("#ename").focus(); return false; }
+               if (!veriform('eno')) { tip('eno', '请填写版本号'); $("#eno").focus(); return false; }
+               if (!veriform('edesc')) { tip('edesc', '请填写版本描述'); $("#edesc").focus(); return false; }
+               if (!veriform('eurls')) { tip('eurls', '请填写下载地址'); $("#eurls").focus(); return false; }
+            	   $.ajax({
+            	        type: "POST",
+            	        dataType: "text",
+            	        url: "admin.php?c=Config&a=UpdateAppConfig",
+            	        data: "ename=" +$("#ename").val()+ "&eno="+$("#eno").val()+"&edesc="+$("#edesc").val()+"&eurls="+$("#eurls").val(),
+            	        success: function (data) {
+            	            if(data > 0){
+            	            	$.jBox.tip('更新成功。', 'success');
+            	            }else{
+            	            	$.jBox.tip('服务器连接超时，更新失败', 'success');
+            	            }
+            	        }
+            	    });
+           });
+       });
+  </script>

@@ -1,0 +1,38 @@
+body,
+html {
+  background-color: #fff;
+}
+.pay-list li {
+  height: 1.40625rem;
+  line-height: 1.40625rem;
+  border-bottom: 1px solid #dadada;
+}
+.pay-lo,
+.pay-name {
+  float: left;
+}
+.opt {
+  float: right;
+  width: 0.5625rem;
+  height: 0.5625rem;
+  margin-top: 0.421875rem;
+}
+.pay-name {
+  font-size: 0.46875rem;
+  color: #000;
+  margin-left: 0.234375rem;
+}
+.pay-lo {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.390625rem;
+}
+.pay-btn p {
+  line-height: 1.25rem;
+  background-color: #f98d06;
+  font-size: 0.5625rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 0.546875rem;
+  border-radius: 0.15625rem;
+}

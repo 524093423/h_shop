@@ -1,0 +1,148 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>消息管理</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/style.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/pagination.css" />
+
+</head>
+<body class="mainbody">
+    <div class="navigation">首页 &gt; 消息管理 &gt; APP用户消息</div>
+    <div class="tools_box">
+	    <div class="tools_bar">
+		    <a href="javascript:void(0);"  id="seleallbybtton" class="tools_btn"><span><b class="all">全选</b></span></a>
+            <a href="javascript:void(0);" id="Button1" class="tools_btn"><span><b class="delete">批量删除</b></span></a>
+        </div>
+        <div class="select_box">
+                  请选择封号状态：<select id="SelectUser" class="select">
+            <option value="0">全部</option>
+            <option value="-1"  <if condition=" $zt eq -1 ">selected<else/></if>>  未冻结</option>
+             <option value="1"  <if condition=" $zt eq 1 ">selected<else/></if>>  已冻结</option>
+            </select>
+	    </div>
+	    
+    </div>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+      <tr>
+       <th width="5%"><input id="Checkbox1" type="checkbox" class="cbk"  style=" margin:0px;"/></th>
+                <th width="5%">编号</th>
+                <th width="10%"  align="center">问题内容</th>
+                <th width="10%"  align="center">提问时间</th>
+                 <th width="10%"  align="center">回复人员</th>
+                 <th width="10%"  align="center">回复内容</th>
+                <th width="10%"  align="center">回复时间</th>
+                <th width="10%"  align="center">是否回复</th>
+                 <th width="20%"  align="center">操作</th>
+      </tr>
+      		<foreach name="list" item="lt">
+      		    <tr>   
+                <td  align="center">  <input name="ck"  type="checkbox" class="cbk"  value="339"/></td>
+                <td align="center">{$no+$key}</td>
+                <td align="center" ><a href="javascript:void(0)" id="aon{$lt.id}" onclick="BackInfo('{$lt.question}',{$lt.isback},'{$lt.answer}',{$lt.id})">{$lt.question}</a></td>
+                <td align="center">{$lt.qt}</td>
+                 <td align="center">{$lt.anusernick}</td>
+                <td align="center" name="answer{$lt.id}">{$lt.answer}</td>
+                <td align="center">{$lt.ats}</td>
+                 <td align="center" name="txtinfo{$lt.id}">
+	                	 {$lt.txtinfo}
+                	</td>
+                <td style=" text-align:center;">
+                	<a class="del" href="javascript:void(0)"   rel='{$lt.id}' ><img  src="__PUBLIC__/admin/images/delete.gif"  title="删除" alt="删除"/></a>
+                </td>
+            </tr>
+            </foreach>
+      </table>
+
+
+   
+    <div class="line15"></div>
+    <div class="page_box">
+      <div id="PageContent" class="flickr right">
+        {$page}
+      </div>
+     
+    </div>
+    <div class="line10"></div>
+</body>
+</html>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/function.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/layer/layer.js"></script>
+   <script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+    var province = $("#pe").val();
+    var city = $("#cy").val();
+        $(function () {
+            tablecolor();
+            $("#btnSearch").click(function () {
+            	userSearch();
+            });
+            $("#SelectUser").change(function () {
+            	userSearch();
+            });
+            $("#Button1").click(function () {
+                alldel("delallNews");
+            });
+            $("table tbody tr td a.del").click(function () {
+                del($(this), "delUserInfo");
+            });
+            $("#seleallbybtton").toggle(function () {
+                $(this).find("span b").text("取消");
+                $(".cbk").each(function () {
+                    $(this).attr("checked", true);
+                });
+            }, function () {
+                $(this).find("span b").text("全选");
+                $(".cbk").each(function () {
+                    $(this).attr("checked", false);
+                });
+            });
+            $("#Checkbox1").click(function () {
+                allselecheck($(this));
+            });
+            
+        });
+        function BackInfo(str,state,str1,id){
+        	if(state == 0){
+        		var text = "<div style='margin-top:20px;margin-bottom:20px'>请输入回复内容：<br/><textarea id='answer' name='answer' style=\"margin: 0px; height: 166px; width: 285px;\"></textarea>";
+        	}else{
+        		var text ="<div style='margin-top:20px;margin-bottom:20px'>回复内容为：<br/>&nbsp;&nbsp;"+str1;
+        	}
+        	var html = "<div style='width:285px;margin-top:10px;margin-left:30px'><div style=''>用户问题是：<br>&nbsp;&nbsp;"+str+"</div>"+text+"</div></div>";
+        	var submit = function (v, h, f) {
+        	    if (f.answer == '') {
+        	        $.jBox.tip("请输入回复信息。", 'error', { focusId: "answer" }); // 关闭设置 yourname 为焦点
+        	        return false;
+        	    }
+        	    $.ajax({
+        	    	url:"./admin.php?c=Message&a=SubAskInfo",
+        	    	type:"post",
+        	    	data:{"info":f.answer,"id":id},
+        	    	success:function(msg){
+        	    		if(msg == 1){
+        	    			$.jBox.tip("回复成功","success");
+        	    			$("#aon"+id).attr("onclick","BackInfo('"+str+"',"+1+",'"+f.answer+"',"+id+")");
+        	    			$("td[name=answer"+id+"]").text(f.answer);
+        	    			$("td[name=txtinfo"+id+"]").text("已回复");
+        	    		}else{
+        	    			$.jBox.tip("连接服务器超时","error");
+        	    		}
+        	    	}
+        	    });
+        	    //$.jBox.tip("你叫：" + h.find("#yourname").val());
+        	    //$.jBox.tip("你叫：" + h.find(":input[name='yourname']").val());
+
+        	    return true;
+        	};
+
+        	if(state == 0){
+        		$.jBox(html, { title: "回复消息", submit: submit });
+        	}else{
+        		$.jBox(html, { title: "回复消息"});
+        	}
+        	
+        }
+    </script>

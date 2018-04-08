@@ -1,0 +1,163 @@
+.car-list {
+  margin-bottom: 0.3125rem;
+  background-color: #fff;
+}
+/*���� ��Ϣ*/
+.car-ti {
+  height: 1.25rem;
+  border-bottom: 1px solid #dadada;
+  border-top: 1px solid #dadada;
+}
+.car-ti .wrap div {
+  float: left;
+}
+.car-ti .wrap .car-bian {
+  float: right;
+}
+.opt img,
+.sh-opt img {
+  width: 0.5625rem;
+  height: 0.5625rem;
+  margin-top: 0.34375rem;
+}
+.car-log img {
+  width: 0.78125rem;
+  height: 0.78125rem;
+  margin-top: 0.234375rem;
+  margin-left: 0.234375rem;
+  margin-right: 0.234375rem;
+}
+.car-name p {
+  font-size: 0.3125rem;
+  line-height: 1.25rem;
+  width: 4.6875rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.car-bian p {
+  font-size: 0.3125rem;
+  line-height: 1.25rem;
+}
+.car-bian p b {
+  margin-left: 0.3125rem;
+}
+/*��Ʒ �б�*/
+.car-art li {
+  padding-top: 0.3125rem;
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 0.3125rem;
+}
+.li-box div {
+  float: left;
+}
+.li-box .li-wo {
+  float: right;
+}
+.li-pic img {
+  width: 1.6875rem;
+  height: 2.265625rem;
+  margin-left: 0.390625rem;
+}
+.li-wo {
+  width: 6.25rem;
+}
+.li-wo h3 {
+  font-size: 0.3125rem;
+  line-height: 0.46875rem;
+  height: 1.5625rem;
+  width: 5rem;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /** ������Ϊ��������ģ����ʾ **/
+
+  -webkit-box-orient: vertical;
+  /** ���û����������ж�������Ԫ�ص����з�ʽ **/
+
+  -webkit-line-clamp: 3;
+  /** ��ʾ������ **/
+
+  overflow: hidden;
+}
+.li-wo .money {
+  float: left;
+  font-size: 0.3125rem;
+  color: #ff9100;
+}
+.li-wo .money b {
+  font-size: 0.375rem;
+  margin-left: 0.078125rem;
+}
+.li-wo .num {
+  font-size: 0.28125rem;
+  float: right;
+}
+.li-wo .num b {
+  font-size: 0.375rem;
+  margin-left: 0.078125rem;
+}
+/*�����༭ ֮����ҳ��*/
+.li-box .del-wo {
+  width: 6.25rem;
+  float: right;
+}
+.del-wen {
+  float: left;
+  width: 4.84375rem;
+}
+.del-btn {
+  float: right;
+  width: 1.25rem;
+  height: 2.265625rem;
+  background-color: #ff9100;
+}
+.del-btn p {
+  font-size: 0.3125rem;
+  color: #fff;
+  text-align: center;
+  line-height: 2.265625rem;
+}
+.del-wen h3 {
+  font-size: 0.3125rem;
+  line-height: 0.46875rem;
+  height: 1.484375rem;
+  width: 4.84375rem;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /** ������Ϊ��������ģ����ʾ **/
+
+  -webkit-box-orient: vertical;
+  /** ���û����������ж�������Ԫ�ص����з�ʽ **/
+
+  -webkit-line-clamp: 3;
+  /** ��ʾ������ **/
+
+  overflow: hidden;
+}
+.del-wen p img {
+  width: 0.78125rem;
+  height: 0.78125rem;
+}
+.less {
+  float: left;
+}
+.add {
+  float: right;
+}
+.del-wen p {
+  font-size: 0.375rem;
+  line-height: 0.78125rem;
+  text-align: center;
+}
+/*����*/
+.finish {
+  display: none;
+}
+.del-wo {
+  display: none;
+}
+/*���� top �ı༭*/
+.del-all {
+  background-color: #ff4203;
+  display: none;
+}

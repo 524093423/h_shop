@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>栏目设置</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/style.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/pagination.css" />
+<script type="text/javascript" src="__PUBLIC__/admin/js/showdate.js"></script>
+</head>
+<body class="mainbody">
+    <!--<div class="navigation">首页 &gt; 管理员管理 &gt; 管理员列表</div>-->
+    <div class="tools_box">
+        <a href="javascript:void(0);"  id="seleallbybtton" class="tools_btn"><span><b class="all">全选</b></span></a>
+	    <div class="tools_bar" style="height:0px;">
+            <div class="search_box">
+		    </div>
+		    <!--  <a href="javascript:void(0);"  id="seleallbybtton" class="tools_btn"><span><b class="all">全选</b></span></a>
+            <a href="javascript:void(0);" id="Button1" class="tools_btn"><span><b class="delete">批量删除</b></span></a>-->
+        </div>
+        <div class="select_box">
+              <!--   按负责人姓名搜索：
+			    <input id="txtKeywords" type="text"   class="txtInput" value="{$search}" x-webkit-speech="" lang="zh-CN"/>
+			 	&nbsp;
+			    管理员类型：
+			    <select id="SelectCate" class="select">
+			    	<option value="0">请选择</option>
+			    	<foreach name="cate" item="ce">
+			    		<option value="{$ce.id}" <if condition=" $ce.id eq $groupid ">selected<else /></if>>{$ce.groupname}</option>
+			    	</foreach>
+			    </select>
+                <input id="btnSearch" type="button" value="搜 索" class="btnSearch" />-->
+       <div style="float:right">
+	   
+	    </div> 
+	    </div>
+	    
+    </div>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+      <tr>
+          <th width="20%"></th>
+          <th width="20%">编号</th>
+          <th width="60%"  align="left">栏目名称</th>
+      </tr>
+      		<foreach name="columnlist" item="lt">
+      		    <tr>   
+                <td  align="center">
+                    <if condition=" $lt.isrole eq 1 ">
+                        <if condition=" $lt.parentid eq 0 ">
+                        <input id="Checkbox1" type="checkbox" data-id="{$lt.id}" name="ck" class="cbk new{$lt.id} father" value="{$lt.id}" style=" margin:0px;" checked/>
+                        <else/>
+                        <input id="Checkbox1" type="checkbox" parentid="{$lt.parentid}" name="ck" class="cbk sun" value="{$lt.id}" style=" margin:0px;" checked/>
+                        </if>
+                    <else/>
+                        <if condition=" $lt.parentid eq 0 ">
+                            <input id="Checkbox1" type="checkbox" name="ck" data-id="{$lt.id}" class="cbk new{$lt.id} father" value="{$lt.id}" style=" margin:0px;"/>
+                            <else/>
+                            <input id="Checkbox1" type="checkbox" name="ck" parentid="{$lt.parentid}" class="cbk sun" value="{$lt.id}" style=" margin:0px;"/>
+                        </if>
+                    </if>
+                </td>
+                <td align="center">{$key+1}</td>
+                <td align="left">
+                    <if condition=" $lt.parentid eq 0 ">
+                    <font style="font-weight: bold">{$lt.html}{$lt.str}{$lt.text}</font>
+                    <else/>
+                    {$lt.html}{$lt.str}{$lt.text}
+                    </if>
+                </td>
+            </tr>
+            </foreach>
+      </table>
+    <div class="foot_btn_box">
+        <input type="hidden" value="no" id="isup">
+        <input id="sub" type="button" value="提交保存" class="btnSubmit" />
+    </div>
+    <div class="line10"></div>
+</body>
+</html>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/function.js"></script>
+<script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/admin/js/layer/layer.js" type="text/javascript"></script>
+ <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+    var groupid = {$groupid};
+        $(function () {
+            tablecolor();
+            $("#btnSearch").click(function () {
+            	ManagerSearch();
+            });
+            $("#seleallbybtton").toggle(function () {
+                $(this).find("span b").text("取消");
+                $(".cbk").each(function () {
+                    $(this).attr("checked", true);
+                });
+            }, function () {
+                $(this).find("span b").text("全选");
+                $(".cbk").each(function () {
+                    $(this).attr("checked", false);
+                });
+            });
+            $("table tbody tr td a.del").click(function () {
+                del($(this), "admin");
+            });
+            //选择父级
+            $(".father").click(function(){
+                var id  = $(this).attr("data-id");//父级id
+                //console.log(id);return false;
+                //console.log("取消   "+$(this).attr("checked"))
+                if($(this).attr("checked")!="checked"){
+                    $(".sun[parentid='"+id+"'").each(function(){
+                        $(this).attr("checked",false);
+                    })
+                }else{
+                    $(".sun[parentid='"+id+"'").each(function(){
+                        $(this).attr("checked",true);
+                    })
+                }
+            });
+            //选择子集
+            $(".sun").click(function(){
+                var parentid =  $(this).attr("parentid");
+                if($(this).attr("checked")=="checked"){
+                    $(".new"+parentid).attr("checked",true);//选中父级
+                }else{
+                    var isfalse = 0;
+                    $(".sun[parentid='"+parentid+"'").each(function(){
+                        if($(this).attr("checked")=="checked"){
+                            isfalse =1;
+                        }
+                    })
+                    if(isfalse==0){
+                        $(".new"+parentid).attr("checked",false);//取消父级
+                    }
+                }
+            })
+            //提交
+            $(".btnSubmit").click(function(){
+                var str = "";
+                $("[name=ck]:checked").each(function () {
+                    str += $(this).val() + ",";
+                });
+                if(str ==""){
+                    layer.msg("你还没有选择栏目，请先选择",{time:1000});
+                    return false;
+                }
+                $.ajax({
+                    url:"./admin.php?c=Manager&a=SetRoleColumn",
+                    type:"post",
+                    dataType:"json",
+                    data:{"groupid":groupid,"columnid":str},
+                    success:function(result){
+                        layer.msg(result.message,{time:1000},function(){
+                            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                            parent.layer.close(index);  // 关闭layer
+                        });
+                    },error:function(){
+                        layer.msg("连接服务器超时，请稍后重试",{time:1000});
+                    }
+                });
+                //console.log(str);
+            });
+        });
+    </script>

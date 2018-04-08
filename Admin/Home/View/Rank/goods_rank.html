@@ -1,0 +1,214 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>热门商品排名</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/style.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/pagination.css" />
+<script src="__PUBLIC__/admin/js/laydate/laydate.js"></script>
+</head>
+<body class="mainbody">
+    <div class="navigation">首页 &gt; 排名管理 &gt; 热门商品&gt;<font style="color: red;">（*序号越大越靠前）</font></div>
+    <div class="tools_box">
+	    <div class="tools_bar">
+            <div class="search_box"><span>按商品名称或者商家搜索：</span>
+			    <input id="txtKeywords" type="text"   class="txtInput" value="{$search}" x-webkit-speech="" lang="zh-CN"/>
+                <input id="btnSearch" type="button" value="搜 索" class="btnSearch" />
+		    </div>
+            <a href="javascript:void(0)" class="tools_btn"><span><b class="add Rank">添加排名商品</b></span></a>
+        </div>
+        <div class="select_box">
+                 商品分类：{$cate}
+                  <input id="btnSearch1" type="button" value="搜 索" class="btnSearch" />
+                  <input id="resetBtn" type="button" value="重置" class="btnSearch" />
+       <div style="float:right">
+	   
+	    </div> 
+	    </div>
+	    
+    </div>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+      <tr>
+       <th width="1%"></th>
+                <th width="8%">编号</th> <!--18-->
+                <th width="15%"  align="center">商品名称</th>
+                <th width="15%"  align="center">商家名称</th>
+                 <th width="10%"  align="center">商品分类</th>
+              <th width="10%"  align="center">排名(开始)</th>
+              <th width="10%"  align="center">排名(结束)</th>
+            <th width="10%"  align="center">序号</th>
+                <th width="10%"  align="center">状态</th>
+                <th width="10%" align="center">操作</th>
+      </tr>
+      		<foreach name="goods" item="lt">
+      		    <tr>   
+                <td  align="center" data-id="{$lt.rankid}"></td>
+                <td align="center">{$no+$key}</td>
+                <td align="center"><a href="./admin.php?c=Goods&a=GoodsDetail&id={$lt.gid}">{$lt.gn}</a></td>
+                <td align="center">{$lt.bn}</td>
+                 <td align="center">{$lt.gc}</td>
+                <td align="center">
+                 	{$lt.ranktime}
+                </td>
+                <td align="center">{$lt.endtime}</td>
+                <td align="center">
+                	{$lt.ranksort}
+                </td>
+                <td align="center">
+                    <if condition=" $lt.rankstatus eq 2 ">
+                        <font style="color: #00E8D7">正常</font>
+                    <else/>
+                        <font style="color: red">超时</font>
+                    </if>
+                </td>
+                <td align="center">
+                    <a href="javascript:void(0)" class="close" data-type="{$goodsorclass}" data-rankid="{$lt.rankid}" data-goodsid="{$lt.gid}" style="cursor: pointer">关闭热门</a>&nbsp;&nbsp;
+                    <a href="javascript:void(0)" class="update" data-type="{$goodsorclass}"  data-sort="{$lt.ranksort}" data-rankid="{$lt.rankid}" data-endtime="{$lt.endtime}" data-goodsid="{$lt.gid}" style="cursor: pointer">设置</a>
+                </td>
+                <!--<td style=" text-align:center;">
+                <a class="" href="./admin.php?c=Goods&a=GoodsDetail&id={$lt.gid}"    ><img  src="__PUBLIC__/admin/images/look.png"  title="查看" alt="查看"/></a>
+                   <a class="del" href="javascript:void(0)"   rel='{$lt.gid}' ><img  src="__PUBLIC__/admin/images/delete.gif"  title="删除" alt="删除"/></a>
+                </td>-->
+            </tr>
+            </foreach>
+      </table>
+
+
+   
+    <div class="line15"></div>
+    <div class="page_box">
+      <div id="PageContent" class="flickr right">
+        {$page}
+      </div>
+     
+    </div>
+    <div class="line10"></div>
+</body>
+</html>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/function.js?r=123"></script>
+<script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/admin/js/layer/layer.js" type="text/javascript"></script>
+<link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var goodsorclass={$goodsorclass};
+        $(function () {
+            $(".Rank").click(function(){
+                var index = layer.open({
+                    title:"选择商品",
+                    type: 2,
+                    content: './admin.php?c=Rank&a=RankGoodsList&goodsorclass='+goodsorclass,
+                    area: ["100%","100%"],
+                    maxmin: true,
+                    end: function () {
+                        SearchRank();
+                    }
+                });
+            });
+            tablecolor();
+            $("#btnSearch").click(function () {
+                SearchRank();
+            });
+            $("#btnSearch1").click(function () {
+                SearchRank();
+            });
+            $("#resetBtn").click(function(){
+                ResetBtnSearchRank();
+            });
+            $("#Select1").change(function () {
+                SearchRank();
+            });
+            $("#Select2").change(function () {
+                SearchRank();
+            });
+            //关闭热门
+            $(".close").click(function(){
+                var obj = $(this);
+                $.ajax({
+                    url:"./admin.php?c=Rank&a=CloseGoodsRank",
+                    type:"post",
+                    dataType:"json",
+                    data:{"gid":obj.attr("data-goodsid"),"type":obj.attr("data-type"),"rankid":obj.attr("data-rankid")},
+                    success: function (result) {
+                        layer.msg(result.message,{time:500}, function () {
+                            if(result.code==200){
+                                obj.parent().parent().fadeOut("slow");
+                            }
+                        });
+                    },error:function(){
+
+                    }
+                })
+            });
+            //更多
+            $(".update").click(function(){
+                var obj = $(this);
+                var edtime  = "";
+                var index = layer.open({
+                    title:"选择结束时间和排列顺序",
+                    content: "<input class=\"laydate-icon\" value="+obj.attr("data-endtime")+"  id=\"st\"  readonly=\"readonly\" onclick=\"laydate({format: 'YYYY-MM-DD',festival: true, choose: function(datas){  }})\" style=\"width:76px;height:16px;\">" +
+                    "<br/><input id=\"upsort\" type=\"text\"  class=\"txtInput\" value="+obj.attr("data-sort")+" x-webkit-speech=\"\" style=\"margin-top:10px;width:30px;height:16px;\" lang=\"zh-CN\"/>",
+                    area: ["200px","200px"],
+                    maxmin: true,
+                    yes: function(index, layero){
+                        edtime  = $(".laydate-icon").val();
+                        if(edtime==""){
+                            layer.msg("请选择结束日期",{time:500});
+                            return false;
+                        }else{
+                            $.ajax({
+                                url:"./admin.php?c=Rank&a=SetRank",
+                                type:"post",
+                                dataType:"json",
+                                data:{"gid":obj.attr("data-goodsid"),"rankid":obj.attr("data-rankid"),"type":obj.attr("data-type"),"sort":$("#upsort").val(),"flag":1,"endtime":edtime},
+                                success: function (result) {
+                                    layer.msg(result.message,{time:500}, function () {
+                                        if(result.code==200){
+                                            //obj.parent().parent().fadeOut("slow");
+                                            window.history.go(0);
+                                        }
+                                    });
+                                },error:function(){
+
+                                }
+                            })
+                            layer.close(index);
+                        }
+                        //如果设定了yes回调，需进行手工关闭
+                    }
+                });
+            });
+            $("#SelectProvince").change(function(){
+                var id = $("#SelectProvince").val();
+                var strp = " <option value=\"0\">请选择</option>";
+                $.getJSON("./admin.php?c=Common&a=getCity&city="+id,function(msg){
+                	if(msg.length >0){
+                		for(var i=0;i<msg.length;i++){
+                			strp += " <option value="+msg[i]['id']+">"+msg[i]['name']+"</option>";
+                		}
+                	}
+                	$("#SelectCity").html(strp);
+                });
+            });
+        });
+    /**
+     * 整合选择条件
+     * 商品搜索
+     */
+    function SearchRank(){
+        var gc = $("#SelectClass").val();
+        var sale = $("#SelectSales").val();
+        var title = $("#txtKeywords").val();
+        location.href = "admin.php?c=Rank&a=HotGoodsRank&gcid=" + gc+"&search="+title+"&goodsorclass="+goodsorclass;
+    }
+    /**
+     *商品搜索重置
+     *2017.05.15
+     */
+    function ResetBtnSearchRank(){
+        var gc = $("#SelectClass").val('');
+        var title = $("#txtKeywords").val('');
+        location.href = "./admin.php?c=Rank&a=HotGoodsRank"+"&goodsorclass="+goodsorclass;
+    }
+    </script>

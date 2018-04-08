@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/order.css"/>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">购物车</h3>
+        <h4 class="compile">编辑</h4>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content car-content">
+    <!--购物车列表 开始-->
+    <div class="carBox ">
+        
+
+    </div>
+    <!--购物车列表 结束-->
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+    <!--合计部分-->
+    <div class="car-bot ">
+        <div class="wrap clearfix">
+            <div class="quan clearfix">
+                <img src="../images/dui1.png" alt=""/>
+                <p>全选</p>
+            </div>
+            <div class="suan">
+                <p>结算（<b>0</b>）</p>
+            </div>
+            <div class="heji">
+                <p>合计：<span>¥<b>0</b></span></p>
+            </div>
+            <!--点击 top 的编辑-->
+            <div class="del-all">
+                <p>删除</p>
+            </div>
+        </div>
+    </div>
+    <ul class="bo-list clearfix">
+        <li>
+            <a href="#">
+                <img src="../images/b1.jpg" alt=""/>
+                <p>首页</p>
+            </a>
+        </li>
+        <li class="car">
+            <a href="#">
+                <img src="../images/b66.jpg" alt=""/>
+                <p class="p-on">购物车</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../images/b4.jpg" alt=""/>
+                <p>关注</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../images/b5.jpg" alt=""/>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    var setcart= [];
+    var cartId = "";
+    var liAlt	= "";
+  $(function(){
+      getShopCart();//获取购物车
+  });
+//获取购物车信息2017.05.28
+function getShopCart(page=""){
+	$.getJSON(webIp+"Cart/CartList?callback=?&token="+sessionStorage.getItem('token')+"&page="+page,function(result){
+		//加载过程中
+		var index = layer.load(3);
+		//alert(result.code);
+		var CartList	= result.info;
+		if(result.code=="200" && !$.isEmptyObject(CartList)){
+			layer.close(index);
+		}else{
+			var p =" <p class='null'>购物车没暂时没有商品，请添加!</p>";
+            $('.car-content').html(p);
+			layer.close(index);
+			return false;
+		}
+		//sessionStorage.setItem("cartlist",JSON.stringify(CartList));
+		console.log(CartList);
+		var carthtml	= '';
+		var cartgoods	= "";
+		var goodsinfo	= "";
+		for(var i=0;i<CartList.length;i++){
+			cartgoods	='';
+			carthtml	+='<div class="car-list">';
+			carthtml	+='<div class="car-ti "><div class="wrap clearfix"><div class="sh-opt"><img src="../images/dui1.png" alt="" /></div>';
+			carthtml	+='<div class="car-log"><img src='+CartList[i]['shopimg']+' alt='+CartList[i]['sellerid']+' /></div><div class="car-name"><p>'+CartList[i]['seller']+'</p>';
+			carthtml	+='</div><div class="car-bian"><p class="compile2">|<b>编辑</b></p></div></div></div>';
+			carthtml	+='<ul class="car-art">';
+			goodsinfo	= CartList[i]['cart'];
+			for(var j=0;j<goodsinfo.length;j++){
+				cartgoods	+='<li> <div class="li-box clearfix wrap"><div class="opt"><img src="../images/dui1.png" alt='+goodsinfo[j]['gctid']+' />';
+				cartgoods	+='</div><div class="li-pic"><img src='+goodsinfo[j]['listimg']+' data-gid='+goodsinfo[j]['gid']+' data-cid='+goodsinfo[j]['gctid']+' alt="" /></div><div class="li-wo ">';
+				cartgoods	+='<h3>'+goodsinfo[j]['gname']+'</h3><h4 class="hid">'+goodsinfo[j]['spectitle']+'</h4><p class="clearfix"><span class="money">¥<b>'+goodsinfo[j]['price']+'</b></span>';
+				cartgoods	+='<span class="num">X<b>'+goodsinfo[j]['gnum']+'</b></span></p></div><div class="del-wo clearfix"><div class="del-wen">';
+				cartgoods	+='<h3>'+goodsinfo[j]['gname']+'</h3><p class="clearfix"><img  class="less" src="../images/jianh.png" alt=""/>';
+				cartgoods	+='<span class="number">'+goodsinfo[j]['gnum']+'</span><img class="add" src="../images/jiah.png" alt=""/>';
+				cartgoods	+='</p></div><div class="del-btn"><p>删除</p></div></div></div></li>';
+			}
+			carthtml	+=cartgoods+'</ul>';
+			carthtml		+='</div>';
+		}
+		$(".carBox").html(carthtml);
+		$(".car-art .li-wo").click(function(){
+			window.location.href="./productDetails.html?id="+$(this).parents(".li-box").find(".li-pic img").attr("data-gid")
+		});
+		$(".car-art .li-pic").click(function(){
+			window.location.href="./productDetails.html?id="+$(this).find("img").attr("data-gid")
+		});
+		carFunc().init();//添加
+	});
+}
+var carFunc = function(){
+    return{
+        init:function(){
+            this.compileClick(); //  点击编辑
+            this.delClick() ;  // 点击 删除
+            this.optClick();  // 点击 选中 更换背景图片
+            this.numClick() ;   // 点击  加减
+            this.suanClick();//点击获取操作的数据
+        },
+        //点击 编辑
+        compileClick:function(){
+            $('.compile').click(function(){ // 顶部编辑
+            	$('.compile2').each(function(i){ // 如果店铺是完成 就变成编辑
+                   /* console.log($('.compile2').eq(i).find('b').text());*/
+                    if( $('.compile2').eq(i).find('b').text() == '完成'){
+                        $('.compile2').eq(i).find('b').text('编辑')
+                    }
+                })
+                if($(this).text()=='编辑'){
+                    $(this).text('完成');
+                    $('.suan').css('display','none');
+                    $('.heji').css('display','none');
+                    $('.del-all').css('display','block');
+                    $('.li-wo').css('display','none');
+                    $('.del-wo').css('display','block');
+                    $('.del-btn').css('display','none');
+                    $('.compile2').css('display','none');
+                    $('.del-wen').css('width','6.25rem');
+                   // alert( $(this).text())
+                }else{
+                	/*console.log(setcart);*/
+                    $(this).text('编辑');
+                    //提交数据
+                    carFunc().subData();
+                    $('.add-on').removeClass('add-on'); // 清除获取id是添加的类名，以便下次获取是的正确
+                    $('.suan').css('display','block');
+                    $('.heji').css('display','block');
+                    $('.del-all').css('display','none');
+                    $('.li-wo').css('display','block');
+                    $('.del-wo').css('display','none');
+                    $('.del-btn').css('display','block');
+                    $('.compile2').css('display','block');
+
+                }
+
+            });
+            $('.compile2').click(function(){ // 点击店铺 编辑
+                // alert($(this).find('b').text())
+                if($(this).find('b').text()=='编辑'){
+                    $(this).find('b').text('完成');
+                    $(this).parents('.car-list').find('.car-art').find('.li-wo').css('display','none');
+                    $(this).parents('.car-list').find('.car-art').find('.del-wo').css('display','block');
+                    $('.del-wen').css('width',' 4.84375rem')
+
+                }else{
+                	//提交数据
+                	carFunc().subData();
+                    $(this).find('b').text('编辑');
+                    $('.add-on').removeClass('add-on'); // 清除获取id是添加的类名，以便下次获取是的正确
+                    $(this).parents('.car-list').find('.car-art').find('.li-wo').css('display','block');
+                    $(this).parents('.car-list').find('.car-art').find('.del-wo').css('display','none');
+                }
+            })
+        },
+        subData:function(){
+        	//开始进行交互
+            $.ajax({
+            	url:webIp2+"Cart/AlterCart",
+            	type:"post",
+            	data:{cart:setcart},
+            	success:function(result){
+            		layer.msg(result.message,{time:2000},function(){
+            			if(result.code==200){
+            				setcart= [];
+            			}
+            		});
+            	},
+            	error:function(){
+            		layer.msg("敬请期待",{time:2000});
+            	}
+            });
+        },
+        delData:function(){
+        	$.ajax({
+        		url:webIp2+"Cart/CartDel",
+        		type:"post",
+        		data:{"token":sessionStorage.getItem('token'),"gctid":liAlt},
+        		success:function(result){
+        			layer.msg(result.message,{time:2000},function(){
+            			if(result.code==200){
+            				liAlt="";
+            				return true;
+            			}
+            		});
+        		},
+        		error:function(){
+        			layer.msg("敬请期待",{time:2000});
+        		}
+        	})
+        },
+        // 点击 删除
+        delClick:function(){
+        	 function delAlt(){
+        	     var arr = []; //  存放 alt
+        	     var str = "" //  存放 alt
+        	     $('.ll').each(function(i){
+        	         var alt =$('.ll').eq(i).find('img').attr('alt')
+        	         arr.push(alt)
+        	         str = arr.join(','); // 转化为 字符串 ，用 逗号 分开
+        	     });
+        	     liAlt	= str;
+        	     carFunc().delData();
+        	 }
+            $('.del-all').click(function(){  // 点击 全选 删除;
+            	 delAlt(); // 调用 函数 获取 alt ，而且要在执行删除操作之前执行，不然获取不到 alt
+                //店铺 被选中 的数量
+                var num = $('.ll').parents('.car-art').find('li').length;
+                if($('.ll').length == num){
+                   $('.ll').parents('.car-list').remove()
+                }else{
+                   $('.ll').parents('li').remove()
+                }
+                if($('.car-list').find('li').length ==0){
+                 $('.car-bot').css('display','none');
+                    var p =" <p class='null'>购物车没暂时没有商品，请添加!</p>";
+                    $('.car-content').html(p)
+
+                }else{
+                    $('.car-bot').css('display','block')
+                }
+
+            });
+            $('.del-btn').click(function(){  // 点击 一个个 删除
+            	liAlt = $(this).parents('li').find('.opt').find('img').attr('alt');
+            	carFunc().delData();
+                // 店铺下面的产品还剩下 1 个的时候，点击删除是，店铺标题也删除
+               if($(this).parents('.car-art').find('li').length == 1){
+                   $(this).parents('.car-list').remove()
+               }else{
+                   $(this).parents('li').remove()
+               }
+            })
+
+        },
+        // 点击 选中 更换背景图片
+        optClick:function(){
+            // 计算总价
+           function allCost(){ // 计算总价
+               var set =[]; // 空数组 用来存放 单个商品的 总价
+               var setNum =[]; // 空数组 用来存放 商品数量
+               var allCost =0; //  总价格 初始化
+               var allNum =0; //  总数量  初始化
+			   var setAlt	= [];
+			   var hh = 0;//  精确 加法运算
+               if($('.ll').length == 0){
+                   $('.heji p b').html(0);
+                   $('.suan b').html(0);
+               }else{
+                   $('.ll').each(function(i){
+                	//获取alt
+                       var alt = $('.ll').eq(i).find('img').attr('alt');
+                       setAlt.push(alt) ;
+                       //  获取单价
+                       var danjia = Number($('.ll').eq(i).parents('li').find('.money').find('b').html());
+                       //  获取数量
+                       var num = Number($('.ll').eq(i).parents('li').find('.num').find('b').html());
+                       setNum.push(num);  // 存放 商品数量
+
+                      //  精确地 乘法 计算
+                       var m=0,s1=danjia.toString(),s2=num.toString();
+                       try{m+=s1.split(".")[1].length}catch(e){}
+                       try{m+=s2.split(".")[1].length}catch(e){}
+                       var   heji = Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m);
+                       set.push(heji);
+                   });
+                   //遍历获得的商品总价格的数组，将其中的各个选中的商品的列表的价格加在一起算出来总价
+                   if(set.length >0){
+                       function accAdd(arg1,arg2){
+                           var r1,r2,m;
+                           try{r1=arg1.toString().split(".")[1].length}catch(e){r1=0}
+                           try{r2=arg2.toString().split(".")[1].length}catch(e){r2=0}
+                           m=Math.pow(10,Math.max(r1,r2))
+                            hh = (arg1*m+arg2*m)/m
+                       }
+                       for(var j=0;j < set.length;j++){
+
+                           //allCost+=set[j];
+                           accAdd(hh,set[j])
+                           
+                       }
+                       $('.heji p b').html(hh)
+                       sessionStorage.setItem("cartTotal",hh);//设置价格
+                   }
+                   //遍历获得的商品的数量，将加在一起算出来总件数
+                   if(setNum.length >0){
+                       for(var i=0;  i < set.length;i++){
+                           allNum+=setNum[i];
+                       }
+                       $('.suan b').html(allNum)
+                   }
+
+               }
+
+           }
+            //  整个页面 是否全部 中 ，否 全选对号变灰色
+            function allXuan(){
+                var length3 = $('.car-list').find('li').length;
+                if($('.ll').length == length3){
+                    $('.quan').find('img').attr('src','../images/dui2.png');
+                }else{
+                    $('.quan').find('img').attr('src','../images/dui1.png');
+                }
+            }
+            // 一个个选中
+            $('.opt').click(function(){
+                // 一个个选中
+                if( $(this).find('img').attr('src') =='../images/dui1.png' ){
+                    $(this).find('img').attr('src','../images/dui2.png');
+                    $(this).addClass('ll')
+
+                }else{
+                    $(this).find('img').attr('src','../images/dui1.png');
+                    $(this).removeClass('ll')
+                }
+                // 店铺 是否全部选择，否 店铺对号变灰色
+                var length2 = $(this).parents('.car-art').find('li').length;
+                /*console.log(length2);
+                console.log($(this).parents('.car-art').find('.ll').length);*/
+                if($(this).parents('.car-art').find('.ll').length == length2){
+                    $(this).parents('.car-list').find('.sh-opt').find('img').attr('src','../images/dui2.png')
+                }else{
+                    $(this).parents('.car-list').find('.sh-opt').find('img').attr('src','../images/dui1.png')
+                }
+                allXuan(); // 调用 是否全部选择 函数
+                allCost(); // 调用 合计函数
+
+            });
+            // 选中该店铺下面的所有
+            $('.sh-opt').click(function(){  // 选中该店铺下面的所有
+
+                if( $(this).find('img').attr('src') =='../images/dui1.png' ){
+                    $(this).find('img').attr('src','../images/dui2.png');
+                    $(this).parents('.car-list').find('.car-art').find('.opt').find('img').attr('src','../images/dui2.png')
+                    $(this).parents('.car-list').find('.car-art').find('.opt').addClass('ll')
+                }else{
+                    $(this).find('img').attr('src','../images/dui1.png');
+                    $(this).parents('.car-list').find('.car-art').find('.opt').find('img').attr('src','../images/dui1.png');
+                    $(this).parents('.car-list').find('.car-art').find('.opt').removeClass('ll')
+                }
+                allXuan(); // 调用 是否全部选择 函数
+                allCost(); // 调用 合计函数
+            });
+            // 点击全选
+            $('.quan').click(function(){ // 点击全选
+                if( $(this).find('img').attr('src') =='../images/dui1.png' ){
+                    $(this).find('img').attr('src','../images/dui2.png');
+                    $('.opt').find('img').attr('src','../images/dui2.png');
+                    $('.opt').addClass('ll');
+                    $('.sh-opt').find('img').attr('src','../images/dui2.png')
+                }else{
+                    $(this).find('img').attr('src','../images/dui1.png');
+                    $('.opt').find('img').attr('src','../images/dui1.png');
+                    $('.opt').removeClass('ll');
+                    $('.sh-opt').find('img').attr('src','../images/dui1.png')
+
+                }
+                allCost(); // 调用 合计函数
+            })
+
+        },
+        numClick:function(){
+            // 获取 点击加减 时的数量 以及 id，写成[{id:1,name:'hsh'},{id:1,name:'hsh'}] 的形式
+            function objArr(){
+            	var set	= [];
+                var json = {gctid:'', gnum:''};
+                //console.log(click_num)
+                $('.add-on').each(function(i){
+                    var num3 = parseInt( $('.add-on').eq(i).parent().find('.number').text());
+                    var id = $('.add-on').eq(i).parents('.li-box').find('.opt').find('img').attr('alt');
+                    json = {gctid:id, gnum:num3};
+                    set.push(json);
+                    //console.log(set);
+                });
+                setcart	= {ct:set};
+            }
+
+
+            $('.add').click(function(){
+
+                var num = parseInt( $(this).parent().find('.number').text());
+                num++;
+
+                $(this).parent().find('.number').text(num);
+                $(this).parents('.li-box').find('.li-wo').find('.num').find('b').text(num);
+                $(this).addClass('add-on');
+                objArr(); //  调用获取 id 以及 alt 的函数
+            });
+
+            $('.less').click(function(){
+                var num = parseInt( $(this).parent().find('.number').text());
+                num--;
+                if(num < 1){
+                    num = 1
+                }
+                $(this).parent().find('.number').text(num);
+                $(this).parents('.li-box').find('.li-wo').find('.num').find('b').text(num);
+                $(this).addClass('add-on');
+                objArr(); //  调用获取 id 以及 alt 的函数
+            })
+        },
+        suanClick:function(){
+            $('.suan').click(function(){
+                if($('.ll').length > 0){
+                    var li_alt = [];  // 存放 列表 alt
+                    var ti_alt = [];  // 存放 店铺名 alt
+
+                    $('.car-list').each(function(i){
+
+                        if($('.car-list').eq(i).find('.ll').length > 0){
+
+                            var sh = $('.car-list').eq(i).find('.car-log').find('img').attr('alt');
+                            ti_alt.push(sh);
+
+                            $('.car-list').eq(i).find('.ll').each(function(j){
+                                var ll = $('.car-list').eq(i).find('.ll').eq(j).find('img').attr('alt');
+                                li_alt.push(ll+','+ti_alt[i]);
+                            });
+                        }
+                    });
+                    sessionStorage.setItem("cartIdStr",JSON.stringify(li_alt));//购物车id字符串
+                    /*console.log(sessionStorage.getItem("cartTotal"));*/
+                    window.location.href="./confirmOrder.html?type=2";
+                    /*console.log(JSON.parse(sessionStorage.getItem("cartIdStr")));*/ //   ["图片1,1", "图片2,1", "图片4,2"]  逗号 后面的是 对应店铺的  alt
+                }
+            })
+         }
+        
+
+    }
+}
+
+
+
+
+</script>
+</html>

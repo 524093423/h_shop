@@ -1,0 +1,450 @@
+/*banner */
+.banner {
+  background-color: #fff;
+  height: 5.9375rem;
+}
+.banner img {
+  display: block;
+  height: 5.9375rem;
+  width: 100%;
+}
+/*Сͼ*/
+.picture {
+  background-color: #fff;
+  padding-top: 0.15625rem;
+  padding-bottom: 0.46875rem;
+  border-bottom: 1px solid #dadada;
+}
+.pic-list {
+  height: 4.34375rem;
+}
+.pic-list li {
+  width: 25%;
+  display: block;
+  float: left;
+  text-align: center;
+  margin: 0.3125rem 0;
+}
+.pic-list li img {
+  width: 1.328125rem;
+  height: 1.328125rem;
+  margin: auto;
+}
+.pic-list li p {
+  font-size: 0.3125rem;
+  color: #444;
+  line-height: 0.46875rem;
+}
+/*����ϲ��*/
+/*����*/
+.sh-ti {
+  height: 1.1875rem;
+  border-top: 1px solid #dadada;
+  line-height: 1.1875rem;
+}
+.sh-ti h3 img,
+.sh-ti span {
+  float: left;
+  display: block;
+}
+.sh-ti h3 img {
+  width: 0.28125rem;
+  height: 0.265625rem;
+  margin-top: 0.46875rem;
+}
+.sh-ti h3 span {
+  font-size: 0.4375rem;
+  color: #fd0000;
+  margin-left: 0.78125rem;
+  line-height: 1.1875rem;
+}
+.sh-ti h3 b {
+  float: right;
+  font-size: 0.375rem;
+  margin: 0.28125rem 0.46875rem 0;
+  display: block;
+  background-color: #fd0000;
+  padding: 0 0.3125rem;
+  line-height: 0.625rem;
+  color: #fff;
+}
+/*�б�*/
+.sh-list li {
+  float: left;
+  width: 4.921875rem;
+  position: relative;
+  margin-bottom: 0.125rem;
+}
+.sh-list li:nth-of-type(odd) {
+  margin-right: 0.15625rem;
+}
+.sh-list li img {
+  width: 4.921875rem;
+  height: 5rem;
+}
+.sh-list li p {
+  /*position: absolute;bottom: 0;left: 0;width: 100%;*/
+  display: block;
+  background-color: #fff;
+}
+/*.sh-list li p span:first-child{float: left;font-size: 22/64rem;color: #fff;margin-left: 15/64rem;
+  overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 170/64rem;display: block;}*/
+/*.sh-list li p .money{float: right;margin-right: 15/67rem;margin-left: 0;text-align: right;
+  overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 110/64rem;}*/
+.sh-list li p .money {
+  font-size: 0.3125rem;
+  color: #ff3723;
+}
+.sh-list li p .money b {
+  display: block;
+  float: left;
+  font-size: 0.375rem;
+  width: 50%;
+  box-sizing: border-box;
+}
+.sh-list li p .money i {
+  display: block;
+  float: right;
+  font-size: 0.34375rem;
+  text-align: right;
+  color: #666;
+  width: 50%;
+  box-sizing: border-box;
+}
+/*���ڸ��ĵ� ��Ʒչʾ �� �����Լ��۸�*/
+.sh-list li p {
+  padding: 0.078125rem 0;
+}
+.sh-list li p span {
+  display: block;
+  font-size: 0.34375rem;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 4.375rem;
+  margin: auto;
+}
+/*����ҳ��*/
+.se-show {
+  padding-top: 1.09375rem;
+}
+.allSe-show {
+  padding-top: 2.1875rem;
+}
+.se-store {
+  padding-top: 1.09375rem;
+  background-color: #fff;
+  height: 100%;
+}
+.search-list {
+  position: fixed;
+  left: 0;
+  top: 1.375rem;
+  z-index: 300;
+  width: 100%;
+}
+/*���� ����*/
+.sear-name {
+  height: 1.09375rem;
+  background-color: #f5f5f5;
+}
+.sear-name p {
+  float: left;
+  width: 50%;
+  font-size: 0.40625rem;
+  text-align: center;
+  line-height: 1.03125rem;
+}
+.se-on {
+  color: #ff9100;
+  border-bottom: 4px solid #ff9100;
+}
+/*�ɰ���ʽ*/
+.mask {
+  position: absolute;
+  top: 2.34375rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 100;
+}
+.search-ul {
+  position: relative;
+}
+.select {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 1.109375rem;
+  z-index: 200;
+}
+.pro-list .wu {
+  font-size: 0.5rem;
+  text-align: center;
+  height: 7.8125rem;
+  line-height: 7.8125rem;
+  color: #666666;
+}
+.search-list {
+  background-color: white;
+  border-bottom: 1px solid #dadada;
+}
+.search-ul li {
+  float: left;
+  width: 33%;
+  height: 0.78125rem;
+  line-height: 0.78125rem;
+  margin: 0.15625rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.search-ul li .search-name {
+  font-size: 0.375rem;
+  text-align: center;
+}
+.xian {
+  border-left: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+}
+.search-ul {
+  position: relative;
+  background-color: #fff;
+}
+.select {
+  overflow: auto;
+  max-height: 11.40625rem;
+  padding-bottom: 0.78125rem;
+  display: none;
+  background-color: white;
+}
+.select p {
+  text-align: left;
+  font-size: 0.375rem;
+  border-bottom: 1px solid #dadada;
+  text-indent: 0.3125rem;
+  display: block;
+  height: 1.21875rem;
+  line-height: 1.21875rem;
+}
+.search-p {
+  color: #ff9100;
+  background-color: #f5f5f5;
+}
+.select p i {
+  float: right;
+  margin-right: 0.3125rem;
+}
+.search-on {
+  background: url("../images/dui3.png") no-repeat;
+  background-size: 0.53125rem 0.40625rem;
+  display: block;
+  width: 0.53125rem;
+  height: 0.40625rem;
+  margin-top: 0.34375rem;
+}
+.search-ul li .search-name span {
+  background: url("../images/xiajiantou.png") no-repeat;
+  background-size: 0.234375rem 0.25rem;
+  width: 0.234375rem;
+  height: 0.25rem;
+  display: inline-block;
+}
+/*���� �� �̼� ҳ��*/
+.storeBox {
+  background-color: #fff;
+  padding-bottom: 0.3125rem;
+}
+.banner2 img {
+  width: 100%;
+  height: 5.46875rem;
+}
+.banner2 {
+  position: relative;
+}
+.sto-back {
+  position: absolute;
+  left: 0.3125rem;
+  top: 0;
+}
+.sto-back img {
+  width: 0.390625rem;
+  height: 1.375rem;
+}
+.sto-ti {
+  position: relative;
+  height: 1.484375rem;
+}
+.sh-pic img {
+  position: absolute;
+  width: 2.03125rem;
+  height: 2.03125rem;
+  border: 0.078125rem solid #ffffff;
+  left: 0;
+  top: -0.703125rem;
+}
+.sto-p1 {
+  margin-left: 2.34375rem;
+  float: left;
+}
+.sto-p1 span {
+  font-size: 0.46875rem;
+  color: #000;
+  display: block;
+  width: 5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.sto-p1 span:first-child {
+  font-size: 0.375rem;
+  color: #999;
+  margin-top: 0.15625rem;
+}
+.sto-p2 {
+  float: right;
+  border-left: 1px solid #dadada;
+  margin-top: 0.15625rem;
+  padding-left: 0.546875rem;
+}
+.sto-p2 span {
+  font-size: 0.28125rem;
+  color: #999;
+  display: block;
+  margin-bottom: 0.078125rem;
+}
+.sto-p2 span:first-child {
+  font-size: 0.40625rem;
+  color: #000;
+  margin-top: 0.078125rem;
+}
+.sto-wo {
+  margin-top: 0.234375rem;
+  overflow: hidden;
+}
+.sto-wo p {
+  font-size: 0.375rem;
+  color: #333;
+  display: table-cell;
+  line-height: 0.546875rem;
+}
+.sto-btn {
+  padding: 0.390625rem 0;
+}
+.sto-btn span {
+  font-size: 0.375rem;
+  float: left;
+  display: block;
+  width: 2.625rem;
+  height: 0.9375rem;
+  line-height: 0.9375rem;
+  text-align: center;
+  border: 1px solid #dadada;
+  border-radius: 0.15625rem;
+}
+.sto-btn span:first-child + span {
+  margin: 0 0.703125rem;
+}
+.sto-sou {
+  height: 1.25rem;
+}
+.sto-sou p {
+  float: left;
+  font-size: 0.40625rem;
+  color: #000;
+  line-height: 1.25rem;
+}
+.sto-inp {
+  float: left;
+  position: relative;
+  margin-left: 0.46875rem;
+  height: 0.78125rem;
+  overflow: hidden;
+  width: 6.5625rem;
+  margin-top: 0.234375rem;
+}
+.sto-inp img {
+  position: absolute;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  top: 0.171875rem;
+  left: 0.3125rem;
+}
+.sto-inp input {
+  width: 6.5625rem;
+  background-color: #fff;
+  height: 0.78125rem;
+  display: block;
+  border-radius: 0.15625rem;
+  font-size: 0.375rem;
+  border: none;
+  text-indent: 1.015625rem;
+}
+.show {
+  background-color: #fff;
+}
+.sto-name {
+  float: left;
+  font-size: 0.4375rem;
+  color: #000;
+}
+.sto-ti-btn {
+  float: right;
+  font-size: 0.375rem;
+  color: #666;
+}
+.sto-ti-btn span:nth-child(2) {
+  margin: 0 0.3125rem;
+}
+/*�̼�ҳ�� */
+.guangzhu {
+  float: left;
+  margin-left: 2.34375rem;
+}
+.kefu {
+  float: right;
+}
+.sh-num {
+  font-size: 0.40625rem;
+  color: #000;
+  margin-top: 0.15625rem;
+  margin-left: 0.15625rem;
+}
+.sh-num span:first-child {
+  margin-right: 0.46875rem;
+}
+.look {
+  font-size: 0.34375rem;
+  width: 4.78125rem;
+  height: 0.5rem;
+  text-align: center;
+  line-height: 0.5rem;
+  border: 2px solid #ff9100;
+  border-radius: 0.15625rem;
+  color: #ff9100;
+  margin-top: 0.15625rem;
+}
+.look-on {
+  background-color: #ff9100;
+  color: #fff;
+}
+.kefu {
+  border-left: 1px solid #dadada;
+  padding: 0.078125rem 0;
+  padding-left: 0.46875rem;
+  margin-top: 0.15625rem;
+}
+.kefu p {
+  font-size: 0.28125rem;
+  text-align: center;
+  line-height: 0.546875rem;
+  color: #ff9100;
+}
+.kefu img {
+  width: 0.65625rem;
+  height: 0.5625rem;
+  margin: auto;
+}

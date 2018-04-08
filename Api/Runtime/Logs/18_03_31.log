@@ -1,0 +1,438 @@
+[ 2018-03-31T09:23:01+08:00 ] 127.0.0.1 /h_shop/CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.004000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.046800s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.015600s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') ) LIMIT 1   [ RunTime:0.046800s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 54 行.
+SQL: SELECT id,user_id,title,cover,click FROM city_video WHERE INSTR(city,'北京市') LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-03-31T09:23:18+08:00 ] 127.0.0.1 /h_shop/Qiniu/getToken
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: bucket D:\phpStudy\WWW\h_shop\Api\Home\Controller\QiniuController.class.php 第 18 行.
+
+[ 2018-03-31T09:29:45+08:00 ] 127.0.0.1 /h_shop/Classifys/GetClassify
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `classify` [ RunTime:0.156009s ]
+SQL: SELECT `id`,`name`,`img` FROM `classify` WHERE ( `state` = 1 )  [ RunTime:0.021001s ]
+
+[ 2018-03-31T11:18:40+08:00 ] 127.0.0.1 /h_shop/Test/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] socket_bind():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 53 行.
+NOTIC: [2] socket_listen():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 57 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 84 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 84 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 84 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 84 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+ERR: Method Home\Controller\TestController::__call() does not exist
+
+[ 2018-03-31T11:18:58+08:00 ] 127.0.0.1 /h_shop/Test/test/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] socket_bind():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 53 行.
+NOTIC: [2] socket_listen():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 57 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 84 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 84 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 84 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 84 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 9 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.046002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM user limit 0,20 [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.014001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014001s ]
+
+[ 2018-03-31T11:20:49+08:00 ] 127.0.0.1 /h_shop/Test/client
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+NOTIC: [2] socket_bind():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 53 行.
+NOTIC: [2] socket_listen():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 57 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 85 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 85 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 85 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+NOTIC: [2] socket_close() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 85 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 64 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 71 行.
+NOTIC: [2] socket_read() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 73 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-31T12:02:06+08:00 ] 127.0.0.1 /h_shop/Test3/test/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] socket_bind():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 36 行.
+NOTIC: [2] socket_listen():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 38 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 40 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 47 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 61 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-31T12:03:29+08:00 ] 127.0.0.1 /h_shop/Test2/test
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] socket_read():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\Test2Controller.class.php 第 14 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-31T12:03:29+08:00 ] 127.0.0.1 /h_shop/Test2/test
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-31T14:40:16+08:00 ] 127.0.0.1 /h_shop/CityVideo/getVideoPath
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 18 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+
+[ 2018-03-31T14:40:45+08:00 ] 127.0.0.1 /h_shop/CityVideo/getVideoPath?token=3c7e37b54bc7ce9e7a38455b0dda8a67&video_path=127.0.0.1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.011001s ]
+SQL: INSERT INTO `city_video` (`user_id`,`click`,`video_path`,`uploadetime`,`num_commen`,`num_fabulous`,`num_collection`,`city`,`title`,`cover`) VALUES (8,0,'127.0.0.1',1522478445,0,0,0,'test','test','test') [ RunTime:0.057003s ]
+
+[ 2018-03-31T15:10:30+08:00 ] 127.0.0.1 /h_shop/CityVideo/getCoverPath?token=3c7e37b54bc7ce9e7a38455b0dda8a67&cover_path=http://ol5pwlkra.bkt.clouddn.com/20180329114257.jpg&video_id=34
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.011000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `city_video` WHERE ( `user_id` = 8 ) AND ( `id` = 34 ) LIMIT 1   [ RunTime:0.024001s ]
+SQL: UPDATE city_video SET cover = 'http://ol5pwlkra.bkt.clouddn.com/20180329114257.jpg' WHERE id = 34 AND user_id = 8; [ RunTime:0.024002s ]
+
+[ 2018-03-31T15:13:42+08:00 ] 127.0.0.1 /h_shop/CityVideo/add?token=3c7e37b54bc7ce9e7a38455b0dda8a67&ns=113.66053999999997,34.75358&video_id=34&title=%E9%83%91%E5%B7%9E%E4%BA%8C%E4%B8%83%E5%A1%94&classify=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: dingdan D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 917 行.
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.008000s ]
+SQL: UPDATE city_video SET city = '郑州市' title = '郑州二七塔' sort_id = 10 WHERE id = 34 AND user_id = 8; [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'title = '郑州二七塔' sort_id = 10 WHERE id = 34 AND user_id = 8' at line 1
+ [ SQL语句 ] : UPDATE city_video SET city = '郑州市' title = '郑州二七塔' sort_id = 10 WHERE id = 34 AND user_id = 8;
+
+[ 2018-03-31T15:14:13+08:00 ] 127.0.0.1 /h_shop/CityVideo/add?token=3c7e37b54bc7ce9e7a38455b0dda8a67&ns=113.66053999999997,34.75358&video_id=34&title=%E9%83%91%E5%B7%9E%E4%BA%8C%E4%B8%83%E5%A1%94&classify=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.007001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: dingdan D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 917 行.
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.008000s ]
+SQL: UPDATE city_video SET city = '郑州市' title = '郑州二七塔' sort_id = 10 WHERE id = 34 AND user_id = 8; [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'title = '郑州二七塔' sort_id = 10 WHERE id = 34 AND user_id = 8' at line 1
+ [ SQL语句 ] : UPDATE city_video SET city = '郑州市' title = '郑州二七塔' sort_id = 10 WHERE id = 34 AND user_id = 8;
+
+[ 2018-03-31T15:15:27+08:00 ] 127.0.0.1 /h_shop/CityVideo/add?token=3c7e37b54bc7ce9e7a38455b0dda8a67&ns=113.66053999999997,34.75358&video_id=34&title=%E9%83%91%E5%B7%9E%E4%BA%8C%E4%B8%83%E5%A1%94&classify=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: dingdan D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 917 行.
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.007000s ]
+SQL: UPDATE city_video SET city = '郑州市', title = '郑州二七塔', sort_id = 10 WHERE id = 34 AND user_id = 8; [ RunTime:0.000000s ]
+
+[ 2018-03-31T15:15:56+08:00 ] 127.0.0.1 /h_shop/CityVideo/add?token=3c7e37b54bc7ce9e7a38455b0dda8a67&ns=113.66053999999997,34.75358&video_id=34&title=%E9%83%91%E5%B7%9E%E4%BA%8C%E4%B8%83%E5%A1%94&classify=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: dingdan D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 917 行.
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.008000s ]
+SQL: UPDATE city_video SET city = '郑州市', title = '郑州二七塔', sort_id = 10 WHERE id = 34 AND user_id = 8; [ RunTime:0.000000s ]
+
+[ 2018-03-31T15:16:00+08:00 ] 127.0.0.1 /h_shop/CityVideo/add?token=3c7e37b54bc7ce9e7a38455b0dda8a67&ns=113.66053999999997,34.75358&video_id=34&title=%E9%83%91%E5%B7%9E%E4%BA%8C%E4%B8%83%E5%A1%94&classify=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: dingdan D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 917 行.
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.010000s ]
+SQL: UPDATE city_video SET city = '郑州市', title = '郑州二七塔', sort_id = 10 WHERE id = 34 AND user_id = 8; [ RunTime:0.001000s ]
+
+[ 2018-03-31T15:16:05+08:00 ] 127.0.0.1 /h_shop/CityVideo/add?token=3c7e37b54bc7ce9e7a38455b0dda8a67&ns=113.66053999999997,34.75358&video_id=34&title=%E9%83%91%E5%B7%9E%E4%BA%8C%E4%B8%83%E5%A1%94&classify=10
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: dingdan D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 917 行.
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.008000s ]
+SQL: UPDATE city_video SET city = '郑州市', title = '郑州二七塔', sort_id = 10 WHERE id = 34 AND user_id = 8; [ RunTime:0.001001s ]
+
+[ 2018-03-31T15:17:05+08:00 ] 127.0.0.1 /h_shop/CityVideo/add?token=3c7e37b54bc7ce9e7a38455b0dda8a67&ns=113.66053999999997,34.75358&video_id=34&title=%E9%83%91%E5%B7%9E%E4%BA%8C%E4%B8%83%E5%A1%94&classify=10&dingdan=2018032710110010
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.011001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.009000s ]
+SQL: UPDATE city_video SET city = '郑州市', title = '郑州二七塔', sort_id = 10 WHERE id = 34 AND user_id = 8; [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_red` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `city_video_red` WHERE ( `dingdan` = '2018032710110010' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE city_video_red SET video_id = 34 WHERE dingdan = '2018032710110010';  [ RunTime:0.001000s ]
+NOTIC: [2] mysql_num_rows() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 106 行.
+NOTIC: [2] mysql_free_result() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 77 行.
+SQL: SHOW COLUMNS FROM `city_video_redenvelopes` [ RunTime:0.008000s ]
+SQL: INSERT INTO `city_video_redenvelopes` (`video_id`,`money`) VALUES (34,'1,1,1,1,2,1,2,5,1,1') [ RunTime:0.001000s ]
+
+[ 2018-03-31T15:44:20+08:00 ] 127.0.0.1 /h_shop/CityVideo/share_add?token=3c7e37b54bc7ce9e7a38455b0dda8a67&video_id=34
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3c7e37b54bc7ce9e7a38455b0dda8a67' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video_share` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `city_video_share` WHERE ( `video_id` = 34 ) AND ( `user_id` = 8 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: INSERT INTO `city_video_share` (`video_id`,`user_id`,`create_time`) VALUES (34,8,1522482260) [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.008001s ]
+SQL: UPDATE `city_video` SET `num_share`=num_share+1 WHERE ( `id` = 34 ) [ RunTime:0.000000s ]
+
+[ 2018-03-31T15:57:20+08:00 ] 127.0.0.1 /h_shop/Users/GetUserDynamic?token=c287ba3a029043a4bca257a89e7280b5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='c287ba3a029043a4bca257a89e7280b5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `follow` [ RunTime:0.020001s ]
+SQL: SELECT * FROM `follow` WHERE ( `user_id` = 1 )  [ RunTime:0.000000s ]
+
+[ 2018-03-31T15:57:39+08:00 ] 127.0.0.1 /h_shop/Users/GetUserDynamic?token=a254436278d365687344eb74f2f25245
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `follow` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `follow` WHERE ( `user_id` = 2 )  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: str D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.008000s ]
+SQL: select * from city_video where user_id in('1','5','15','8','7','10')  ORDER BY uploadetime DESC; [ RunTime:0.016001s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_collection` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 34 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_fabulous` [ RunTime:0.028002s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 34 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 5 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 33 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 33 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 8 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 32 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 32 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 31 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 31 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 8 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 8 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 5 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 4 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 4 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 5 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 5 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 6 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 6 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 1 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 1 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-03-31T15:59:08+08:00 ] 127.0.0.1 /h_shop/CityVideo/videoFabulous_up/?token=a254436278d365687344eb74f2f25245&video_id=34
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video_fabulous` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 34 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: INSERT INTO `city_video_fabulous` (`video_id`,`user_id`,`create_time`) VALUES (34,2,1522483148) [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.007000s ]
+SQL: UPDATE `city_video` SET `num_fabulous`=num_fabulous+1 WHERE ( `id` = 34 ) [ RunTime:0.000000s ]
+
+[ 2018-03-31T15:59:12+08:00 ] 127.0.0.1 /h_shop/Users/GetUserDynamic?token=a254436278d365687344eb74f2f25245
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='a254436278d365687344eb74f2f25245' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `follow` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `follow` WHERE ( `user_id` = 2 )  [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: str D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 129 行.
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.009000s ]
+SQL: select * from city_video where user_id in('1','5','15','8','7','10')  ORDER BY uploadetime DESC; [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 8 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video_collection` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 34 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video_fabulous` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 34 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 33 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 33 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 8 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 32 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 32 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 15 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 31 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 31 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 8 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 8 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 5 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 4 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 4 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 5 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 5 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 6 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 6 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 1 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `city_video_fabulous` WHERE ( `video_id` = 1 ) AND ( `user_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-03-31T16:48:50+08:00 ] 127.0.0.1 /h_shop/Test/out
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2] socket_bind():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 36 行.
+NOTIC: [2] socket_listen():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 38 行.
+NOTIC: [2] socket_accept():  D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 40 行.
+NOTIC: [2] socket_write() expects parameter 1 to be resource, boolean given D:\phpStudy\WWW\h_shop\Api\Home\Controller\TestController.class.php 第 47 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+

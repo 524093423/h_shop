@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>我的关注</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/user.css"/>
+    <style>
+        body,html{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">我的关注</h3>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <ul class="wrap sc-list">
+        
+    </ul>
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+    <ul class="bo-list clearfix">
+        <li>
+            <a href="#">
+                <img src="../images/b1.jpg" alt=""/>
+                <p>首页</p>
+            </a>
+        </li>
+        <li class="car">
+            <a href="#">
+                <img src="../images/b6.jpg" alt=""/>
+                <p>购物车</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../images/b44.jpg" alt=""/>
+                <p class="p-on">关注</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../images/b5.jpg" alt=""/>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+  $(function(){
+     getMyFollow();//获取我的关注
+  });
+  //获取我的收藏
+  function getMyFollow(page=""){
+	  $.getJSON(webIp+"User/my_follow_store?callback=?&token="+sessionStorage.getItem('token'),function(result){
+		//加载过程中
+			var index = layer.load(3,{time:2*1000});
+			//alert(result.code);
+			var FollowList	= result.info;
+			if(result.code=="200" && !$.isEmptyObject(FollowList)){
+				layer.close(index);
+			}else{
+				layer.msg('正在努力加载..',{time:2*1000});
+				return false;
+			}
+			var FollowHtml	= "";
+			for(var i=0;i<FollowList.length;i++){
+				FollowHtml+='<li class="clearfix"><img src='+FollowList[i]['shop_logo']+' alt='+FollowList[i]['shopid']+' /><div class="cang-wo"><h3>'+FollowList[i]['shop_name']+'</h3><p>关注人数： <b>'+FollowList[i]['follow']+'</b></p></div></li>';
+			}
+			$(".sc-list").html(FollowHtml);
+			$(".sc-list li").click(function(){
+				window.location.href="./Store.html?shopid="+$(this).find("img").attr("alt");
+			});
+	  });
+  }
+</script>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>-->
+    <meta name="viewport" content="width=device-width, user-scalable=0,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/swiper.min.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+</head>
+<body>
+<!--#include file='./allPingJia.html' -->
+
+<!--content start-->
+<div class="index-cont">
+   <!--banner 开始-->
+    <div class="banner-box">
+        <!--top star-->
+        <div class="index-top">
+            <div class="wrap clearfix topWrap">
+                <div class="to-address">
+                    <img src="../images/dizhi.png" alt=""/>
+                    <p>请选择</p>
+                </div>
+                <div class="to-inp">
+                    <input type="text" placeholder="搜索商品或商家" onclick="location.href='./searchAll.html'" />
+                    <img src="../images/sou.png" alt=""/>
+                </div>
+                <div class="to-pic">
+                    <!--红色小圆点-->
+                    <div  id="isShow" class="redDot"></div>
+                    <img src="../images/logo1.png" alt=""/>
+                </div>
+            </div>
+        </div>
+        <!--top end-->
+        <div class=" swiper-container banner" id="swiper-container1">
+            <div class="swiper-wrapper clearfix" id="bannerlist">
+               <!-- <div class="swiper-slide "><img src=http://www.heigushop.com/Uploads/carousel/2017-07-10/5962f8df7ddb8.jpg alt="" /></div>
+                <div class="swiper-slide "><img src=http://www.heigushop.com/Uploads/carousel/2017-07-10/5962f8b0765e0.jpg alt="" /></div>
+                <div class="swiper-slide "><img src=http://www.heigushop.com/Uploads/carousel/2017-07-07/595f35a2de012.jpg alt="" /></div>-->
+            </div>
+            <!--<div class="swiper-pagination"></div>-->
+        </div>
+    </div>
+   <!--banner 结束-->
+    <!--小图 开始-->
+    <div class="picture swiper-container" id="swiper-container2">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <ul class="clearfix pic-list">
+                    <!--<li><img src=http://www.heigushop.com/Uploads/goods/thumb/2017-05-23/592397c491850.png alt=1 /><p>电线电缆</p></li>
+                    <li><img src=http://www.heigushop.com/Uploads/goods/thumb/2017-05-23/592397d09bb29.png alt=2 /><p>电料电器</p></li>
+                    <li><img src=http://www.heigushop.com/Uploads/goods/thumb/2017-05-23/592397de72a18.png alt=3 /><p>五金工具</p></li>
+                    <li><img src=http://www.heigushop.com/Uploads/goods/thumb/2017-08-18/5996369b236f9.png alt=4 /><p>五金机电</p></li>
+                    <li><img src=http://www.heigushop.com/Uploads/goods/thumb/2017-05-23/59239809700eb.png alt=5 /><p>水暖洁具</p></li>
+                    <li><img src=http://www.heigushop.com/Uploads/goods/thumb/2017-05-23/59239816ce7b9.png alt=6 /><p>劳保日杂</p></li>
+                    <li><img src=http://www.heigushop.com/Uploads/goods/thumb/2017-05-23/5923974d2bc12.png alt=7 /><p>开关灯饰</p></li>
+                    <li><img src=http://www.heigushop.com/Uploads/goods/thumb/2017-05-23/59239839d0313.png alt=8 /><p>其他</p></li>-->
+                </ul>
+            </div>
+            <!--<div class="swiper-slide">
+                <ul class="clearfix pic-list">
+                    
+                </ul>
+            </div>-->
+        </div>
+        <!-- Add Pagination -->
+    </div>
+    <!--小图 结束-->
+    <!--猜你喜欢 开始-->
+    <div class="show">
+       <div class="sh-ti">
+           <h3 class="clearfix online">
+               <span>热门商品</span>
+               <b>在线人数：<i>0</i>人</b>
+           </h3>
+           <!--列表-->
+       </div>
+       <div class="ul-box ssse-show">
+        <ul class="clearfix sh-list">
+            
+        </ul>
+        </div>
+    </div>
+    <!--猜你喜欢 结束-->
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+    <ul class="bo-list clearfix">
+        <li>
+            <a href="#">
+                <img src="../images/b11.jpg" alt=""/>
+                <p class="p-on">首页</p>
+            </a>
+        </li>
+        <li class="car">
+            <a href="#">
+                <img src="../images/b6.jpg" alt=""/>
+                <p>购物车</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../images/b4.jpg" alt=""/>
+                <p>关注</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../images/b5.jpg" alt=""/>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/classify.js?a=123"></script>
+<script src="../js/goods.js?a=123456"></script>
+<script src="../js/dropload.js"></script>
+<!--  <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101405623" data-callback="true"></script>-->
+<script src="http://api.map.baidu.com/api?v=2.0&ak=1jtvvshwlALgPCCRN43N2r6P"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript">
+  $(function(){
+      var return_url    = sessionStorage.getItem("return_url");
+      console.log(return_url);
+      if(return_url !=null && return_url !="null"){
+        window.location.href=return_url;
+      }
+      $(".to-address").click(function(){
+          window.location.href="./Gps.html?a="+Math.floor(Math.random() * 10);
+      });
+      sessionStorages();
+      //微信定位
+      var rand = "";
+      for(var i = 0; i < 3; i++){
+          var r = Math.floor(Math.random() * 10);
+          rand += r;
+      }
+      $.getJSON("../WxLocation/jsapi.php?id="+rand,function(result){
+          wx.config({
+              debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+              appId: result.appid, // 必填，公众号的唯一标识
+              timestamp: result.timestamp, // 必填，生成签名的时间戳
+              nonceStr: result.noncestr, // 必填，生成签名的随机串
+              signature: result.signature,// 必填，签名，见附录1
+              jsApiList: ["getLocation"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+          });
+      })
+      wx.ready(function(){
+          wx.getLocation({
+                  type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+                  success: function (res) {
+                      var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+                      var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+                      var speed = res.speed; // 速度，以米/每秒计
+                      var accuracy = res.accuracy; // 位置精度
+                      var point = new BMap.Point(longitude,latitude);
+                      var geoc = new BMap.Geocoder();
+                      geoc.getLocation(point, function(rs){
+                          var addComp = rs.addressComponents;
+                          if(sessionStorage.getItem("isset")!=1){
+                              $(".to-address").find("p").text(addComp.city);
+                              sessionStorage.setItem("city",addComp.city);
+                          }else{
+                              $(".to-address").find("p").text(sessionStorage.getItem("city"));
+                          }
+                      });
+                  }
+              });
+          /*wx.openAddress({
+              success: function (res) {
+                  var userName = res.userName; // 收货人姓名
+                  var postalCode = res.postalCode; // 邮编
+                  var provinceName = res.provinceName; // 国标收货地址第一级地址（省）
+                  var cityName = res.cityName; // 国标收货地址第二级地址（市）
+                  var countryName = res.countryName; // 国标收货地址第三级地址（国家）
+                  var detailInfo = res.detailInfo; // 详细收货地址信息
+                  var nationalCode = res.nationalCode; // 收货地址国家码
+                  var telNumber = res.telNumber; // 收货人手机号码
+                  $.ajax({
+                      url:webIp2+"Address/NewlyAdded",
+                      type:"post",
+                      data:{"token":sessionStorage.getItem('token'),"cphe":telNumber,"cname":userName,"caddress":provinceName+cityName,"remarks":detailInfo,"flag":1},
+                      success:function(result){
+                          //layer.msg("同步成功",{time:1000});
+                      },
+                      error:function(){
+                          layer.msg("系统错误",{time:1000});
+                      }
+                  });
+              }
+          });*/
+      })
+      getHomeGoods("","","","","","","",2,2);
+      // 获取当前城市
+      var state	= sessionStorage.getItem("city");
+     /* //轮播
+      var swiper2 = new Swiper('#swiper-container1', {
+          autoplay: 1500, //自动切换的时间间隔
+          pagination : '.swiper-pagination',
+          speed:1000, //滑动速度，即slider自动滑动开始到结束的时间
+          loop:true,
+          autoplayDisableOnInteraction:false
+      });*/
+      //分类跳转
+      /*$(".pic-list").find("li").click(function(){
+          window.location.href="./search.html?classid="+$(this).find("img").attr("alt");
+      });*/
+      if(state == "" || state ==null){
+          sessionStorage.setItem("city","全国")
+          $(".to-address").find("p").text("定位中");
+          getCarsole()
+      }else{
+          $(".to-address").find("p").text(sessionStorage.getItem("city"));
+          getCarsole();
+      }
+      getUserIsNewMsg();
+      getHomeClassify();
+      var swiper = new Swiper('#swiper-container2', {
+          pagination: '.swiper-pagination',
+          paginationClickable: true
+      });
+      $(".to-pic").click(function(){
+          window.location.href="./news.html";
+      });
+   	 	//getHomeGoods();//商品
+
+      /*//获取本地存储的数据
+      //保存 已经加载的数据
+      var storage_html = $('.index-cont').html();
+      sessionStorage.setItem("list_id", storage_html);
+
+      var value = sessionStorage.getItem("list_id");
+      if(value !== null && value !== undefined && value !== ''){
+          //alert(111)
+          setTimeout(function(){
+              var h = sessionStorage.getItem('scroll_top')
+              //alert(typeof  parseInt(sessionStorage.getItem('scroll_top')))
+              $(document).scrollTop(h);
+          },500)
+      }*/
+
+//      if(sessionStorage.getItem('scroll_top')){
+//          setTimeout(function(){
+//              var h = sessionStorage.getItem('scroll_top')
+//              //alert(typeof  parseInt(sessionStorage.getItem('scroll_top')))
+//              $(document).scrollTop(h);
+//          },500)
+//
+//      }
+
+    })
+  //判断用户时候存在未读新消息
+  function getUserIsNewMsg(){
+      var userTokenMsg  = sessionStorage.getItem("token");
+      if(userTokenMsg=="" || userTokenMsg==null || userTokenMsg=="undefined"){
+            return false;
+      }
+      $.getJSON(webIp+"Message/IsNewMessage?callback=?&token="+userTokenMsg,function(result){
+            if(result.code==200){
+                var info    = result.info;
+                if(info.isnew==1){
+                    $(".redDot").css("display","block");
+                }
+                $(".online").find("i").text(info.online);
+            }
+          return true;
+      })
+  }
+    function getCarsole(){
+    	$.getJSON(webIp+"Api/GetCarousel?callback=?&city="+sessionStorage.getItem("city"),function(result){
+   	 		var bannerList	= result.info;
+	   	 	var index = layer.load(3);
+			if(result.code=="200" && !$.isEmptyObject(bannerList)){
+				layer.close(index);
+			}else{
+				layer.msg('敬请期待');
+				layer.close(index);
+				return false;
+			}
+			var banHtml	= "";
+			for(var i=0;i<bannerList.length;i++){
+                if(bannerList[i]['url'] !=""){
+                    banHtml	+= "<div class=\"swiper-slide urls\"  ><a href="+bannerList[i]['url']+" target='_blank'><img src="+bannerList[i]['img']+" alt=\"\" /></a></div>";
+                }else{
+                    banHtml	+= "<div class=\"swiper-slide urls\"  data-url="+bannerList[i]['url']+"><img src="+bannerList[i]['img']+" alt=\"\" /></div>";
+                }
+			}
+			$("#bannerlist").html(banHtml);
+            //加入跳转事件
+            /*$(".urls").click(function(){
+                var url = $(this).attr("data-url");
+                if(url!=0){
+                    window.location.href=url;
+                }
+            });*/
+			var swiper2 = new Swiper('#swiper-container1', {
+	            autoplay: 2000, //自动切换的时间间隔
+	            pagination : '.swiper-pagination',
+	            speed:1000, //滑动速度，即slider自动滑动开始到结束的时间
+	            loop:true,
+	            autoplayDisableOnInteraction:false
+	        });
+   	 	});
+        }
+  // 滚动高度 本地保存
+  function sessionStorages(){
+      // 保存本地存储滚动的高度
+      $(window).scroll(function() {
+          sessionStorage.setItem('scroll_top3',$(window).scrollTop());
+          //alert(  parseInt(sessionStorage.getItem('scroll_top')));
+      });
+
+      //获取本地存储的数据
+      //保存 已经加载的数据
+      var storage_html3 = $('.ssse-show').html();
+      sessionStorage.setItem("list_id", storage_html3);
+
+      var value3 = sessionStorage.getItem("list_id");
+      if(value3 !== null && value3 !== undefined && value3 !== ''){
+          // alert(111)
+          setTimeout(function(){
+              var h3 = sessionStorage.getItem('scroll_top3')
+              //alert(typeof  parseInt(sessionStorage.getItem('scroll_top')))
+              $(document).scrollTop(h3);
+          },300)
+      }
+  }
+</script>
+
+</html>

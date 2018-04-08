@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <title>定位</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/addres.css"/>
+    <style>
+        .content{margin-bottom: 0;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">定位</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <!--当前-->
+    <div class="now">
+        <span>当前：</span>
+        <span class="nowGps">请选择</span>
+    </div>
+    <!--热门-->
+    <div class="hot ">
+        <h3>热门城市</h3>
+        <ul class="clearfix wrap">
+            <li><p>全国</p></li>
+            <li><p>郑州市</p></li>
+            <li><p>北京市</p></li>
+            <li><p>广州市</p></li>
+            <li><p>深圳市</p></li>
+            <li><p>武汉市</p></li>
+            <li><p>天津市</p></li>
+            <li><p>西安市</p></li>
+            <li><p>南京市</p></li>
+            <li><p>杭州市</p></li>
+            <li><p>成都市</p></li>
+            <li><p>重庆市</p></li>
+        </ul>
+    </div>
+    <!--首字母分类-->
+    <div class="initial">
+        <h3>A</h3>
+        <ul class="wrap">
+            <li><p>鞍山市</p></li>
+            <li><p>安庆市</p></li>
+            <li><p>安阳市</p></li>
+            <li><p>安康市</p></li>
+            <li><p>安顺市</p></li>
+            <li><p>澳门特别行政区</p></li>
+        </ul>
+        <h3>B</h3>
+        <ul class="wrap">
+            <li><p>北京市</p></li>
+            <li><p>白城市</p></li>
+            <li><p>包头市</p></li>
+            <li><p>保定市</p></li>
+            <li><p>本溪市</p></li>
+            <li><p>白山市</p></li>
+            <li><p>亳州市</p></li>
+            <li><p>蚌埠市</p></li>
+            <li><p>滨州市</p></li>
+            <li><p>白银市</p></li>
+            <li><p>宝鸡市</p></li>
+            <li><p>保山市</p></li>
+            <li><p>百色市</p></li>
+            <li><p>北海市</p></li>
+            <li><p>巴中市</p></li>
+        </ul>
+        <h3>C</h3>
+        <ul class="wrap">
+            <li><p>长治市</p></li>
+            <li><p>沧州市</p></li>
+            <li><p>常州市</p></li>
+            <li><p>慈溪市</p></li>
+            <li><p>常熟市</p></li>
+            <li><p>承德市</p></li>
+            <li><p>赤峰市</p></li>
+            <li><p>长春市</p></li>
+            <li><p>郴州市</p></li>
+            <li><p>长沙市</p></li>
+            <li><p>滁州市</p></li>
+            <li><p>常德市</p></li>
+            <li><p>巢湖市</p></li>
+            <li><p>池州市</p></li>
+            <li><p>澄迈县</p></li>
+            <li><p>崇左市</p></li>
+            <li><p>潮州市</p></li>
+            <li><p>重庆市</p></li>
+            <li><p>成都市</p></li>
+        </ul>
+        <h3>D</h3>
+        <ul class="wrap">
+            <li><p>大同市</p></li>
+            <li><p>大庆市</p></li>
+            <li><p>丹阳市</p></li>
+            <li><p>大连市</p></li>
+            <li><p>丹东市</p></li>
+            <li><p>东营市</p></li>
+            <li><p>德州市</p></li>
+            <li><p>达州市</p></li>
+            <li><p>儋州市</p></li>
+            <li><p>定安县</p></li>
+            <li><p>德阳市</p></li>
+            <li> <p>东方市</p></li>
+            <li><p>东莞市</p></li>
+            <li><p>定西市</p></li>
+        </ul>
+        <h3>E</h3>
+        <ul class="wrap">
+            <li><p >鄂尔多斯市</p></li>
+            <li><p >鄂州市</p></li>
+        </ul>
+        <h3>F</h3>
+        <ul class="wrap">
+            <li><p >阜新市</p></li>
+            <li><p >抚顺市</p></li>
+            <li><p >福清市</p></li>
+            <li><p >阜阳市</p></li>
+            <li><p >肥城市</p></li>
+            <li><p >抚州市</p></li>
+            <li><p >福州市</p></li>
+            <li><p >佛山市</p></li>
+            <li><p >防城港市</p></li>
+        </ul>
+        <h3>G</h3>
+        <ul class="wrap">
+            <li><p >广州市</p></li>
+            <li><p >赣州市</p></li>
+            <li><p >广元市</p></li>
+            <li><p >广安市</p></li>
+            <li><p >桂林市</p></li>
+            <li><p >贵港市</p></li>
+            <li><p >贵阳市</p></li>
+            <li><p >固原市</p></li>
+        </ul>
+        <h3>H</h3>
+        <ul class="wrap">
+            <li><p >黑河市</p></li>
+            <li><p >葫芦岛市</p></li>
+            <li><p >海宁市</p></li>
+            <li><p >淮安市</p></li>
+            <li><p >衡水市</p></li>
+            <li><p  >呼和浩特市</p></li>
+            <li><p >湖州市</p></li>
+            <li><p >鹤岗市</p></li>
+            <li><p >呼伦贝尔市</p></li>
+            <li><p >哈尔滨市</p></li>
+            <li><p >邯郸市</p></li>
+            <li><p >杭州市</p></li>
+            <li><p >鹤壁市</p></li>
+            <li><p >菏泽市</p></li>
+            <li><p >黄石市</p></li>
+            <li><p >怀化市</p></li>
+            <li><p >淮北市</p></li>
+            <li><p >黄冈市</p></li>
+            <li><p >衡阳市</p></li>
+            <li><p >合肥市</p></li>
+            <li><p >淮南市</p></li>
+            <li><p >黄山市</p></li>
+            <li><p >河池市</p></li>
+            <li><p >海口市</p></li>
+            <li><p >河源市</p></li>
+            <li><p >惠州市</p></li>
+            <li><p >汉中市</p></li>
+            <li><p >贺州市</p></li>
+            <li><p >海东市</p></li>
+        </ul>
+        <h3>J</h3>
+        <ul class="wrap">
+            <li><p >锦州市</p></li>
+            <li><p >金华市</p></li>
+            <li><p >晋中市</p></li>
+            <li><p >江阴市</p></li>
+            <li><p >吉林市</p></li>
+            <li><p >佳木斯市</p></li>
+            <li><p >鸡西市</p></li>
+            <li><p >嘉兴市</p></li>
+            <li><p >晋城市</p></li>
+            <li><p >晋江市</p></li>
+            <li><p >即墨市</p></li>
+            <li><p >吉安市</p></li>
+            <li><p >济南市</p></li>
+            <li><p >荆门市</p></li>
+            <li><p >焦作市</p></li>
+            <li><p >济宁市</p></li>
+            <li><p >济源市</p></li>
+            <li><p >荆州市</p></li>
+            <li><p >九江市</p></li>
+            <li><p >景德镇市</p></li>
+            <li><p >揭阳市</p></li>
+            <li><p >金昌市</p></li>
+            <li><p >江门市</p></li>
+            <li><p >嘉峪关市</p></li>
+            <li><p >酒泉市</p></li>
+        </ul>
+        <h3>K</h3>
+        <ul class="wrap">
+            <li><p >开封市</p></li>
+            <li><p >昆山市</p></li>
+            <li><p >昆明市</p></li>
+            <li><p >克拉玛依市</p></li>
+        </ul>
+
+        <h3>L</h3>
+        <ul class="wrap">
+            <li><p >廊坊市</p></li>
+            <li><p >临汾市</p></li>
+            <li><p >辽阳市</p></li>
+            <li><p >辽源市</p></li>
+            <li><p >吕梁市</p></li>
+            <li><p >连云港市</p></li>
+            <li><p >莱芜市</p></li>
+            <li><p >漯河市</p></li>
+            <li><p >丽水市</p></li>
+            <li><p >六安市</p></li>
+            <li><p >娄底市</p></li>
+            <li><p >龙岩市</p></li>
+            <li><p >龙口市</p></li>
+            <li><p >临沂市</p></li>
+            <li><p >洛阳市</p></li>
+            <li><p >聊城市</p></li>
+            <li><p >丽江市</p></li>
+            <li><p >来宾市</p></li>
+            <li><p >泸州市</p></li>
+            <li><p >临沧市</p></li>
+            <li><p >乐山市</p></li>
+            <li><p >兰州市</p></li>
+            <li><p >柳州市</p></li>
+            <li><p >拉萨市</p></li>
+            <li><p >六盘水市</p></li>
+            <li><p >陇南市</p></li>
+        </ul>
+        <h3>M</h3>
+        <ul class="wrap">
+            <li><p >牡丹江市</p></li>
+            <li><p >马鞍山市</p></li>
+            <li><p >绵阳市</p></li>
+            <li><p >眉山市</p></li>
+            <li><p >茂名市</p></li>
+            <li><p >梅州市</p></li>
+        </ul>
+        <h3>N</h3>
+        <ul class="wrap">
+            <li><p >南京市</p></li>
+            <li><p >宁波市</p></li>
+            <li><p >南通市</p></li>
+            <li><p >南昌市</p></li>
+            <li><p >南昌市</p></li>
+            <li><p >南平市</p></li>
+            <li><p >宁德市</p></li>
+            <li><p >南安市</p></li>
+            <li><p >那曲地区</p></li>
+            <li><p >南宁市</p></li>
+            <li><p >南充市</p></li>
+            <li><p >内江市</p></li>
+        </ul>
+        <h3>P</h3>
+        <ul class="wrap">
+            <li><p >盘锦市</p></li>
+            <li><p >萍乡市</p></li>
+            <li><p >平顶山市</p></li>
+            <li><p >濮阳市</p></li>
+            <li><p >莆田市</p></li>
+            <li><p >攀枝花市</p></li>
+            <li><p >普洱市</p></li>
+            <li><p >平凉市</p></li>
+        </ul>
+        <h3>Q</h3>
+        <ul class="wrap">
+            <li><p >秦皇岛市</p></li>
+            <li><p >齐齐哈尔市</p></li>
+            <li><p >七台河市</p></li>
+            <li><p >泉州市</p></li>
+            <li><p >潜江市</p></li>
+            <li><p >青岛市</p></li>
+            <li><p >衢州市</p></li>
+            <li><p >清远市</p></li>
+            <li><p >钦州市</p></li>
+            <li><p >曲靖市</p></li>
+            <li><p >庆阳市</p></li>
+            <li><p >琼海市</p></li>
+        </ul>
+        <h3>R</h3>
+        <ul class="wrap">
+            <li><p >如皋市</p></li>
+            <li><p >荣成市</p></li>
+            <li><p >日照市</p></li>
+            <li><p >日喀则市</p></li>
+        </ul>
+        <h3>S</h3>
+        <ul class="wrap">
+            <li><p >四平市</p></li>
+            <li><p >绥化市</p></li>
+            <li><p >松原市</p></li>
+            <li><p >苏州市</p></li>
+            <li><p >上海市</p></li>
+            <li><p >宿迁市</p></li>
+            <li><p >绍兴市</p></li>
+            <li><p >朔州市</p></li>
+            <li><p >双鸭山市</p></li>
+            <li><p >沈阳市</p></li>
+            <li><p >上虞市</p></li>
+            <li><p >石家庄市</p></li>
+            <li><p >汕头市</p></li>
+            <li><p >三明市</p></li>
+            <li><p >神农架林区</p></li>
+            <li><p >上饶市</p></li>
+            <li><p >商丘市</p></li>
+            <li><p >随州市</p></li>
+            <li><p >宿州市</p></li>
+            <li><p >三门峡市</p></li>
+            <li><p >十堰市</p></li>
+            <li><p >深圳市</p></li>
+            <li><p >邵阳市</p></li>
+            <li><p >韶关市</p></li>
+            <li><p >遂宁市</p></li>
+            <li><p >商洛市</p></li>
+            <li><p >山南地区</p></li>
+            <li><p >三亚市</p></li>
+            <li><p >石嘴山市</p></li>
+            <li><p >石河子市</p></li>
+        </ul>
+        <h3>T</h3>
+        <ul class="wrap">
+            <li><p >太原市</p></li>
+            <li><p >铁岭市</p></li>
+            <li><p >通化市</p></li>
+            <li><p >唐山市</p></li>
+            <li><p >太仓市</p></li>
+            <li><p >天津市</p></li>
+            <li><p >泰州市</p></li>
+            <li><p >通辽市</p></li>
+            <li><p >台州市</p></li>
+            <li><p >泰安市</p></li>
+            <li><p >天门市</p></li>
+            <li><p >铜陵市</p></li>
+            <li><p >铜仁市</p></li>
+            <li><p >屯昌县</p></li>
+            <li><p >铜川市</p></li>
+            <li><p >天水市</p></li>
+            <li><p >图木舒克市</p></li>
+            <li><p >台湾</p></li>
+        </ul>
+        <h3>W</h3>
+        <ul class="wrap">
+            <li><p >温州市</p></li>
+            <li><p >无锡市</p></li>
+            <li><p >乌兰察布市</p></li>
+            <li><p >乌海市</p></li>
+            <li><p >芜湖市</p></li>
+            <li><p >武汉市</p></li>
+            <li><p >潍坊市</p></li>
+            <li><p >威海市</p></li>
+            <li><p >万宁市</p></li>
+            <li><p >渭南市</p></li>
+            <li><p >文昌市</p></li>
+            <li><p >五指山市</p></li>
+            <li><p >武威市</p></li>
+            <li><p >梧州市</p></li>
+            <li><p >五家渠市</p></li>
+            <li><p >吴忠市</p></li>
+            <li><p >乌鲁木齐市</p></li>
+        </ul>
+        <h3>X</h3>
+        <ul class="wrap">
+            <li><p >忻州市</p></li>
+            <li><p >邢台市</p></li>
+            <li><p >徐州市</p></li>
+            <li><p >新乡市</p></li>
+            <li><p >襄阳市</p></li>
+            <li><p >新余市</p></li>
+            <li><p >信阳市</p></li>
+            <li><p >仙桃市</p></li>
+            <li><p >许昌市</p></li>
+            <li><p >湘潭市</p></li>
+            <li><p >厦门市</p></li>
+            <li><p >宣城市</p></li>
+            <li><p >孝感市</p></li>
+            <li><p >咸宁市</p></li>
+            <li><p >西安市</p></li>
+            <li><p >咸阳市</p></li>
+            <li><p >西宁市</p></li>
+            <li><p >香港特别行政区</p></li>
+        </ul>
+        <h3>Y</h3>
+        <ul class="wrap">
+            <li><p >宜兴市</p></li>
+            <li><p >扬州市</p></li>
+            <li><p >运城市</p></li>
+            <li><p >盐城市</p></li>
+            <li><p >阳泉市</p></li>
+            <li><p >余姚市</p></li>
+            <li><p >伊春市</p></li>
+            <li><p >营口市</p></li>
+            <li><p >烟台市</p></li>
+            <li><p >宜昌市</p></li>
+            <li><p >岳阳市</p></li>
+            <li><p >宜春市</p></li>
+            <li><p >益阳市</p></li>
+            <li><p >义乌市</p></li>
+            <li><p >鹰潭市</p></li>
+            <li><p >永州市</p></li>
+            <li><p >玉林市</p></li>
+            <li><p >雅安市</p></li>
+            <li><p >玉溪市</p></li>
+            <li><p >阳江市</p></li>
+            <li><p >榆林市</p></li>
+            <li><p >宜宾市</p></li>
+            <li><p >云浮市</p></li>
+            <li><p >延安市</p></li>
+            <li><p >银川市</p></li>
+        </ul>
+        <h3>Z</h3>
+        <ul class="wrap">
+            <li><p >张家口市</p></li>
+            <li><p >诸暨市</p></li>
+            <li><p >镇江市</p></li>
+            <li><p >张家港市</p></li>
+            <li><p >朝阳市</p></li>
+            <li><p >张家界市</p></li>
+            <li><p >郑州市</p></li>
+            <li><p >枣庄市</p></li>
+            <li><p >舟山市</p></li>
+            <li><p >增城市</p></li>
+            <li><p >珠海市</p></li>
+            <li><p >周口市</p></li>
+            <li><p >淄博市</p></li>
+            <li><p >株洲市</p></li>
+            <li><p >漳州市</p></li>
+            <li><p >驻马店市</p></li>
+            <li><p >湛江市</p></li>
+            <li><p >遵义市</p></li>
+            <li><p >自贡市</p></li>
+            <li><p >昭通市</p></li>
+            <li><p >肇庆市</p></li>
+            <li><p >中山市</p></li>
+            <li><p >张掖市</p></li>
+            <li><p >资阳市</p></li>
+            <li><p >中卫市</p></li>
+        </ul>
+
+    </div>
+
+</div>
+<!--content end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/webconfig.js?a=321"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i  [^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    $(function(){
+    	$(".nowGps").text(sessionStorage.getItem('city'));
+    	$(".back").click(function(){
+  			  //var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+  			  //parent.layer.close(index);  // 关闭layer
+            window.location.href="./index.html";
+  	 	});
+    	$(".wrap li").click(function(){
+    		console.log($(this).find("p").text());
+    		sessionStorage.setItem("city",$(this).find("p").text());
+            sessionStorage.setItem("isset","1");
+            window.location.href="./index.html";
+    		/*var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+			  parent.layer.close(index);  // 关闭layer*/
+    	});
+    });
+
+
+
+</script>
+</html>

@@ -1,0 +1,150 @@
+/*��¼ ҳ��*/
+.lo-box {
+  padding-top: 0.78125rem;
+}
+.log-inp {
+  border: 1px solid #c9c9c9;
+  border-radius: 0.15625rem;
+}
+.log-inp div {
+  height: 1.71875rem;
+  overflow: hidden;
+}
+.lo-num {
+  border-bottom: 1px solid #c9c9c9;
+}
+.lo-num img,
+.lo-pas img {
+  float: left;
+  width: 0.609375rem;
+  height: 0.609375rem;
+  margin-top: 0.546875rem;
+  margin-left: 0.3125rem;
+}
+.lo-num input,
+.lo-pas input {
+  display: block;
+  float: left;
+  font-size: 0.4375rem;
+  background-color: transparent;
+  border: none;
+  width: 6.09375rem;
+  line-height: 1.71875rem;
+  margin-left: 0.3125rem;
+}
+.log-btn p {
+  line-height: 1.25rem;
+  background-color: #f98d06;
+  font-size: 0.5625rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 0.546875rem;
+  border-radius: 0.15625rem;
+}
+.mind-pas {
+  margin-top: 0.390625rem;
+}
+.lo-ma1 {
+  float: left;
+}
+.lo-ma2 {
+  float: right;
+}
+.lo-ma1 img {
+  float: left;
+  width: 0.4375rem;
+  height: 0.4375rem;
+  margin-right: 0.15625rem;
+}
+.lo-ma1 span,
+.lo-ma2 span {
+  font-size: 0.375rem;
+  display: block;
+  float: left;
+  line-height: 0.4375rem;
+  color: #969696;
+}
+.lo-ma2 span {
+  margin-left: 0.15625rem;
+}
+.san-wo {
+  width: 7.8125rem;
+  margin: auto;
+  margin-top: 1.09375rem;
+  margin-bottom: 0.46875rem;
+}
+.san-wo b,
+.san-wo span {
+  float: left;
+}
+.san-wo .b2 {
+  float: right;
+}
+.san-wo span {
+  font-size: 0.28125rem;
+  color: #999;
+  line-height: 0.46875rem;
+  width: 4.375rem;
+  text-align: center;
+}
+.san-wo b {
+  display: block;
+  width: 110px;
+  border-bottom: 1px solid #c9c9c9;
+  margin-top: 0.234375rem;
+}
+.san-pic img {
+  width: 0.65625rem;
+  height: 0.625rem;
+  float: right;
+}
+.san-pic img:first-child {
+  float: left;
+}
+.san-pic {
+  width: 2.03125rem;
+  margin: auto;
+}
+/*ע�� ҳ��*/
+.re-num img {
+  width: 0.5rem;
+  height: 0.640625rem;
+}
+.re-num {
+  position: relative;
+}
+.re-code {
+  position: absolute;
+  display: block;
+  width: 1.796875rem;
+  height: 0.859375rem;
+  background-color: #ff9100;
+  color: #fff;
+  font-size: 0.40625rem;
+  text-align: center;
+  line-height: 0.859375rem;
+  top: 0.421875rem;
+  right: 0.3125rem;
+  border-radius: 0.15625rem;
+}
+.lo-ma1 span b {
+  color: #ff9100;
+}
+/*�޸ĵ�¼����*/
+.alp-ma {
+  margin-top: 0.46875rem;
+}
+.alp-ma span {
+  float: right;
+  font-size: 0.375rem;
+  color: #f98d06;
+}
+.alp-btn p {
+  background-color: #d1d1d1;
+  line-height: 1.25rem;
+  font-size: 0.5625rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 0.546875rem;
+  border-radius: 0.15625rem;
+}

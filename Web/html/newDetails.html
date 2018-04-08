@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>消息内容</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/news.css"/>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">系统消息</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <div class="newBox wrap">
+        <!--日期 划分 结束-->
+    </div>
+</div>
+<!--content end-->
+<!--bottom  star-->
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    var state = 1;
+    var titles= "";
+    $(function(){
+    	var type	= getUrlParam("type");
+    	if(type==1){
+    		titles	= "系统消息";
+    	}else{
+    		state   = 2;
+    		titles  = "站内信";
+    	}
+    	getMessageList(state);
+    	$(".to-ti").text(titles);
+    	$(".back").click(function(){
+			window.location.href="./news.html";
+  		  /*var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+  		  	parent.layer.close(index);  // 关闭layer*/
+  	  });
+    });
+    var getMessageList = function(status){
+    	$.getJSON(webIp+"Message/message_list?callback=?&token="+sessionStorage.getItem("token")+"&type="+status,function(result){
+    		if(result.code==204){
+    			layer.msg("请重新登录",{time:1000});
+    		}else{
+    			var msgList	= result.info;
+    			if($.isEmptyObject(msgList)){
+    				return false;
+    			}else{
+    				var html = "";
+    				for(var i=0;i<msgList.length;i++){
+    					html+='<div class="dateNew">';
+    					html+='<h3>'+msgList[i]['create_time']+'</h3>';
+    					html+='<ul><li>';
+    					html+='<h4>'+msgList[i]['title']+'</h4>';
+    					html+='<p>'+msgList[i]['message']+'</p>';
+    					html+='</li></ul></div>';
+    				}
+    				$(".newBox").html(html);
+    			}
+    		}
+    	});
+    }
+</script>
+</html>

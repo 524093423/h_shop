@@ -1,0 +1,66 @@
+/*������Ϣ ����ҳ���ĵ�����Ϣ һ����*/
+.new1 {
+  border-top: 1px solid #dadada;
+}
+.new1 li {
+  border-bottom: 1px solid #dadada;
+  height: 1.875rem;
+}
+.ne-pic,
+.ne-wo {
+  float: left;
+}
+.ne-pic img {
+  width: 1.34375rem;
+  height: 1.34375rem;
+  margin-top: 0.265625rem;
+}
+.ne-wo {
+  margin-left: 0.390625rem;
+  line-height: 0.671875rem;
+  margin-top: 0.265625rem;
+  width: 7.5rem;
+}
+.ne-wo h3 {
+  font-size: 0.4375rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ne-wo h4 {
+  font-size: 0.375rem;
+  color: #666;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*��֮ͬ��*/
+.se-store {
+  display: none;
+}
+.ne-jian {
+  float: right;
+}
+.ne-jian img {
+  width: 0.234375rem;
+  height: 0.390625rem;
+  margin-top: 0.890625rem;
+}
+.st-list li {
+  height: 2.5rem;
+}
+.st-list .ne-wo {
+  width: 6.25rem;
+  margin-top: 0.578125rem;
+}
+.st-list .ne-wo h3 {
+  font-size: 0.375rem;
+}
+.st-list .ne-wo h4 {
+  font-size: 0.3125rem;
+}
+.st-list .ne-pic img {
+  margin-top: 0.578125rem;
+}

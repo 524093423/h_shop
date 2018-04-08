@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>角色管理</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/style.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/pagination.css" />
+<link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/admin/js/showdate.js"></script>
+</head>
+<body class="mainbody">
+    <div class="navigation">首页 &gt; 管理员管理 &gt; 角色管理</div>
+    <div class="tools_box">
+	    <div class="tools_bar" style="height:0px;">
+            <div class="search_box">
+		    </div>
+		    
+		    <!--  <a href="javascript:void(0);"  id="seleallbybtton" class="tools_btn"><span><b class="all">全选</b></span></a>
+            <a href="javascript:void(0);" id="Button1" class="tools_btn"><span><b class="delete">批量删除</b></span></a>-->
+        </div>
+        <div class="select_box">
+            <a href="javascript:void(0)" onclick="addRole(1,0)" />添加角色</a>
+       <div style="float:right">
+	   
+	    </div> 
+	    </div>
+	    
+    </div>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+      <tr>
+                <th width="10%">编号</th>
+                <th width="20%"  align="center">角色名称</th>
+                <th width="22%"  align="center">管理操作</th>
+      </tr>
+      		<foreach name="rolelist" item="lt">
+      		    <tr>   
+                <td  align="center">{$key+1}</td>
+                <td align="center">{$lt.groupname}</td>
+                <td align="center">
+                    <a href="javascript:void(0)" onclick="setRoleColumn({$lt.id})">栏目权限</a>&nbsp;&nbsp;|
+                    &nbsp;&nbsp; <a href="javascript:void(0)" onclick="addRole(2,{$lt.id},'{$lt.groupname}')">修改</a>&nbsp;&nbsp;|
+                    &nbsp;&nbsp;<a href="javascript:void(0)" onclick="delRole({$lt.id})">删除</a>
+                </td>
+            </tr>
+            </foreach>
+      </table>
+
+
+   
+    <div class="line15"></div>
+    <div class="page_box">
+      <div id="PageContent" class="flickr right">
+      </div>
+     
+    </div>
+    <div class="line10"></div>
+</body>
+</html>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/function.js"></script>
+<script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/admin/js/layer/layer.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            tablecolor();
+            /*$("table tbody tr td a.del").click(function () {
+                del($(this), "admin");
+            });*/
+
+        });
+        function addRole(state,groupid,oldname=""){
+            if(oldname!=""){
+                oldname = "【原角色名："+oldname+"】";
+            }
+            layer.prompt({title: '请输入角色名称'+oldname, formType: 2}, function(text, index){
+                var index2 = layer.load(0, {shade: false});
+                $.getJSON("./admin.php?c=Manager&a=AddRole",{"role":text,"flag":state,"groupid":groupid},function(result){
+                    layer.close(index2);
+                    if(result.code==200){
+                        layer.msg(result.message,{time:1000},function(){
+                            layer.close(index);
+                            history.go(0);
+                        });
+                    }else{
+                        layer.msg(result.message,{time:1000});
+                    }
+                });
+            });
+        }
+        function delRole(id){
+            layer.confirm('是否确定删除该角色', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.ajax({
+                    url:"./admin.php?c=Del&a=delRole",
+                    type:"post",
+                    dataType:"json",
+                    data:{"roleid":id},
+                    success:function(result){
+                        if(result.code==200){
+                            layer.msg("角色删除成功",{time:1000},function(){
+                                history.go(0);
+                            });
+                        }else{
+                            layer.msg(result.message,{time:1000});
+                        }
+                    },
+                    error:function(){
+                        layer.msg('服务器连接超时,请稍后重试..', {time:1000});
+                    }
+                })
+            }, function(){
+
+            });
+        }
+        function setRoleColumn(id){
+            layer.open({
+                type: 2,
+                area:["50%","80%"],
+                content: './admin.php?c=Manager&a=SetColumn&groupid='+id //这里content是一个普通的String
+            });
+        }
+    </script>

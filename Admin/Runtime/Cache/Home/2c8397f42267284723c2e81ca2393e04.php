@@ -1,0 +1,185 @@
+<?php if (!defined('THINK_PATH')) exit();?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>后台管理</title>
+<link type="text/css" rel="stylesheet" href="/h_shop/Public/admin/images/style.css" />
+<link type="text/css" rel="stylesheet" href="/h_shop/Public/admin/images/pagination.css" />
+
+</head>
+<body class="mainbody">
+    <div class="navigation">首页 &gt; 消息管理 &gt; 意见反馈</div>
+    <div class="tools_box">
+	    <div class="tools_bar">
+		    <a href="javascript:void(0);"  id="seleallbybtton" class="tools_btn"><span><b class="all">全选</b></span></a>
+            <a href="javascript:void(0);" id="Button1" class="tools_btn"><span><b class="delete">批量删除</b></span></a>
+        </div>    
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+      <tr>
+            <th width="10%"></th>
+            <th width="22%"  align="center">反馈内容</th>
+            <th width="22%"  align="center">发布日期</th>
+            <th width="22%"  align="center">是否处理</th>
+            <th width="22%"  align="center">操作</th>
+      </tr>
+  		    <?php if(is_array($list)): $k = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($k % 2 );++$k;?><tr>   
+                <td  align="center">  <input name="ck"  type="checkbox" class="cbk" id="cbkone<?php echo ($v["mid"]); ?>" value="<?php echo ($v["mid"]); ?>"/></td>
+                <td align="center"><a class="Message" rel="<?php echo ($v["message"]); ?>" reply="<?php echo ($v["replycontent"]); ?>"><?php echo ($v["mtitle"]); ?></a></td>
+                <td align="center"><?php echo ($v["time"]); ?></td>
+                <td align="center"><?php echo ($v["solvetext"]); ?></td>
+                <td style=" text-align:center;">
+                	<a href="javascript:void(0)" class="Message" rel="<?php echo ($v["message"]); ?>" reply="<?php echo ($v["replycontent"]); ?>">查看</a>&nbsp;&nbsp;
+                    <?php if( $v["issolve"] == 0 ): ?><a href="javascript:void(0)" class="Reply" data-mid="<?php echo ($v["mid"]); ?>" data-userid="<?php echo ($v["userid"]); ?>">回复</a>&nbsp;&nbsp;<?php endif; ?>
+                   <a class="del" href="javascript:void(0)" onclick="DelOne(<?php echo ($v["mid"]); ?>)" >删除</a>
+                </td>
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+    </table>
+    <div class="line15"></div>
+    <div class="page_box">
+      <div id="PageContent" class="flickr right">
+        <?php echo ($page); ?>
+      </div>
+     
+    </div>
+    <div class="line10"></div>
+</body>
+</html>
+<script type="text/javascript" src="/h_shop/Public/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="/h_shop/Public/admin/js/function.js"></script>
+<script src="/h_shop/Public/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+<script src="/h_shop/Public/admin/js/layer/layer.js" type="text/javascript"></script>
+<link href="/h_shop/Public/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    var province = $("#pe").val();
+    var city = $("#cy").val();
+        $(function () {
+            $(".Message").click(function () {
+                layer.open({
+                    type: 1,
+                    shade: false,
+                    title: false, //不显示标题
+                    content: "<div style='margin: 20px 50px 20px 50px'><font style='font-weight: bold;font-size: inherit'>反馈内容：</font>" +
+                    "<span style='line-height: 16px;letter-spacing: 2px'>"+$(this).attr("rel")
+                    +"</span><br><font style='font-weight: bold;font-size: inherit'>回复内容：</font><span style='line-height: 16px;letter-spacing: 2px'>"
+                    +$(this).attr("reply")+"</span></div>", //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+                    cancel: function(){
+                        //layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', {time: 5000, icon:6});
+                    }
+                });
+            });
+            $(".Reply").click(function(){
+                var obj = $(this);
+                layer.prompt({title: '请输入回复内容', formType: 2}, function(text, index){
+                    if(text==""){
+                        layer.msg("请输入回复内容",{time:1000});
+                        return false;
+                    }
+                    layer.close(index);
+                    var userid  = obj.attr("data-userid");
+                    var mid     = obj.attr("data-mid");
+                    var content = text;
+                    $.ajax({
+                        url:"./admin.php?c=Message&a=ReplyFeedBack",
+                        type:"post",
+                        dataType:"json",
+                        data:{"userid":userid,"mid":mid,"content":text},
+                        success:function(result){
+                            layer.msg(result.message,{time:1000},function(){
+                                if(result.code==200){
+                                    history.go(0)
+                                }
+                            });
+                        },error: function () {
+                            layer.msg("连接超时",{time:1000});
+                        }
+                    })
+                });
+            });
+            tablecolor();
+            $("#Button1").click(function () {
+                // alldel("delallNews");
+                // 批量删除
+                var type = $("#type").val();
+                var str = "";
+                $("[name=ck]:checked").each(function () {
+                    str += $(this).val() + ",";
+                });
+                if (str == "") {
+                    $.jBox.error('请先选中', '错误')
+                }
+                else {
+                    var submit = function (v, h, f) {
+                        if (v == true) {
+                            // alert(typeof str);
+                            $.ajax({
+                                type: "POST",
+                                dataType: "text",
+                                url: "admin.php?c=Message&a=FeedBackDelAll",
+                                // data:$("#submitForm").serialize(),
+                                data:{idstr:str},
+                                success: function (data) {
+                                    if(data > 0){
+                                        $.jBox.tip('批量删除成功。', 'success');
+                                        window.setTimeout(function () {
+                                        location.href = "./admin.php?c=Message&a=MessageFeedBack";}, 1500); //跳转页面
+                                    }else{
+                                        $.jBox.tip('服务器连接超时，删除失败', 'error');
+                                    }
+                                }
+                            });
+                        }
+                        else
+                            return true;
+                    };
+                    $.jBox.confirm("此操作不可恢复，是否继续？？", "温馨提示", submit, { buttons: { '是': true, '否': false} });
+                }
+            });
+            $("table tbody tr td a.del").click(function () {
+                // del($(this), "delUser");
+            });
+            $("#seleallbybtton").toggle(function () {
+                $(this).find("span b").text("取消");
+                $(".cbk").each(function () {
+                    $(this).attr("checked", true);
+                });
+            }, function () {
+                $(this).find("span b").text("全选");
+                $(".cbk").each(function () {
+                    $(this).attr("checked", false);
+                });
+            });
+            $("#Checkbox1").click(function () {
+                allselecheck($(this));
+            });
+        });
+        // 单个删除
+        function DelOne(sys_id){
+            $("#cbkone"+sys_id).attr("checked", true);
+            var submit = function (v, h, f) {
+                if (v == 'ok'){
+                $.ajax({
+                  type: "POST",
+                  dataType: "text",
+                  url: "admin.php?c=Message&a=FeedBackDelAll",
+                  data:{idstr:sys_id},
+                  success: function (data) {
+                      if(data > 0){
+                        $.jBox.tip('删除成功。', 'success');
+                        window.setTimeout(function () {
+                            location.href = "./admin.php?c=Message&a=MessageFeedBack";}, 1500); //跳转页面
+                      }else{
+                        $.jBox.tip('服务器连接超时，删除失败', 'error');
+                      }
+                    }
+                });
+                }else if (v == 'cancel'){
+                    $("#cbkone"+sys_id).attr("checked", false);
+                    jBox.tip('取消删除', 'info');  
+                }  
+                return true; //close  
+            };    
+            $.jBox.confirm("确认删除吗？删除不可恢复", "温馨提示", submit);             
+        }
+   
+    </script>

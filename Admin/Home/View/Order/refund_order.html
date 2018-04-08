@@ -1,0 +1,225 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>任务管理</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/style.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/pagination.css" />
+
+</head>
+<body class="mainbody">
+    <div class="navigation">首页 &gt; 订单管理 &gt; {$title}</div>
+    <div class="tools_box">
+	    <div class="tools_bar" style="height:45px;">
+            <!-- <div class="search_box"><span>导出方式：</span>
+			   	<select id="ExportStyle" class="select" style="height:20px;">
+			    	<option value="1" selected>CSV 数据量大时，效率较高，文件内样式需重新调整</option>
+			    	<option value="2">EXCEL数据量大时，效率较低，文件内样式无需重新调整</option>
+			    </select>
+			   &nbsp;&nbsp;&nbsp;<input id="ExportCsv-all"  rel="all" type="button"  value="导出全部" class="btnSearch" />   
+			   &nbsp;&nbsp;&nbsp;<input id="ExportCsv-cn" rel="0"  type="button"  value="导出条件检索" class="btnSearch" />   
+		    </div> -->
+		    <!-- <a href="javascript:void(0);"  id="seleallbybtton" class="tools_btn"><span><b class="all">全选</b></span></a>
+            <a href="javascript:void(0);" id="Button1" class="tools_btn"><span><b class="delete">批量删除</b></span></a> -->
+        </div>
+        <div class="select_box">
+        	输入订单号：<input id="txtKeywords" type="text"  placeholder="输入订单号" class="txtInput" value="" x-webkit-speech=""  style="width:210px;height:16px;" lang="zh-CN"/>
+             选择日期:
+                <input class="laydate-icon" value="{$st}"  id="st"  readonly="readonly" onclick="laydate({format: 'YYYY-MM-DD',festival: true, choose: function(datas){  }})" style="width:76px;height:16px;">-<input class="laydate-icon" value="{$ed}"  id="ed"  readonly="readonly" onclick="laydate({format: 'YYYY-MM-DD',festival: true, choose: function(datas){  }})" style="width:76px;height:16px;">
+            选择店铺：<select id="Shop" class="select" style="height:20px;">
+			    	<option value="0">请选择</option>
+			    </select>
+			支付方式：<select id="PayStyle" class="select" style="height:20px;">
+			    	<option value="0">请选择</option>
+			    	<option value="1">支付宝</option>
+			    	<option value="2">微信</option>
+			    	<option value="3">余额</option>
+			    </select>
+			<!-- 发货方式：<select id="Delivery" class="select" style="height:20px;">
+			    	<option value="0">请选择</option>
+			    </select>   -->
+			   <input id="btnSearch" type="button" value="搜 索" onclick="OrderSearch()" class="btnSearch" />
+			   &nbsp;&nbsp;&nbsp;<input id="reset" type="button" onclick="history.go(0)" value="重置" class="btnSearch" /> 
+	    </div> 
+	    </div>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+      <tr>
+      <!--  <th width="5%"><input id="Checkbox1" type="checkbox" class="cbk"  style=" margin:0px;"/></th>-->
+                <th width="10%">编号</th>
+                <th width="10%"  align="center">订单号</th>
+		  		<th width="10%"  align="center">商户订单号(第三方)</th>
+                <th width="10%"  align="center">用户名</th>
+                <th width="10%"  align="center">商品名称(数量)</th>
+                 <th width="10%"  align="center">商品金额</th>
+                 <th width="10%"  align="center">申请日期</th>
+                 <th width="10%"  align="center">退货原因</th>
+                 <th width="5%"  align="center">退货状态</th>
+                 <th width="5%"  align="center">退货(退款)金额</th>
+                 <th width="10%"  align="center">操作日期</th>
+      </tr>
+      		<tbody class="orderlist">
+      		
+      		</tbody>
+      </table>
+
+
+   
+    <div class="line15"></div>
+    <div class="page_box">
+      <div id="PageContent" class="flickr right">
+        	<div class="orderPage"></div>
+      </div>
+     
+    </div>
+    <div class="line10"></div>
+</body>
+</html>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/function.js"></script>
+<script src="__PUBLIC__/admin/js/laydate/laydate.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/showdate.js"></script>
+<script src="__PUBLIC__/admin/js/layer/layer.js" type="text/javascript"></script>
+<script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/admin/js/layer/layer.js" type="text/javascript"></script>
+<link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var bid = 0;
+var did = 0;
+var ispay1 	= {$ispay};
+var isfh1 		= {$isfh};
+var shopid    = 0;
+var fhstyles 	= 0;
+var payt 		= 0;
+        $(function () {
+        	$("#Shop").change(function(){
+        		shopid 	= $(this).val();
+        	});
+        	$("#PayStyle").click(function(){
+        		payt   	= $(this).val();
+        	});
+        	$("#ExportCsv-all").click(function(){
+        		ExportCsv($(this));
+        	});
+        	$("#ExportCsv-cn").click(function(){
+        		ExportCsv($(this));
+        	});
+        	/* $("#Delivery").change(function(){
+        		fhstyles = $(this).val();
+        	});
+        	 $.getJSON("./admin.php?c=Common&a=GetDelivery",function(msg){
+        		 var strp = " <option value=\"0\">请选择</option>";
+	             	if(msg.length > 0){
+	             		for(var i=0;i<msg.length;i++){
+	             			strp += " <option value="+msg[i]['id']+">"+msg[i]['dtitle']+"</option>";
+	             		}
+	             		$("#Delivery").html(strp);
+	             	}
+        	 }); */
+			$.getJSON("./admin.php?c=Shop&a=GetShopJson",function(msg){
+				var strp = " <option value=\"0\">请选择</option>";
+            	if(msg.length > 0){
+            		for(var i=0;i<msg.length;i++){
+            			strp += " <option value="+msg[i]['id']+">"+msg[i]['bname']+"</option>";
+            		}
+            		$("#Shop").html(strp);
+            	}
+        	 });
+        	var url1 = "./admin.php?c=Order&a=GetRefundOrder&ispay="+ispay1+"&isfh="+isfh1;
+        	getOrderList(url1); 
+        });
+        //获取订单信息
+        function getOrderList(url){
+  	    	  $.getJSON(url,function(data){
+  	  			var str = "<tr><td align='center' colspan='14'>获取中.......</td></tr>";
+  	  			$(".orderlist").html(str);
+	  	  		if(data.list.length > 0 || data.page.length > 0){
+					 $(".orderlist").html("");
+					 $(".orderlist").html(data.list);
+					 $(".orderPage").html(data.page);
+					 tablecolor();
+					 $("table tbody tr td a.del").click(function () {
+			            	del($(this), "goods_order");
+			            });
+					 $("table tbody tr td a.look").click(function () {
+						 var index = layer.open({
+							  title:"订单详情",
+		        			  type: 2,
+		        			  content: './admin.php?c=Order&a=OrderDetail&goid='+$(this).attr("rel"),
+		        			  area: ["100%","100%"],
+		        			  maxmin: true,
+		        			  end: function () {
+		        				  OrderSearch();
+		        	            }
+		        			});
+			            });
+					 $(".orderPage a.page").click(function () {
+						 getOrderList($(this).attr("rel"));
+			            });
+					$(".oper").click(function () {
+						var obj	= $(this);
+						$.ajax({
+							url:"./index.php?c=Api&a=AdminRefundOrder",
+							type:"post",
+							dataType:"json",
+							data:{"odid":$(obj).attr("id"),"adminpinyin":$(obj).attr("pinyin"),"groupid":$(obj).attr("group")},
+							success:function(result){
+								layer.msg(result.message,{time:1000}, function () {
+									if(result.code==200){
+										var url1 = "./admin.php?c=Order&a=GetRefundOrder&ispay="+ispay1+"&isfh="+isfh1;
+										getOrderList(url1);
+									}
+								});
+							},
+							error: function () {
+								layer.msg("连接服务器超时",{time:500});
+							}
+						});
+					});
+				}else{
+					var str = "<tr><td align='center' colspan='14'>无记录.......</td></tr>";
+					$(".orderlist").html(str);
+					$(".orderPage").html("");
+				} 
+  	  		});
+        }
+        //搜索
+        function OrderSearch(){
+      	  	var st = $("#st").val();
+      	  	var ed = $("#ed").val();
+      	  	var orderno 	= $("#txtKeywords").val();
+	      	var url1 = "./admin.php?c=Order&a=GetRefundOrder&date1="+st+"&date2="+ed+"&fhstyle="+fhstyles+"&ispay="+ispay1+"&isfh="+isfh1+"&bid="+shopid+"&payt="+payt+"&orderno="+orderno;
+	    	getOrderList(url1); 
+        }
+        //导出文件
+        function ExportCsv(obj){
+        	var all = obj.attr("rel");
+        	var st = $("#st").val();
+      	  	var ed = $("#ed").val();
+      	  	var dostyle = $("#ExportStyle").val();
+      	  	var orderno 	= $("#txtKeywords").val();
+	      	var url1 = "./admin.php?c=Order&a=OrderExport&date1="+st+"&date2="+ed+"&fhstyle="+fhstyles+"&ispay="+ispay1+"&isfh="+isfh1+"&bid="+shopid+"&payt="+payt+"&all="+all+"&dostyle="+dostyle+"&orderno="+orderno;
+	      	location.href=url1;return false;
+	      	$.ajax({
+	      		type:"get",
+	      		timeout:"100000",
+	      		url:url1,
+	      		success:function(data){
+	      			var returndata 	= eval('('+data+')');
+	      			if(returndata.code==204){
+	      				layer.msg(returndata.message,{time:500});
+	      			}else{
+	      				location.href=url1;
+	      			}
+	      		}
+	      	});
+        }
+      //查看全部内容
+        function looks(content){
+      	  layer.msg(content, {
+      		  offset: 't',
+      		  anim: 6,
+      		  time:2000
+      		});
+        }
+    </script>

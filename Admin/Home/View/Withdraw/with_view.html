@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{:C('APP_TITLE')}</title>
+ <link href="__PUBLIC__/admin/images/style.css" rel="stylesheet" type="text/css" />
+ <script src="http://api.html5media.info/1.1.4/html5media.min.js"></script>    
+</head>
+<body class="mainbody">
+
+<div class="navigation"><a href="javascript:history.go(-1);" class="back">后退</a>首页 &gt; 商家认证 &gt; 申请详情</div>
+<div id="contentTab">
+    <ul class="tab_nav">
+        <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+    </ul>
+    <div class="tab_con" style="display:block;">
+        <table class="form_table">
+            <col width="150px"><col>
+            <tbody>
+            <tr>
+                <th>法人名/手机号码：</th>
+                <td>{$info.seller_name}&nbsp;/&nbsp;{$info.seller_phone}
+                </td>
+            </tr>
+            <tr>
+                <th>企业名称：</th>
+                <td>{$info.company_name}
+                </td>
+            </tr>
+            <tr>
+                <th>提款金额：</th>
+                <td>{$info.money}
+                </td>
+            </tr>
+            <tr>
+                <th>提款方式：</th>
+                <td><php>if($info['type'] == 1){ echo "<span style='color:#22acf8;'>支付宝</span>";}elseif($info['type'] == 2){ echo "<span style='color:#1ac91a;'>微信</span>";}</php>
+                </td>
+            </tr>
+            <tr>
+                <th>提款账号：</th>
+                <td><php>if($info['type'] == 1){ echo $info['number'];}elseif($info['type'] == 2){</php><img src=".{$info.number}" style="width:200px;height:200px;" alt="" /><php>}</php>
+                </td>
+            </tr>
+            <tr> 
+                <th>提现状态：</th>
+                <td id="status">
+                    <if condition=" $info.status eq 3">
+                         <input type="radio" name="status" value="3" <if condition=" $info.status eq 3">checked</if>>驳回提现
+                    <else/>
+                        <input type="radio" name="status" value="1" <if condition=" $info.status eq 1">checked</if>>待批准
+                        <input type="radio" name="status" value="2" <if condition=" $info.status eq 2">checked</if>>提现完成
+                        <input type="radio" name="status" value="3" <if condition=" $info.status eq 3">checked</if>>驳回提现
+                    </if>
+                    
+                </td>
+                <input type="hidden" id="money" name="money" value='{$info.money}'>
+                <input type="hidden" id="with_id" name="with_id" value='{$info.with_id}'>
+                <input type="hidden" id="old_status" name="old_status" value="{$info.status}"/>
+            </tr>            
+            </tbody>
+        </table>
+    </div>
+    <div class="foot_btn_box">
+     <input id="sub" type="button" value="提交保存" class="btnSubmit"/>
+    </div>
+</div>
+</body>
+</html>
+ <script src="__PUBLIC__/js/jquery-1.8.3.min.js" type="text/javascript"></script>
+ <script type="text/javascript" src="__PUBLIC__/admin/js/layer/layer.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/function.js"></script>
+    <script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+ <script src="__PUBLIC__/admin/js/tips/jquery.poshytip.js" type="text/javascript"></script>
+ <link href="__PUBLIC__/admin/js/tips/tip-yellow/tip-yellow.css" rel="stylesheet" type="text/css" />
+   <script>
+    $(function () {
+        $("#sub").click(function () {
+            var with_id = $("#with_id").val();
+            var money = $("#money").val();
+            var status = $("input[name=status]:checked").val();
+            var old_status = $("#old_status").val();                    
+            $.ajax({
+                type: "POST",
+                url: "admin.php?c=Withdraw&a=WithView",
+                // data:$("#submitForm").serialize(),
+                data:{with_id:with_id,status:status,old_status:old_status,money:money},
+                success: function (data) {
+                    if(data == 1){
+                        $.jBox.tip('提交成功', 'success');
+                        window.setTimeout(function () {
+                        location.href = "./admin.php?c=Withdraw&a=DrawList&status="+old_status;}, 2000); //跳转页面
+                    }else if(data == 0){
+                        $.jBox.tip('提交失败，请检查', 'error');
+                    }else if(data == -1){
+                        $.jBox.tip('没有需要更改的状态，不必提交', 'error');
+                    }
+                }
+            });
+        });
+    });
+  </script>

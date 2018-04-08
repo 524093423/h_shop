@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/user.css">
+    <style>
+        body,html{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">设置</h3>
+        <div class="back">
+           <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content addCon ">
+    <ul class="set-list">
+        <li class="clearfix">
+            <img src="../images/yaoshi.png" alt=""/>
+            <p>修改登陆密码</p>
+        </li>
+    </ul>
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+    <p class="set-btn">退出当前账户</p>
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101405623" data-redirecturi="http://www.heigushop.com/Web/html/index.html" charset="utf-8"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    $(function(){
+    	$(".back").click(function(){
+    		window.location.href="./my.html";
+    	});
+    	UserOperate().init();
+    })
+    var UserOperate= function(){
+        	return{
+        		init:function(){
+        			this.updateLoginp();//修改登陆密码
+        			this.loginOut();//退出登陆
+        		},
+        		updateLoginp:function(){
+        			$(".set-list").click(function(){
+        				var index = layer.open({
+                			  title:false,
+                			  type: 2,
+                			  closeBtn:0,
+                			  shift:1,
+                			  content: './amendLoginPas.html',
+                			  area: ["100%","100%"],
+                			  maxmin: true,
+                			  success:function(){
+                				  $('.layui-layer-min').hide();
+                				  $('.layui-layer-max').hide(); 
+                			  },
+                			  end: function () {
+                				  //OrderSearch();
+                				  //orderFunc().setAddress();
+                	            }
+                			});
+        			});
+        		},
+        		loginOut:function(){
+        			$(".set-btn").click(function(){
+        				if(sessionStorage.getItem("login_type") ==3){
+        					QC.Login.signOut();
+        				}
+        				sessionStorage.clear();
+        				window.location.href="./login.html";
+        			});
+        		}
+        	}
+        }
+</script>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>评价</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/user.css"/>
+    <link rel="stylesheet" href="../layer/skin/default/layer.css"/>
+
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">评价</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <div class="pj-box wrap">
+        <div class="pj-xing clearfix">
+            <img src="../images/redxing.png" alt=""/>
+            <img src="../images/redxing.png" alt=""/>
+            <img src="../images/redxing.png" alt=""/>
+            <img src="../images/redxing.png" alt=""/>
+            <img src="../images/redxing.png" alt=""/>
+        </div>
+        <div class="pj-nei">
+            <textarea name="" id="" placeholder="请输入评价..."></textarea>
+        </div>
+    </div>
+    <!--btn-->
+    <div class="pay-btn wrap">
+        <p>提交评价</p>
+    </div>
+</div>
+<!--content end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script type="text/javascript">
+var orderid	= "";
+var ratelevel	= 5;
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+  $(function(){
+  	$(".back").click(function(){
+        window.history.back();
+   	});
+     payFun().init();
+     orderid	= getUrlParam("orderid");
+  });
+
+    var payFun = function(){
+        return{
+            init:function(){
+                this.btnClick(); // 点击确认按钮
+                this.startClick();
+            },
+            // 点击提交按钮
+            btnClick:function(){
+            $('.pay-btn').click(function(){
+            	sessionStorage.setItem("RateState",1);
+                if($('textarea').val()==''){
+                    layer.msg('评论内容不可为空',{time:1000});
+                    return false;
+                }else if(orderid==""){
+                	layer.msg('订单不存在',{time:1000});
+                    return false;
+                }else if(ratelevel	==0){
+                	layer.msg('评论等级不可为空',{time:1000});
+                    return false;
+                }
+                $.ajax({
+        			url:webIp2+"Goods/RateAdd",
+        			type:"post",
+        			data:{"token":sessionStorage.getItem('token'),"orderid":orderid,"rate_info":$('textarea').val(),"ratelevel":ratelevel},
+        			success:function(result){
+        				layer.msg(result.message,{time:1000},function(){
+        					if(result.code==200){
+        						sessionStorage.setItem("RateState",2);
+                                window.location.href="./myOrder.html?state=4";
+            					/*var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+            		  		  	parent.layer.close(index);  // 关闭layer*/
+        					}
+        				});
+        			},
+        			error:function(){
+        				layer.msg('系统问题，给您带来的不便，对不起',{time:1000});
+        			}
+        		});
+            })
+            },
+            // 几个星
+            startClick:function(){
+                $('.pj-xing img').click(function(){
+                    if($(this).attr('src') == '../images/huixing.png'){
+
+                        var i= $(this).index();
+                        var num = $('.pj-xing img').length;
+                        for(var j =0 ; j<num ;j++){
+                            var index = $('.pj-xing img').eq(j).index();
+                            if(index <= i){
+                                $('.pj-xing img').eq(j).attr('src','../images/redxing.png')
+                            }
+
+                        }
+
+                    }else{
+                        var i= $(this).index();
+                        var num = $('.pj-xing img').length;
+
+                        for(var j =0 ; j<num ;j++){
+                            var index = $('.pj-xing img').eq(j).index();
+                            if(index > i){
+                                $('.pj-xing img').eq(j).attr('src','../images/huixing.png')
+                            }
+
+                        }
+                    }
+                    ratelevel	= i+1;
+                })
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{:C('APP_TITLE')}</title>
+ <link href="__PUBLIC__/admin/images/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="mainbody">
+
+<div class="navigation"><!--<a href="javascript:history.go(-1);" class="back">后退</a>-->首页 &gt; 系统管理 &gt; 设置网站地址</div>
+<div id="contentTab">
+    <ul class="tab_nav">
+        <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+    </ul>
+
+    <div class="tab_con" style="display:block;">
+        <table class="form_table">
+            <col width="150px"><col>
+            <tbody>
+            <foreach name="rooturl" item="rl">
+            <tr> 
+                <th>网站地址：</th>
+                <td><input type="text" id="classname" value="{$rl.content}"   class="txtInput normal required" /></td>
+            </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </div>
+    <div class="foot_btn_box">
+     <input id="sub" type="button" value="提交保存" class="btnSubmit"/>
+    </div>
+</div>
+</body>
+</html>
+ <script src="__PUBLIC__/js/jquery-1.8.3.min.js" type="text/javascript" ></script>
+ <script src="__PUBLIC__/admin/js/function.js" type="text/javascript" ></script>
+ <script src="__PUBLIC__/admin/js/tips/jquery.poshytip.js" type="text/javascript"></script>
+ <link href="__PUBLIC__/admin/js/tips/tip-yellow/tip-yellow.css" rel="stylesheet" type="text/css" />
+     <script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+   <script>
+   var classname1 = $("#classname").val();
+       $(function () {
+           $("#sub").click(function () {
+               if (!veriform('classname')) { tip('classname', '请填写网站地址'); $("#classname").focus(); return false; }
+               else {
+            	   if(classname1 == $("#classname").val()){
+            		   $.jBox.tip('输入地址与原网址相同。', 'success');
+            		   return false;
+            	   }
+            	   $.ajax({
+            	        type: "POST",
+            	        dataType: "text",
+            	        url: "admin.php?c=Config&a=UpdateConfig",
+            	        data: "sets=adminUrl" + "&contents="+$("#classname").val(),
+            	        success: function (data) {
+            	            if(data > 0){
+            	            	$.jBox.tip('更新成功。', 'success');
+            	            }else{
+            	            	$.jBox.tip('服务器连接超时，更新失败', 'success');
+            	            }
+            	        }
+            	    });
+               }
+           });
+       });
+  </script>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>忘记登录密码</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/register.css"/>
+    <link rel="stylesheet" href="../layer/skin/default/layer.css"/>
+    <style>
+        body,html{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">忘记登录密码</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+   <div class="wrap lo-box">
+       <div class="log-inp ">
+           <div class="lo-num clearfix re-num">
+               <img src="../images/bang1.png" alt=""/>
+               <input type="text" id="phone" placeholder="11位手机号码"/>
+               <span class="re-code">验证码</span>
+           </div>
+           <div class="lo-num clearfix re-num">
+               <img src="../images/bang2.png" alt=""/>
+               <input type="text" id="code" placeholder="请输入手机验证码"/>
+           </div>
+           <div class="lo-num clearfix">
+               <img src="../images/lo2.png" alt=""/>
+               <input type="password" id="pas" placeholder="请输入6-12位密码"/>
+           </div>
+           <div class="lo-pas clearfix">
+               <img src="../images/lo2.png" alt=""/>
+               <input type="password" id="pas2" placeholder="请再次输入密码"/>
+           </div>
+       </div>
+
+       <!--按钮-->
+       <div class="log-btn ">
+           <p>确认</p>
+       </div>
+
+   </div>
+</div>
+<!--content end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+  $(function(){
+	  $(".back").click(function(){
+			 var index = parent.layer.getFrameIndex(window.name);//获取窗口索引
+			 parent.layer.close(index);// 关闭layer
+	  });
+     payFun().init();
+  });
+
+    var payFun = function(){
+        return{
+            init:function(){
+                this.btnClick();  //  点击 登录 按钮
+                this.sendMsg();//发送验证码
+            },
+            //  点击 确认按钮
+            btnClick:function(){
+                $('.log-btn').click(function(){
+                    // 获取 数据
+                    var phone = $('#phone').val().replace(/\s/g, "");
+                    var code = $.trim($('#code').val());
+                    var pas = $('#pas').val().replace(/\s/g,"");
+                    var pas2 = $('#pas2').val().replace(/\s/g,"");
+                    //   手机号正则
+                    var myreg = /^1[34578][0-9]\d{4,8}$/;
+                    var   maReg = /^[\w]{6,12}$/ ;
+                    if(phone == ""){
+                        layer.msg('请输入手机号')
+                    }else if(!myreg.test(phone)){
+                        layer.msg('请输入有效的手机号！')
+                    }else if(code == ""){
+                        layer.msg('请输入验证码')
+                    }else if(pas == ""){
+                        layer.msg('请输入密码')
+                    }else if(!maReg.test(pas)){
+                        layer.msg('请输入6-12位密码（数字、字母、下划线）')
+                    }else if(pas2 == ""){
+                        layer.msg('请再次输入密码')
+                    }else if(pas != pas2){
+                        layer.msg('两次密码不一样')
+                    }else{
+                    	$.ajax({
+                        	url:webIp2+"AppLogin/FindUPwd",
+                        	type:"post",
+                        	data:{"phe":phone,"code":code,"pwd":pas,"p_pwd":pas2},
+                        	success:function(result){
+                        		layer.msg(result.message,{time:1000},function(){
+                        			if(result.code==200){
+                        				var index = parent.layer.getFrameIndex(window.name);//获取窗口索引
+                        				 parent.layer.close(index);// 关闭layer
+                        			}
+                        		});
+                        	},
+                        	error:function(){
+                        		layer.msg("敬请期待",{time:2000});
+                        	}
+                        });
+                    }
+                })
+            },
+            sendMsg:function(){
+            	$(".re-code").click(function(){
+            		//手机号正则
+                    var myreg = /^1[34578][0-9]\d{4,8}$/;
+            		var phe	= $('#phone').val().replace(/\s/g, "");
+            		if(!myreg.test(phe)){
+            			layer.msg('请输入有效的手机号！');
+            			return false;
+            		}
+            		$.getJSON(webIp+"SendMessage/SendMsg?callback=?&phe="+phe+"&state=1",function(result){
+            			layer.msg(result.message,{time:1000});
+            		})
+            	});
+            }
+
+        }
+    }
+</script>
+</html>

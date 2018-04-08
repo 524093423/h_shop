@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>绑定手机号</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/user.css"/>
+    <style>
+        body,html{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">绑定手机号</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <div class="bo-box ">
+        <div class="phone  clearfix">
+            <img src="../images/bang1.png" alt=""/>
+            <div class="bo-inp">
+                <input type="text" id="ud-phone" placeholder="请输入新的手机号码"/>
+            </div>
+            <span class="re-code">验证码</span>
+        </div>
+        <div class="duanxin clearfix">
+            <img src="../images/bang2.png" alt=""/>
+            <div class="bo-inp">
+                <input type="text" id="code" placeholder="短信验证码"/>
+            </div>
+        </div>
+    </div>
+    <!--btn-->
+    <div class="pay-btn wrap">
+        <p>立即绑定</p>
+    </div>
+</div>
+<!--content end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    var flag = 1;//1绑定手机号2修改手机
+  $(function(){
+	  if(sessionStorage.getItem('Phone') !=""){
+      	$(".to-ti").text("修改手机号");
+      	$("title").html("修改手机号");
+      	$(".pay-btn").find("p").text("立即修改");
+      	flag	= 2;
+      }
+	  $(".back").click(function(){
+		  var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+		  parent.layer.close(index);  // 关闭layer
+ 	});
+     payFun().init();
+  });
+
+    var payFun = function(){
+        return{
+            init:function(){
+            	this.sendMsg();//发送验证码
+                this.btnClick(); // 点击确认按钮
+            },
+            sendMsg:function(){
+            	$(".re-code").click(function(){
+            		//手机号正则
+                    var myreg = /^1[34578][0-9]\d{4,8}$/;
+            		var phe	= $('#ud-phone').val().replace(/\s/g, "");
+            		if(!myreg.test(phe)){
+            			layer.msg('请输入有效的手机号！');
+            			return false;
+            		}
+            		$.getJSON(webIp+"SendMessage/SendMsg?callback=?&phe="+phe,function(result){
+            			layer.msg(result.message,{time:1000});
+            		})
+            	});
+            },
+            // 点击确认按钮
+            btnClick:function(){
+				$(".pay-btn").click(function(){
+					//手机号正则
+	                var myreg = /^1[34578][0-9]\d{4,8}$/;
+	        		var phe	= $('#ud-phone').val().replace(/\s/g, "");
+	        		var code = $.trim($('#code').val());
+	        		if(!myreg.test(phe)){
+	        			layer.msg('请输入有效的手机号！');
+	        			return false;
+	        		}else if(code == ""){
+	        			layer.msg('请输入验证码！');
+	        			return false;
+	        		}
+					$.ajax({
+						url:webIp2+"AppLogin/UpUserPhe",
+						type:"post",
+						data:{"token":sessionStorage.getItem("token"),"code":code,"phe":phe},
+						success:function(result){
+                    		layer.msg(result.message,{time:1000},function(){
+                    			if(result.code==200){
+                    				sessionStorage.setItem("Phone",phe);
+                    				var index = parent.layer.getFrameIndex(window.name);//获取窗口索引
+                    				 parent.layer.close(index);// 关闭layer
+                    			}
+                    		});
+                    	},
+                    	error:function(){
+                    		layer.msg("敬请期待",{time:2000});
+                    	}
+					});
+				});
+            }
+        }
+    }
+</script>
+</html>

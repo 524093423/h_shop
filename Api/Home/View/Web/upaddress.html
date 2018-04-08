@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>修改收货地址</title>
+    <link rel="stylesheet" href="__PUBLIC__/web/css/public.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/web/css/global.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/web/css/addres.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/web/layer/skin/default/layer.css"/>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">修改收货地址</h3>
+        <h4 class="compile">保存</h4>
+        <div class="back">
+            <img src="__PUBLIC__/web/images/back.png" alt=""/>
+        </div>
+    </div>
+
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <div class="addContent">
+        <div class="people">
+            <label for="name">收货人：</label>
+            <input type="text" id="name" name="name" value="{$info.consignee_name}" />
+        </div>
+        <div class="people">
+            <label for="phone">联系电话：</label>
+            <input type="text" id="phone" name="phone" value="{$info.consignee_phe}" />
+        </div>
+        <div class="people area">
+            <label for="area">所在地区：</label>
+            <input type="text" id="area" name="area" value="{$info.consignee_address}" />
+        </div>
+        <div class="text">
+            <label for="detAddr">请输入详细地址：</label>
+            <textarea name="" id="detAddr" cols="30" rows="4">{$info.remarks}</textarea>
+        </div>
+        <div class="defaultBox clearfix box-zl">
+            <input type="hidden" id="address_id" value='{$info.address_id}'/>
+            <p class="clearfix xuan-p">
+                <if condition="$info.flag eq 1"><i class="xaun-zl  xaun-zl-on"></i><else /><i class="xaun-zl"></i></if>
+                <input type="hidden" id="flag" value='{$info.flag}'/>
+                <i class="xuan-wen">设置默认地址</i>
+            </p>
+        </div>
+        <input type="hidden" id='token' name='token' value='{$token}' />
+    </div>
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+
+</div>
+<!--bottom  end-->
+</body>
+<script src="__PUBLIC__/web/js/jquery1.9.1.js"></script>
+<script src="__PUBLIC__/web/js/common.js"></script>
+<script src="__PUBLIC__/web/layer/layer.js"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+$(function(){
+      addressFun().init();
+  });
+    
+  var addressFun = function(){
+
+      return{
+          init:function(){
+              this.jump();  //  页面跳转
+              this.click_list() ; //点击选中事件(跟换背景图)
+              this.save();  // 点击保存地址
+          },
+          jump:function(){
+              $('.back').click(function(){  //  返回上一个页面
+                  window.history.back();
+              });
+              $('.config-wen').click(function(){
+                  window.location.href = "#"
+              })
+          },
+          click_list:function(){ // 点击选中事件(跟换背景图)
+              $('.xuan-p').click(function(){
+                  $(this).find('.xaun-zl').toggleClass('xaun-zl-on');// 会员选择部分
+                  if($(this).find('.xaun-zl').hasClass('xaun-zl-on')){
+                      $(this).find('.xaun-zl').parent().parent().parent().siblings().find('.xaun-zl').removeClass('xaun-zl-on')
+                      $('#flag').val('1');
+                      // alert('已经选中我了')
+                  }else{
+                        $('#flag').val('2');
+                       // alert('没有选中我')
+                  }
+              });
+          },
+            save:function(){
+                $('.compile').click(function(){
+                    // 获取页面数据
+                    var token = $.trim(sessionStorage.getItem('token'));
+                    var address_id = $.trim($('#address_id').val());
+                    var cname = $.trim($('#name').val());
+                    var cphe = $.trim($('#phone').val());
+                    var caddress = $.trim($('#area').val());
+                    var remarks = $.trim($('#detAddr').val());
+                    var flag = $.trim($('#flag').val());
+                    // 手机正则
+                    var myreg = /^1[34578][0-9]\d{4,8}$/;
+                  if(cname == null || "" ==cname){
+                      layer.msg("请输入收件人名称");
+                      return false;
+                  }else if(cphe == null || "" == cphe){
+                      layer.msg("请填入收件人手机号");
+                      return false;
+                  }else if(!myreg.test(cphe)){
+                      layer.msg("请输入有效的手机号码！");
+                      return false;
+                  }else if(caddress == 0 || "" == caddress){
+                      layer.msg("请填写所在地区");
+                      return false;
+                  }else if(remarks == null || "" == remarks){
+                      layer.msg("请填写详细地址");
+                      return false;
+                  }else{
+                        $.ajax({
+                            url:"__APP__/Address/RenewAddress",
+                            type:"POST",
+                            data:{token:token,web:1,address_id:address_id,cname:cname,cphe:cphe,caddress:caddress,remarks:remarks,flag:flag},
+                            success:function(re){
+                                if(re.code == 204){
+                                    layer.msg(re.message);
+                                    // window.location.href = '#'
+                                }else if(re.code == 200){  
+                                    layer.msg(re.message);
+                                    window.setTimeout(function () {
+                                        location.href = '__APP__/Address/GetAddress?token='+token+'&web='+1;}, 1500); //跳转页面
+                                }
+                            }
+                        }); 
+                  }
+                })
+            }
+      }
+  };
+</script>
+</html>

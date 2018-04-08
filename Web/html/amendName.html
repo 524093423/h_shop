@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>修改昵称</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/user.css"/>
+    <style>
+        body,html{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">修改昵称</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+        <h4 class="compile">保存</h4>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+   <div class="am-inp">
+       <input type="text" class="nike"/>
+   </div>
+</div>
+<!--content end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+  $(function(){
+	  $(".back").click(function(){
+			  var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+			  parent.layer.close(index);  // 关闭layer
+	 	});
+     payFun().init();
+  });
+
+    var payFun = function(){
+        return{
+            init:function(){
+                this.btnClick(); // 点击确认按钮
+                $(".nike").val(sessionStorage.getItem('userName'));
+            },
+            // 确认按钮
+            btnClick:function(){
+                $('.compile').click(function(){
+                	 var  name = $('.nike').val().replace(/\s/g,"");
+                     var nareg = /^[\u4E00-\u9FA5a-zA-Z0-9_]{1,20}$/ ;
+                     if(name == ""){
+                         layer.msg('请输入昵称');
+                         return false;
+                     }else if(!nareg.test(name)){
+                         layer.msg('不能输入特殊符号');
+                         return false;
+                     }
+                	$.ajax({
+                		url:webIp2+"AppLogin/UpdateUserNick",
+                		type:"post",
+                		data:{"token":sessionStorage.getItem("token"),"user_name":name},
+                		success:function(result){
+                			layer.msg(result.message,{time:2000},function(){
+                				if(result.code==200){
+                					sessionStorage.setItem('userName',name);
+                					var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                  				  parent.layer.close(index);  // 关闭layer
+                				}
+                			});
+                		},
+                		error:function(){
+                			layer.msg("敬请期待",{time:2000});
+                		}
+                	});
+                })
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0054)https://test.dscmall.cn/seller/privilege.php?act=login -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>商家中心</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/seller/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/seller/style.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/seller/general.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/seller/purebox.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/seller/perfect-scrollbar.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/seller/calendar.min.css">
+</head>
+<body>
+	<div class="sller_login">
+    	<div class="sller_login_warp">
+            <div class="ecsc-login-container">
+            	<div class="logo"><img src="__PUBLIC__/seller/logo_new.png"></div>
+                <div class="container">
+                	<div class="warp">
+                    	<div class="warp_content">
+                            <div class="title">
+                                <h3>商家管理中心</h3>
+                                <span class="txt"></span>
+                            </div>
+                                <div class="formInfo">
+                                    <div class="formText">
+                                        <i class="login-icon login-icon-user"></i>
+                                        <input type="text" name="username" id="uphe" autocomplete="off" class="input-text" value="" placeholder="用户名">
+                                    </div>
+                                    <div class="formText">
+                                        <i class="login-icon login-icon-pwd"></i>
+                                        <input type="password" style="display:none">
+                                        <input type="password" name="password" id="upwd" autocomplete="off" class="input-text" value="" placeholder="密  码">
+                                    </div>
+                                    <div class="formText">
+                                        
+                                    </div>
+                                    <div class="formText submitDiv">
+                                                                                <span class="submit_span">
+                                            <input type="button" name="submit" id="log-btn" class="sub qp_sub" value="登 录">
+                                        </span>
+                                                                            </div>
+                                </div>
+                                <div id="error" class="error"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="backpwd_layout">
+        <div class="backpwd_info">
+            <div class="close"></div>
+                                </div>
+    </div>
+    <div class="backpwd_layout_bg"></div>
+</body></html>
+<script  src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script src="__PUBLIC__/admin/js/layer/layer.js"></script>
+<script type="text/javascript">
+$(function(){
+	login();
+ });
+	var login=function(){
+	$("#log-btn").click(function(){
+		var userPhe	= $("#uphe").val();
+    	var userPwd	= $("#upwd").val();
+    	if(userPhe == ""){
+    		layer.msg('请输入登录手机号',{time:1*1000});
+    		return false;
+    	}
+    	if(userPwd == ""){
+    		layer.msg('请输入登录密码',{time:1*1000});
+    		return false;
+    	}
+		$.ajax({
+			url:"http://www.heigushop.com/admin.php?c=Seller&a=AuthSeller",
+			type:"post",
+			data:{"phe":userPhe,"pwd":userPwd,"login_type":1},
+			success:function(result){
+				eval(arguments[0]);
+			},
+			error:function(){
+				layer.msg('系统升级..',{time:2*1000});
+			}
+		});
+	}); 
+}
+</script>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>收货地址管理</title>
+    <link rel="stylesheet" href="__PUBLIC__/web/css/public.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/web/css/global.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/web/css/addres.css"/>
+    <link rel="stylesheet" href="__PUBLIC__/web/layer/skin/default/layer.css"/>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">收货地址管理</h3>
+        <div class="back">
+            <img src="__PUBLIC__/web/images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content addCon">
+<volist name="info" id="v" key="k">
+    <!--一条地址开始-->
+    <div class="config-address clearfix address-list">
+        <div class="config-wen">
+            <p class="config-p1 address-user clearfix">
+                <span class="address-name">{$v.consignee_name}</span>
+                <span class="address-phone">{$v.consignee_phe}</span>
+            </p>
+            <p class="config-p2">
+                <span class="areaAdd">{$v.consignee_address}</span>
+                <span class="street">{$v.remarks}</span>
+            </p>
+        </div>
+        <div class="defaultBox clearfix box-zl">
+         <input type="hidden" id="address_id" value='{$v.address_id}'/>
+            <p class="clearfix xuan-p">
+                <if condition="$v.flag eq 1"><i class="xaun-zl  xaun-zl-on"></i><else /><i class="xaun-zl"></i></if>
+                <!-- <i class="xaun-zl"></i> -->
+                <input type="hidden" id="flag" value='{$v.flag}'/>
+                <i class="xuan-wen">设置默认地址</i>
+            </p>
+            <p class="xuan-p2">
+                <span class="remove">删除</span>
+                <span class="compile2">编辑</span>
+            </p>
+        </div>
+    </div>
+</volist>
+<input type="hidden" id='token' name='token' value='{$token}' />
+    <!--一条地址结束-->
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+    <p class="addAddress">新添收货地址</p>
+</div>
+<!--bottom  end-->
+</body>
+<script src="__PUBLIC__/web/js/jquery1.9.1.js"></script>
+<script src="__PUBLIC__/web/js/common.js"></script>
+<script src="__PUBLIC__/web/layer/layer.js"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+    var token = $.trim($('#token').val()) ;
+    sessionStorage.setItem('Web',1);//微信保存本地标识
+    sessionStorage.setItem('token',token);//微信保存本地标识
+$(function(){
+      addressFun().init();
+  });
+  var addressFun = function(){
+
+      return{
+          init:function(){
+              this.jump();  //  页面跳转
+              this.click_operate() ; //  编辑 删除 操作
+              this.sessionStorage_redact(); // 本地存储数据
+              this.click_list() ; //点击选中事件(跟换背景图)
+          },
+          jump:function(){
+              $('.addAddress').click(function(){  //  跳转到 地址列表页面
+                  window.location.href = '__APP__/Address/NewlyAdded?token='+sessionStorage.getItem('token')+'&web=1'
+              });
+              $('.back').click(function(){  //  返回上一个页面
+                  window.history.back();
+              });
+              $('.config-wen').click(function(){
+                  window.location.href = "#"
+              })
+          },
+          click_list:function(){ // 点击选中事件(跟换背景图)
+              $('.xuan-p').click(function(){
+                  $(this).find('.xaun-zl').toggleClass('xaun-zl-on');// 会员选择部分
+                  if($(this).find('.xaun-zl').hasClass('xaun-zl-on')){
+                      $(this).find('.xaun-zl').parent().parent().parent().siblings().find('.xaun-zl').removeClass('xaun-zl-on')
+                       $(this).find('#flag').val('1');
+                       var address_id = $(this).parent().find('#address_id').val();
+                       $.ajax({
+                            url:"__APP__/Address/SetDefault",
+                            type:"POST",
+                            data:{token:sessionStorage.getItem('token'),web:1,address_id:address_id,flag:1},
+                            success:function(re){
+                                if(re.code == 204){
+                                    layer.msg(re.message);
+                                    // window.location.href = '#'
+                                }else if(re.code == 200){  
+                                    layer.msg(re.message);
+                                    window.setTimeout(function () {
+                                        location.href = '__APP__/Address/GetAddress?token='+token+'&web='+1;}, 1500); //跳转页面
+                                }
+                            }
+                        }); 
+                        // $(this).parents('.address-list').siblings().find('#flag').val('2');//其他未选中的改为2
+                      // alert('已经选中我了')
+                  }else{
+                      $(this).find('#flag').val('2');
+                       // alert('没有选中我')
+                  }
+
+              });
+
+          },
+          click_operate:function(){
+              $('.remove').click(function(){
+                  var remove  = $(this).parent().parent().parent();
+                  var address_id = $(this).parent().parent().find('#address_id').val();
+                  layer.confirm('您确定删除该信息？', {
+                      btn: ['确定','取消'] //按钮
+                  }, function(){
+                      $.ajax({
+                            url:"__APP__/Address/DelAddress",
+                            type:"POST",
+                            data:{token:sessionStorage.getItem('token'),web:1,address_id:address_id},
+                            success:function(re){
+                                if(re.code == 204){
+                                    layer.msg(re.message);
+                                }else if(re.code == 200){  
+                                    layer.msg(re.message);
+                                    remove.remove();
+                                }
+                            }
+                        }); 
+                  }, function(){
+                      return
+                  });
+
+              })
+          },
+          sessionStorage_redact: function () {
+              $('.compile2').click(function(){ // 点击编辑 保存数据 跳转到修改地址页面
+                 var address_id = $(this).parent().parent().find('#address_id').val();
+                  window.location.href = '__APP__/Address/getAddDetail?token='+token+'&web='+1+'&address_id='+address_id;
+              });
+              $('.config-wen').click(function(){ // 选择收货地址 获取数据
+
+                  /* window.history.back();*/
+              });
+
+
+          }
+      }
+
+  };
+
+</script>
+</html>

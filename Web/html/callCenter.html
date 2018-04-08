@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>客服中心</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/user.css"/>
+    <link rel="stylesheet" href="../layer/skin/default/layer.css"/>
+    <style>
+      html ,body{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">客服中心</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+
+    <!--资料 收藏等 列表 开始-->
+    <div class="my-list">
+        <ul class="">
+            <a target="_blank" style="color: black;" href="http://wpa.qq.com/msgrd?v=3&uin=3134901263&site=qq&menu=yes"> <li class="">
+               <div class="wrap clearfix">
+                   <!--<img src="../images/icon_qq5.png" alt=""/>-->
+                      <!-- <p><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes"><img border="0" src="../images/icon_qq5.png" alt="联系嘿谷商城" title="联系嘿谷商城"/>QQ客服</a></p>-->
+                   <p><img border="0" src="../images/icon_qq5.png" alt="嘿谷商城客服" title="嘿谷商城客服"/>QQ客服</p>
+               </div>
+            </li>
+            </a>
+            <li class="callphone">
+                <div class="wrap clearfix">
+                    <img src="../images/icon_zuoji5.png" alt=""/>
+                    <p>电话客服</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--资料 收藏等 列表 结束-->
+
+</div>
+<!--content end-->
+
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+
+    $(function(){
+        $(".back").click(function(){
+            window.history.back();
+        });
+        myFun().init();
+    });
+    var myFun = function(){
+        return{
+            init:function(){
+                this.QQ();  // 判断 代付款等 是否有待处理的订单
+                this.callphone(); //  点击 清除缓存
+
+            },
+            // 唤起QQ
+            QQ:function(){
+                $('.qq').click(function(){
+                    //com3134901263
+                    //window.location.href="mqqwpa://im/chat?chat_type=wpa&uin=3134901263&version=1&src_type=web&web_src=oicqzone.com";
+                    //window.location.href="mqqwpa://im/chat?chat_type=wpa&uin=3134901263&version=1&src_type=web&web_src=oicqzone.com";
+                    window.open("http://wpa.qq.com/msgrd?v=3&uin=3134901263&site=baidu.com&menu=yes");
+                });
+            },
+            // 唤起电话
+            callphone:function(){
+                $('.callphone').click(function(){
+                    window.location.href="tel:0371-56667279";
+                });
+            }
+        }
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,122 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>消息管理</title>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/style.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/admin/images/pagination.css" />
+
+</head>
+<body class="mainbody">
+    <div class="navigation">首页 &gt; 消息管理 &gt; APP系统消息</div>
+    <div class="tools_box">
+	    <div class="tools_bar">
+		    <a href="javascript:void(0);"  id="seleallbybtton" class="tools_btn"><span><b class="all">全选</b></span></a>
+            <a href="javascript:void(0);" id="Button1" class="tools_btn"><span><b class="delete">批量删除</b></span></a>
+            <a href="javascript:void(0);" class="tools_btn" onclick="BackInfo()"><span><b class="add">发送系统消息</b></span></a>
+        </div>
+	    
+    </div>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="msgtable">
+      <tr>
+       <th width="5%"><input id="Checkbox1" type="checkbox" class="cbk"  style=" margin:0px;"/></th>
+                <th width="5%">编号</th>
+                <th width="22%"  align="center">消息内容</th>
+                <th width="22%"  align="center">发布日期</th>
+                 <th width="22%"  align="center">查看权限</th>
+                 <th width="22%"  align="center">操作</th>
+      </tr>
+      		<foreach name="list" item="lt">
+      		    <tr>   
+                <td  align="center">  <input name="ck"  type="checkbox" class="cbk"  value="339"/></td>
+                <td align="center">{$no+$key}</td>
+                <td align="center">{$lt.ct}</td>
+                <td align="center">{$lt.atime}</td>
+                 <td align="center">{$lt.state}</td>
+                <td style=" text-align:center;">
+                   <a class="del" href="javascript:void(0)"   rel='{$lt.id}' ><img  src="__PUBLIC__/admin/images/delete.gif"  title="删除" alt="删除"/></a>
+                </td>
+            </tr>
+            </foreach>
+      </table>
+
+
+   
+    <div class="line15"></div>
+    <div class="page_box">
+      <div id="PageContent" class="flickr right">
+        {$page}
+      </div>
+     
+    </div>
+    <div class="line10"></div>
+</body>
+</html>
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/admin/js/function.js"></script>
+   <script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+    var province = $("#pe").val();
+    var city = $("#cy").val();
+        $(function () {
+            tablecolor();
+            $("#btnSearch").click(function () {
+            	userSearch();
+            });
+            $("#SelectUser").change(function () {
+            	userSearch();
+            });
+            $("#Button1").click(function () {
+                alldel("delallNews");
+            });
+            $("table tbody tr td a.del").click(function () {
+                del($(this), "delSysInfo");
+            });
+            $("#seleallbybtton").toggle(function () {
+                $(this).find("span b").text("取消");
+                $(".cbk").each(function () {
+                    $(this).attr("checked", true);
+                });
+            }, function () {
+                $(this).find("span b").text("全选");
+                $(".cbk").each(function () {
+                    $(this).attr("checked", false);
+                });
+            });
+            $("#Checkbox1").click(function () {
+                allselecheck($(this));
+            });
+        });
+        function BackInfo(){
+        	
+        	var text = "<div style='margin-top:20px;margin-bottom:20px'>请输入发送的内容：<br/><textarea id='answer' name='answer' style=\"margin: 0px; height: 166px; width: 285px;\"></textarea>";
+        	var html = "<div style='width:285px;margin-top:10px;margin-left:30px'>"+text+"</div></div>";
+        	var submit = function (v, h, f) {
+        	    if (f.answer == '') {
+        	        $.jBox.tip("请输入发送的系统信息。", 'error', { focusId: "answer" }); // 关闭设置 yourname 为焦点
+        	        return false;
+        	    }
+        	    $.ajax({
+        	    	url:"./admin.php?c=Message&a=SubSystem",
+        	    	type:"post",
+        	    	data:{"info":f.answer},
+        	    	success:function(msg){
+        	    		if(msg == 1){
+        	    			$.jBox.tip("回复成功","success");
+        	    		}else{
+        	    			$.jBox.tip("连接服务器超时","error");
+        	    		}
+        	    	}
+        	    });
+        	    //$.jBox.tip("你叫：" + h.find("#yourname").val());
+        	    //$.jBox.tip("你叫：" + h.find(":input[name='yourname']").val());
+
+        	    return true;
+        	};
+			$.jBox(html, { title: "发送系统消息", submit: submit });
+        	 	
+        }
+   
+    </script>

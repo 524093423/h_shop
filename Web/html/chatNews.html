@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>聊天</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/news.css"/>
+    <style>
+
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti"></h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <div class="wrap chatBox">
+        <!--日期 分割 聊天记录 开始-->
+    </div>
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+  <div class="wrap chat-bot clearfix">
+     <div class="chat-pic">
+         <img src="../images/chat.png" alt=""/>
+     </div>
+     <div class="chat-wen">
+         <!--  <p class="chat-btn" >按住说话</p>-->
+         <div class="chat-box clearfix">
+             <!--<a href="#5F" class="chat-inp">
+                 <input type="text" id="textInput"/>
+             </a>-->
+             <div class="chat-inp">
+                 <input type="text" id="textInput"/>
+             </div>
+             <!--发送-->
+            <span class="fa" id="sendPrivateText" >发送</span>
+         </div>
+     </div> 
+  </div>
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/webconfig.js?a=321"></script>
+<script src="../web-im/config/webim.config.js"></script>
+<script src="../web-im/sdk/strophe-1.2.8.min.js"></script>
+<script src="../web-im/sdk/websdk-1.4.10.js"></script>
+<script src="../web-im/webrtc/adapter.js"></script>
+<script src="../web-im/webrtc/webrtc-1.4.10.js"></script>
+
+
+<script>
+    /**
+     * Created by clock on 16-11-25.
+     */
+    var conn = {};
+    conn = new WebIM.connection({
+        isMultiLoginSessions: WebIM.config.isMultiLoginSessions,
+        https: typeof WebIM.config.https === 'boolean' ? WebIM.config.https : location.protocol === 'https:',
+        url: WebIM.config.xmppURL,
+        isAutoLogin: true
+       //heartBeatWait: WebIM.config.heartBeatWait,
+        //autoReconnectNumMax: WebIM.config.autoReconnectNumMax,
+        //autoReconnectInterval: WebIM.config.autoReconnectInterval
+    });
+
+    // listern，添加回调函数
+    conn.listen({
+        onOpened: function (message) {          //连接成功回调，连接成功后才可以发送消息
+            //如果isAutoLogin设置为false，那么必须手动设置上线，否则无法收消息
+            // 手动上线指的是调用conn.setPresence(); 在本例中，conn初始化时已将isAutoLogin设置为true
+            // 所以无需调用conn.setPresence();
+            //console.log("opened");
+        },
+        onTextMessage: function (message) {
+            // 在此接收和处理消息，根据message.type区分消息来源，私聊或群组或聊天室
+            /*console.log(message);
+            console.log(message.type);
+            console.log(message.data);*/
+            var fromuser    = message.from;//是否为当前账号
+            sellTOken = getUrlParam("sellerToken");console.log(sellTOken);
+            if(fromuser == sellTOken){
+                chatFun().pushText(message.data,2);
+            }
+            //chatFun().saveChat(getUrlParam("sellerToken"),sessionStorage.getItem("token"),message.data,sessionStorage.getItem("userName"),sessionStorage.getItem("Photo"));//记录消息
+        },  //收到文本消息
+        onEmojiMessage: function (message) {
+            // 当为WebIM添加了Emoji属性后，若发送的消息含WebIM.Emoji里特定的字符串，connection就会自动将
+            // 这些字符串和其它文字按顺序组合成一个数组，每一个数组元素的结构为{type: 'emoji(或者txt)', data:''}
+            // 当type='emoji'时，data表示表情图像的路径，当type='txt'时，data表示文本消息
+            var data = message.data;
+            for (var i = 0, l = data.length; i < l; i++) {
+                console.log(data[i]);
+            }
+        },   //收到表情消息
+        onPictureMessage: function (message) {
+            var options = {url: message.url};
+            options.onFileDownloadComplete = function () {
+                // 图片下载成功
+                console.log('Image download complete!');
+            };
+            options.onFileDownloadError = function () {
+                // 图片下载失败
+                console.log('Image download failed!');
+            };
+            WebIM.utils.download.call(conn, options);       // 意义待查
+
+        }, //收到图片消息
+        onCmdMessage: function (message) {
+            console.log('CMD');
+        },     //收到命令消息
+        onAudioMessage: function (message) {
+            console.log("Audio");
+        },   //收到音频消息
+        onLocationMessage: function (message) {
+            console.log("Location");
+        },//收到位置消息
+        onFileMessage: function (message) {
+            console.log("File");
+        },    //收到文件消息
+        onVideoMessage: function (message) {
+            var node = document.getElementById('privateVideo');
+            var option = {
+                url: message.url,
+                headers: {
+                    'Accept': 'audio/mp4'
+                },
+                onFileDownloadComplete: function (response) {
+                    var objectURL = WebIM.utils.parseDownloadResponse.call(conn, response);
+                    node.src = objectURL;
+                },
+                onFileDownloadError: function () {
+                    console.log('File down load error.')
+                }
+            };
+            WebIM.utils.download.call(conn, option);
+        },   //收到视频消息
+        onPresence: function (message) {
+            switch (message.type) {
+                case 'subscribe':                           // 对方请求添加好友
+                    // 同意对方添加好友
+                    document.getElementById('agreeFriends').onclick = function (message) {
+                        conn.subscribed({
+                            to: 'asdfghj',
+                            message: "[resp:true]"
+                        });
+                        // 需要反向添加对方好友
+                        conn.subscribe({
+                            to: message.from,
+                            message: "[resp:true]"
+                        });
+                    };
+                    // 拒绝对方添加好友
+                    document.getElementById('rejectFriends').onclick = function (message) {
+                        conn.unsubscribed({
+                            to: message.from,
+                            message: "rejectAddFriend"                  // 拒绝添加好友回复信息
+                        });
+                    };
+
+                    break;
+                case 'subscribed':                          // 对方同意添加好友，已方同意添加好友
+                    break;
+                case 'unsubscribe':                         // 对方删除好友
+                    break;
+                case 'unsubscribed':                        // 被拒绝添加好友，或被对方删除好友成功
+                    break;
+                case 'joinChatRoomSuccess':                 // 成功加入聊天室
+                    console.log('join chat room success');
+                    break;
+                case 'joinChatRoomFaild':                   // 加入聊天室失败
+                    console.log('join chat room faild');
+                    break;
+                case 'joinPublicGroupSuccess':              // 意义待查
+                    console.log('join public group success', message.from);
+                    break;
+            }
+        },       //收到联系人订阅请求（加好友）、处理群组、聊天室被踢解散等消息
+        onRoster: function (message) {
+            console.log('Roster');
+        },         //处理好友申请
+        onInviteMessage: function (message) {
+            console.log('Invite');
+        },  //处理群组邀请
+        onOnline: function () {
+            console.log('onLine');
+        },                  //本机网络连接成功
+        onOffline: function () {
+            console.log('offline');
+        },                 //本机网络掉线
+        onError: function (message) {
+            console.log('Error');
+        },           //失败回调
+        onBlacklistUpdate: function (list) {
+            // 查询黑名单，将好友拉黑，将好友从黑名单移除都会回调这个函数，list则是黑名单现有的所有好友信息
+            console.log(list);
+        }     // 黑名单变动
+    });
+    // 初始化WebRTC Call
+    var rtcCall = new WebIM.WebRTC.Call({
+        connection: conn,
+
+        mediaStreamConstaints: {
+            audio: true,
+            video: true
+        },
+
+        listener: {
+            onAcceptCall: function (from, options) {
+                console.log('onAcceptCall::', 'from: ', from, 'options: ', options);
+            },
+            onGotRemoteStream: function (stream) {
+                console.log('onGotRemoteStream::', 'stream: ', stream);
+                var video = document.getElementById('video');
+                video.src = window.URL.createObjectURL(stream);
+            },
+            onGotLocalStream: function (stream) {
+                console.log('onGotLocalStream::', 'stream:', stream);
+                var video = document.getElementById('localVideo');
+                video.src = window.URL.createObjectURL(stream);
+            },
+            onRinging: function (caller) {
+                console.log('onRinging::', 'caller:', caller);
+            },
+            onTermCall: function (reason) {
+                console.log('onTermCall::');
+                console.log('reason:', reason);
+            },
+            onIceConnectionStateChange: function (iceState) {
+                console.log('onIceConnectionStateChange::', 'iceState:', iceState);
+            },
+            onError: function (e) {
+                console.log(e);
+            }
+        }
+    });
+</script>
+<script>
+    /**
+     * Created by clock on 16-11-30.
+     */
+// open，登录
+    var options = { 
+    			  apiUrl: WebIM.config.apiURL,
+    			  user: sessionStorage.getItem("token"),
+    			  pwd: '123456',
+    			  appKey: WebIM.config.appkey
+    		};
+    conn.open(options);
+	//console.log(options);
+    var register = function () {
+        var option = {
+            username: '13126808448',
+            password: 'a',
+            nickname: 'clock',
+            appKey: WebIM.config.appkey,
+            success: function () {
+                //console.log('regist success!');
+            },
+            error: function () {
+                console.log('regist error');
+            },
+            apiUrl: WebIM.config.apiURL
+        };
+        conn.signup(option);
+    };
+
+    // 私聊发送文本消息，发送表情同发送文本消息，只是会在对方客户端将表情文本进行解析成图片
+    var sendPrivateText = function () {
+    	var sendmsg	= $.trim($("#textInput").val());
+    	if(sendmsg==""){
+    		layer.msg("请输入聊天内容",{time:1000});
+
+    		return false;
+    	}
+        var id = conn.getUniqueId();
+        //console.log(id);
+        var msg = new WebIM.message('txt', id);
+        //console.log(msg);
+        msg.set({
+            msg: sendmsg,                       // 消息内容
+            to: getUrlParam("sellerToken"),                     // 接收消息对象
+            roomType: false,
+            success: function (id, serverMsgId) {
+            	//conn.listen().onTextMessage();
+            	chatFun().pushText(sendmsg,1);
+            	$("#textInput").val("");
+            	chatFun().saveChat(sessionStorage.getItem("token"),getUrlParam("sellerToken"),sendmsg,sessionStorage.getItem("userName"),sessionStorage.getItem("Photo"));//记录消息
+                //console.log("send private text Success");
+            },
+            error:function(){
+            	console.log("send error");
+            }
+        });
+        msg.body.chatType = 'singleChat';
+        conn.send(msg.body);
+        //console.log("结束");
+    };
+
+    // 私聊发送命令消息
+    var sendPrivateCmd = function () {
+        var id = conn.getUniqueId();
+        var msg = new WebIM.message('cmd', id);
+        msg.set({
+            msg: 'ls',
+            to: 'asdfghj',
+            roomType: false,
+            success: function (id, serverMsgId) {
+                console.log('CMD Success');
+            }
+        });
+        msg.body.chatType = 'singleChat';
+        conn.send(msg.body);
+    };
+
+    // 私聊发送图片消息
+    var sendPrivateImg = function () {
+        var id = conn.getUniqueId();
+        var msg = new WebIM.message('img', id);
+        var input = document.getElementById('image');               // 选择图片的input
+        var file = WebIM.utils.getFileUrl(input);                   // 将图片转化为二进制文件
+        var allowType = {
+            'jpg': true,
+            'gif': true,
+            'png': true,
+            'bmp': true
+        };
+        if (file.filetype.toLowerCase() in allowType) {
+            console.log('send');
+            var option = {
+                apiUrl: WebIM.config.apiURL,
+                file: file,
+                to: 'asdfghj',
+                roomType: false,
+                chatType: 'singleChat',
+                onFileUploadError: function () {
+                    console.log('onFileUploadError');
+                },
+                onFileUploadComplete: function () {
+                    console.log('onFileUploadComplete');
+                },
+                success: function () {
+                    console.log('Success');
+                }
+                // flashUpload: WebIM.flashUpload               // 意义待查
+            };
+            msg.set(option);
+            conn.send(msg.body);
+        }
+    };
+</script>
+<script>
+    /**
+     * Created by clock on 16-11-30.
+     */
+    window.onload = function () {
+    	/* var options = { 
+    			  apiUrl: WebIM.config.apiURL,
+    			  user: '13220138448',
+    			  pwd: '123456',
+    			  appKey: WebIM.config.appkey
+    			};
+    			conn.open(options);
+    	console.log(conn);
+    	var sendPrivateText = function () {
+    	    var id = conn.getUniqueId();                 // 生成本地消息id
+    	    var msg = new WebIM.message('txt', id);      // 创建文本消息
+    	    msg.set({
+    	        msg: '我是冯晓磊',                  // 消息内容
+    	        to: '15110027513',                          // 接收消息对象（用户id）
+    	        roomType: false,
+    	        success: function (id, serverMsgId) {
+    	            console.log('send private text Success');
+    	        }
+    	    });
+    	    msg.body.chatType = 'singleChat';
+    	    conn.send(msg.body);
+    	};return false; */
+        //document.getElementById('register').onclick = register;
+
+
+    	$("#sendPrivateText").click(function(){
+
+            sendPrivateText();//发送私人消息
+    		//sendRoomText();
+
+            var target = this;
+            // 使用定时器是为了让输入框上滑时更加自然
+            setTimeout(function(){
+                target.scrollIntoView(true);
+            },100);
+            /*发送时如为空  失去焦点  ZL 8-10*/
+            var val = $.trim($(this).parents('.chat-bot').find('input').val());
+            if(val == ''){
+                $(this).parents('.chat-bot').find('input').blur()
+            }else{
+                $(this).parents('.chat-bot').find('input').focus()
+            }
+
+
+
+    	});
+
+    };
+</script>
+<script>
+    // 贴图发送（放到消息模块里）
+    document.addEventListener('paste', function (e) {
+        if (e.clipboardData && e.clipboardData.types) {
+            if (e.clipboardData.items.length > 0) {
+                if (/^image\/\w+$/.test(e.clipboardData.items[0].type)) {
+                    var blob = e.clipboardData.items[0].getAsFile();
+                    var url = window.URL.createObjectURL(blob);
+                    var id = conn.getUniqueId();//生成本地消息id
+
+                    var msg = new WebIM.message('img', id);
+                    msg.set({
+                        apiUrl: WebIM.config.apiURL,
+                        file: {data: blob, url: url},
+                        to: 'asdfghj',
+                        roomType: false,
+                        chatType: 'singleChat',
+                        onFileUploadError: function (error) {
+                            console.log("Error");
+                        },
+                        onFileUploadComplete: function (data) {
+                            console.log("Complete");
+                        },
+                        success: function (id) {
+                            console.log("Success");
+                        }
+                    });
+                    conn.send(msg.body);
+                }
+            }
+        }
+    });
+</script>
+<script type="text/javascript" charset="utf-8">
+
+
+    $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.content').addClass('content-news');
+            $('.bottom').addClass('bottom-news');
+
+            $('.chat-inp').on('click', function () {
+                var target = this;
+                // 使用定时器是为了让输入框上滑时更加自然
+                setTimeout(function(){
+                    target.scrollIntoView(true);
+                },100);
+
+            });
+
+            $('.fa').on('click', function () {
+                var target = this;
+                // 使用定时器是为了让输入框上滑时更加自然
+                setTimeout(function(){
+                    target.scrollIntoView(true);
+                },100);
+
+            });
+
+            //解决第三方ios 输入法遮挡输入框问题
+           /* var interval = setInterval(function() {
+                document.body.scrollTop = document.body.scrollHeight
+            }, 100)*/
+
+            /*点击中间 失去 焦点  ZL 8-10*/
+            $('.content').click(function(){
+               // alert(12)
+                $('.chat-inp input').blur()
+            });
+
+
+        }
+    });
+
+ var sellTOken	= "";
+  $(function(){
+	  $(".to-ti").text(unescape(getUrlParam("shop")));
+     $(".back").click(function(){
+		  window.history.back();
+	  });
+      chatFun().init();
+     sellTOken = getUrlParam("sellerToken");console.log(sellTOken);
+     console.log(unescape(getUrlParam("shop")));
+  });
+
+    var chatFun = function(){
+        return{
+            init:function(){
+               this.importClick();  // 点击 切换语音和文字输入
+                //this.last()
+
+            },
+            // 点击 切换语音和文字输入
+            importClick:function(){
+
+            },
+            pushText:function(msg,state){
+            	console.log("内容--"+msg+"--状态"+state);
+            	var messageHtml	= "";
+            	messageHtml	 += '<div class="chatNews"><!--<h3>2017年3月26日</h3>-->';
+            	messageHtml  += '<ul class="chat-list">';
+            	if(state==1){
+            		messageHtml  += '<li class="clearfix chat-ri">';
+                    messageHtml	 += '<img src='+sessionStorage.getItem('Photo')+' alt=""/>';   
+                    messageHtml  +='<p>'+msg+'</p></li>';
+            	}else{
+            		messageHtml  +='<li class="clearfix chat-le">';
+                    messageHtml  +='<img src='+getUrlParam("logo")+' alt=""/>';
+                    messageHtml  +='<p>'+msg+'</p></li>';
+            	}
+                messageHtml  +='</ul></div>';
+                $(".chatBox").append(messageHtml);
+
+
+                // 判断是安卓 还是ios
+                var u = navigator.userAgent;
+                var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+                var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+
+                //  如果是ios 手机
+                if(isiOS){
+
+                    $('.chatNews').eq(leng_ios-1).addClass('last-news');
+                    $('.chatNews').eq(leng_ios-1).siblings().removeClass('last-news');
+
+                    var inpTop_ios = $('.chat-bot').offset().top;
+                    var leng_ios = $('.chatBox .chatNews').length;
+
+                    if(leng_ios > 0){
+                        // 屏幕的高度
+                        var screenTop_ios = $(window).height();
+                        // 获取底部的高度，以及最后一个li的高度，
+                        var top1_ios = $('.chat-bot').height();
+                        // 获取头部的高度
+                        var top2_ios = $('.top').height();
+                        // 中间内容区域的高度
+                        var conTop = screenTop_ios - top1_ios -top2_ios ;
+                        // 中间内容区域的实际高度
+                        var conTop_ios = $('.chatBox').height();
+                        // 获取 一个 chatNews 的高度
+                        var oneNew  = $('.chatNews').height();
+
+                    }
+
+                    if(conTop_ios < top1_ios*7){
+                        $('.content').scrollTop(conTop - conTop_ios);
+                        $('.chatNews ul').eq(0).css('padding-top', top1_ios*7 - conTop_ios)
+                    }else{
+                        $('.content').scrollTop(conTop_ios - conTop);
+
+                        $('.chatNews ul').eq(0).css('padding-top', 0)
+                    }
+                    $('.chat-inp').click(function(){
+                        if(conTop_ios < top1_ios*7){
+                            $('.content').scrollTop(conTop - conTop_ios);
+                            $('.chatNews ul').eq(0).css('padding-top', top1_ios*7 - conTop_ios)
+                        }else{
+                            $('.content').scrollTop(conTop_ios - conTop);
+                            $('.chatNews ul').eq(0).css('padding-top', 0)
+                        }
+                    });
+                    $('.chat-inp input').blur(function(){
+                        $('.chatNews ul').eq(0).css('padding-top', 0)
+                    })
+                    /*$('.chat-inp').click(function(){
+                        $('.content').scrollTop(conTop_ios - conTop );
+                    });
+                    $('.content').scrollTop(conTop_ios - conTop);
+*/
+                }
+                //如果是 安卓 手机
+                if(isAndroid){
+                    var inpTop = $('.chat-bot').offset().top;
+                    var leng = $('.chatBox .chatNews').length;
+                    console.log(leng);
+                    console.log(inpTop);
+                    $('.chatNews').eq(leng-1).addClass('last-news');
+                    $('.chatNews').eq(leng-1).siblings().removeClass('last-news');
+                    //$('.chatNews').eq(leng-1).attr('id','5F');
+                    // 最后一个li距离页面顶部的距离
+                    if(leng > 0){
+                        var lastTop =  $('.last-news').offset().top;
+                        // 屏幕的高度
+                        var screenTop = $(window).height();
+                        // 获取底部的高度，以及最后一个li的高度，
+                        var top1 = $('.chat-bot').height();
+                        var top2 = $('.chatNews:last').height();
+                        // 要滚动的高度
+                        var scrollTop = lastTop - screenTop;
+                        //console.log(scrollTop);
+                    }
+                    $('.chat-inp').click(function(){
+                        $(window).scrollTop(scrollTop+top1+top2+top2);
+                    });
+                    $(window).scrollTop(scrollTop+top1+top2+top2);
+
+                }
+
+
+            },
+            saveChat:function(ufrom,uto,msg,fromhead,fromphoto){
+            	$.ajax({
+            		url:"../web-im/function/dialogue.php",
+            		type:"post",
+            		data:{"fromtoken":ufrom,"totoken":uto,"msg":msg,"shopname":unescape(getUrlParam("shop")),"logo":getUrlParam("logo"),
+            			"fromhead":fromhead,"fromphoto":fromphoto},
+            		success:function(result){
+            			if(result.code==204){
+            				layer.msg("请检查您的网络连接",{time:1000});
+            			}
+            		},
+            		error:function(){
+            			layer.msg("请检查您的网络连接",{time:1000});
+            		}
+            	});
+            }
+        }
+    }
+
+</script>
+</html>

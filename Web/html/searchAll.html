@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>搜索</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+     <div class="wrap clearfix topWrap">
+         <div class="se-back">
+             <img src="../images/back.png" alt=""/>
+         </div>
+         <div class="to-inp search-inp">
+             <input type="text" class="searchInput" placeholder="搜索商品或商家"/>
+             <img src="../images/sou.png" alt=""/>
+         </div>
+         <div class="sou-btn">
+             <p>搜索</p>
+         </div>
+     </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <!--搜索方式-->
+    <div class="search-list">
+        <!--宝贝 店铺-->
+        <div class="sear-name">
+            <p class="se-bao se-on" data-type="1">宝贝</p>
+            <p class="se-dian" data-type="2">店铺</p>
+        </div>
+        <!--搜索列表-->
+        <ul class="clearfix search-ul">
+            <li>
+                <p class="search-name"><i>综合排序 </i><span></span></p>
+                <div class="select">
+                    <p class="clearfix" data-sale="2"> 销量从高到低 <i></i></p>
+                    <p class="clearfix" data-sale="1">销量从低到高 <i></i></p>
+                </div>
+            </li>
+            <li class="xian">
+                <p class="search-name"><i>销量  </i><span></span></p>
+                <div class="select">
+                    <p class="clearfix" data-sale="2"> 销量从高到低 <i></i></p>
+                    <p class="clearfix" data-sale="1">销量从低到高 <i></i></p>
+                </div>
+            </li>
+            <li >
+                <p class="search-name"><i>价格 </i><span></span></p>
+                <div class="select">
+                    <p class="clearfix" data-unit="2">价格最高 <i ></i></p>
+                    <p class="clearfix" data-unit="1">价格最低 <i></i></p>
+
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <!--猜你喜欢 开始-->
+    <div class="show allSe-show">
+            <!--列表-->
+        <ul class="clearfix sh-list">
+
+        </ul>
+    </div>
+    <!--猜你喜欢 结束-->
+    <!--店铺页面 开始-->
+    <div class="se-store">
+        <ul class="st-list new1">
+            <li>
+                <div class="wrap clearfix">
+                    <div class="ne-pic">
+                        <img src="../images/logo1.jpg" alt=""/>
+                    </div>
+                    <div class="ne-wo">
+                        <h3>---</h3>
+                        <h4>----------------</h4>
+                    </div>
+                    <div class="ne-jian">
+                        <img src="../images/youjian.png" alt=""/>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--店铺页面 结束-->
+    <!--蒙版效果-->
+    <div class="mask"></div>
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+    <ul class="bo-list clearfix">
+        <li>
+            <a href="#">
+                <img src="../images/b1.jpg" alt=""/>
+                <p>首页</p>
+            </a>
+        </li>
+        <li class="car">
+            <a href="#">
+                <img src="../images/b6.jpg" alt=""/>
+                <p>购物车</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../images/b4.jpg" alt=""/>
+                <p>关注</p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="../images/b5.jpg" alt=""/>
+                <p>我的</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/classify.js?a=123"></script>
+<script src="../js/goods.js?a=123"></script>
+<script src="../js/shop.js?a=321"></script>
+<script type="text/javascript">
+    /*  $(function(){ //判断 是 安卓 还是IOS 手机
+     var u = navigator.userAgent;
+     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+     if(isAndroid){
+     return;
+     }
+     if(isiOS){
+     $('.top').css({'height':'1.765625rem'})
+     $('.content').css({'margin-top':'1.765625rem'})
+     $('.topWrap').css({'margin-top':'0.328125rem'})
+     }
+     })*/
+     var sale	= "";
+     var unit	= "";
+     var search	= "";
+     var classId="";
+     var shopsearch="";
+     var goodssearch="";
+     var searchtype=1;
+    $(function(){
+    	$(".se-back").click(function(){
+    		history.go(-1);
+    	});
+        searchFun().init()
+     	classId	= getUrlParam('classid');
+        getHomeGoods(classId,bid="",sessionStorage.getItem('city'),page="",search="",sale="",unit="",2,2);
+        getShop(sessionStorage.getItem('city'),page="",search="",2)
+    });
+    var searchFun = function(){
+        return {
+            init:function(){
+                this.tab_list(); //点击导航
+                this.ul_li() ; // 点击导航下拉列表
+                this.jump();  // 页面跳转
+                this.search();
+                this.sessionStorage(); // 滚动高度 本地保存
+
+            },
+            tab_list:function(){ //点击导航
+                $('.search-ul li').on('click',function(){
+                    if($(this).find('.select').css("display")=="none"){
+                        $(this).find('.select').css('display','block');
+                        $(this).siblings().find('.select').css('display','none');
+                        $('.mask').css('display','block');
+                        $('body').css('overflow','hidden')
+                    }else{
+                        $(this).find('.select').css('display','none');
+                        $('.mask').css('display','none');
+                        $('body').css('overflow','auto')
+
+                    }
+
+                });
+                $('.sear-name p').click(function(){ // 店铺  宝贝
+                    if($(this).hasClass('se-on')){ //  点击更换  样式
+                       $(this).siblings().removeClass('se-on')
+                    }else{
+                        $(this).addClass('se-on');
+                        $(this).siblings().removeClass('se-on')
+                    }
+                	searchtype	= $(this).attr('data-type');
+                    if($('.se-dian').hasClass('se-on')){ //  点击 切换内容
+                        $('.search-ul').css('display','none');
+                        $('.show').css('display','none');
+                        $('.mask').css('display','none');
+                        $('.se-store').css('display','block');
+                        if(shopsearch != ""){
+                        	$('.searchInput').val(shopsearch);
+                        }else{
+                        	$('.searchInput').val('');
+                        }
+                    }else{
+                        $('.search-ul').css('display','block');
+                        $('.show').css('display','block');
+                        $('.se-store').css('display','none');
+                        if(goodssearch != ""){
+                        	$('.searchInput').val(goodssearch);
+                        }else{
+                        	$('.searchInput').val('');
+                        }
+                    }
+                })
+            },
+            ul_li:function(){   // 点击导航下拉列表
+                $('.select p').on('click',function(){
+                    var html = $(this).text();
+                    $(this).parent().parent().find('.search-name').find('i').text(html);
+                    $(this).addClass('search-p');
+                    $(this).siblings().removeClass('search-p');
+                    $(this).find('i').addClass('search-on');
+                    $(this).siblings().find('i').removeClass('search-on');
+                    if(typeof($(this).attr('data-sale')) == "undefined"){
+                    	if(typeof($(this).attr('data-unit'))!="undefined"){
+                    		unit	= $(this).attr('data-unit');
+                    	}
+                    }else{
+                    	if(typeof($(this).attr('data-unit'))!="undefined"){
+                    		unit	= $(this).attr('data-unit');
+                    		sale	= $(this).attr('data-sale');
+                    	}else{
+                    		sale	= $(this).attr('data-sale');
+                    	}
+                    }
+                    getHomeGoods(classId,bid="",sessionStorage.getItem('city'),page="",goodssearch,sale,unit,2,2);//切换搜索 销量或者是价格
+
+                })
+            },
+            jump:function(){ // 页面跳转
+
+            },
+            search:function(){
+              $('.sou-btn').click(function(){
+            	  Allsearch();
+              });
+            },
+            // 滚动高度 本地保存
+            sessionStorage:function(){
+                // 保存本地存储滚动的高度
+                $(window).scroll(function() {
+                    sessionStorage.setItem('scroll_top3',$(window).scrollTop());
+                    //alert(  parseInt(sessionStorage.getItem('scroll_top')));
+                });
+
+                //获取本地存储的数据
+                //保存 已经加载的数据
+                var storage_html3 = $('.allSe-show').html();
+                sessionStorage.setItem("list_id", storage_html3);
+
+                var value3 = sessionStorage.getItem("list_id");
+                if(value3 !== null && value3 !== undefined && value3 !== ''){
+                    // alert(111)
+                    setTimeout(function(){
+                        var h3 = sessionStorage.getItem('scroll_top3')
+                        //alert(typeof  parseInt(sessionStorage.getItem('scroll_top')))
+                        $(document).scrollTop(h3);
+                    },300)
+                }
+            }
+
+
+        }
+    };
+	function Allsearch(){
+		var input = $.trim($('.searchInput').val());
+        if( !input) {    //一抬起就看表单里面是否有值，没有直接return
+        	if(searchtype==1){
+        		search	= "";
+        		goodssearch = "";
+        	}else{
+        		shopsearch	= "";
+        	}
+            $('.result').css('display','none');
+        }
+        search	= input;
+        if(searchtype==1){
+    		goodssearch = search;
+    	}else{
+    		shopsearch	= search;
+    	}
+        if(searchtype ==1){
+        	getHomeGoods(classId,bid="",sessionStorage.getItem('city'),page="",search,sale,unit,2,2);
+        }else{
+        	getShop(sessionStorage.getItem('city'),page="",search,2);	
+        }
+	}
+</script>
+</html>

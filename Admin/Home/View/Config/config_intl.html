@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{:C('APP_TITLE')}</title>
+ <link href="__PUBLIC__/admin/images/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="mainbody">
+
+<div class="navigation"><!--<a href="javascript:history.go(-1);" class="back">后退</a>-->首页 &gt; 系统管理 &gt; 积分相关设置</div>
+<div id="contentTab">
+    <ul class="tab_nav">
+        <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+    </ul>
+
+    <div class="tab_con" style="display:block;">
+        <table class="form_table">
+            <col width="150px"><col>
+            <tbody>
+            <foreach name="intl" item="rl">
+            <tr> 
+                <th>是否开启：</th>
+                <td>
+                    <select class="select" id="classname">
+                       <if condition=" $rl.content eq 1 " >
+                           <option value="1" selected>是</option>
+                           <option value="2" >否</option>
+                       <else />
+                           <option value="1" >是</option>
+                           <option value="2" selected>否</option>
+                       </if>
+                    </select>(使用积分支付同样返积分)
+                </td>
+            </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </div>
+    <div class="foot_btn_box">
+     <input id="sub" type="button" value="提交保存" class="btnSubmit"/>
+    </div>
+</div>
+</body>
+</html>
+ <script src="__PUBLIC__/js/jquery-1.8.3.min.js" type="text/javascript" ></script>
+ <script src="__PUBLIC__/admin/js/function.js" type="text/javascript" ></script>
+ <script src="__PUBLIC__/admin/js/tips/jquery.poshytip.js" type="text/javascript"></script>
+ <link href="__PUBLIC__/admin/js/tips/tip-yellow/tip-yellow.css" rel="stylesheet" type="text/css" />
+     <script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+   <script>
+   var classname1 = $("#classname").val();
+       $(function () {
+           $("#sub").click(function () {
+               if (1==2) { tip('classname', '请选择进行的操作'); $("#classname").focus(); return false; }
+               else {
+            	   if(classname1 == $("#classname").val()){
+            		   $.jBox.tip('未做改变', 'success');
+            		   return false;
+            	   }
+            	   $.ajax({
+            	        type: "POST",
+            	        dataType: "text",
+            	        url: "admin.php?c=Config&a=UpdateConfig",
+            	        data: "sets=payuseintl" + "&contents="+$("#classname").val(),
+            	        success: function (data) {
+            	            if(data > 0){
+            	            	$.jBox.tip('更新成功。', 'success');
+            	            }else{
+            	            	$.jBox.tip('服务器连接超时，更新失败', 'success');
+            	            }
+            	        }
+            	    });
+               }
+           });
+       });
+  </script>

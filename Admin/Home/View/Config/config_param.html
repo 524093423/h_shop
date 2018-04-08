@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{:C('APP_TITLE')}</title>
+ <link href="__PUBLIC__/admin/images/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="mainbody">
+
+<div class="navigation"><!--<a href="javascript:history.go(-1);" class="back">后退</a>-->首页 &gt; 系统管理 &gt; 参数配置</div>
+<div id="contentTab">
+    <ul class="tab_nav">
+        <li class="selected"><a onclick="tabs('#contentTab',0);" href="javascript:;">基本信息</a></li>
+    </ul>
+
+    <div class="tab_con" style="display:block;">
+        <table class="form_table">
+            <col width="200px"><col>
+            <tbody>
+            <foreach name="info" item="io">
+            <tr> 
+                <th><span class="{$io.set}">{$io.tdname}</span>：</th>
+                <td><input type="text" id="{$io.set}" value="{$io.content}"   class="txtInput normal required" />
+                <input style="margin-left:185px" onclick="SubUp('{$io.set}')" type="button" value="保存" class="btnSubmit"/></td>
+            </tr>
+            </foreach>
+            </tbody>
+        </table>
+    </div>
+    <div class="foot_btn_box">
+    
+    </div>
+</div>
+</body>
+</html>
+ <script src="__PUBLIC__/js/jquery-1.8.3.min.js" type="text/javascript" ></script>
+ <script src="__PUBLIC__/admin/js/function.js" type="text/javascript" ></script>
+ <script src="__PUBLIC__/admin/js/tips/jquery.poshytip.js" type="text/javascript"></script>
+ <link href="__PUBLIC__/admin/js/tips/tip-yellow/tip-yellow.css" rel="stylesheet" type="text/css" />
+     <script src="__PUBLIC__/admin/js/jbox/jquery.jBox-2.2.min.js" type="text/javascript"></script>
+    <link href="__PUBLIC__/admin/js/jbox/jbox.css" rel="stylesheet" type="text/css" />
+   <script>
+   var classname1 = $("#classname").val();
+   //更新参数
+   function SubUp(column){
+	   var content = GetParam(column);
+	   if(!CheckParam(column)){
+		   var str = "请填写";
+		   tip(column, str+content);
+		   return false;
+	   }
+	   $.ajax({
+	        type: "POST",
+	        dataType: "text",
+	        url: "admin.php?c=Config&a=UpdateConfig",
+	        data: "sets="+column+ "&contents="+$("#"+column).val(),
+	        success: function (data) {
+	            if(data > 0){
+	            	$.jBox.tip('更改参数'+content+'成功', 'success');
+	            }else{
+	            	$.jBox.tip('参数未做修改', 'error');
+	            }
+	        }
+	    });
+   }
+   //获取参数名称
+   function GetParam(set){
+	   var vas = $("."+set).html();
+	   return vas;
+   }
+   //对参数进行非空判断
+   function CheckParam(set){
+	   if ($("#" + set).val().length < 1) {
+	        return false;
+	    }
+	    else {
+	        return true;
+	    }
+   }
+       $(function () {
+           /* $("#sub").click(function () {
+               if (!veriform('classname')) { tip('classname', '请填写网站地址'); $("#classname").focus(); return false; }
+               else {
+            	   if(classname1 == $("#classname").val()){
+            		   $.jBox.tip('输入地址与原网址相同。', 'success');
+            		   return false;
+            	   }
+            	   $.ajax({
+            	        type: "POST",
+            	        dataType: "text",
+            	        url: "admin.php?c=Config&a=UpdateConfig",
+            	        data: "sets=rooturl" + "&contents="+$("#classname").val(),
+            	        success: function (data) {
+            	            if(data > 0){
+            	            	$.jBox.tip('更新成功。', 'success');
+            	            }else{
+            	            	$.jBox.tip('服务器连接超时，更新失败', 'success');
+            	            }
+            	        }
+            	    });
+               }
+           }); */
+       });
+  </script>

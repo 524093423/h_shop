@@ -1,0 +1,1340 @@
+[ 2018-03-22T14:00:32+08:00 ] 127.0.0.1 /h_shop/admin.php
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `api_return` [ RunTime:0.008000s ]
+ERR: 1146:Table 'h_shop.api_return' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `api_return`
+NOTIC: [8] Undefined variable: Getdata D:\phpStudy\WWW\h_shop\Admin\Home\Controller\IndexController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.073004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.009000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.007001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007001s ]
+
+[ 2018-03-22T14:00:34+08:00 ] 127.0.0.1 /h_shop/admin.php/Index/verify.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `api_return` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.api_return' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `api_return`
+NOTIC: [8] Undefined variable: Getdata D:\phpStudy\WWW\h_shop\Admin\Home\Controller\IndexController.class.php 第 13 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:00:44+08:00 ] 127.0.0.1 /h_shop/admin.php?a=CheckLogin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `api_return` [ RunTime:0.008000s ]
+ERR: 1146:Table 'h_shop.api_return' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `api_return`
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.096005s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.008001s ]
+SQL: SELECT admin_id as id,`bid`,admin_name as adname,admin_password as pwd,usepeople as user,`groupname`,`pinyin`,nmt_admin_group.id as groupid FROM `admin` INNER JOIN nmt_user_group on admin.admin_id=nmt_user_group.adminid INNER JOIN nmt_admin_group on nmt_user_group.groupid=nmt_admin_group.id  WHERE ( admin_name='admin' ) LIMIT 1   [ RunTime:0.074004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:00:45+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.090005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:00:45+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin&a=Center
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.057004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:00:45+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin&a=Center
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2018-03-22T14:00:47+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=getMeun
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `nmt_column` [ RunTime:0.027001s ]
+SQL: SELECT `id`,title as text,`url`,pid as parentid FROM `nmt_column` WHERE ( id!=3 ) ORDER BY sort asc  [ RunTime:0.012001s ]
+
+[ 2018-03-22T14:00:47+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Admin&a=Center
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:00:48+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=CheckReturnOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.009000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_order` INNER JOIN order_detail on order_detail.goid2=goods_order.goid  WHERE ( isth=2 AND goods_order.ispay=2 ) LIMIT 1   [ RunTime:0.013000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:00:49+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=CheckOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_order` INNER JOIN order_detail on order_detail.goid2=goods_order.goid  WHERE ( isfh=1 AND goods_order.ispay=2 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:00:50+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=CheckWithDraw
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.008000s ]
+ERR: 1146:Table 'h_shop.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `nmt_user_tx` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nmt_user_tx`
+SQL: SELECT COUNT(*) AS tp_count FROM `nmt_user_tx` WHERE ( isauth=1 ) LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `nmt_user_tx` WHERE ( isauth=1 ) LIMIT 1  
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:00:55+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Sysmess&a=Mess_List&type=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\SysmessController.class.php 第 79 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\SysmessController.class.php 第 87 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\SysmessController.class.php 第 89 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `sysmess` [ RunTime:0.008000s ]
+ERR: 1146:Table 'h_shop.sysmess' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `sysmess`
+SQL: SHOW COLUMNS FROM `h_message` [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h_message` WHERE ( 1=1 and type = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT
+		m_id,title,message,type,create_time
+	FROM
+		h_message
+	
+	WHERE
+	m_id IN (SELECT
+	m_id
+FROM
+	(SELECT
+	m_id
+FROM
+	h_message
+
+WHERE
+	( 1=1   and type = 3
+	)  	ORDER BY
+		create_time desc  LIMIT 0,20) as t)  and type = 3  ORDER BY create_time  desc
+ [ RunTime:0.020001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: type D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\2175943005078ee451aaee91142e265e.php 第 11 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:01:05+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Rate&a=RateList
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.025002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:01:07+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Rate&a=GetUserRate
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: search D:\phpStudy\WWW\h_shop\Admin\Home\Controller\RateController.class.php 第 21 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\RateController.class.php 第 22 行.
+NOTIC: [8] Undefined index: st D:\phpStudy\WWW\h_shop\Admin\Home\Controller\RateController.class.php 第 23 行.
+NOTIC: [8] Undefined index: ed D:\phpStudy\WWW\h_shop\Admin\Home\Controller\RateController.class.php 第 24 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `rate` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.rate' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `rate`
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Common\Common\function.php 第 170 行.
+NOTIC: [8] Undefined variable: WhereStr D:\phpStudy\WWW\h_shop\Admin\Home\Model\RateModel.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `goods_rate` [ RunTime:0.026001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_rate` WHERE ( 1=1  AND goods_rate.ratetime  between '2018-02-01 00:00:00' and '2018-03-31 23:59:59'  ) LIMIT 1   [ RunTime:0.014001s ]
+SQL: SELECT
+		rateinfo AS pltext,ratetime AS plsj,goods.gname,user_name,gname,grid
+	FROM
+		goods_rate
+	LEFT JOIN goods ON goods_rate.ggid=goods.gid LEFT JOIN `user` ON goods_rate.userid=`user`.user_id
+	WHERE
+	grid IN (SELECT
+	grid
+FROM
+	(SELECT
+	grid
+FROM
+	goods_rate
+LEFT JOIN goods ON goods_rate.ggid=goods.gid LEFT JOIN `user` ON goods_rate.userid=`user`.user_id
+WHERE
+	( 1=1    AND goods_rate.ratetime  between '2018-02-01 00:00:00' and '2018-03-31 23:59:59' 
+	)  	ORDER BY
+		grid desc  LIMIT 0,15) as t)   ORDER BY grid  desc
+ [ RunTime:0.005000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-03-22T14:01:13+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Withdraw&a=DrawList&status=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\WithdrawController.class.php 第 55 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\WithdrawController.class.php 第 61 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\WithdrawController.class.php 第 69 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\WithdrawController.class.php 第 71 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `withdraw` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.withdraw' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `withdraw`
+SQL: SHOW COLUMNS FROM `h_withdraw` [ RunTime:0.086005s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h_withdraw` inner join h_user_bank on h_user_bank.bank_id = h_withdraw.bank_id inner join h_seller_detail on h_seller_detail.seller_id = h_withdraw.seller_id  WHERE ( 1=1 and h_withdraw.status =1 ) LIMIT 1   [ RunTime:0.029001s ]
+SQL: SELECT
+		h_withdraw.*,h_user_bank.number,h_seller_detail.seller_name,h_seller_detail.seller_phone,h_seller_detail.company_name
+	FROM
+		h_withdraw
+	inner join h_user_bank on h_user_bank.bank_id = h_withdraw.bank_id inner join h_seller_detail on h_seller_detail.seller_id = h_withdraw.seller_id
+	WHERE
+	h_withdraw.with_id IN (SELECT
+	h_withdraw.with_id
+FROM
+	(SELECT
+	h_withdraw.with_id
+FROM
+	h_withdraw
+inner join h_user_bank on h_user_bank.bank_id = h_withdraw.bank_id inner join h_seller_detail on h_seller_detail.seller_id = h_withdraw.seller_id
+WHERE
+	( 1=1   and h_withdraw.status =1
+	)  	ORDER BY
+		h_withdraw.create_time desc  LIMIT 0,20) as t)  and h_withdraw.status =1  ORDER BY h_withdraw.create_time  desc
+ [ RunTime:0.004001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: type D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\d93a9a3d56dd59dc02158d240c6fb311.php 第 12 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:01:14+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Withdraw&a=DrawList&status=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\WithdrawController.class.php 第 55 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\WithdrawController.class.php 第 61 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\WithdrawController.class.php 第 69 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\WithdrawController.class.php 第 71 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `withdraw` [ RunTime:0.008000s ]
+ERR: 1146:Table 'h_shop.withdraw' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `withdraw`
+SQL: SHOW COLUMNS FROM `h_withdraw` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `h_withdraw` inner join h_user_bank on h_user_bank.bank_id = h_withdraw.bank_id inner join h_seller_detail on h_seller_detail.seller_id = h_withdraw.seller_id  WHERE ( 1=1 and h_withdraw.status =2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		h_withdraw.*,h_user_bank.number,h_seller_detail.seller_name,h_seller_detail.seller_phone,h_seller_detail.company_name
+	FROM
+		h_withdraw
+	inner join h_user_bank on h_user_bank.bank_id = h_withdraw.bank_id inner join h_seller_detail on h_seller_detail.seller_id = h_withdraw.seller_id
+	WHERE
+	h_withdraw.with_id IN (SELECT
+	h_withdraw.with_id
+FROM
+	(SELECT
+	h_withdraw.with_id
+FROM
+	h_withdraw
+inner join h_user_bank on h_user_bank.bank_id = h_withdraw.bank_id inner join h_seller_detail on h_seller_detail.seller_id = h_withdraw.seller_id
+WHERE
+	( 1=1   and h_withdraw.status =2
+	)  	ORDER BY
+		h_withdraw.create_time desc  LIMIT 0,20) as t)  and h_withdraw.status =2  ORDER BY h_withdraw.create_time  desc
+ [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: type D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\d93a9a3d56dd59dc02158d240c6fb311.php 第 12 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:01:22+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Banner&a=BannerList
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\BannerController.class.php 第 121 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `banner` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.banner' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `banner`
+NOTIC: [2] Missing argument 4 for Home\Model\BannerModel::GetBannerList(), called in D:\phpStudy\WWW\h_shop\Admin\Home\Controller\BannerController.class.php on line 128 and defined D:\phpStudy\WWW\h_shop\Admin\Home\Model\BannerModel.class.php 第 21 行.
+NOTIC: [2] Missing argument 5 for Home\Model\BannerModel::GetBannerList(), called in D:\phpStudy\WWW\h_shop\Admin\Home\Controller\BannerController.class.php on line 128 and defined D:\phpStudy\WWW\h_shop\Admin\Home\Model\BannerModel.class.php 第 21 行.
+NOTIC: [2] Missing argument 6 for Home\Model\BannerModel::GetBannerList(), called in D:\phpStudy\WWW\h_shop\Admin\Home\Controller\BannerController.class.php on line 128 and defined D:\phpStudy\WWW\h_shop\Admin\Home\Model\BannerModel.class.php 第 21 行.
+NOTIC: [2] Missing argument 7 for Home\Model\BannerModel::GetBannerList(), called in D:\phpStudy\WWW\h_shop\Admin\Home\Controller\BannerController.class.php on line 128 and defined D:\phpStudy\WWW\h_shop\Admin\Home\Model\BannerModel.class.php 第 21 行.
+NOTIC: [2] Missing argument 8 for Home\Model\BannerModel::GetBannerList(), called in D:\phpStudy\WWW\h_shop\Admin\Home\Controller\BannerController.class.php on line 128 and defined D:\phpStudy\WWW\h_shop\Admin\Home\Model\BannerModel.class.php 第 21 行.
+SQL: SHOW COLUMNS FROM `carousel_photo` [ RunTime:0.043003s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `carousel_photo` LEFT JOIN h_region ON carousel_photo.cityid=h_region.`code`  WHERE ( 1=1 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT
+    cityid,CASE WHEN ISNULL(fullName) THEN '全国' ELSE fullName END AS cityname
+    FROM
+    carousel_photo
+    LEFT JOIN h_region ON carousel_photo.cityid=h_region.`code`
+    WHERE
+    ( 1=1  
+    )
+     GROUP BY cityid	ORDER BY
+    c_id asc  LIMIT 0,15
+     [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:01:25+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Common&a=GetBannerJsonImg
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `banner` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.banner' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `banner`
+SQL: SHOW COLUMNS FROM `carousel_photo` [ RunTime:0.009000s ]
+SQL: SELECT '全国轮播图' as alt,REPLACE ( c_photo,'/Uploads','./Uploads') as src,c_photo as thumb,c_id as pid FROM `carousel_photo` WHERE ( cityid=0 ) ORDER BY sort asc  [ RunTime:0.016001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:01:33+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 14 行.
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 0,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.041002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:02:54+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList&page=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 80,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:03:15+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList&page=5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.017001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 80,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.001001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-22T14:04:19+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList&page=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014000s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 0,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:04:32+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList&page=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 0,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:04:39+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList&page=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 0,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:04:47+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList&page=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 0,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:04:54+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList&page=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 0,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-22T14:04:58+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=SingleShopping&userid=76
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+SQL: SELECT `user_name`,`user_phone`,`integral` FROM `user` WHERE ( user_id=76 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `consume` [ RunTime:0.014001s ]
+ERR: 1146:Table 'h_shop.consume' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `consume`
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.014000s ]
+SQL: SELECT `actulpay`,`goodstotal`,`freprice` FROM `goods_order` WHERE ( userid=76 and ispay=2 )  [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `withdraw` [ RunTime:0.014001s ]
+ERR: 1146:Table 'h_shop.withdraw' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `withdraw`
+SQL: SHOW COLUMNS FROM `nmt_user_tx` [ RunTime:0.014001s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nmt_user_tx`
+SQL: SELECT `price`,`sjprice` FROM `nmt_user_tx` WHERE ( userid=76 )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SELECT `price`,`sjprice` FROM `nmt_user_tx` WHERE ( userid=76 ) 
+SQL: SELECT `intlnum` FROM `goods_order` WHERE ( userid=76 and ispay=2 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `rebate` [ RunTime:0.011000s ]
+ERR: 1146:Table 'h_shop.rebate' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `rebate`
+SQL: SHOW COLUMNS FROM `order_detail` [ RunTime:0.013001s ]
+SQL: SELECT rebatetotal AS flzje,remaintotal AS flsyje,reintl AS jfsl FROM `order_detail` WHERE ( ispay=2 And isretotal =1 And userid=76 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:05:00+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Single&a=GetUserAddress&userid=76
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\SingleController.class.php 第 48 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015000s ]
+NOTIC: [8] Undefined variable: WhereStr2 D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 80 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 80 行.
+SQL: SHOW COLUMNS FROM `user_addressinfo` [ RunTime:0.036002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_addressinfo` WHERE ( 1=1 AND user_id=76  ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		flag,consignee_address,consignee_phe,consignee_name,remarks
+	FROM
+		`user_addressinfo`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user_addressinfo`
+
+WHERE
+	( 1=1   AND user_id=76 
+	)  	ORDER BY
+		flag asc  LIMIT 0,5) as t)   ORDER BY flag  asc
+ [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:05:01+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Single&a=GetUserConsumeInfo&userid=76
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\SingleController.class.php 第 15 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `consume` [ RunTime:0.013001s ]
+ERR: 1146:Table 'h_shop.consume' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `consume`
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\ConsumeModel.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_order` WHERE ( 1=1  AND userid=76 AND ispay=2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: select actulpay as price,otime,paym from goods_order  Where  1=1   AND userid=76 AND ispay=2 order by goid desc limit 4 [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-22T14:05:29+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList&page=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 0,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:05:36+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=SingleShopping&userid=95
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+SQL: SELECT `user_name`,`user_phone`,`integral` FROM `user` WHERE ( user_id=95 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `consume` [ RunTime:0.014001s ]
+ERR: 1146:Table 'h_shop.consume' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `consume`
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.013001s ]
+SQL: SELECT `actulpay`,`goodstotal`,`freprice` FROM `goods_order` WHERE ( userid=95 and ispay=2 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `withdraw` [ RunTime:0.013000s ]
+ERR: 1146:Table 'h_shop.withdraw' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `withdraw`
+SQL: SHOW COLUMNS FROM `nmt_user_tx` [ RunTime:0.011001s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nmt_user_tx`
+SQL: SELECT `price`,`sjprice` FROM `nmt_user_tx` WHERE ( userid=95 )  [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SELECT `price`,`sjprice` FROM `nmt_user_tx` WHERE ( userid=95 ) 
+SQL: SELECT `intlnum` FROM `goods_order` WHERE ( userid=95 and ispay=2 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `rebate` [ RunTime:0.011001s ]
+ERR: 1146:Table 'h_shop.rebate' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `rebate`
+SQL: SHOW COLUMNS FROM `order_detail` [ RunTime:0.012001s ]
+SQL: SELECT rebatetotal AS flzje,remaintotal AS flsyje,reintl AS jfsl FROM `order_detail` WHERE ( ispay=2 And isretotal =1 And userid=95 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:05:37+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Single&a=GetUserConsumeInfo&userid=95
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\SingleController.class.php 第 15 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `consume` [ RunTime:0.015001s ]
+ERR: 1146:Table 'h_shop.consume' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `consume`
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\ConsumeModel.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.016000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_order` WHERE ( 1=1  AND userid=95 AND ispay=2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: select actulpay as price,otime,paym from goods_order  Where  1=1   AND userid=95 AND ispay=2 order by goid desc limit 4 [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:05:38+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Single&a=GetUserAddress&userid=95
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\SingleController.class.php 第 48 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+NOTIC: [8] Undefined variable: WhereStr2 D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 80 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 80 行.
+SQL: SHOW COLUMNS FROM `user_addressinfo` [ RunTime:0.013000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_addressinfo` WHERE ( 1=1 AND user_id=95  ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT
+		flag,consignee_address,consignee_phe,consignee_name,remarks
+	FROM
+		`user_addressinfo`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user_addressinfo`
+
+WHERE
+	( 1=1   AND user_id=95 
+	)  	ORDER BY
+		flag asc  LIMIT 0,5) as t)   ORDER BY flag  asc
+ [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-03-22T14:05:44+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=UserList&page=1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: where D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 15 行.
+NOTIC: [8] Undefined index: flag D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 21 行.
+NOTIC: [8] Undefined index: ext D:\phpStudy\WWW\h_shop\Admin\Home\Controller\UserController.class.php 第 27 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 25 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 27 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `user` WHERE ( 1=1 and isdel=0 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		user_id as uid,create_time as rtime,user_phone as phe,user_photo as uhead,user_name as nickname,state as isfh,integral as intl,account,register_type
+	FROM
+		`user`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user`
+
+WHERE
+	( 1=1   and isdel=0
+	)  	ORDER BY
+		user_id desc  LIMIT 0,20) as t)   ORDER BY user_id  desc
+ [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+NOTIC: [8] Undefined variable: vo D:\phpStudy\WWW\h_shop\Admin\Runtime\Cache\Home\31503d9f0ae2490155b5cc3cd6f34b0a.php 第 52 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-03-22T14:05:51+08:00 ] 127.0.0.1 /h_shop/admin.php?c=User&a=SingleShopping&userid=95
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+SQL: SELECT `user_name`,`user_phone`,`integral` FROM `user` WHERE ( user_id=95 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `consume` [ RunTime:0.013001s ]
+ERR: 1146:Table 'h_shop.consume' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `consume`
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.011001s ]
+SQL: SELECT `actulpay`,`goodstotal`,`freprice` FROM `goods_order` WHERE ( userid=95 and ispay=2 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `withdraw` [ RunTime:0.011000s ]
+ERR: 1146:Table 'h_shop.withdraw' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `withdraw`
+SQL: SHOW COLUMNS FROM `nmt_user_tx` [ RunTime:0.012001s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `nmt_user_tx`
+SQL: SELECT `price`,`sjprice` FROM `nmt_user_tx` WHERE ( userid=95 )  [ RunTime:0.001000s ]
+ERR: 1146:Table 'h_shop.nmt_user_tx' doesn't exist
+ [ SQL语句 ] : SELECT `price`,`sjprice` FROM `nmt_user_tx` WHERE ( userid=95 ) 
+SQL: SELECT `intlnum` FROM `goods_order` WHERE ( userid=95 and ispay=2 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `rebate` [ RunTime:0.012001s ]
+ERR: 1146:Table 'h_shop.rebate' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `rebate`
+SQL: SHOW COLUMNS FROM `order_detail` [ RunTime:0.013001s ]
+SQL: SELECT rebatetotal AS flzje,remaintotal AS flsyje,reintl AS jfsl FROM `order_detail` WHERE ( ispay=2 And isretotal =1 And userid=95 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:05:52+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Single&a=GetUserConsumeInfo&userid=95
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\SingleController.class.php 第 15 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `consume` [ RunTime:0.014000s ]
+ERR: 1146:Table 'h_shop.consume' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `consume`
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\ConsumeModel.class.php 第 23 行.
+SQL: SHOW COLUMNS FROM `goods_order` [ RunTime:0.016001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods_order` WHERE ( 1=1  AND userid=95 AND ispay=2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: select actulpay as price,otime,paym from goods_order  Where  1=1   AND userid=95 AND ispay=2 order by goid desc limit 4 [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-03-22T14:05:53+08:00 ] 127.0.0.1 /h_shop/admin.php?c=Single&a=GetUserAddress&userid=95
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Admin\Home\Controller\SingleController.class.php 第 48 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+NOTIC: [8] Undefined variable: WhereStr2 D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 80 行.
+NOTIC: [8] Undefined variable: join D:\phpStudy\WWW\h_shop\Admin\Home\Model\UserModel.class.php 第 80 行.
+SQL: SHOW COLUMNS FROM `user_addressinfo` [ RunTime:0.013000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user_addressinfo` WHERE ( 1=1 AND user_id=95  ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT
+		flag,consignee_address,consignee_phe,consignee_name,remarks
+	FROM
+		`user_addressinfo`
+	
+	WHERE
+	user_id IN (SELECT
+	user_id
+FROM
+	(SELECT
+	user_id
+FROM
+	`user_addressinfo`
+
+WHERE
+	( 1=1   AND user_id=95 
+	)  	ORDER BY
+		flag asc  LIMIT 0,5) as t)   ORDER BY flag  asc
+ [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+

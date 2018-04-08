@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>个人资料</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/user.css"/>
+    <style>
+        body,html{background-color: #fff;}
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">个人资料</h3>
+        <div class="back">
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content">
+    <div class="data-box">
+      <ul class="data-list">
+          <!-- <li class="clearfix ud-pic">
+              <span>头像</span>
+              <img src="../images/rentou.png" alt=""/>
+          </li> -->
+          <!-- <li class="clearfix ud-nike">
+              <span>昵称</span>
+              <img src="../images/youjian.png" alt=""/>
+              <b>动力无限</b>
+          </li> -->
+          <li class="clearfix ud-phe">
+              <span>修改手机号</span>
+              <img src="../images/youjian.png" alt=""/>
+          </li>
+      </ul>
+  </div>
+    <!--选择 相册 相机 开始-->
+    <div class="picture wrap2">
+        <ul>
+            <li class="clearfix">
+                <h3>修改头像</h3>
+            </li>
+            <li class="clearfix pic-1">
+                <img src="../images/xiangce.png" alt=""/>
+                <p>相册</p>
+            </li>
+            <li class="clearfix pic-2">
+                <img src="../images/xiangji.png" alt=""/>
+                <p>拍照</p>
+            </li>
+        </ul>
+    </div>
+    <!--选择 相册 相机 结束-->
+    <!--蒙版-->
+    <div class="mask"></div>
+</div>
+<!--content end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript">
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+  $(function(){
+  	$(".back").click(function(){
+ 		window.location.href="./my.html";
+ 	});
+     payFun().init();
+  });
+
+    var payFun = function(){
+        return{
+            init:function(){
+                this.picClick(); // 点击 头像
+                this.nickClick();//点击修改昵称
+                $(".ud-nike b").text(sessionStorage.getItem('userName'));
+                $(".ud-pic").find("img").attr("src",sessionStorage.getItem('Photo'));
+                if(sessionStorage.getItem('Phone') ==""){
+                	$(".ud-phe").find("span").text("绑定手机号");
+                }
+                this.pheClick();//点击手机号
+            },
+
+            // 点击确认按钮
+            picClick:function(){
+                $('.ud-pic').click(function(){
+                    $('.mask').css('display','block');
+                    $('.picture').css('display','block');
+                    $('body').css('overflow','hidden')
+                });
+
+                $('.mask').click(function(){
+                    $('.mask').css('display','none');
+                    $('.picture').css('display','none');
+                    $('body').css('overflow','auto')
+                })
+            },
+            nickClick:function(){
+            	$(".ud-nike").click(function(){
+            		var index = layer.open({
+          			  title:false,
+          			  type: 2,
+          			  closeBtn:0,
+          			  shift:1,
+          			  content: './amendName.html',
+          			  area: ["100%","100%"],
+          			  maxmin: true,
+          			  success:function(){
+          				  $('.layui-layer-min').hide();
+          				  $('.layui-layer-max').hide(); 
+          			  },
+          			  end: function () {
+          				  //OrderSearch();
+          				  //orderFunc().setAddress();
+          				$(".ud-nike b").text(sessionStorage.getItem('userName'));
+          	            }
+          			});
+            	});
+            },
+            pheClick:function(){
+            	$(".ud-phe").click(function(){
+            		var index = layer.open({
+            			  title:false,
+            			  type: 2,
+            			  closeBtn:0,
+            			  shift:1,
+            			  content: './boundNum.html',
+            			  area: ["100%","100%"],
+            			  maxmin: true,
+            			  success:function(){
+            				  $('.layui-layer-min').hide();
+            				  $('.layui-layer-max').hide(); 
+            			  },
+            			  end: function () {
+            				  //OrderSearch();
+            				  //orderFunc().setAddress();
+            				//$(".ud-nike b").text(sessionStorage.getItem('userName'));
+            	            }
+            			});
+            	});
+            }
+        }
+    }
+</script>
+</html>

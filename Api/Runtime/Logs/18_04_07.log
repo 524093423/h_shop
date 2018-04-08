@@ -1,0 +1,138 @@
+[ 2018-04-07T15:40:52+08:00 ] 127.0.0.1 /CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.046800s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.046800s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.015600s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.062400s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') AND sort_id = 1 AND type = 1 ) LIMIT 1   [ RunTime:0.015600s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click,video_path FROM city_video WHERE INSTR(city,'北京市') AND sort_id = 1  AND type = 1 LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-07T15:44:40+08:00 ] 127.0.0.1 /CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015600s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') AND sort_id = 1 AND type = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click,video_path FROM city_video WHERE INSTR(city,'北京市') AND sort_id = 1  AND type = 1 LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-07T15:49:01+08:00 ] 127.0.0.1 /h_shop/index.php/CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.000000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.015600s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') AND sort_id = 1 AND type = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click,video_path FROM city_video WHERE INSTR(city,'北京市') AND sort_id = 1  AND type = 1 LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-07T15:49:25+08:00 ] 127.0.0.1 /h_shop/index.php/CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015600s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') AND sort_id = 1 AND type = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click,video_path FROM city_video WHERE INSTR(city,'北京市') AND sort_id = 1  AND type = 1 LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-07T15:53:06+08:00 ] 127.0.0.1 /CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015600s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.015600s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') AND sort_id = 1 AND type = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click,video_path FROM city_video WHERE INSTR(city,'北京市') AND sort_id = 1  AND type = 1 LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-07T15:53:13+08:00 ] 127.0.0.1 /8080
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.015600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+ERR: 无法加载控制器:8080
+
+[ 2018-04-07T16:01:38+08:00 ] 127.0.0.1 /CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.015600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015600s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.015600s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') AND sort_id = 1 AND type = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click,video_path FROM city_video WHERE INSTR(city,'北京市') AND sort_id = 1  AND type = 1 LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-07T16:04:55+08:00 ] 127.0.0.1 /CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.000000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015600s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') AND sort_id = 1 AND type = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click,video_path FROM city_video WHERE INSTR(city,'北京市') AND sort_id = 1  AND type = 1 LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-07T16:06:12+08:00 ] 127.0.0.1 /c
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:C
+
+[ 2018-04-07T16:06:19+08:00 ] 127.0.0.1 /CityVideo/AutoCityVideo/?token=3cb468c525c756ceafa23ac7d5545959&ns=116.397499,39.908722
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.015600s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015600s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='3cb468c525c756ceafa23ac7d5545959' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.015600s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `city_video` WHERE ( INSTR(city,'北京市') AND sort_id = 1 AND type = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 50 行.
+SQL: SELECT id,user_id,title,cover,click,video_path FROM city_video WHERE INSTR(city,'北京市') AND sort_id = 1  AND type = 1 LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-07T17:09:33+08:00 ] 127.0.0.1 /asd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 无法加载控制器:Asd
+

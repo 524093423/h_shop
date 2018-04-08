@@ -1,0 +1,2 @@
+<?php die('forbidden'); ?>
+{"appid":"101405623","appkey":"d83c5b5f12a54a2ed0833625968427da","callback":"http://www.heigushop.com/Web/QQlogin/oauth/callback.php","scope":"get_user_info","errorReport":true,"storageType":"file","host":"localhost","user":"root","password":"root","database":"test"}

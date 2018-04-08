@@ -1,0 +1,210 @@
+.new1 {
+  border-top: 1px solid #dadada;
+}
+.new1 li {
+  border-bottom: 1px solid #dadada;
+  height: 1.875rem;
+}
+.ne-pic,
+.ne-wo {
+  float: left;
+}
+.ne-btn {
+  float: right;
+  width: 1.5625rem;
+  background-color: rgba(206, 1, 13, 0.8);
+  border-radius: 0.234375rem;
+  margin-top: 0.546875rem;
+  display: none;
+}
+.ne-btn p {
+  font-size: 0.3125rem;
+  color: #fff;
+  text-align: center;
+  line-height: 0.78125rem;
+}
+.ne-pic img {
+  width: 1.34375rem;
+  height: 1.34375rem;
+  margin-top: 0.265625rem;
+}
+/*红色圆点数量*/
+.ne-pic {
+  position: relative;
+}
+.newsNum {
+  font-size: 0.21875rem;
+  color: #fff;
+  display: none;
+  width: 0.46875rem;
+  line-height: 0.46875rem;
+  text-align: center;
+  background-color: #ff0000;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -0.109375rem;
+  right: -0.15625rem;
+}
+.ne-wo {
+  margin-left: 0.390625rem;
+  line-height: 0.671875rem;
+  margin-top: 0.265625rem;
+}
+.ne-wo h3 {
+  font-size: 0.4375rem;
+  width: 5.625rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ne-wo h4 {
+  font-size: 0.375rem;
+  color: #666;
+  width: 5.625rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*系统 消息详情*/
+.dateNew {
+  padding-top: 0.625rem;
+}
+.dateNew h3 {
+  font-size: 0.375rem;
+  width: 3.4375rem;
+  text-align: center;
+  margin: auto ;
+  background-color: #dcdcdc;
+  border-radius: 0.15625rem;
+  padding: 0.15625rem 0;
+}
+.dateNew ul li {
+  border: 2px solid #d2d2d2;
+  background-color: #fff;
+  border-radius: 0.125rem;
+  padding: 0.46875rem 0;
+  margin-top: 0.390625rem;
+}
+.dateNew ul li h4 {
+  font-size: 0.4375rem;
+  width: 8.671875rem;
+  margin: auto;
+  color: #000;
+  display: table;
+}
+.dateNew ul li p {
+  font-size: 0.375rem;
+  line-height: 0.625rem;
+  width: 8.671875rem;
+  margin: auto;
+  margin-top: 0.46875rem;
+  color: #000;
+  display: table;
+}
+/*聊天  消息*/
+.chatBox {
+  padding-bottom: 0.625rem;
+  height: auto;
+}
+.chatNews {
+  padding-top: 0.625rem;
+  padding-bottom: 0.46875rem;
+}
+.chatNews h3 {
+  font-size: 0.375rem;
+  width: 3.4375rem;
+  text-align: center;
+  line-height: 0.9375rem;
+  margin: auto ;
+  background-color: #dcdcdc;
+  border-radius: 0.15625rem;
+  margin-bottom: 0.625rem;
+}
+.chat-list li {
+  margin-top: 0.625rem;
+}
+.chat-list li img {
+  width: 1rem;
+  height: 1rem;
+}
+.chat-list li p {
+  font-size: 0.375rem;
+  line-height: 0.6875rem;
+  max-width: 4.53125rem;
+  padding: 0.15625rem 0.3125rem;
+  background-color: #fff;
+  border-radius: 0.15625rem;
+}
+.chat-ri img,
+.chat-ri p {
+  float: right;
+}
+.chat-le img,
+.chat-le p {
+  float: left;
+}
+.chat-ri p {
+  margin-right: 0.234375rem;
+}
+.chat-le p {
+  margin-left: 0.234375rem;
+}
+.chat-bot {
+  height: 1.5625rem;
+}
+.chat-pic,
+.chat-wen {
+  float: left;
+}
+.chat-pic img {
+  width: 0.8125rem;
+  height: 0.8125rem;
+  margin-top: 0.375rem;
+}
+.chat-pic {
+  width: 0.8125rem;
+  height: 1.5625rem;
+}
+.chat-wen p {
+  font-size: 0.5625rem;
+  line-height: 0.9375rem;
+  border-radius: 0.15625rem;
+  border: 1px solid #8d95a5;
+}
+.chat-wen {
+  width: 8.125rem;
+  margin-left: 0.28125rem;
+  line-height: 0.9375rem;
+  text-align: center;
+  margin-top: 0.3125rem;
+  height: 0.9375rem;
+}
+.chat-box {
+  width: 8.125rem;
+}
+.chat-inp input {
+  font-size: 0.375rem;
+  text-indent: 0.234375rem;
+  height: 0.9375rem;
+  width: 6.25rem;
+  display: block;
+  background-color: transparent;
+  border: none;
+}
+.chat-inp {
+  border-bottom: 1px solid #8d95a5;
+  width: 6.25rem;
+  float: left;
+  display: block;
+}
+.fa {
+  display: block;
+  float: right;
+  font-size: 0.40625rem;
+  color: #333;
+  width: 1.5625rem;
+  border: 1px solid #8d95a5;
+  border-radius: 0.1875rem;
+  text-align: center;
+  cursor: pointer;
+}

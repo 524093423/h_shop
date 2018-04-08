@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>收货地址管理</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/addres.css"/>
+    <link rel="stylesheet" href="../layer/skin/default/layer.css"/>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti">收货地址管理</h3>
+        <div class="back" >
+            <img src="../images/back.png" alt=""/>
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content addCon">
+    <!--一条地址开始-->
+    <!--一条地址结束-->
+    <!--一条地址开始-->
+</div>
+<!--content end-->
+<!--bottom  star-->
+<div class="bottom">
+    <p class="addAddress">新添收货地址</p>
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script type="text/javascript">
+var title ="";
+var cofingTitle	= "";
+var type	= "";
+var hreftype="";
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/
+wx.ready(function(){
+	wx.openAddress({
+		success: function (res) {
+			var userName = res.userName; // 收货人姓名
+			var postalCode = res.postalCode; // 邮编
+			var provinceName = res.provinceName; // 国标收货地址第一级地址（省）
+			var cityName = res.cityName; // 国标收货地址第二级地址（市）
+			var countryName = res.countryName; // 国标收货地址第三级地址（国家）
+			var detailInfo = res.detailInfo; // 详细收货地址信息
+			var nationalCode = res.nationalCode; // 收货地址国家码
+			var telNumber = res.telNumber; // 收货人手机号码
+			$.ajax({
+				url:webIp2+"Address/NewlyAdded",
+				type:"post",
+				data:{"token":sessionStorage.getItem('token'),"cphe":telNumber,"cname":userName,"caddress":provinceName+cityName,"remarks":detailInfo,"flag":1},
+				success:function(result){
+					//layer.msg("同步成功",{time:1000});
+					addressFun().AddressList();
+				},
+				error:function(){
+					layer.msg("系统错误",{time:1000});
+				}
+			});
+		}
+	});
+})
+  $(function(){
+	  title	= getUrlParam("title");
+	  hreftype	= getUrlParam("hreftype");
+	  type	= getUrlParam("type");
+	  cofingTitle	= title;
+	  var state	= 0;
+	  $(".back").click(function(){
+		  if(state == 1){
+			  window.location.href="./my.html";
+		  }else{
+			  window.history.back();
+		  }
+	 	});
+	  if(title=="" || title==undefined){
+		  title="收货地址管理";
+		  state = 1;
+	  }else{
+		  title="选择收货地址";
+	  }
+	  if(state==0){
+
+	  }
+	  $(".to-ti").html(title);
+	  addressFun().AddressList();
+  });
+  var addressFun = function(){
+
+      return{
+          init:function(){
+              this.jump();  //  页面跳转
+              this.click_operate() ; //  编辑 删除 操作
+              //this.sessionStorage_redact(); // 本地存储数据
+              this.click_list() ; //点击选中事件(跟换背景图)
+          },
+          jump:function(){
+              $('.addAddress').click(function(){  //  跳转到 地址列表页面
+                  window.location.href = './addAddress.html?flag=0'
+              });
+              $('.config-wen').click(function(){
+                  window.location.href = "#"
+              })
+          },
+          click_list:function(){ // 点击选中事件(跟换背景图)
+              $('.xuan-p').click(function(){
+            	  $(this).find('.xaun-zl').addClass("xaun-zl-on");
+            	  $(this).find('.xaun-zl').parent().parent().parent().siblings().find('.xaun-zl').removeClass('xaun-zl-on');
+                  $.getJSON(webIp+"Address/SetDefault?callback=?&address_id="+$(this).parents('.box-zl').find(".compile2").attr("data-id")+"&token="+sessionStorage.getItem('token'),function(result){
+					 	if(result.code==200){
+					 		layer.msg(result.message,{time:1000});
+					 	}
+				  });
+              });
+
+          },
+          click_operate:function(){
+              $('.remove').click(function(){
+
+                  var remove  = $(this).parent().parent();
+				  var id	  =  $(this).parents('.xuan-p2').find('.compile2').attr("data-id");
+                  layer.confirm('您确定删除该信息？', {
+
+                      btn: ['确定','取消'] //按钮
+                  }, function(){
+                      remove.parents('.address-list').remove();
+                      console.log($(this));
+	                  $.getJSON(webIp+"Address/DelAddress?callback=?&address_id="+id+"&token="+sessionStorage.getItem('token'),function(result){
+	                	  if(result.code==200){
+	                		  layer.msg(result.message,{time:1000});
+	                		  addressFun().AddressList();
+						 }
+					  });
+                  }, function(){
+
+                      return
+                  });
+
+              })
+              $('.compile2').click(function(){
+            	  sessionStorage.setItem("aname",$(this).parents('.address-list').find('.config-wen .address-name').text());
+            	  sessionStorage.setItem("aphe",$(this).parents('.address-list').find('.config-wen .address-phone').text());
+            	  sessionStorage.setItem("area",$(this).parents('.address-list').find('.config-wen .areaAdd').text());
+            	  sessionStorage.setItem("astreet",$(this).parents('.address-list').find('.config-wen .street').text());
+            	  sessionStorage.setItem("aflag",$(this).attr('data-flag'));
+            	  window.location.href="./addAddress.html?flag="+$(this).attr('data-id');
+              });
+          },
+          sessionStorage_redact: function () {
+              $('.compile').click(function(){ // 点击编辑 保存数据 跳转到修改地址页面
+
+                  window.location.href = '#'
+              });
+              $('.config-wen').click(function(){ // 选择收货地址 获取数据
+
+                  /* window.history.back();*/
+              });
+
+
+          },
+          AddressList:function(){
+        	  $.getJSON(webIp+"Address/GetAddress?callback=?&token="+sessionStorage.getItem('token'),function(result){
+	       		  	var AddList	= result.info;
+	      	   	 	var index = layer.load(3);
+	      			if(result.code=="200" && !$.isEmptyObject(AddList)){
+	      				layer.close(index);
+	      			}else{
+						//type=single&title=1&hreftype=1  GG
+						var url	= "";
+						if(type==null || type=="null"){
+							url	= "../WxAddress/jsapi.php?title="+cofingTitle;
+						}else{
+							url	= "../WxAddress/jsapi.php?type="+type+"&title="+cofingTitle+"&hreftype="+hreftype;
+						}
+						$.getJSON(url,function(result){
+							wx.config({
+								debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+								appId: result.appid, // 必填，公众号的唯一标识
+								timestamp: result.timestamp, // 必填，生成签名的时间戳
+								nonceStr: result.noncestr, // 必填，生成签名的随机串
+								signature: result.signature,// 必填，签名，见附录1
+								jsApiList: ["openAddress"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+							});
+						})
+	      				layer.msg('您还未添加收货地址',{time:1000});
+	      				addressFun().jump();
+	      				layer.close(index);
+	      				return false;
+	      			}
+	      			var addressHtml	="";
+	      			for(var i=0;i<AddList.length;i++){
+	      				addressHtml	+='<div class="config-address clearfix address-list"><div class="config-wen">';
+	      				addressHtml	+='<p class="config-p1 address-user clearfix">';
+	      				addressHtml +='<span class="address-name">'+AddList[i]['consignee_name']+'</span>';
+	      				addressHtml	+='<span class="address-phone">'+AddList[i]['consignee_phe']+'</span>';
+	      				addressHtml	+='</p><p class="config-p2"><span class="areaAdd">'+AddList[i]['consignee_address']+'</span>';
+	      				addressHtml	+='&nbsp;&nbsp;&nbsp;<span class="street">'+AddList[i]['remarks']+'</span>';
+	      				addressHtml	+='</p></div><div class="defaultBox clearfix box-zl">';
+	      				addressHtml	+='<p class="clearfix xuan-p">';
+	      				if(AddList[i]['flag'] == 1){
+	      					addressHtml	+='<i class="xaun-zl xaun-zl-on"></i>';
+	      				}else if(AddList[i]['flag'] == 2){
+	      					addressHtml	+='<i class="xaun-zl"></i>';
+	      				}
+	      				addressHtml +='<i class="xuan-wen">设置默认地址</i>';
+	      				addressHtml	+='</p><p class="xuan-p2"><span class="remove">删除</span>';
+	      				addressHtml	+='<span class="compile2" data-id='+AddList[i]['address_id']+' data-flag='+AddList[i]['flag']+'>编辑</span></p></div></div>';
+	      			}
+	      			$(".addCon").html(addressHtml);
+	      			//将选择的收获地址存储到本地
+	      			if(title !=""){
+	      				$(".config-wen").click(function(){
+	      					var addressId	= $(this).parent().find(".box-zl .compile2").attr("data-id");
+	      					var people		= $(this).find(".address-name").text();
+	      					var phe			= $(this).find(".address-phone").text();
+	      					var address		= $(this).find(".areaAdd").text();
+	      					var xxaddress	= $(this).find(".street").text();
+	      					sessionStorage.setItem("addressId",addressId);
+	      					sessionStorage.setItem("people",people);
+	      					sessionStorage.setItem("phe",phe);
+	      					sessionStorage.setItem("address",address);
+	      					sessionStorage.setItem("xxaddress",xxaddress);
+	      					window.history.back();
+	      				});
+	      			}
+	      			addressFun().init();
+        	  });
+          }
+      }
+
+  };
+
+</script>
+</html>

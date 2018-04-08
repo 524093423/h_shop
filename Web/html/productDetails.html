@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>产品详情</title>
+    <link rel="stylesheet" href="../css/public.css"/>
+    <link rel="stylesheet" href="../css/global.css"/>
+    <link rel="stylesheet" href="../css/order.css"/>
+    <link rel="stylesheet" href="../css/swiper-3.4.2.min.css"/>
+    <link rel="stylesheet" href="../js/layerMobile/need/layer.css">
+    <style>
+       /* .videos{
+            width:100%;
+            position:relative;
+            padding-bottom:56.25%;    /!*需要用padding来维持16:9比例,也就是9除以16*!/
+            height: 0;/!*搜索*!/
+        }
+        .videos video{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }*/
+
+    </style>
+</head>
+<body>
+<!--top star-->
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <div class="back">
+            <img src="../images/back.png" alt="" />
+        </div>
+        <div class="cang">
+            <img src="../images/cang.png" alt=""/>
+        </div>
+        <!-- <div class="fen">
+            <img src="../images/fen.png" alt=""/>
+        </div> -->
+        <div class="logo">
+            
+        </div>
+    </div>
+</div>
+<!--top end-->
+<!--content start-->
+<div class="content addCon detail_cont">
+    <!--商品部分-->
+   <div class="pinBox">
+       <!--视频部分-->
+       <div class=" swiper-container video" id="swiper-container1">
+           <div class="swiper-wrapper clearfix swiper-wrapper_1">
+               <div class="swiper-slide videos">
+                   <div class="red"></div>
+                   <div class="red2"></div>
+                   <video src="" controls="controls" style="object-fit:fill"     webkit-playsinline="true"  x-webkit-airplay="true"
+                          x5-video-player-type="h5" >
+
+                   </video>
+
+               </div>
+           </div>
+           <!-- Add Pagination 圆点-->
+           <div class="swiper-pagination"></div>
+       </div>
+       <!--webkit-playsinline="true"  playsinline="true"
+       x5-video-player-type="h5"     x5-video-orientation="h5"  x5-video-player-fullscreen="true"-->
+       <!--视频部分
+       <div class="video">
+           <video src="" controls="controls"  width="100%"  ></video>
+       </div>-->
+       <!--商品 简介-->
+       <div class="pin-wo wrap clearfix">
+           <div class="clearfix">
+            <div class="pin-le">
+                <h3>--
+                </h3>
+            </div>
+            <div class="pin-ri">
+                <h4>浏览量</h4>
+                <h5>--</h5>
+            </div>
+           </div>
+           <div class="pin-bot clearfix">
+               <p class="llxl">¥<b>--</b><i></i></p>
+               <p class="pin-location">
+                   货源地：<b></b>
+               </p>
+           </div>
+       </div>
+   </div>
+    <!--商品描述-->
+    <div class="pinWord">
+        <h3 class="zl_color">商品描述</h3>
+        <p class="wrap gdesc"></p>
+    </div>
+    <!--规格-->
+    <div class="pinWord fen-box">
+        <h3><span></span>系列</h3>
+    </div>
+    <!--宝贝评价 部分-->
+    <div class="appraise">
+        <h3 class="zl_color">宝贝评价（<b>--</b>）</h3>
+        <ul class="wrap app-list">
+            <li>
+                <p class="clearfix p1">
+                    <img src="../images/tou.png" alt=""/>
+                    <span>---------</span>
+                    <i>------</i>
+                </p>
+                <p class=" p2">-------------------</p>
+                <p class="clearfix p3">
+                    <img src="../images/redxing.png" alt=""/>
+                    <img src="../images/redxing.png" alt=""/>
+                    <img src="../images/redxing.png" alt=""/>
+                    <img src="../images/redxing.png" alt=""/>
+                    <img src="../images/redxing.png" alt=""/>
+                </p>
+            </li>
+        </ul>
+        <!--btn-->
+        <div class="btn">
+            <a href="javascript:;">查看全部评价</a>
+        </div>
+    </div>
+    <!--蒙版 -->
+    <div class="mask2">
+
+    </div>
+    <!--点击  加入购物车 的页面 开始-->
+    <div class="addCar">
+        <div class="wrap">
+            <div class="pro-tuwen clearfix">
+                <img src="../images/car1.jpg" alt=""/>
+                <p>
+                    <span class="hid">电缆</span>
+                    <span class="money_1">¥<b>0</b></span>
+                    <span>库存<i class="allNum">0</i>件</span>
+                </p>
+            </div>
+            <div class="pro-num clearfix">
+                <h4>购买数量</h4>
+                <p>
+                    <span class="lessNum"><img src="../images/jianh.png" alt=""/></span>
+                    <b class="number">
+                        <input type="number" value="1"/>
+                    </b>
+                    <span class=" addNum"><img src="../images/jiah.png" alt=""/></span>
+                </p>
+            </div>
+        </div>
+        <div class="btn2">
+            <p>确认</p>
+        </div>
+    </div>
+    <!--点击  加入购物车 的页面 开始-->
+</div>
+<!--content end-->
+<!--蒙版 开始-->
+<div class="mask_2"></div>
+<!--蒙版 结束-->
+<!--放大后的图片 开始-->
+<div class="big_pic" >
+    <div class=" swiper-container " id="swiper-container2">
+        <div class="swiper-wrapper clearfix swiper-wrapper_2">
+
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination_2"></div>
+    </div>
+</div>
+<!--放大后的图片 结束-->
+<!--bottom  star-->
+<div class="bottom">
+  <div class="bot-btn clearfix">
+      <span class="sp1 hxc">
+          <img src="../images/kefu.png" alt=""/>
+          <b>客服</b>
+      </span>
+      <span class="sp1 sp1_1">
+         <a class="tell" href="#">
+             <img src="../images/icon_zuoji5.png" alt=""/>
+             <b>电话</b>
+         </a>
+      </span>
+      <span class="sp2 sp3" data-type="1">立即购买</span>
+      <span class="sp3" data-type="2">加入购物车</span>
+  </div>
+</div>
+<!--bottom  end-->
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="../js/zl_common.js"></script>
+<script src="../js/checkLogin.js?a=123"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../layerMobile/layer.js"></script>
+<script src="../js/webconfig.js?a=321"></script>
+<!--<script src="../js/xback.js"></script>-->
+<script src="../js/goods.js?a=20170812"></script>
+<script type="text/javascript" charset="utf-8">
+var d_goodsid	= "";
+var goodsNum= 1;
+var specid  = "";
+  /*  $(function(){ //判断 是 安卓 还是IOS 手机
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            return;
+        }
+        if(isiOS){
+            $('.top').css({'height':'1.765625rem'})
+            $('.content').css({'margin-top':'1.765625rem'})
+            $('.topWrap').css({'margin-top':'0.328125rem'})
+        }
+    })*/	
+    wx.ready(function(){
+    	var titles="看看【"+$(".hxc").find("img").attr("data-shopname")+"】家的产品多漂亮，价格就是便宜！";
+        var descs   = $(".gdesc").text();
+    	var links = "http://www.heigushop.com/Web/html/productDetails.html?id="+d_goodsid;
+		var imgurls= $(".pro-tuwen").find("img").attr("src");
+		wx.onMenuShareTimeline({
+    	    title: titles, // 分享标题
+    	    link: links, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+    	    imgUrl: imgurls, // 分享图标
+    	    success: function () { 
+    	        // 用户确认分享后执行的回调函数
+                layer.open({
+                    content: '分享成功'
+                    ,skin: 'msg'
+                    ,time: 1//2秒后自动关闭
+                })
+    	    },
+    	    cancel: function () { 
+    	        // 用户取消分享后执行的回调函数
+                layer.open({
+                    content: '分享取消'
+                    ,skin: 'msg'
+                    ,time: 1//2秒后自动关闭
+                })
+    	    }
+    	});
+		wx.onMenuShareAppMessage({
+    	    title: titles, // 分享标题
+    	    desc: descs, // 分享描述
+    	    link: links, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+    	    imgUrl: imgurls, // 分享图标
+    	    type: '', // 分享类型,music、video或link，不填默认为link
+    	    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+    	    success: function () { 
+    	        // 用户确认分享后执行的回调函数
+                layer.open({
+                    content: '分享成功'
+                    ,skin: 'msg'
+                    ,time: 1//2秒后自动关闭
+                })
+    	    },
+    	    cancel: function () { 
+    	        // 用户取消分享后执行的回调函数
+                layer.open({
+                    content: '分享取消'
+                    ,skin: 'msg'
+                    ,time: 1//2秒后自动关闭
+                })
+    	    }
+    	});
+    });
+    $(function(){
+        d_goodsid	= getUrlParam('id');
+        var tokens   = sessionStorage.getItem("token");
+    	$(".back").click(function(){
+            window.history.back();
+    	});
+        /*layer.open({
+            content: '加载中...'
+            ,skin: 'msg'
+            ,time: 1//2秒后自动关闭
+        })*/
+       proFun().init();
+       GetProductDetail(d_goodsid);
+        //为1表示已经关注，为0表示未关注。
+        //var subscribe   = sessionStorages.getItem("subscribe");
+       /* window.location.href="http://www.heigushop.com/Web/Wxflollow/jsapi.php"
+        if(0==0){
+            layer.open({
+                content: '您还未关注公众号'
+                ,btn: ['去关注', '继续浏览']
+                ,yes: function(index){
+                    window.location.href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU5OTEwMDU4NQ==&scene=110#wechat_redirect";
+                }
+            });
+        }else{
+            alert("已经关注");
+        }*/
+    });
+    var proFun = function(){
+        return{
+            init:function(){
+                this.allClick();  // 点击 全部评价
+                this.sp3Click();  // 点击加入购物车
+                this.SubClick();//取人添加购物车
+                this.setHouse();//设置收藏
+                //this.ConfirmOrder();//确认订单
+                this.CustomerClick();//客服点击事件
+                //this.fenClick(); // 点击分享按钮 弹出底部弹框
+                this.swiper(); // 轮播
+                //this.guiClick() ;  // 选择规格
+                //this.big_pic_click();  // banner图 点击放大
+                this.isFollow();
+            },
+            //轮播
+            swiper:function(){
+               /* var swiper2 = new Swiper('#swiper-container1', {
+                    pagination: '.swiper-pagination',
+                    loop:true
+                });*/
+            },
+            // banner图 点击放大
+            big_pic_click:function(){
+
+                /* $('.big_pic').css('display','none');
+                 $('.mask_2').css('display','none');*/
+
+                $('.swiper-slide img').click(function(){
+                    alert(12)
+                    $('.mask_2').css('display','block');
+                    $('.big_pic').css('display','block');
+                    $('body').css('overflow','hidden');
+                    var swiper_2 = new Swiper('#swiper-container2', {
+                        pagination: '.swiper-pagination'
+                    });
+
+                });
+                $('.mask_2').click(function(){
+                    $('.mask_2').css('display','none');
+                    $('.big_pic').css('display','none');
+
+                    $('body').css('overflow','auto');
+                })
+            },
+            // 点击 全部评价
+            allClick:function(){
+                $(".btn").click(function(){
+                	window.location.href="./allPingJia.html?goodsid="+d_goodsid;
+                });
+            },
+            // 点击加入购物车
+            sp3Click:function(){
+                $('.addNum').click(function(){
+                    var num = parseInt($('.number input').val());
+                    num++;
+                    $('.number input').val(num)
+                });
+                $('.lessNum').click(function(){
+                    var num = parseInt($('.number input').val());
+                    num--;
+                    if(num < 1){
+                        num = 1
+                    }
+                    $('.number input').val(num)
+                });
+
+                $('.sp3').click(function(){
+                    $('.bot-btn').css('display','none');
+                    $('.addCar').css('display','block');
+                    $('.mask2').css('display','block');
+                    $('body').css('overflow','hidden');
+                    console.log($(this).attr("data-type"))
+                    $(".btn2").attr("data-type",$(this).attr("data-type"));//设置状态
+                });
+                $('.mask2').click(function(){
+                    $('.bot-btn').css('display','block');
+                    $('.mask2').css('display','none');
+                    $('body').css('overflow','auto');
+                    $('.addCar').css('display','none');
+                    $('.number input').val('1')
+                });
+            },
+            SubClick:function(){
+            	$(".btn2").click(function(){
+                    if(sessionStorage.getItem("token") == "" || sessionStorage.getItem("token")==null || sessionStorage.getItem("token")=="null"){
+                        var return_url  = "http://www.heigushop.com/Web/html/productDetails.html?id="+d_goodsid;
+                        sessionStorage.setItem("return_url",return_url);
+                        window.location.href="http://www.heigushop.com/Web/Wxlogin/jsapi.php";
+                        /*layer.open({
+                            content: '请关注公众号"嘿谷商城"或下载"嘿谷商城APP"'
+                            ,skin: 'msg'
+                            ,time: 3//2秒后自动关闭
+                        })*/
+                        return false;
+                    }
+                    goodsNum = $('.number input').val();
+                    var goodskc = $(".allNum").text();
+                    if(parseInt(goodskc) < parseInt(goodsNum)){
+                        layer.open({
+                            content: '库存不足'
+                            ,skin: 'msg'
+                            ,time: 1//2秒后自动关闭
+                        })
+                        return false;
+                    }
+                    var data_type   = $(this).attr("data-type");//获取是那个点击的遮罩
+                    if(data_type==1){
+                        proFun().ConfirmOrder();//确认订单
+                        return false;
+                    }
+            		$.ajax({
+            			url:webIp+"Cart/JoinCart",
+            			type:"get",
+            			dataType:"jsonp",
+            			jsonp:"callback",
+            			data:{"token":sessionStorage.getItem('token'),"gnum":goodsNum,"gsid":d_goodsid,"specid":specid},
+            			beforeSend:function(){
+            				//当一个Ajax请求开始时触发。如果需要，你可以在这里设置XHR对象。
+            			},
+            			success:function(result){
+            				if(result.code=="200"){
+                                $('.bot-btn').css('display','block');
+                                $('.mask2').css('display','none');
+                                $('body').css('overflow','auto');
+                                $('.addCar').css('display','none');
+                                $('.number input').val('1')
+                                goodsNum	= 1;
+            				}
+                            layer.open({
+                                content: result.message
+                                ,skin: 'msg'
+                                ,time: 1//2秒后自动关闭
+                            })
+            			},
+            			error:function(){
+            				//仅当发生错误时触发
+                            layer.open({
+                                content: '请关注公众号"嘿谷商城"或下载"嘿谷商城APP"'
+                                ,skin: 'msg'
+                                ,time: 3//2秒后自动关闭
+                            })
+            			},
+            			complete:function(){
+            				//不管你请求成功还是失败，即便是同步请求，你都能在请求完成时触发这个事件。
+            			}
+            		});
+            	});
+            },
+            setHouse:function(){
+            	//
+            	$(".cang").click(function(){
+                    if(sessionStorage.getItem("token") == "" || sessionStorage.getItem("token")==null || sessionStorage.getItem("token")=="null"){
+
+                        var return_url  = "http://www.heigushop.com/Web/html/productDetails.html?id="+d_goodsid;
+                        sessionStorage.setItem("return_url",return_url);
+                        window.location.href="http://www.heigushop.com/Web/Wxlogin/jsapi.php";
+                        /*layer.open({
+                            content: '请关注公众号"嘿谷商城"或下载"嘿谷商城APP"'
+                            ,skin: 'msg'
+                            ,time: 3//2秒后自动关闭
+                        })*/
+                        return false;
+                    }
+            		$.getJSON(webIp+"Goods/SetGoodsHouse?callback=?&token="+sessionStorage.getItem('token')+"&goodsid="+d_goodsid,function(result){
+            			var house	= result.info;
+            			//var index = layer.load(3,{time:2*1000});
+            			if(result.code=="200" && !$.isEmptyObject(house)){
+            				//layer.close(index);
+            			}else{
+                            layer.open({
+                                content: result.message
+                                ,skin: 'msg'
+                                ,time: 1//2秒后自动关闭
+                            })
+            				return false;
+            			}
+            			if(house['state']==1){
+            				$(".cang").find("img").attr("src","../images/m9.png");
+            			}else{
+            				$(".cang").find("img").attr("src","../images/cang.png");
+            			}
+                        layer.open({
+                            content: result.message
+                            ,skin: 'msg'
+                            ,time: 1//2秒后自动关闭
+                        })
+            		});
+            	});
+            },
+            ConfirmOrder:function(){
+                    if(sessionStorage.getItem("token") == "" || sessionStorage.getItem("token")==null || sessionStorage.getItem("token")=="null"){
+                        var return_url  = "http://www.heigushop.com/Web/html/productDetails.html?id="+d_goodsid;
+                        sessionStorage.setItem("return_url",return_url);
+                        window.location.href="http://www.heigushop.com/Web/Wxlogin/jsapi.php";
+                        /*layer.open({
+                            content: '请关注公众号"嘿谷商城"或下载"嘿谷商城APP"'
+                            ,skin: 'msg'
+                            ,time: 3//2秒后自动关闭
+                        })*/
+                        return false;
+                    }
+            		window.location.href="./confirmOrder.html?type=1&id="+d_goodsid+"&gnum="+$('.number input').val()+"&specid="+specid;
+            },
+            CustomerClick:function(){
+            	$(".hxc").click(function(){
+            		/* if($(this).find("img").attr("alt") == sessionStorage.getItem("token")){
+            			layer.msg("该商品是您自己的",{time:1000});
+            			return false;
+            		} */
+                    if(sessionStorage.getItem("token") == "" || sessionStorage.getItem("token")==null || sessionStorage.getItem("token")=="null"){
+                        var return_url  = "http://www.heigushop.com/Web/html/productDetails.html?id="+d_goodsid;
+                        sessionStorage.setItem("return_url",return_url);
+                        window.location.href="http://www.heigushop.com/Web/Wxlogin/jsapi.php";
+                        /*layer.open({
+                            content: '请关注公众号"嘿谷商城"或下载"嘿谷商城APP"'
+                            ,skin: 'msg'
+                            ,time: 3//2秒后自动关闭
+                        })*/
+                        return false;
+                    }
+            		window.location.href='./chatNews.html?sellerToken='+$(this).find("img").attr("alt")+"&shop="+escape($(this).find("img").attr("data-shopname"))+"&logo="+$(".logo").find("img").attr("src");
+            	});
+            },
+            fenClick:function(){ // 点击分享按钮 弹出底部弹框
+                $('.fen').click(function(){
+                    $('.bot-btn').css('display','none');//隐藏掉原始底部的内容，防止点击穿透
+                    $('.fenBox').css('display','block');
+                    $('.mask2').css('display','block');
+                    $('body').css('overflow','hidden');
+                    proFun().wxgetConfig();
+                });
+                $('.mask2').click(function(){
+                    $('.bot-btn').css('display','block');
+                    $('.mask2').css('display','none');
+                    $('body').css('overflow','auto');
+                    $('.fenBox').css('display','none');
+                })
+            },
+            wxgetConfig:function(){
+            	$.getJSON("../WxShare/jsapi.php?id="+d_goodsid,function(result){
+            		wx.config({
+                        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                        appId: result.appid, // 必填，公众号的唯一标识
+                        timestamp: result.timestamp, // 必填，生成签名的时间戳
+                        nonceStr: result.noncestr, // 必填，生成签名的随机串
+                        signature: result.signature,// 必填，签名，见附录1
+                        jsApiList: ["onMenuShareTimeline","onMenuShareAppMessage"] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                    }); 
+            	});
+            },
+            // 选择规格
+            guiClick:function(){
+                // 默认 第一个选中
+                $('.fen-btn').eq(0).addClass('fen-on') ;
+                proFun().guiEidt();
+                // 点击选中
+                $('.fen-btn').click(function(){
+                    $(this).addClass('fen-on') ;
+                    $(this).siblings().removeClass('fen-on')
+                    proFun().guiEidt();
+                })
+            },
+            guiEidt:function(){
+                //设置加入购物车弹出
+                var goodsprice  = $(".fen-on").find("span").attr("data-spece");
+                var goodsnum    = $(".fen-on").find("span").attr("data-stock");
+                specid  = $(".fen-on").find("span").attr("data-specid");
+                $(".pro-tuwen").find("b").html(goodsprice);
+                $(".pro-tuwen").find("i").html(goodsnum);
+                $(".pin-bot .llxl").find("b").html(goodsprice);
+            },
+            isFollow:function(){
+                var aa= sessionStorage.getItem("subscribe");
+                var return_url    = sessionStorage.getItem("return_url");
+                if(aa==null){
+                    if(sessionStorage.getItem("token")!=null && return_url != null)
+                    {
+                        window.location.href="http://www.heigushop.com/Web/Wxflollow/jsapi.php"
+                    }
+                }else{
+                    if(aa==0){
+                        layer.open({
+                            content: '您还未关注公众号'
+                            ,btn: ['去关注', '继续浏览']
+                            ,yes: function(index){
+                                window.location.href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU5OTEwMDU4NQ==&scene=110#wechat_redirect";
+                            }
+                        });
+                    }
+                    return;
+                }
+
+            }
+            
+        }
+    }
+
+</script>
+</html>

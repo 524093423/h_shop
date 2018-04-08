@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            font-family:  Microsoft YaHei ;
+            font-style:normal;
+            font-weight:normal;
+        }
+        body,html{background-color: #f8f8f8;}
+
+        .wrap{width: 91%;margin: auto;}
+        .ti {margin-top: 30px;}
+        .ti p {font-size:14px;;color: #333;line-height: 26px;text-indent: 20px;padding-bottom: 20px;}
+        .item1 p{color: #666;font-size: 0.9rem;line-height: 26px;text-indent: 20px;}
+        .ti h4{text-align: center;margin-bottom: 15px;font-size: 18px;;}
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="wrap clearfix topWrap">
+        <h3 class="to-ti"></h3>
+    </div>
+</div>
+<!--content start-->
+<div class="content ">
+   <div class="ti wrap">
+   </div>
+
+</div>
+<!--content end-->
+
+</body>
+<script src="../js/jquery1.9.1.js"></script>
+<script src="../layer/layer.js"></script>
+<script src="../js/webconfig.js?a=123"></script>
+<script src="../js/system.js?a=123"></script>
+<script type="text/javascript">
+    $(function(){ 
+    //判断 是 安卓 还是IOS 手机
+        getAboutUs();
+    })
+</script>
+</html>
