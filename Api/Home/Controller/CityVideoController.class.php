@@ -198,7 +198,7 @@ class CityVideoController extends RestController {
 					'from_uid'   => $from_id
 				];
 			}
-
+			
 			//评论的子评论数+1
 			$reply_up = M('city_video_comment')->where(array('id'=>$pid))->setinc('reply_num');
 			//更新视频表 评论+1
