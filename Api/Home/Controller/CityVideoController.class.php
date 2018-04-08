@@ -157,14 +157,9 @@ class CityVideoController extends RestController {
 			//评论 +1			
 			$commup = M('city_video')->where(array('id'=>$video_id))->setinc('num_commen');
 
-			$userinfo = M('user')->field('user_name,user_photo')->where(array('user_id'=>$user_id))->find();
-
-			$newArr  = array_merge($arr,$userinfo);
-
 			if ($update && $commup) {
 				$data['code']    = 200;
 				$data['message'] = '评论成功';
-				$data['data']    = $newArr;
 				$this->response($data);					
 			}else{
 				$data['code'] = 204;
@@ -211,15 +206,11 @@ class CityVideoController extends RestController {
 
 			$commup = M('city_video')->where(array('id'=>$video_id))->setinc('num_commen');
 
-			$userinfo = M('user')->field('user_name,user_photo')->where(array('user_id'=>$user_id))->find();
-			
-			$newArr = array_merge($arr,$userinfo);
+			$data['reply_num'] = M('city_video_comment')->where(array('id'=>$pid))->field('reply_num')->find()['reply_num'];
 
 			if ($update && $commup && $reply_up) {
-
 				$data['code']    = 200;
 				$data['message'] = '评论成功';
-				$data['data']    =  $newArr;
 				$this->response($data);	
 
 			}else{
@@ -806,7 +797,7 @@ class CityVideoController extends RestController {
 		}else{
 			$data['code'] = 204;
 			$data['message'] = '领取失败请重试';
-			$this->response($data);				
+			$this->response($data);						
 		}
 	}
 
