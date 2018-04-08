@@ -455,9 +455,21 @@ class CityVideoController extends RestController {
 		$res = M('city_video_collection')->where(array('video_id'=>$video_id,'user_id'=>$user_id))->find();
 
 		if ($res) {
-			$data['code'] = 204;
-			$data['message'] = '已经收藏过了';
-			$this->response($data);		
+			//删除收藏表数据
+			$del = M('city_video_collection')->where(array('video_id'=>$video_id,'user_id'=>$user_id))->delete();
+
+			//评论点赞数 -1
+			$collection_del    = M('city_video')->where(array('id'=>$video_id))->setDec('num_collection');	
+			
+			if($del && $collection_del) {
+				$data['code'] = 200;
+				$data['message'] = '取消收藏成功';
+				$this->response($data);				
+			}else{
+				$data['code'] = 204;
+				$data['message'] = '取消收藏失败';
+				$this->response($data);				
+			}		
 		}		
 
 		//更新收藏表
@@ -481,52 +493,6 @@ class CityVideoController extends RestController {
 
 	}
 
-	/*
-	视频取消收藏
-	*/
-	public function collection_del () {
-		$user_id = $this->_USERID;
-		if(empty($user_id)) {
-			$data['code'] = 204;
-			$data['message'] = '登陆后才能操作';
-			$this->response($data);				
-		}
-
-		$video_id = $_REQUEST['video_id'];
-		//判断视频id 是否传来
-		if (!$video_id) {
-			$data['code'] = 204;
-			$data['message'] = '请求数据不存在';
-			$this->response($data);				
-		}
-		//检测是否收藏
-		$res = M('city_video_collection')->where(array('video_id'=>$video_id,'user_id'=>$user_id))->find();
-
-		if (!$res) {
-
-			$data['code'] = 204;
-			$data['message'] = '尚未收藏,无法取消收藏';
-			$this->response($data);	
-
-		}				
-
-		//删除收藏表数据
-		$del = M('city_video_collection')->where(array('video_id'=>$video_id,'user_id'=>$user_id))->delete();
-
-		//评论点赞数 -1
-		$collection_del    = M('city_video')->where(array('id'=>$video_id))->setDec('num_collection');	
-		
-		if($del && $collection_del) {
-			$data['code'] = 200;
-			$data['message'] = '取消收藏成功';
-			$this->response($data);				
-		}else{
-			$data['code'] = 204;
-			$data['message'] = '取消收藏失败';
-			$this->response($data);				
-		}		
-
-	}
 	/* 
 	视频分享
 	@param  $video_id  视频id
@@ -594,24 +560,36 @@ class CityVideoController extends RestController {
 			$data['message'] = '暂无评论';
 			$this->response($data);	
 		}
+		//添加视频标题到评论数据中;
+		$info  = M('city_video')->where(array('id'=>$video_id))->find();
+		$title['content']     = $info['title'];
+		$title['create_time'] =  mdate($info['uploadetime']);
+		$title['user_id']     = $info['user_id'];
+		$tmp   = M('user')->where(array('user_id'=>$title['user_id']))->find();
+		$title['user_name']   = $tmp['user_name'];
+		$title['user_photo']  =	$tmp['user_photo'];	
+		$title['fabulous_num']= 0;
+		$title['reply_num']   = 0;
+		$title['is_fabulous'] = 0;
+		$title['from_uid']    = 0;
+		$title['is_message']  = 0;
+
 		$arr = [];
 		$arr['code'] = 200;
 		$arr['message'] = '获取评论成功';
 		foreach ($comment as $key => $value) {
-
 			if (is_null($this->_USERID) || empty($this->_USERID)) {
 				$value['is_fabulous'] = 0;	
 			}else{
 				$value['is_fabulous'] = $this->is_fabulous($this->_USERID,$value['id']) ? 1 : 0;
 			}
-
 			$userinfo = M('user')->where(array('user_id'=>$value['user_id']))->field('user_name,user_photo')->find();
-
 			$value['create_time'] = mdate($value['create_time']);
 			unset($value['pid']);
 			unset($value['cid']);
 			$arr['data'][$key] = array_merge($value,$userinfo);
 		}
+		array_unshift($arr['data'],$title);
 		$this->response($arr);
 		
 	}
@@ -644,9 +622,10 @@ class CityVideoController extends RestController {
 		foreach ($arr as $key => $value) {
 			$userinfo = M('user')->field('user_name,user_photo')->where(array('user_id'=>$value['user_id']))->find();
 			if ($value['from_uid'] == 0) {
-				unset($value['from_uid']);
+				$value['from_uid'] = "";
+				$value['from_name'] = "";
 			}else{
-				$from_userinfo = M('user')->where(array('user_id'=>$value['from_uid']))->field('user_name as from_name,user_photo as from_photo')->find();
+				$from_userinfo = M('user')->where(array('user_id'=>$value['from_uid']))->field('user_name as from_name')->find();
 				$userinfo = array_merge($userinfo,$from_userinfo);
 			}
 			unset($value['cid']);
@@ -955,18 +934,7 @@ class CityVideoController extends RestController {
 		$sql = "UPDATE city_video SET city = '{$city}', title = '{$content}', sort_id = {$classify} WHERE id = {$video_id} AND user_id = {$user_id};";
 
 		$res = M('city_video')->execute($sql);
-		$arr = [
-			'cid'    => $video_id,
-			'user_id'=> $user_id,
-			'pid'    => 0,
-			'content'=> $content,
-			'create_time'  => time(),
-			'fabulous_num' => 0,
-			'reply_num'    => 0,
-			'from_uid'     => 0,
-			'is_message'   => 1,
-		];
-		M('city_video_comment')->add($arr);
+
 		//红包检测
 		if (!empty($dingdan) || !is_null($dingdan)) {
 			//检测订单是否存在

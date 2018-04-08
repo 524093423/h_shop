@@ -489,3 +489,105 @@ SQL: SELECT * FROM `city_video_collection` WHERE ( `video_id` = 35 ) AND ( `user
 SQL: SHOW COLUMNS FROM `follow` [ RunTime:0.007001s ]
 SQL: SELECT * FROM `follow` WHERE ( `user_id` = 20 ) AND ( `follow_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
 
+[ 2018-04-08T16:07:49+08:00 ] 127.0.0.1 /CityVideo/getVideoComment&video_id=35
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.296016s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.045003s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `cid` = 35 ) AND ( `pid` = 0 ) ORDER BY fabulous_num DESC  [ RunTime:0.028001s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.030002s ]
+SQL: SELECT * FROM `city_video` WHERE ( `id` = 35 ) LIMIT 1   [ RunTime:0.033002s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.042003s ]
+SQL: SELECT * FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.041002s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-08T16:09:50+08:00 ] 127.0.0.1 /CityVideo/getVideoComment&video_id=35
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.019002s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `cid` = 35 ) AND ( `pid` = 0 ) ORDER BY fabulous_num DESC  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `city_video` WHERE ( `id` = 35 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-08T16:10:31+08:00 ] 127.0.0.1 /CityVideo/getVideoComment&video_id=35
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `cid` = 35 ) AND ( `pid` = 0 ) ORDER BY fabulous_num DESC  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `city_video` WHERE ( `id` = 35 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-08T16:38:44+08:00 ] 127.0.0.1 /CityVideo/getVideoComment&video_id=35
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.023001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `cid` = 35 ) AND ( `pid` = 0 ) ORDER BY fabulous_num DESC  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `city_video` WHERE ( `id` = 35 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-08T16:41:07+08:00 ] 127.0.0.1 /CityVideo/getVideoComment&video_id=35
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.010000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `cid` = 35 ) AND ( `pid` = 0 ) ORDER BY fabulous_num DESC  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `city_video` WHERE ( `id` = 35 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-08T16:41:43+08:00 ] 127.0.0.1 /CityVideo/getVideoComment&video_id=35
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\CityVideoController.class.php 第 14 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.030001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `city_video_comment` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `city_video_comment` WHERE ( `cid` = 35 ) AND ( `pid` = 0 ) ORDER BY fabulous_num DESC  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `city_video` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `city_video` WHERE ( `id` = 35 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `user_name`,`user_photo` FROM `user` WHERE ( `user_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+
