@@ -1,0 +1,795 @@
+[ 2018-04-09T09:48:59+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.054003s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.010001s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 736 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 737 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = '郑州市' ) LIMIT 1   [ RunTime:0.014000s ]
+SQL: SELECT * FROM emergencysell WHERE type = 1 AND city = '郑州市' LIMIT 0,20 [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-04-09T09:50:55+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 736 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 737 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.015001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = '郑州市' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM emergencysell WHERE type = 1 AND city = '郑州市' LIMIT 0,20 [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-04-09T10:03:36+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 736 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 737 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = '郑州市' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT id,title,price,click,city,Bidder,`number` FROM emergencysell WHERE type = 1 AND city = '郑州市' LIMIT 0,20 [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008001s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 5 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 9 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 768 行.
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 13 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-04-09T10:05:25+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 736 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 737 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = '郑州市' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT id,title,price,click,city,Bidder,`number` FROM emergencysell WHERE type = 1 AND city = '郑州市' LIMIT 0,20 [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 3 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 9 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 767 行.
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 13 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T10:05:29+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 736 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 737 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = '郑州市' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT id,title,price,click,city,Bidder,`number` FROM emergencysell WHERE type = 1 AND city = '郑州市' LIMIT 0,20 [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008001s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 3 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 9 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 767 行.
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 13 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T10:07:14+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 736 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 737 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = '郑州市' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT id,title,price,click,city,Bidder,`number` FROM emergencysell WHERE type = 1 AND city = '郑州市' LIMIT 0,20 [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008001s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 5 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 9 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 768 行.
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 13 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T10:08:05+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 736 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 737 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = '郑州市' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT id,title,price,click,city,Bidder,`number` FROM emergencysell WHERE type = 1 AND city = '郑州市' LIMIT 0,20 [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.007001s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 5 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 9 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 13 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T10:10:34+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358&type=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 737 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 2 ) AND ( `city` = '郑州市' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT id,title,price,click,city FROM emergencysell WHERE type = 2 AND city = '郑州市' LIMIT 0,20 [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 789 行.
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 10 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 789 行.
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 12 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 789 行.
+SQL: SELECT `cover` FROM `emergencysell_img` WHERE ( `post_id` = 23 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2] array_merge(): Argument #2 is not an array D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 789 行.
+
+[ 2018-04-09T10:27:39+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358&type=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.011000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T10:27:48+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358&type=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T10:28:09+08:00 ] 127.0.0.1 /EmergencySell/getHome?ns=113.66053999999997,34.75358&type=2
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T10:28:13+08:00 ] 127.0.0.1 /EmergencySell/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T10:28:14+08:00 ] 127.0.0.1 /EmergencySell/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T10:28:23+08:00 ] 127.0.0.1 /EmergencySell/GetContent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 691 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 692 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008000s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 695 行.
+NOTIC: [8] Undefined property: stdClass::$regeocode D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 797 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 797 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 697 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = null ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT id,title,price,click,city,Bidder,`number` FROM emergencysell WHERE type = 1 AND city = '' LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-09T11:19:53+08:00 ] 127.0.0.1 /EmergencySell/GetContent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.028002s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 25 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.011001s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 29 行.
+NOTIC: [8] Undefined property: stdClass::$regeocode D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 784 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 784 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 31 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = null ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT id,title,price,click,city,Bidder,`number` FROM emergencysell WHERE type = 1 AND city = '' LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-09T11:21:00+08:00 ] 127.0.0.1 /EmergencySell/GetContent
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 25 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008001s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 29 行.
+NOTIC: [8] Undefined property: stdClass::$regeocode D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 784 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 784 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 31 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = null ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT id,title,price,click,city,Bidder,`number` FROM emergencysell WHERE type = 1 AND city = '' LIMIT 0,20 [ RunTime:0.000000s ]
+
+[ 2018-04-09T11:21:13+08:00 ] 127.0.0.1 /EmergencySell/GetContent?ns=133.
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: type D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 25 行.
+NOTIC: [8] Undefined index: page D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 26 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008000s ]
+NOTIC: [8] Undefined property: stdClass::$regeocode D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 784 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 784 行.
+NOTIC: [8] Trying to get property of non-object D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 31 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `emergencysell` WHERE ( `type` = 1 ) AND ( `city` = null ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT id,title,price,click,city,Bidder,`number` FROM emergencysell WHERE type = 1 AND city = '' LIMIT 0,20 [ RunTime:0.001000s ]
+
+[ 2018-04-09T16:45:21+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase_GetInfo?token=cab56545af99e74b185ecd524217af0d&title=%E6%88%91%E7%88%B1%E4%BD%A0%E8%B0%81%E6%89%93%E7%9A%84&message=%E6%B5%8B%E8%AF%95%E6%B5%8B%E7%BB%98%E5%B8%88%E7%94%9F&money=25
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.024001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 184 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 209 行.
+NOTIC: [8] Undefined index: number D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 235 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.010001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (14,'25','我爱你谁打的',0,'内网IP','测试测绘师生',1,5,1,1523263521) [ RunTime:0.028002s ]
+
+[ 2018-04-09T16:47:38+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=24&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 24 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.009001s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`) VALUES ('www.test.com') [ RunTime:0.001000s ]
+
+[ 2018-04-09T16:48:05+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=24&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.012000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 24 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.012001s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`) VALUES ('www.test.com') [ RunTime:0.000000s ]
+
+[ 2018-04-09T16:48:27+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=24&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.012001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 24 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.012001s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`) VALUES ('www.test.com') [ RunTime:0.000000s ]
+
+[ 2018-04-09T16:48:49+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=24&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 24 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T16:49:10+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=24&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 24 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T16:49:22+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=24&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 24 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T16:50:16+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=24&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 24 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T16:50:33+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=24&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 24 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.009000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`img_1`,`img_2`) VALUES ('www.test.com','www.test.com','www.test.com') [ RunTime:0.000000s ]
+
+[ 2018-04-09T16:53:17+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetInfo?token=cab56545af99e74b185ecd524217af0d&title=%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95&message=%E6%92%92%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&money=50
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 333 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 359 行.
+NOTIC: [8] Undefined index: dingdan D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 388 行.
+
+[ 2018-04-09T16:53:29+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetInfo?token=cab56545af99e74b185ecd524217af0d&title=%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95&message=%E6%92%92%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&money=50&dingdan=123
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 333 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 359 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.020001s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '123' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (14,'50','测试测试测试',0,'内网IP','撒大声地阿斯达',2,0,1,1523264008) [ RunTime:0.001000s ]
+SQL: UPDATE emergencysell_pay SET post_id = 25 WHERE dingdan = 123 [ RunTime:0.001000s ]
+
+[ 2018-04-09T16:54:25+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetInfo?token=cab56545af99e74b185ecd524217af0d&title=%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95&message=%E6%92%92%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&money=50&dingdan=123
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 333 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 359 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '123' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T16:54:59+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetInfo?token=cab56545af99e74b185ecd524217af0d&title=%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95&message=%E6%92%92%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&money=50&dingdan=123
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 333 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 359 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '123' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.010001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (14,'50','测试测试测试',0,'内网IP','撒大声地阿斯达',2,0,1,1523264099) [ RunTime:0.001000s ]
+SQL: UPDATE emergencysell_pay SET post_id = 26 WHERE dingdan = 123 [ RunTime:0.001000s ]
+
+[ 2018-04-09T16:55:32+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetInfo?token=cab56545af99e74b185ecd524217af0d&title=%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95&message=%E6%92%92%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&money=50&dingdan=123
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 333 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 359 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '123' ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T16:56:57+08:00 ] 127.0.0.1 /EmergencySell/pay?toekn=cab56545af99e74b185ecd524217af0d
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: post_id D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 145 行.
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = null ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T16:58:20+08:00 ] 127.0.0.1 /EmergencySell/pay?toekn=cab56545af99e74b185ecd524217af0d
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.017001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: post_id D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 145 行.
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = null ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T16:59:00+08:00 ] 127.0.0.1 /EmergencySell/pay?toekn=cab56545af99e74b185ecd524217af0d
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: post_id D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 145 行.
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = null ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T16:59:15+08:00 ] 127.0.0.1 /EmergencySell/pay?toekn=cab56545af99e74b185ecd524217af0d
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: post_id D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 145 行.
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = null ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T17:00:14+08:00 ] 127.0.0.1 /EmergencySell/pay?toekn=cab56545af99e74b185ecd524217af0d
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = null ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T17:00:42+08:00 ] 127.0.0.1 /EmergencySell/pay?toekn=cab56545af99e74b185ecd524217af0d
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = null ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T17:01:15+08:00 ] 127.0.0.1 /EmergencySell/pay?toekn=cab56545af99e74b185ecd524217af0d
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = null ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T17:01:42+08:00 ] 127.0.0.1 /EmergencySell/pay?token=cab56545af99e74b185ecd524217af0d
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 14 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T17:01:51+08:00 ] 127.0.0.1 /EmergencySell/pay?token=cab56545af99e74b185ecd524217af0d
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `integral` FROM `user` WHERE ( `user_id` = 14 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `user` SET `integral`=integral-1000 WHERE ( `user_id` = 14 ) [ RunTime:0.012000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.023002s ]
+SQL: INSERT INTO `emergencysell_pay` (`user_id`,`dingdan`) VALUES (14,'2018040910110248') [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.033002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.033002s ]
+
+[ 2018-04-09T17:02:20+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetInfo?token=cab56545af99e74b185ecd524217af0d&title=%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95%E6%B5%8B%E8%AF%95&message=%E6%92%92%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&money=50&dingdan=2018040910110248
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 334 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 360 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '2018040910110248' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (14,'50','测试测试测试',0,'内网IP','撒大声地阿斯达',2,0,1,1523264540) [ RunTime:0.001000s ]
+SQL: UPDATE emergencysell_pay SET post_id = 27 WHERE dingdan = 2018040910110248 [ RunTime:0.001000s ]
+
+[ 2018-04-09T17:04:09+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetVideo_Path?token=cab56545af99e74b185ecd524217af0d&post_id=27&video_path=asdasdasda
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 27 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_video` [ RunTime:0.009001s ]
+SQL: INSERT INTO `emergencysell_video` (`post_id`,`path`) VALUES (27,'asdasdasda') [ RunTime:0.000000s ]
+
+[ 2018-04-09T17:04:58+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=27&cover=www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 27 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 517 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`) VALUES ('www.test.com') [ RunTime:0.001001s ]
+
+[ 2018-04-09T17:05:26+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=27&cover=www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 27 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 517 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.007001s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`) VALUES ('www.test.com') [ RunTime:0.001000s ]
+
+[ 2018-04-09T17:06:02+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=27&cover=www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 27 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 517 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('www.test.com',27) [ RunTime:0.001001s ]
+
+[ 2018-04-09T17:06:25+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=27&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 27 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.009001s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('www.test.com',27) [ RunTime:0.001000s ]
+
+[ 2018-04-09T17:06:46+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=27&cover=www.test.com&img_path=www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 27 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008001s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`,`img_1`,`img_2`) VALUES ('www.test.com',27,'www.test.com','www.test.com') [ RunTime:0.001000s ]
+
+[ 2018-04-09T17:07:09+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell_GetImg_path?token=cab56545af99e74b185ecd524217af0d&post_id=27&cover=www.test.com&img_path=www.test.com,www.test.com,www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `emergencysell` WHERE ( `id` = 27 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008001s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`,`img_1`,`img_2`,`img_3`) VALUES ('www.test.com',27,'www.test.com','www.test.com','www.test.com') [ RunTime:0.001000s ]
+
+[ 2018-04-09T17:31:21+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=asd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.020001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.023001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 336 行.
+
+[ 2018-04-09T17:31:37+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 336 行.
+
+[ 2018-04-09T17:32:10+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 336 行.
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 337 行.
+
+[ 2018-04-09T17:32:28+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 336 行.
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 337 行.
+
+[ 2018-04-09T17:32:56+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.009001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 336 行.
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 409 行.
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 337 行.
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 409 行.
+
+[ 2018-04-09T17:33:10+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 336 行.
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 337 行.
+
+[ 2018-04-09T17:33:29+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 336 行.
+NOTIC: [8] Undefined variable: message D:\phpStudy\WWW\h_shop\Api\Home\Controller\UsersController.class.php 第 337 行.
+
+[ 2018-04-09T17:34:08+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-09T17:34:35+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007000s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.007000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.001000s ]
+ERR: Think\Model:geLastSql方法不存在！
+
+[ 2018-04-09T17:35:01+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.008001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2018-04-09T17:35:39+08:00 ] 127.0.0.1 /Users/editUserMessage?token=cab56545af99e74b185ecd524217af0d&message=%E8%BF%99%E6%98%AF%E6%88%91%E7%9A%84%E6%96%B0%E7%AE%80%E4%BB%8B
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `register` [ RunTime:0.007001s ]
+ERR: 1146:Table 'h_shop.register' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `register`
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT user_id as userid FROM `user` WHERE ( token='cab56545af99e74b185ecd524217af0d' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `user` SET `message`='这是我的新简介' WHERE ( `user_id` = 14 ) [ RunTime:0.001000s ]
+

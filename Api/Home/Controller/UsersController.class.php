@@ -30,43 +30,9 @@ class UsersController extends RestController {
 		$user_id = $this->_USERID;
 		$follow_id = $_REQUEST['follow_id'];
 		$state = $_REQUEST['state'];   //1.关注  2.取消关注
-		if ($state == 1) {
-			$se = $this->is_follow($user_id,$follow_id);
-			if ($se) {
-				$data['code'] = 204;
-				$data['message'] ="已经关注，请勿再次关注";
-				$this->response($data);	
-				return false;		
-			}
-			//被关注者粉丝+1  关注者关注+1
-			$fans_up = $model->where(array('user_id'=>$follow_id))->setinc('fans');
-			$follow_up = $model->where(array('user_id'=>$user_id))->setinc('follow');
-
-			//更新用户关注列表
-			$arr = [
-				'user_id' =>  $user_id,
-				'follow_id' => $follow_id,
-				'create_time'=> time()
-			];
-			$user_follow_up = M('follow')->add($arr);
-
-			if ($fans_up && $follow_up && $user_follow_up) {
-				$data['code'] = 200;
-				$data['message'] = "关注成功";
-				$this->response($data);					
-			}else{
-				$data['code'] = 204;
-				$data['message'] = '关注失败';
-			}
-
-		}elseif ($state == 2) {
-			$se = $this->is_follow($user_id,$follow_id);
-			if (!$se) {
-				$data['code'] = 204;
-				$data['message'] ="没有关注，无法取消关注";
-				$this->response($data);	
-				return false;		
-			}
+		
+		$se = $this->is_follow($user_id,$follow_id);
+		if ($se) {
 			//用户关注 -1 	取关者粉丝 -1
 			$follow_del = $model->where(array('user_id'=>$user_id))->setDec('follow');
 
@@ -84,12 +50,26 @@ class UsersController extends RestController {
 				$data['message'] = "取消关注失败";
 				$this->response($data);					
 			}
+		}
+		//被关注者粉丝+1  关注者关注+1
+		$fans_up = $model->where(array('user_id'=>$follow_id))->setinc('fans');
+		$follow_up = $model->where(array('user_id'=>$user_id))->setinc('follow');
 
+		//更新用户关注列表
+		$arr = [
+			'user_id' =>  $user_id,
+			'follow_id' => $follow_id,
+			'create_time'=> time()
+		];
+		$user_follow_up = M('follow')->add($arr);
+
+		if ($fans_up && $follow_up && $user_follow_up) {
+			$data['code'] = 200;
+			$data['message'] = "关注成功";
+			$this->response($data);					
 		}else{
 			$data['code'] = 204;
-			$data['message'] ="数据有误，请检查";
-			$this->response($data);
-			return false;				
+			$data['message'] = '关注失败';
 		}
 	}
 	
@@ -99,7 +79,7 @@ class UsersController extends RestController {
 	public function GetUser() {
 		$user_id  = $this->_USERID;
 
-		$res = M('user')->where(array('user_id'=>$user_id))->field('user_name,user_photo,integral,follow,fans')->find();
+		$res = M('user')->where(array('user_id'=>$user_id))->field('user_name,user_photo,integral,follow,fans,sex,message,user_id')->find();
 
 		if (!$res) {
 			$data['code']    = 204;
@@ -204,7 +184,6 @@ class UsersController extends RestController {
 		$data['message']= '获取成功';
 		$data['data']   = $arr;
 		$this->response($data); 
-
 	}
 
 	/*
@@ -280,26 +259,101 @@ class UsersController extends RestController {
 		$user_id  = $this->_USERID;
 		$from_id  = $_REQUEST['user_id'];
 		//数据库中查询这个用户个人信息
-		$user_info = M('user')->where(array('user_id'=>$from_id))->field('user_name,user_photo,fans,follow')->find();
+		$user_info = M('user')->where(array('user_id'=>$from_id))->field('user_id,user_name,user_photo,fans,follow,message,sex')->find();
 		$user_info['is_follow'] = $this->is_follow($user_id,$from_id) ? 1 : 0; 
-		//查询用户上传的视频 标题 视频封面 视频地址
-		$video_info = M('city_video')->where(array('user_id'=>$from_id))->field('title,cover,video_path')->select();
-		//查询用户收藏的视频 标题 视频封面 视频地址
-		$res     =  M('city_video_collection')->where(array('user_id'=>$from_id))->order('create_time DESC')->select();
-		if ($res) {
-			foreach ($res as $k => $v) {
-				$video_id   = $v['video_id'];
-				$collection[$k] = M('city_video')->field('title,cover,video_path')->where(array('video_id'=>$video_id))->find();
-			}
-		}else{
-			$collection = '';
-		}
-		
+
 		$data['code'] = 200;
 		$data['message'] = '获取用户信息成功';
-		$data['user_info'] = $user_info;
-		$data['video_info'] = $video_info;
-		$data['collection'] = $collection;
+		$data['data'] = $user_info;
+
+		$this->response($data);
+	}
+
+	/* 
+	 * 用户查看他人的上传
+	 */
+	public function viewUserUpload() {
+		$user_id = $_REQUEST['user_id'];
+		if (!$user_id) {
+			$data['code']    = 204;
+			$data['message'] = '数据错误';
+			$this->response($data);
+		}
+		$res     = M('city_video')->where(array('user_id'=>$user_id))->order('uploadetime DESC')->select();
+		if ($res) {
+			$data['code'] = 200;
+			$data['message'] = '获取成功';
+			$data['data'] = $res;
+			$this->response($data);
+		}else{
+			$data['code'] = 204;
+			$data['message'] = '你暂时没有上传视频';
+			$this->response($data);
+		}			
+	}
+	/* 
+	* 用户查看他人的收藏
+	*/
+	public function viewUserCollection() {
+		$user_id = $_REQUEST['user_id'];
+		if (!$user_id) {
+			$data['code']    = 204;
+			$data['message'] = '数据错误';
+			$this->response($data);
+		}
+		$res     = M('city_video_collection')->where(array('user_id'=>$user_id))->order('create_time DESC')->select();
+		if (!$res) {
+			$data ['code'] = 204;
+			$data ['message'] = '他收藏列表空空的';
+			$this->response($data);
+		}
+		//遍历循环出用户头像,名字 与视频点击量封面
+		$arr = [];
+		foreach ($res as $key => $value) {
+			$video_id   = $value['video_id'];
+			$video_info = M('city_video')->where(array('video_id'=>$video_id))->find();
+			$user_id    = $video_info['user_id'];
+			$user_info  = M('user')->field('user_name,user_photo')->where(array('user_id'=>$user_id))->find();
+			$arr[$key]  = array_merge($user_info,$video_info);
+		}
+		$data['code']   = 200;
+		$data['message']= '获取成功';
+		$data['data']   = $arr;
+		$this->response($data); 
+	}
+
+	/*  
+	修改用户简介
+	*/
+	public function editUserMessage() {
+		$user_id = $this->_USERID;
+		$newMessage = $_REQUEST['message'];
+		if (empty($newMessage)) {
+			$data['code']    = 204;
+			$data['message'] = '新简介不能为空';
+			$this->response($data);
+		}
+		if ($this->length_number($newMessage) < 5) {
+			$data['code'] = 204;
+			$data['message'] = '新简介字数不能小于5';
+			$this->response($data);					
+		}
+		if ($this->length_number($newMessage) > 255) {
+			$data['code'] = 204;
+			$data['message'] = '新简介字数不能大于255';
+			$this->response($data);					
+		}	
+		//更新用户表
+		$model = M('user');
+		$model->message = $newMessage;
+		$bool  = $model->where(array('user_id'=>$user_id))->save();
+		if (!is_bool($bool)) {
+			$data['code']    = 200;
+			$data['message'] = '修改成功';
+		}else{
+			$data['code']    = 204;
+			$data['message'] = '修改失败';
+		}
 		$this->response($data);
 	}
 
@@ -329,11 +383,11 @@ class UsersController extends RestController {
   		return false;		
 	}
 
-	/*
-	视频是否点赞
-	@param  $uid         用户id
-	@param  $video_id  帖子id
-	return  bool 已经点赞返回true 未点赞返回false	
+	/**
+	* 视频是否点赞
+	* @param  $uid         用户id
+	* @param  $video_id  帖子id
+	* return  bool 已经点赞返回true 未点赞返回false	
 	*/
 	protected function is_fabulous($uid,$video_id) {
 		$result = M('city_video_fabulous')->where(array('video_id'=>$video_id,'user_id'=>$uid))->find();
@@ -341,5 +395,19 @@ class UsersController extends RestController {
   			return true;
   		}
   		return false;			
+	}	
+
+    /** 
+	* 字符串长度检测
+    */
+    private function length_number($str) {
+
+        preg_match_all("/./us", $str, $match);
+
+        $str_arr=$match[0];
+		
+		$length_val=count($str_arr);//字符串长度 
+		
+		return $length_val;  	
 	}	
 }
