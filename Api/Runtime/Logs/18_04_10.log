@@ -1,0 +1,300 @@
+[ 2018-04-10T09:33:12+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase?token=1eed2bcfeb700b9ab8a32705465427e3&title=wwwww.dsad&message=asdasdadasd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = '1eed2bcfeb700b9ab8a32705465427e3' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 185 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 210 行.
+NOTIC: [8] Undefined index: number D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 236 行.
+NOTIC: [8] Undefined index: cover D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 238 行.
+
+[ 2018-04-10T09:33:38+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase?token=1eed2bcfeb700b9ab8a32705465427e3&title=wwwww.dsad&message=asdasdadasd&cover=www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = '1eed2bcfeb700b9ab8a32705465427e3' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 185 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 210 行.
+NOTIC: [8] Undefined index: number D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 236 行.
+NOTIC: [8] Undefined index: money D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 251 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.023002s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,null,'wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324018) [ RunTime:0.047003s ]
+ERR: 1048:Column 'price' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,null,'wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324018)
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 271 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('www.test.com',null) [ RunTime:0.001000s ]
+ERR: 1048:Column 'post_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('www.test.com',null)
+
+[ 2018-04-10T09:34:25+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase?token=1eed2bcfeb700b9ab8a32705465427e3&title=wwwww.dsad&message=asdasdadasd&cover=www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = '1eed2bcfeb700b9ab8a32705465427e3' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 185 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 210 行.
+NOTIC: [8] Undefined index: number D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 236 行.
+NOTIC: [8] Undefined index: money D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 251 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.007001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,null,'wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324065) [ RunTime:0.001000s ]
+ERR: 1048:Column 'price' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,null,'wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324065)
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 271 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.008000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('www.test.com',null) [ RunTime:0.001000s ]
+ERR: 1048:Column 'post_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('www.test.com',null)
+
+[ 2018-04-10T09:34:55+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase?token=1eed2bcfeb700b9ab8a32705465427e3&title=wwwww.dsad&message=asdasdadasd&cover=www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = '1eed2bcfeb700b9ab8a32705465427e3' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 185 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 210 行.
+NOTIC: [8] Undefined index: number D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 236 行.
+NOTIC: [8] Undefined index: money D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 251 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008000s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,null,'wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324095) [ RunTime:0.000000s ]
+ERR: 1048:Column 'price' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,null,'wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324095)
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 271 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.009001s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('www.test.com',null) [ RunTime:0.000000s ]
+ERR: 1048:Column 'post_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('www.test.com',null)
+
+[ 2018-04-10T09:35:10+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase?token=1eed2bcfeb700b9ab8a32705465427e3&title=wwwww.dsad&message=asdasdadasd&cover=www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = '1eed2bcfeb700b9ab8a32705465427e3' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 185 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 210 行.
+NOTIC: [8] Undefined index: number D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 236 行.
+NOTIC: [8] Undefined index: money D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 251 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,null,'wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324110) [ RunTime:0.001000s ]
+ERR: 1048:Column 'price' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,null,'wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324110)
+
+[ 2018-04-10T09:35:36+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase?token=1eed2bcfeb700b9ab8a32705465427e3&title=wwwww.dsad&message=asdasdadasd&cover=www.test.com&money=50
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = '1eed2bcfeb700b9ab8a32705465427e3' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 185 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 210 行.
+NOTIC: [8] Undefined index: number D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 236 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,'50','wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324136) [ RunTime:0.009000s ]
+
+[ 2018-04-10T09:35:56+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase?token=1eed2bcfeb700b9ab8a32705465427e3&title=wwwww.dsad&message=asdasdadasd&cover=www.test.com&money=50
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = '1eed2bcfeb700b9ab8a32705465427e3' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 185 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 210 行.
+NOTIC: [8] Undefined index: number D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 236 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,'50','wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324156) [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 271 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.009000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('www.test.com',30) [ RunTime:0.001000s ]
+
+[ 2018-04-10T09:36:41+08:00 ] 127.0.0.1 /EmergencySell/UrgentPurchase?token=1eed2bcfeb700b9ab8a32705465427e3&title=wwwww.dsad&message=asdasdadasd&cover=www.test.com&money=50&img_path=www.test.com,www.baidaidaid,dasdasdasd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = '1eed2bcfeb700b9ab8a32705465427e3' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 185 行.
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 210 行.
+NOTIC: [8] Undefined index: number D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 236 行.
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008000s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (18,'50','wwwww.dsad',0,'内网IP','asdasdadasd',1,5,1,1523324201) [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.009000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`,`img_1`,`img_2`,`img_3`) VALUES ('www.test.com',31,'www.test.com','www.baidaidaid','dasdasdasd') [ RunTime:0.001000s ]
+
+[ 2018-04-10T10:09:34+08:00 ] 127.0.0.1 /EmergencySell/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: token D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 16 行.
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.012001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = null ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2018-04-10T10:10:02+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell?token=f5a00987cd2b80d8f11952ea0865bd9a
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'f5a00987cd2b80d8f11952ea0865bd9a' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: state D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 299 行.
+NOTIC: [8] Undefined index: title D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 308 行.
+
+[ 2018-04-10T10:11:29+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell?token=f5a00987cd2b80d8f11952ea0865bd9a&title=%E8%90%A8%E8%BE%BE%E5%9B%9B%E5%A4%A7%E7%9A%84%E6%92%92&message=%E7%88%B1%E4%B8%8A%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'f5a00987cd2b80d8f11952ea0865bd9a' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 324 行.
+NOTIC: [8] Undefined index: video_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 351 行.
+
+[ 2018-04-10T10:11:45+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell?token=f5a00987cd2b80d8f11952ea0865bd9a&title=%E8%90%A8%E8%BE%BE%E5%9B%9B%E5%A4%A7%E7%9A%84%E6%92%92&message=%E7%88%B1%E4%B8%8A%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&video_path=www.test.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'f5a00987cd2b80d8f11952ea0865bd9a' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 324 行.
+NOTIC: [8] Undefined index: cover D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 358 行.
+
+[ 2018-04-10T10:12:00+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell?token=f5a00987cd2b80d8f11952ea0865bd9a&title=%E8%90%A8%E8%BE%BE%E5%9B%9B%E5%A4%A7%E7%9A%84%E6%92%92&message=%E7%88%B1%E4%B8%8A%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&video_path=www.test.com&cover=asdaasd
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'f5a00987cd2b80d8f11952ea0865bd9a' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 324 行.
+NOTIC: [8] Undefined index: money D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 365 行.
+NOTIC: [8] Undefined index: dingdan D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 368 行.
+
+[ 2018-04-10T10:12:27+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell?token=f5a00987cd2b80d8f11952ea0865bd9a&title=%E8%90%A8%E8%BE%BE%E5%9B%9B%E5%A4%A7%E7%9A%84%E6%92%92&message=%E7%88%B1%E4%B8%8A%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&video_path=www.test.com&cover=asdaasd&dingdan=2018040910110248
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009001s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'f5a00987cd2b80d8f11952ea0865bd9a' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 324 行.
+NOTIC: [8] Undefined index: money D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 365 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '2018040910110248' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.011001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (16,null,'萨达四大的撒',0,'内网IP市','爱上大声地阿斯达',2,0,1,1523326346) [ RunTime:0.000000s ]
+ERR: 1048:Column 'price' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (16,null,'萨达四大的撒',0,'内网IP市','爱上大声地阿斯达',2,0,1,1523326346)
+SQL: SHOW COLUMNS FROM `emergencysell_video` [ RunTime:0.029002s ]
+SQL: INSERT INTO `emergencysell_video` (`post_id`,`path`) VALUES (null,'www.test.com') [ RunTime:0.001000s ]
+ERR: 1048:Column 'post_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell_video` (`post_id`,`path`) VALUES (null,'www.test.com')
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 411 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.009000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('asdaasd',null) [ RunTime:0.001000s ]
+ERR: 1048:Column 'post_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('asdaasd',null)
+NOTIC: [8] Undefined variable: endId D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 423 行.
+SQL: UPDATE emergencysell_pay SET post_id =  WHERE dingdan = 2018040910110248 [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE dingdan = 2018040910110248' at line 1
+ [ SQL语句 ] : UPDATE emergencysell_pay SET post_id =  WHERE dingdan = 2018040910110248
+
+[ 2018-04-10T10:13:06+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell?token=f5a00987cd2b80d8f11952ea0865bd9a&title=%E8%90%A8%E8%BE%BE%E5%9B%9B%E5%A4%A7%E7%9A%84%E6%92%92&message=%E7%88%B1%E4%B8%8A%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&video_path=www.test.com&cover=asdaasd&dingdan=2018040910110248
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'f5a00987cd2b80d8f11952ea0865bd9a' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 324 行.
+NOTIC: [8] Undefined index: money D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 365 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '2018040910110248' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009000s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (16,null,'萨达四大的撒',0,'内网IP市','爱上大声地阿斯达',2,0,1,1523326386) [ RunTime:0.001000s ]
+ERR: 1048:Column 'price' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (16,null,'萨达四大的撒',0,'内网IP市','爱上大声地阿斯达',2,0,1,1523326386)
+SQL: SHOW COLUMNS FROM `emergencysell_video` [ RunTime:0.008001s ]
+SQL: INSERT INTO `emergencysell_video` (`post_id`,`path`) VALUES (null,'www.test.com') [ RunTime:0.000000s ]
+ERR: 1048:Column 'post_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell_video` (`post_id`,`path`) VALUES (null,'www.test.com')
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 411 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.009000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('asdaasd',null) [ RunTime:0.000000s ]
+ERR: 1048:Column 'post_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('asdaasd',null)
+NOTIC: [8] Undefined variable: endId D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 423 行.
+SQL: UPDATE emergencysell_pay SET post_id =  WHERE dingdan = 2018040910110248 [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE dingdan = 2018040910110248' at line 1
+ [ SQL语句 ] : UPDATE emergencysell_pay SET post_id =  WHERE dingdan = 2018040910110248
+
+[ 2018-04-10T10:13:56+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell?token=f5a00987cd2b80d8f11952ea0865bd9a&title=%E8%90%A8%E8%BE%BE%E5%9B%9B%E5%A4%A7%E7%9A%84%E6%92%92&message=%E7%88%B1%E4%B8%8A%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&video_path=www.test.com&cover=asdaasd&dingdan=2018040910110248&money=50
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'f5a00987cd2b80d8f11952ea0865bd9a' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 324 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '2018040910110248' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.009001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (16,'50','萨达四大的撒',0,'内网IP市','爱上大声地阿斯达',2,0,1,1523326436) [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_video` [ RunTime:0.007000s ]
+SQL: INSERT INTO `emergencysell_video` (`post_id`,`path`) VALUES (32,'www.test.com') [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 411 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.007000s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('asdaasd',32) [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: endId D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 423 行.
+SQL: UPDATE emergencysell_pay SET post_id =  WHERE dingdan = 2018040910110248 [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE dingdan = 2018040910110248' at line 1
+ [ SQL语句 ] : UPDATE emergencysell_pay SET post_id =  WHERE dingdan = 2018040910110248
+
+[ 2018-04-10T10:14:07+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell?token=f5a00987cd2b80d8f11952ea0865bd9a&title=%E8%90%A8%E8%BE%BE%E5%9B%9B%E5%A4%A7%E7%9A%84%E6%92%92&message=%E7%88%B1%E4%B8%8A%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&video_path=www.test.com&cover=asdaasd&dingdan=2018040910110248&money=50
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'f5a00987cd2b80d8f11952ea0865bd9a' ) LIMIT 1   [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 324 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '2018040910110248' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.012001s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (16,'50','萨达四大的撒',0,'内网IP市','爱上大声地阿斯达',2,0,1,1523326447) [ RunTime:0.001000s ]
+
+[ 2018-04-10T10:14:30+08:00 ] 127.0.0.1 /EmergencySell/UrgentSell?token=f5a00987cd2b80d8f11952ea0865bd9a&title=%E8%90%A8%E8%BE%BE%E5%9B%9B%E5%A4%A7%E7%9A%84%E6%92%92&message=%E7%88%B1%E4%B8%8A%E5%A4%A7%E5%A3%B0%E5%9C%B0%E9%98%BF%E6%96%AF%E8%BE%BE&video_path=www.test.com&cover=asdaasd&dingdan=2018040910110248&money=50
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\h_shop\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008000s ]
+SQL: SELECT `user_id` FROM `user` WHERE ( `token` = 'f5a00987cd2b80d8f11952ea0865bd9a' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: ns D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 324 行.
+SQL: SHOW COLUMNS FROM `emergencysell_pay` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `emergencysell_pay` WHERE ( `dingdan` = '2018040910110248' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `emergencysell` [ RunTime:0.008000s ]
+SQL: INSERT INTO `emergencysell` (`user_id`,`price`,`title`,`click`,`city`,`message`,`type`,`number`,`state`,`create_time`) VALUES (16,'50','萨达四大的撒',0,'内网IP市','爱上大声地阿斯达',2,0,1,1523326470) [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `emergencysell_video` [ RunTime:0.010001s ]
+SQL: INSERT INTO `emergencysell_video` (`post_id`,`path`) VALUES (35,'www.test.com') [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: img_path D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 410 行.
+SQL: SHOW COLUMNS FROM `emergencysell_img` [ RunTime:0.007001s ]
+SQL: INSERT INTO `emergencysell_img` (`cover`,`post_id`) VALUES ('asdaasd',35) [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: endId D:\phpStudy\WWW\h_shop\Api\Home\Controller\EmergencySellController.class.php 第 422 行.
+SQL: UPDATE emergencysell_pay SET post_id =  WHERE dingdan = 2018040910110248 [ RunTime:0.000000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE dingdan = 2018040910110248' at line 1
+ [ SQL语句 ] : UPDATE emergencysell_pay SET post_id =  WHERE dingdan = 2018040910110248
+

@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <!-- <link rel="shortcut icon" href="https://test.dscmall.cn/favicon.ico"> -->
 <!-- <link rel="icon" href="https://test.dscmall.cn/animated_favicon.gif" type="image/gif"> -->
-<link href="/h_shop/Public/newadmin/login.css" rel="stylesheet" type="text/css">
-<script  src="/h_shop/Public/js/jquery-1.8.3.min.js"></script>
-<script src="/h_shop/Public/admin/js/layer/layer.js"></script>
+<link href="/Public/newadmin/login.css" rel="stylesheet" type="text/css">
+<script  src="/Public/js/jquery-1.8.3.min.js"></script>
+<script src="/Public/admin/js/layer/layer.js"></script>
 <!--[if lte IE 8]>
 	<script type="Text/Javascript" language="JavaScript">
     	$(function(){
@@ -35,7 +35,7 @@
 
 <body>
 	<div class="login-layout">
-    	<div class="logo"><img src="/h_shop/Public/newadmin/loginImg.png"></div>
+    	<div class="logo"><img src="/Public/newadmin/loginImg.png"></div>
             <div class="login-form" style="position: relative">
                 <div class="formContent">
                 	<div class="title">管理中心</div>
@@ -70,12 +70,12 @@
     </div>
     <div id="bannerBox">
         <ul id="slideBanner" class="slideBanner" style="position: relative; width: 1920px; height: 935px;">
-            <li style="position: absolute; width: 1920px; left: 0px; top: 0px; display: none;"><img src="/h_shop/Public/newadmin/banner_1.jpg"></li>
-            <li style="position: absolute; width: 1920px; left: 0px; top: 0px;"><img src="/h_shop/Public/newadmin/banner_2.jpg"></li>
-            <li style="position: absolute; width: 1920px; left: 0px; top: 0px; display: none;"><img src="/h_shop/Public/newadmin/banner_3.jpg"></li>
-            <li style="position: absolute; width: 1920px; left: 0px; top: 0px; display: none;"><img src="/h_shop/Public/newadmin/banner_4.jpg"></li>
-            <li style="position: absolute; width: 1920px; left: 0px; top: 0px; display: none;"><img src="/h_shop/Public/newadmin/banner_5.jpg"></li>
+            <li style="position: absolute; width: 1920px; left: 0px; top: 0px; display: none;"><img src="/Public/newadmin/banner_1.jpg"></li>
+            <li style="position: absolute; width: 1920px; left: 0px; top: 0px;"><img src="/Public/newadmin/banner_2.jpg"></li>
+            <li style="position: absolute; width: 1920px; left: 0px; top: 0px; display: none;"><img src="/Public/newadmin/banner_3.jpg"></li>
+            <li style="position: absolute; width: 1920px; left: 0px; top: 0px; display: none;"><img src="/Public/newadmin/banner_4.jpg"></li>
+            <li style="position: absolute; width: 1920px; left: 0px; top: 0px; display: none;"><img src="/Public/newadmin/banner_5.jpg"></li>
         </ul>
     </div>
 </body></html>
-<script src="/h_shop/Public/admin/js/adminlogin.js?a=123"></script>
+<script src="/Public/admin/js/adminlogin.js?a=123"></script>

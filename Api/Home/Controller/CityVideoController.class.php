@@ -556,9 +556,23 @@ class CityVideoController extends RestController {
 		//根据视频id先获取评论 不包括子评论
 		$comment = M('city_video_comment')->where(array('cid'=>$video_id,'pid'=>0))->order('fabulous_num DESC')->select();
 		if (!$comment) {
-			$data['code'] = 204;
-			$data['message'] = '暂无评论';
-			$this->response($data);	
+			//添加视频标题到评论数据中;
+			$info  = M('city_video')->where(array('id'=>$video_id))->find();
+			$title[0]['content']     = $info['title'];
+			$title[0]['create_time'] =  mdate($info['uploadetime']);
+			$title[0]['user_id']     = $info['user_id'];
+			$tmp   = M('user')->where(array('user_id'=>$title[0]['user_id']))->find();
+			$title[0]['user_name']   = $tmp['user_name'];
+			$title[0]['user_photo']  =	$tmp['user_photo'];	
+			$title[0]['fabulous_num']= 0;
+			$title[0]['reply_num']   = 0;
+			$title[0]['is_fabulous'] = 0;
+			$title[0]['from_uid']    = 0;
+			$title[0]['is_message']  = 0;
+			$data['code'] = 200;
+			$data['message'] = '获取评论成功';
+			$data['data'] = $title;
+			$this->response($data);
 		}
 		//添加视频标题到评论数据中;
 		$info  = M('city_video')->where(array('id'=>$video_id))->find();
@@ -717,7 +731,7 @@ class CityVideoController extends RestController {
 		$num = $red['money_num'];
 
 		if (!is_numeric($money)) {
-			$data['code'] = 204;
+			$data['code'] = 200;
 			$data['message'] = '该视频不存在红包';
 			$this->response($data);				
 		}
@@ -771,7 +785,8 @@ class CityVideoController extends RestController {
 		$rr  = M('city_video_redenvelopes')->execute($sql);
 		if ($rr && $result && $redUpdate) {
 			$data['code'] = 200;
-			$data['message'] = "恭喜你领取了 {$redEnvelopes} 嘿币";
+			$data['message'] = "恭喜你领取成功";
+			$data['money']  = $redEnvelopes;
 			$this->response($data);				
 		}else{
 			$data['code'] = 204;

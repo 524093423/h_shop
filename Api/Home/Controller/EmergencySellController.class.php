@@ -178,9 +178,9 @@ class EmergencySellController extends RestController {
 	 * 急购分步上传__获取帖子信息 
 	 * 急购不存在视频 急售存在 急购不需要收费
 	 * state 1代表可以与我建立私信窗口 0代表不可以  
-	 *@return  帖子id
+	 *
 	 */
-	public function UrgentPurchase_GetInfo() {
+	public function UrgentPurchase() {
 		$user_id = $this->_USERID;
 		$state   = $_REQUEST['state'] ? $_REQUEST['state'] : 1 ;
 		//检测用户
@@ -214,7 +214,7 @@ class EmergencySellController extends RestController {
 			$city = $res->city;
 		}else{
 			$json = $this->analysis($ns);
-			$city = $json->city;
+			$city = $json->city . '市';
 		}		
 		$message = $_REQUEST['message'];
 		//检测描述
@@ -234,14 +234,20 @@ class EmergencySellController extends RestController {
 			$this->response($data);					
 		}	
 		$number  = $_REQUEST['number'] ? $_REQUEST['number'] : 5;
-
 		//检测报价人数
 		if ($number < 5) {
 			$data['code'] = 204;
 			$data['message'] = '报价人数不能小于5人';
 			$this->response($data);					
 		}
-		$money   = $_REQUEST['money'];
+
+		$cover     = $_REQUEST['cover'] ? $_REQUEST['cover'] : "1";
+
+		if ($cover == '1') {
+			$cover  = 'http://ol5pwlkra.bkt.clouddn.com/default_01.png';
+		}
+
+		$money   =  0;
 		//更新数据库
 		$arr = [
 			'user_id' => $user_id,
@@ -257,10 +263,25 @@ class EmergencySellController extends RestController {
 		];
 		$result =  M('emergencysell')->add($arr);
 
-		if ($result) {
+		$newArr['cover']  = $cover;
+
+		$newArr['post_id'] =  M('emergencysell')->getLastInsID();
+
+		$img_path  = $_REQUEST['img_path'];   //..img_path 类似与 1.jpg,2.png
+
+		if (!empty($img_path)) {
+			$img = explode(',',$img_path);
+
+			for ($i=0; $i <count($img) ; $i++) { 
+				$newArr['img_'.($i+1)] = $img[$i];
+			}
+		}
+		//添加到图片表
+		$add = M('emergencysell_img')->add($newArr); 
+
+		if ($result && $add) {
 			$data['code']    = 200;
 			$data['message'] = '添加数据成功';
-			$data['post_id'] = M('emergencysell')->getLastInsID();
 		}else{
 			$data['code']    = 204;
 			$data['message'] = '添加数据失败';			
@@ -269,70 +290,12 @@ class EmergencySellController extends RestController {
 	}
 
 	/* 
-	急购分步上传__获取图片地址 并整合
-	*/
-	public function UrgentPurchase_GetImg_path() {
-		$user_id = $this->_USERID;
-		//获取帖子id,并验证
-		$post_id = $_REQUEST['post_id'];
-		if (!$post_id) {
-			$data['code']    = 204;
-			$data['message'] = '数据错误';
-			$this->response($data);
-		}
-		$res = M('emergencysell')->where(array('id'=>$post_id))->find();
-
-		if (!$res) {
-			$data['code']    = 204;
-			$data['message'] = '帖子id不存在';
-			$this->response($data);
-		}
-
-		if($res['user_id'] != $user_id) {
-			$data['code']    = 204;
-			$data['message'] = '信息不正确';
-			$this->response($data);
-		}	
-
-		$cover     = $_REQUEST['cover'];
-		if (!$cover) {
-			$data['code']    = 204;
-			$data['message'] = '封面地址不存在';
-			$this->response($data);			
-		}
-		$arr['cover']  = $cover;
-
-		$img_path  = $_REQUEST['img_path'];   //..img_path 类似与 1.jpg,2.png
-	
-		if (!empty($img_path)) {
-			$img = explode(',',$img_path);
-			for ($i=0; $i <count($img) ; $i++) { 
-				$arr['img_'.($i+1)] = $img[$i];
-			}
-		}
-
-		//添加到图片表
-		$add = M('emergencysell_img')->add($arr); 
-		if ($add) {
-			$data['code']    = 200;
-			$data['message'] = '上传成功';
-		}else{
-			$data['code']    = 204;
-			$data['message'] = '上传失败请重试';
- 		}
-		$this->response($data);
-	}
-
-
-	/* 
-	急购分步上传_获取帖子信息
+	急售上传
 	急售存在视频  急售需要收费
 	*/
-	public function UrgentSell_GetInfo() {
+	public function UrgentSell() {
 		$user_id = $this->_USERID;
-
-		$state   = $_REQUEST['state'] ? $_REQUEST['state'] : 1 ;
-
+		$state   =  1 ;
 		//检测用户
 		if (!$user_id) {
 			$data['code'] = 204;
@@ -361,7 +324,7 @@ class EmergencySellController extends RestController {
 		//城市检测
 		if (empty($ns)) {
 			$res  = $this->analysisIp($_SERVER['REMOTE_ADDR']);	//没有经纬度从ip查询
-			$city = $res->city;
+			$city = $res->city . '市';
 		}else{
 			$json = $this->analysis($ns);
 			$city = $json->city;
@@ -383,6 +346,19 @@ class EmergencySellController extends RestController {
 			$data['message'] = '描述字数不能大于255';
 			$this->response($data);					
 		}	
+
+		$video_path  = $_REQUEST['video_path'];
+		if (!$video_path) {
+			$data['code']    = 204;
+			$data['message'] = '视频地址不存在';
+			$this->response($data);
+		}
+
+		$cover     = $_REQUEST['cover'] ? $_REQUEST['cover'] : "1";
+		if ($cover == '1') {
+			$cover  = 'http://ol5pwlkra.bkt.clouddn.com/default_02.png';
+		}
+
 		$money   = $_REQUEST['money'];
 
 		//检测订单是否存在;
@@ -395,7 +371,6 @@ class EmergencySellController extends RestController {
 
 		//从订单表查询
 		$ding = M('emergencysell_pay')->where(array('dingdan'=>$dingdan))->find();
-
 
 		if (empty($ding) || is_null($ding)) {
 			$data['code'] = 204;
@@ -417,16 +392,36 @@ class EmergencySellController extends RestController {
 			'create_time' => time()
 		];
 		$result =  M('emergencysell')->add($arr);
+		$post_id = M('emergencysell')->getLastInsID();
+
+		//更新视频表
+		$video_arr = [
+			'post_id' => $post_id,
+			'path'    => $video_path
+		];
+		$video_add = M('emergencysell_video')->add($video_arr);
+
+		//更新图片表
+		$img_arr['cover']   = $cover;
+		$img_arr['post_id'] = $post_id;
+		$img_path  = $_REQUEST['img_path'];   //..img_path 类似与 1.jpg,2.png
+		if (!empty($img_path)) {
+			$img = explode(',',$img_path);
+			for ($i=0; $i <count($img) ; $i++) { 
+				$img_arr['img_'.($i+1)] = $img[$i];
+			}
+		}
+		//添加到图片表
+		$img_add = M('emergencysell_img')->add($img_arr); 
+
 
 		//更新订单表
-		$endId = M('emergencysell')->getLastInsID();
-		$sql = "UPDATE emergencysell_pay SET post_id = $endId WHERE dingdan = $dingdan";
+		$sql = "UPDATE emergencysell_pay SET post_id = $post_id WHERE dingdan = $dingdan";
 		M('emergencysell_pay')->execute($sql);
 
-		if ($result) {
+		if ($result && $video_add && $img_add) {
 			$data['code']    = 200;
 			$data['message'] = '添加数据成功';
-			$data['post_id'] = $endId;
 		}else{
 			$data['code']    = 204;
 			$data['message'] = '添加数据失败';	
@@ -434,105 +429,6 @@ class EmergencySellController extends RestController {
 		$this->response($data);		
 	}
 
-	/* 
-	急售分步上传__获取视频地址
-	*/
-	public function UrgentSell_GetVideo_Path() {
-		$user_id = $this->_USERID;
-		//获取帖子id,并验证
-		$post_id = $_REQUEST['post_id'];
-		if (!$post_id) {
-			$data['code']    = 204;
-			$data['message'] = '数据错误';
-			$this->response($data);
-		}
-		$res = M('emergencysell')->where(array('id'=>$post_id))->find();
-		if (!$res) {
-			$data['code']    = 204;
-			$data['message'] = '帖子id不存在';
-			$this->response($data);
-		}
-		if($res['user_id'] != $user_id) {
-			$data['code']    = 204;
-			$data['message'] = '信息不正确';
-			$this->response($data);
-		}
-		$video_path  = $_REQUEST['video_path'];
-		if (!$video_path) {
-			$data['code']    = 204;
-			$data['message'] = '视频地址不存在';
-			$this->response($data);
-		}
-		//更新视频表
-		$arr = [
-			'post_id' => $post_id,
-			'path'    => $video_path
-		];
-
-		$add = M('emergencysell_video')->add($arr);
-		if ($arr) {
-			$data['code'] = 200;
-			$data['message'] = '更新视频地址成功';
-		}else{
-			$data['code'] = 204;
-			$data['message'] = '更新视频地址失败';
-		}
-		$this->response($data);
-	}
-
-	/* 
-	急售分步上传__获取封面以及图片地址
-	*/
-	public function UrgentSell_GetImg_path() {
-		$user_id = $this->_USERID;
-		//获取帖子id,并验证
-		$post_id = $_REQUEST['post_id'];
-		if (!$post_id) {
-			$data['code']    = 204;
-			$data['message'] = '数据错误';
-			$this->response($data);
-		}
-		$res = M('emergencysell')->where(array('id'=>$post_id))->find();
-
-		if (!$res) {
-			$data['code']    = 204;
-			$data['message'] = '帖子id不存在';
-			$this->response($data);
-		}
-
-		if($res['user_id'] != $user_id) {
-			$data['code']    = 204;
-			$data['message'] = '信息不正确';
-			$this->response($data);
-		}	
-
-		$cover     = $_REQUEST['cover'];
-		if (!$cover) {
-			$data['code']    = 204;
-			$data['message'] = '封面地址不存在';
-			$this->response($data);			
-		}
-		$arr['cover']   = $cover;
-		$arr['post_id'] = $post_id;
-		$img_path  = $_REQUEST['img_path'];   //..img_path 类似与 1.jpg,2.png
-		if (!empty($img_path)) {
-			$img = explode(',',$img_path);
-			for ($i=0; $i <count($img) ; $i++) { 
-				$arr['img_'.($i+1)] = $img[$i];
-			}
-		}
-
-		//添加到图片表
-		$add = M('emergencysell_img')->add($arr); 
-		if ($add) {
-			$data['code']    = 200;
-			$data['message'] = '上传成功';
-		}else{
-			$data['code']    = 204;
-			$data['message'] = '上传失败请重试';
- 		}
-		$this->response($data);
-	}
 
 	/* 
 	用户余额查询
